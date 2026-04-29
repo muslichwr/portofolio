@@ -13,6 +13,19 @@
 !.yarn/releases
 !.yarn/versions
 
+# Agents (AI-assisted development)
+/.agents
+/.agent
+/.claude
+/.codex
+/.gemini
+/.openai
+/.orbit
+/.scaffold
+/.tradie
+/.windsurf
+.md/
+
 # testing
 /coverage
 

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -17,24 +19,25 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Portfolio | Pendidik Vokasi & Developer",
+    default: "Muslich Wahyu R. | Pendidik Vokasi & Developer",
     template: "%s | Portfolio",
   },
   description:
-    "E-Portfolio UTS PPL Terbimbing — Praktik Pengalaman Lapangan Pendidikan Profesi Guru Prajabatan.",
+    "E-Portfolio UTS PPL Terbimbing — Praktik Pengalaman Lapangan Pendidikan Profesi Guru Prajabatan. Fullstack Developer & Pendidik Vokasi TKJ.",
   keywords: [
     "E-Portfolio",
     "PPL Terbimbing",
     "PPG Prajabatan",
     "Pendidik Vokasi",
-    "Developer",
+    "Fullstack Developer",
+    "TKJ",
     "Next.js",
   ],
-  authors: [{ name: "Pendidik Vokasi" }],
+  authors: [{ name: "Muslich Wahyu Ramadhan" }],
   openGraph: {
-    title: "Portfolio | Pendidik Vokasi & Developer",
+    title: "Muslich Wahyu R. | Pendidik Vokasi & Developer",
     description:
-      "E-Portfolio UTS PPL Terbimbing — Praktik Pengalaman Lapangan Pendidikan Profesi Guru Prajabatan.",
+      "E-Portfolio UTS PPL Terbimbing — Fullstack Developer & Pendidik Vokasi TKJ.",
     type: "website",
     locale: "id_ID",
   },
@@ -52,7 +55,9 @@ export default function RootLayout({
     >
       <body className="bg-background text-foreground antialiased selection:bg-white selection:text-black">
         <SmoothScrollProvider>
-          <main className="min-h-screen">{children}</main>
+          <Navbar />
+          <main className="min-h-screen pt-16">{children}</main>
+          <Footer />
         </SmoothScrollProvider>
       </body>
     </html>
