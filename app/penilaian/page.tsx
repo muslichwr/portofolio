@@ -241,7 +241,7 @@ export default function PenilaianPage() {
           HERO / PAGE HEADER
           ================================================================ */}
       <section className="px-6 pb-8 pt-24 md:pt-32">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-7xl">
           {/* Kicker */}
           <p className="mb-3 font-mono text-xs uppercase tracking-widest text-zinc-600">
             Transparansi Penilaian
@@ -264,13 +264,13 @@ export default function PenilaianPage() {
         </div>
       </section>
 
-      <Separator className="mx-auto max-w-4xl bg-zinc-800/50" />
+      <Separator className="mx-auto max-w-7xl bg-zinc-800/50" />
 
       {/* ================================================================
           SECTION A: LAMPIRAN 7 — Perangkat Pembelajaran
           ================================================================ */}
       <section id="lampiran-7" className="px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-7xl">
           {/* Section header */}
           <div className="mb-12">
             <div className="mb-4 flex items-center gap-3">
@@ -361,13 +361,13 @@ export default function PenilaianPage() {
         </div>
       </section>
 
-      <Separator className="mx-auto max-w-4xl bg-zinc-800/50" />
+      <Separator className="mx-auto max-w-7xl bg-zinc-800/50" />
 
       {/* ================================================================
           SECTION B: LAMPIRAN 8 — Praktik Mengajar 3 Siklus
           ================================================================ */}
       <section id="lampiran-8" className="px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-7xl">
           {/* Section header */}
           <div className="mb-12">
             <div className="mb-4 flex items-center gap-3">

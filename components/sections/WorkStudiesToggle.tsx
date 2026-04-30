@@ -6,8 +6,10 @@ import { cn } from "@/lib/utils";
 import {
   Briefcase,
   GraduationCap,
-  MapPin,
-  Calendar,
+  BookOpen,
+  Code2,
+  School,
+  Award,
 } from "lucide-react";
 
 /* ============================================================================
@@ -17,38 +19,38 @@ interface TimelineEntry {
   readonly period: string;
   readonly role: string;
   readonly institution: string;
-  readonly location: string;
   readonly description: string;
-  readonly tags: readonly string[];
+  readonly icon: typeof Briefcase;
+  readonly iconColor: string;
 }
 
 const workEntries: readonly TimelineEntry[] = [
   {
     period: "2025 — Sekarang",
-    role: "Praktik Pengalaman Lapangan (PPL)",
-    institution: "Mahasiswa PPG Prajabatan",
-    location: "Kediri, Jawa Timur",
+    role: "Mahasiswa PPG Prajabatan",
+    institution: "Praktik Pengalaman Lapangan (PPL)",
     description:
       "Melaksanakan 3 siklus praktik mengajar terbimbing. Fokus: Kurikulum Vokasi, konfigurasi DHCP Server, dan Web Deployment berbasis Nginx.",
-    tags: ["Siklus 1", "Siklus 2", "Siklus 3", "DHCP Server"],
+    icon: BookOpen,
+    iconColor: "text-emerald-400",
   },
   {
     period: "2025 — Sekarang",
-    role: "Pengajar Penuh Waktu & Admin Lab",
-    institution: "SMKS Tunas Bangsa Pare",
-    location: "Kediri, Jawa Timur",
+    role: "SMKS Tunas Bangsa Pare",
+    institution: "Pengajar Penuh Waktu & Admin Lab",
     description:
       "Mengajar Konsentrasi Keahlian TKJ pada mata pelajaran Administrasi Sistem Jaringan. Mengelola laboratorium jaringan dan merancang praktikum berbasis industri.",
-    tags: ["TKJ", "ASJ", "Lab Admin"],
+    icon: School,
+    iconColor: "text-cyan-400",
   },
   {
     period: "2024",
-    role: "Fullstack Developer Intern",
-    institution: "Dinas Komunikasi dan Informatika (Diskominfo)",
-    location: "Kota Kediri",
+    role: "Dinas Komunikasi dan Informatika (Diskominfo)",
+    institution: "Fullstack Developer Intern",
     description:
       "Merancang dan membangun aplikasi web internal menggunakan Next.js dan Laravel. Mengimplementasikan RESTful API dan optimasi database pada shared hosting.",
-    tags: ["Next.js", "Laravel", "REST API"],
+    icon: Code2,
+    iconColor: "text-blue-400",
   },
 ] as const;
 
@@ -58,30 +60,25 @@ const workEntries: readonly TimelineEntry[] = [
 const studiesEntries: readonly TimelineEntry[] = [
   {
     period: "2025 — Sekarang",
-    role: "PPG Prajabatan",
-    institution: "Program Profesi Guru Kejuruan TKJ",
-    location: "Universitas Negeri Surabaya",
+    role: "Program Profesi Guru Kejuruan TKJ",
+    institution: "PPG Prajabatan",
     description:
       "Program sertifikasi profesi guru yang fokus pada pengembangan kompetensi pedagogik, profesional, sosial, dan kepribadian untuk guru kejuruan TKJ.",
-    tags: ["Sertifikasi", "Pedagogik", "Kejuruan"],
+    icon: Award,
+    iconColor: "text-amber-400",
   },
   {
     period: "2021 — 2025",
-    role: "S1 Pendidikan Teknologi Informasi",
-    institution: "Universitas Negeri Surabaya (UNESA)",
-    location: "Surabaya, Jawa Timur",
+    role: "Universitas Negeri Surabaya (UNESA)",
+    institution: "S1 Pendidikan Teknologi Informasi",
     description:
       "Mendalami pendidikan teknologi informasi dengan filosofi 'Logic First, Syntax Later'. Fokus pada pengembangan software dan pedagogik teknologi. IPK: 3.78.",
-    tags: ["GPA 3.78", "Logic First", "IT Education"],
+    icon: GraduationCap,
+    iconColor: "text-violet-400",
   },
 ] as const;
 
 type TabKey = "work" | "studies";
-
-const tabs: readonly { readonly key: TabKey; readonly label: string; readonly icon: typeof Briefcase }[] = [
-  { key: "work", label: "Work", icon: Briefcase },
-  { key: "studies", label: "Studies", icon: GraduationCap },
-] as const;
 
 /* ============================================================================
    COMPONENT
@@ -93,89 +90,93 @@ export function WorkStudiesToggle() {
 
   return (
     <div>
-      {/* ── Toggle Tabs ── */}
-      <div className="mb-12 flex items-center gap-1 rounded-full border border-white/[0.06] bg-white/[0.02] p-1 w-fit">
-        {tabs.map((tab) => {
-          const IconComponent = tab.icon;
-          const isActive = activeTab === tab.key;
-          return (
-            <button
-              key={tab.key}
-              onClick={() => setActiveTab(tab.key)}
-              className={cn(
-                "relative flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors duration-300",
-                isActive ? "text-white" : "text-zinc-500 hover:text-zinc-300"
-              )}
-            >
-              {isActive && (
-                <motion.span
-                  layoutId="work-studies-active"
-                  className="absolute inset-0 rounded-full bg-white/[0.08]"
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
-                />
-              )}
-              <IconComponent className="relative z-10 size-4" />
-              <span className="relative z-10">{tab.label}</span>
-            </button>
-          );
-        })}
+      {/* ── Full-width Toggle Tabs (matching rafaelamaral.dev) ── */}
+      <div className="mb-10 grid grid-cols-2 rounded-xl border border-white/[0.06] bg-white/[0.02] p-1">
+        <button
+          onClick={() => setActiveTab("work")}
+          className={cn(
+            "relative flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-medium transition-colors duration-300",
+            activeTab === "work" ? "text-white" : "text-zinc-500 hover:text-zinc-300"
+          )}
+        >
+          {activeTab === "work" && (
+            <motion.span
+              layoutId="experience-tab-active"
+              className="absolute inset-0 rounded-lg bg-white/[0.06] border border-white/[0.06]"
+              transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
+            />
+          )}
+          <Briefcase className="relative z-10 size-4" />
+          <span className="relative z-10">Work</span>
+        </button>
+
+        <button
+          onClick={() => setActiveTab("studies")}
+          className={cn(
+            "relative flex items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-medium transition-colors duration-300",
+            activeTab === "studies" ? "text-white" : "text-zinc-500 hover:text-zinc-300"
+          )}
+        >
+          {activeTab === "studies" && (
+            <motion.span
+              layoutId="experience-tab-active"
+              className="absolute inset-0 rounded-lg bg-white/[0.06] border border-white/[0.06]"
+              transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
+            />
+          )}
+          <GraduationCap className="relative z-10 size-4" />
+          <span className="relative z-10">Studies</span>
+        </button>
       </div>
 
-      {/* ── Timeline List ── */}
+      {/* ── Timeline Cards (rafaelamaral.dev card-style with left icons) ── */}
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -12 }}
+          exit={{ opacity: 0, y: -16 }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="space-y-0"
+          className="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden"
         >
-          {entries.map((entry, index) => (
-            <div key={`${activeTab}-${index}`}>
-              {/* Divider */}
-              {index > 0 && (
-                <div className="border-t border-white/[0.04]" />
-              )}
-
-              <div className="group grid grid-cols-1 gap-4 py-8 transition-colors md:grid-cols-[200px_1fr]">
-                {/* Left column — period & location */}
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 text-zinc-500">
-                    <Calendar className="size-3.5" />
-                    <span className="font-mono text-xs">{entry.period}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-zinc-600">
-                    <MapPin className="size-3.5" />
-                    <span className="text-xs">{entry.location}</span>
+          {entries.map((entry, index) => {
+            const IconComponent = entry.icon;
+            return (
+              <div
+                key={`${activeTab}-${index}`}
+                className={cn(
+                  "group flex gap-5 px-6 py-6 transition-colors hover:bg-white/[0.02]",
+                  index > 0 && "border-t border-white/[0.04]"
+                )}
+              >
+                {/* Icon circle */}
+                <div className="flex shrink-0 pt-1">
+                  <div className="flex size-12 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.03]">
+                    <IconComponent className={cn("size-5", entry.iconColor)} />
                   </div>
                 </div>
 
-                {/* Right column — content */}
-                <div className="space-y-3">
-                  <h3 className="text-lg font-bold tracking-tight text-white transition-colors group-hover:text-zinc-100">
+                {/* Content */}
+                <div className="min-w-0 space-y-1.5">
+                  {/* Period */}
+                  <p className="text-xs text-zinc-500">{entry.period}</p>
+
+                  {/* Institution / Company name — bold */}
+                  <h3 className="text-base font-bold tracking-tight text-white">
                     {entry.role}
                   </h3>
-                  <p className="text-sm font-medium text-zinc-400">
-                    {entry.institution}
-                  </p>
-                  <p className="max-w-xl text-sm leading-relaxed text-zinc-500">
+
+                  {/* Role */}
+                  <p className="text-sm text-zinc-400">{entry.institution}</p>
+
+                  {/* Description */}
+                  <p className="pt-1 text-sm leading-relaxed text-zinc-500">
                     {entry.description}
                   </p>
-                  <div className="flex flex-wrap gap-1.5 pt-1">
-                    {entry.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1 text-xs text-zinc-500 transition-colors group-hover:border-white/10 group-hover:text-zinc-400"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </motion.div>
       </AnimatePresence>
     </div>

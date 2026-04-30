@@ -78,7 +78,7 @@ export default function ArtefakPage() {
           HERO / PAGE HEADER
           ================================================================ */}
       <section className="px-6 pb-8 pt-24 md:pt-32">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-7xl">
           {/* Kicker */}
           <p className="mb-3 font-mono text-xs uppercase tracking-widest text-zinc-600">
             Portofolio PPL Terbimbing
@@ -102,13 +102,13 @@ export default function ArtefakPage() {
         </div>
       </section>
 
-      <Separator className="mx-auto max-w-4xl bg-zinc-800/50" />
+      <Separator className="mx-auto max-w-7xl bg-zinc-800/50" />
 
       {/* ================================================================
           ARTIFACT CARDS
           ================================================================ */}
       <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto flex max-w-4xl flex-col gap-12">
+        <div className="mx-auto flex max-w-7xl flex-col gap-12">
           {artifacts.map((artifact, index) => (
             <ArtifactCard
               key={artifact.cycle}

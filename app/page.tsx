@@ -117,7 +117,7 @@ export default function HomePage() {
         id="hero"
         className="relative flex min-h-[90vh] flex-col items-center justify-center px-6 py-32"
       >
-        <div className="mx-auto w-full max-w-5xl text-center">
+        <div className="mx-auto w-full max-w-7xl text-center">
           {/* ── Profile Module — Avatar + Name + Badge ── */}
           <div className="mb-10 flex flex-col items-center gap-4">
             {/* Avatar with subtle glow */}
@@ -140,21 +140,21 @@ export default function HomePage() {
           </div>
 
           {/* ── Massive Typography ── */}
-          <div className="relative">
-            <h1
-              className="text-[clamp(2.5rem,8vw,7rem)] font-extrabold leading-[0.9] tracking-tighter text-white"
-            >
-              VOCATIONAL IT
-              <br />
-              <span className="bg-gradient-to-r from-white via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
-                EDUCATOR & DEV
-              </span>
-            </h1>
+          <h1
+            className="text-[clamp(2.5rem,7vw,6.5rem)] font-extrabold leading-[0.9] tracking-tighter text-white"
+          >
+            VOCATIONAL IT
+            <br />
+            <span className="bg-gradient-to-r from-white via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
+              EDUCATOR & DEV
+            </span>
+          </h1>
 
-            {/* Side CTA Button — positioned absolute on desktop */}
+          {/* CTA Button — below heading, never overlapping */}
+          <div className="mt-8">
             <Link
               href="#about"
-              className="group mt-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.08] hover:text-white md:absolute md:right-0 md:top-1/2 md:mt-0 md:-translate-y-1/2"
+              className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
             >
               <Send className="size-4" />
               Kenali Filosofi
@@ -196,8 +196,8 @@ export default function HomePage() {
       {/* ==================================================================
           WORK / STUDIES SECTION
           ================================================================== */}
-      <section id="about" className="px-6 py-24">
-        <div className="mx-auto max-w-5xl">
+      <section id="about" className="px-2 py-14">
+        <div className="mx-auto max-w-4xl">
           {/* Section header */}
           <div className="mb-12">
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-zinc-600">
@@ -215,8 +215,8 @@ export default function HomePage() {
       {/* ==================================================================
           ARTIFACTS / PROJECTS SECTION
           ================================================================== */}
-      <section id="artefak-preview" className="px-6 py-24">
-        <div className="mx-auto max-w-5xl">
+      <section id="artefak-preview" className="px-2 py-24">
+        <div className="mx-auto max-w-4xl">
           {/* Section header */}
           <div className="mb-16">
             <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-zinc-600">
