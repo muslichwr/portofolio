@@ -1,20 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetTitle,
-} from "@/components/ui/sheet";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { href: "/", label: "Beranda" },
+  { href: "/", label: "Home" },
+  { href: "/#about", label: "About" },
   { href: "/artefak", label: "Artefak & Analisis" },
   { href: "/penilaian", label: "Penilaian" },
   { href: "/refleksi", label: "Refleksi" },
@@ -22,99 +17,111 @@ const navLinks = [
 
 export function Navbar() {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header
-      className="fixed top-0 z-50 w-full border-b border-zinc-800/80 bg-black/80 backdrop-blur-md"
-      role="banner"
-    >
-      <nav
-        className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6"
+    <header className="fixed top-0 z-50 flex w-full justify-center px-4 pt-4" role="banner">
+      {/* ── Floating Pill Navbar ── */}
+      <motion.nav
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className={cn(
+          "flex items-center gap-1 rounded-full border px-2 py-2 transition-all duration-500",
+          hasScrolled
+            ? "border-white/10 bg-black/70 shadow-lg shadow-black/20 backdrop-blur-xl"
+            : "border-white/[0.06] bg-white/[0.03] backdrop-blur-md"
+        )}
         aria-label="Navigasi utama"
       >
-        {/* Logo */}
-        <Link
-          href="/"
-          className="text-lg font-bold tracking-tight text-white transition-opacity hover:opacity-80"
-        >
-          Portfolio.
-        </Link>
+        {/* Desktop Links */}
+        <div className="hidden items-center gap-0.5 md:flex">
+          {navLinks.map((link) => {
+            const isActive =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href.replace("/#", "/"));
 
-        {/* Desktop Navigation */}
-        <div className="hidden items-center gap-1 md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                pathname === link.href
-                  ? "text-white"
-                  : "text-zinc-400 hover:text-white"
-              )}
-            >
-              {link.label}
-            </Link>
-          ))}
-          <div className="ml-4">
-            <a href="mailto:muslichwr@gmail.com">
-              <Button variant="outline" size="sm">
-                <Mail data-icon="inline-start" className="size-3.5" />
-                Contact
-              </Button>
-            </a>
-          </div>
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-300",
+                  isActive
+                    ? "text-white"
+                    : "text-zinc-400 hover:text-zinc-200"
+                )}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="navbar-active-pill"
+                    className="absolute inset-0 rounded-full bg-white/[0.08]"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+                <span className="relative z-10">{link.label}</span>
+              </Link>
+            );
+          })}
         </div>
 
         {/* Mobile Hamburger */}
-        <div className="md:hidden">
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger
-              render={
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  aria-label="Buka menu navigasi"
-                />
-              }
-            >
-              <Menu className="size-5 text-zinc-300" />
-            </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="w-72 border-zinc-800 bg-black/95 backdrop-blur-xl"
-            >
-              <SheetTitle className="sr-only">Menu Navigasi</SheetTitle>
-              <div className="flex flex-col gap-2 pt-8">
-                {navLinks.map((link) => (
+        <button
+          className="flex size-9 items-center justify-center rounded-full text-zinc-400 transition-colors hover:text-white md:hidden"
+          onClick={() => setIsMobileOpen(!isMobileOpen)}
+          aria-label={isMobileOpen ? "Tutup menu" : "Buka menu navigasi"}
+        >
+          {isMobileOpen ? <X className="size-4" /> : <Menu className="size-4" />}
+        </button>
+      </motion.nav>
+
+      {/* ── Mobile Overlay ── */}
+      <AnimatePresence>
+        {isMobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-x-0 top-[4.5rem] z-40 mx-4 rounded-2xl border border-white/10 bg-black/90 p-4 backdrop-blur-xl md:hidden"
+          >
+            <div className="flex flex-col gap-1">
+              {navLinks.map((link) => {
+                const isActive =
+                  link.href === "/"
+                    ? pathname === "/"
+                    : pathname.startsWith(link.href.replace("/#", "/"));
+
+                return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => setIsMobileOpen(false)}
                     className={cn(
-                      "rounded-md px-4 py-3 text-sm font-medium transition-colors",
-                      pathname === link.href
-                        ? "bg-zinc-900 text-white"
-                        : "text-zinc-400 hover:bg-zinc-900/50 hover:text-white"
+                      "rounded-lg px-4 py-3 text-sm font-medium transition-colors",
+                      isActive
+                        ? "bg-white/[0.08] text-white"
+                        : "text-zinc-400 hover:bg-white/[0.04] hover:text-white"
                     )}
                   >
                     {link.label}
                   </Link>
-                ))}
-                <div className="mt-4 border-t border-zinc-800 pt-4">
-                  <a href="mailto:muslichwr@gmail.com" className="block">
-                    <Button variant="outline" size="sm" className="w-full">
-                      <Mail data-icon="inline-start" className="size-3.5" />
-                      Contact
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
-      </nav>
+                );
+              })}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

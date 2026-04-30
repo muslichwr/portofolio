@@ -53,10 +53,20 @@ export default function RootLayout({
       lang="id"
       className={`${inter.variable} ${geistMono.variable}`}
     >
-      <body className="bg-background text-foreground antialiased selection:bg-white selection:text-black">
+      <body className="relative bg-background text-foreground antialiased selection:bg-white selection:text-black">
+        {/* ── Signature Radial Glow — Top-center teal/cyan gradient ── */}
+        <div
+          className="pointer-events-none fixed inset-x-0 top-0 z-0 h-[600px]"
+          aria-hidden="true"
+        >
+          <div className="absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 -translate-y-1/4 rounded-full bg-[radial-gradient(ellipse_at_center,_rgba(6,182,212,0.12)_0%,_rgba(59,130,246,0.06)_40%,_transparent_70%)] blur-3xl" />
+        </div>
+
         <SmoothScrollProvider>
           <Navbar />
-          <main className="min-h-screen pt-16">{children}</main>
+          <main className="relative z-10 min-h-screen pt-24">
+            {children}
+          </main>
           <Footer />
         </SmoothScrollProvider>
       </body>
