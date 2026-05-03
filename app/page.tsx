@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, Send, ArrowUpRight, Server, Globe, Code2 } from "lucide-react";
+import Image from "next/image";
+import profilePhoto from "@/assets/images/muslich1.png";
+import { ArrowRight, ArrowUpRight, Server, Globe, Code2, Target, Layers, Zap, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { WorkStudiesToggle } from "@/components/sections/WorkStudiesToggle";
 
@@ -49,12 +51,63 @@ function InstagramIcon({ className }: { readonly className?: string }) {
 }
 
 /* ============================================================================
-   DATA — Artifact teasers
+   DATA — Stats metrics
+   ============================================================================ */
+interface StatMetric {
+  readonly value: string;
+  readonly label: string;
+}
+
+const statsMetrics: readonly StatMetric[] = [
+  { value: "3", label: "Siklus Mengajar" },
+  { value: "30", label: "Murid Terdidik" },
+  { value: "7", label: "Bab Modul Ajar" },
+  { value: "93%", label: "Berhasil Demo Final" },
+] as const;
+
+/* ============================================================================
+   DATA — Model Guru karakter cards
+   ============================================================================ */
+interface GuruKarakter {
+  readonly icon: typeof Target;
+  readonly title: string;
+  readonly description: string;
+}
+
+const guruKarakterCards: readonly GuruKarakter[] = [
+  {
+    icon: Target,
+    title: "Guru Reflektif",
+    description:
+      "Belajar dari setiap siklus mengajar secara iteratif dan terstruktur berdasarkan data nyata di kelas.",
+  },
+  {
+    icon: Layers,
+    title: "Guru Fasilitatif",
+    description:
+      "Memberi ruang murid menemukan solusi sendiri sebelum jawaban diberikan — mendorong kemandirian belajar.",
+  },
+  {
+    icon: Zap,
+    title: "Guru Inovatif",
+    description:
+      "Mengintegrasikan teknologi dan tools industri nyata ke dalam setiap praktikum pembelajaran vokasi.",
+  },
+  {
+    icon: Users,
+    title: "Guru Diferensiatif",
+    description:
+      "Menyesuaikan scaffolding dan pendekatan berdasarkan profil kemampuan dan kebutuhan tiap murid.",
+  },
+] as const;
+
+/* ============================================================================
+   DATA — Artifact teasers (synced with actual Modul Ajar & GP assessment)
    ============================================================================ */
 interface ArtifactTeaser {
   readonly cycle: string;
+  readonly weekRange: string;
   readonly title: string;
-  readonly description: string;
   readonly tags: readonly string[];
   readonly icon: typeof Server;
 }
@@ -62,26 +115,23 @@ interface ArtifactTeaser {
 const artifactTeasers: readonly ArtifactTeaser[] = [
   {
     cycle: "Siklus 1",
-    title: "Jaringan Dasar & DHCP",
-    description:
-      "Konfigurasi DHCP Server pada jaringan LAN menggunakan Mikrotik dengan pendekatan Problem Based Learning. Siswa memecahkan studi kasus distribusi IP otomatis.",
-    tags: ["PBL", "Mikrotik"],
+    weekRange: "Minggu 5–8",
+    title: "OS Server & Web Server Dasar",
+    tags: ["PjBL", "Ubuntu Server", "SSH", "Apache2"],
     icon: Server,
   },
   {
     cycle: "Siklus 2",
-    title: "Web Server Deployment",
-    description:
-      "Deployment web server menggunakan Nginx dan Laravel pada lingkungan shared hosting. Pendekatan Project Based Learning untuk simulasi deployment industri.",
-    tags: ["PjBL", "Nginx", "Laravel"],
+    weekRange: "Minggu 9–12",
+    title: "Full Stack Environment & DNS Lokal",
+    tags: ["PjBL", "Nginx", "Laravel", "BIND9"],
     icon: Globe,
   },
   {
     cycle: "Siklus 3",
-    title: "Evaluasi Jaringan",
-    description:
-      "Evaluasi komprehensif jaringan kampus dengan pendekatan Teaching at the Right Level. Troubleshooting berbasis diagnosa bertingkat sesuai kemampuan siswa.",
-    tags: ["TaRL", "Troubleshooting"],
+    weekRange: "Minggu 13–15",
+    title: "Git Deployment & Monitoring Server",
+    tags: ["PjBL", "Git", "GitHub", "htop"],
     icon: Code2,
   },
 ] as const;
@@ -115,7 +165,7 @@ export default function HomePage() {
           ================================================================== */}
       <section
         id="hero"
-        className="relative flex min-h-[90vh] flex-col items-center justify-center px-6 py-32"
+        className="relative flex min-h-[90vh] flex-col items-center justify-center px-6 py-10"
       >
         <div className="mx-auto w-full max-w-7xl text-center">
           {/* ── Profile Module — Avatar + Name + Badge ── */}
@@ -123,18 +173,32 @@ export default function HomePage() {
             {/* Avatar with subtle glow */}
             <div className="relative">
               <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-teal-500/20 blur-md" />
-              <div className="relative flex size-16 items-center justify-center rounded-full border border-white/10 bg-zinc-900 text-xl font-bold text-white">
-                M
-              </div>
+              <Image
+                src={profilePhoto}
+                alt="Muslich Wahyu Romadhon"
+                width={64}
+                height={64}
+                className="relative size-16 rounded-full border border-white/10 object-cover"
+                priority
+              />
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="text-sm text-zinc-400">Muslich Wahyu R.</span>
+              <span className="text-sm text-zinc-400">Muslich Wahyu Romadhon</span>
               <Badge
                 variant="outline"
-                className="border-white/[0.08] bg-white/[0.03] text-zinc-500"
+                className="inline-flex items-center gap-1.5 border-white/[0.08] bg-white/[0.03] text-zinc-500"
               >
-                🇮🇩 Based in Indonesia
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 3 2"
+                  className="size-3.5 shrink-0 rounded-[2px]"
+                  aria-hidden="true"
+                >
+                  <rect width="3" height="1" fill="#FF0000" />
+                  <rect width="3" height="1" y="1" fill="#FFFFFF" />
+                </svg>
+                Based in Indonesia
               </Badge>
             </div>
           </div>
@@ -146,18 +210,18 @@ export default function HomePage() {
             VOCATIONAL IT
             <br />
             <span className="bg-gradient-to-r from-white via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
-              EDUCATOR & DEV
+              EDUCATOR &amp; DEV
             </span>
           </h1>
 
-          {/* CTA Button — below heading, never overlapping */}
+          {/* CTA Button — navigates to /about */}
           <div className="mt-8">
             <Link
-              href="#about"
+              href="/about"
               className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-5 py-2.5 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
             >
-              <Send className="size-4" />
-              Kenali Filosofi
+              Tentang Saya
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
@@ -179,17 +243,67 @@ export default function HomePage() {
               );
             })}
           </div>
+        </div>
+      </section>
 
-          {/* ── Narrative ── */}
-          <p className="mx-auto mt-10 max-w-2xl text-base leading-relaxed text-zinc-400">
-            Menggabungkan keahlian{" "}
-            <span className="text-zinc-200">Software Development</span> dan{" "}
-            <span className="text-zinc-200">pedagogi</span> untuk mencetak
-            lulusan SMK yang relevan dengan industri.{" "}
-            <span className="italic text-zinc-300">
-              &ldquo;Aku belum Berhasil, Bukan tidak Berhasil.&rdquo;
-            </span>
-          </p>
+      {/* ==================================================================
+          STATS BAR — Quantitative proof of teaching scale
+          ================================================================== */}
+      <section id="stats" className="px-6 py-12">
+        <div className="mx-auto max-w-4xl">
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {statsMetrics.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl bg-white/[0.02] px-6 py-5 text-center"
+              >
+                <p className="text-3xl font-extrabold tracking-tight text-white">
+                  {stat.value}
+                </p>
+                <p className="mt-1 text-xs text-zinc-500">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ==================================================================
+          MODEL GURU YANG DITUJU — E-Portfolio 1 mandatory component
+          ================================================================== */}
+      <section id="model-guru" className="px-2 py-24">
+        <div className="mx-auto max-w-4xl">
+          {/* Section header */}
+          <div className="mb-16">
+            <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-zinc-600">
+              Visi Pendidikan
+            </p>
+            <h2 className="text-3xl font-extrabold tracking-tighter text-white md:text-5xl">
+              Model Guru yang Dituju
+            </h2>
+          </div>
+
+          {/* Karakter cards grid */}
+          <div className="grid gap-6 sm:grid-cols-2">
+            {guruKarakterCards.map((karakter) => {
+              const IconComponent = karakter.icon;
+              return (
+                <div
+                  key={karakter.title}
+                  className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6"
+                >
+                  <div className="mb-4 flex size-9 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.03]">
+                    <IconComponent className="size-4 text-zinc-500" />
+                  </div>
+                  <h3 className="text-base font-bold tracking-tight text-white">
+                    {karakter.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-zinc-500">
+                    {karakter.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -204,13 +318,26 @@ export default function HomePage() {
               Experience
             </p>
             <h2 className="text-3xl font-extrabold tracking-tighter text-white md:text-5xl">
-              Work & Studies
+              Work &amp; Studies
             </h2>
           </div>
 
           <WorkStudiesToggle />
         </div>
       </section>
+
+      {/* ⚠️ CONSISTENCY CHECK REQUIRED:
+          Homepage siklus topics must exactly match these documents:
+          ─ Siklus 1: Ubuntu Server, Jaringan (ifupdown/netplan), SSH, Apache2
+          ─ Siklus 2: PHP/MySQL/Composer/Laravel, Nginx+PHP-FPM, BIND9 DNS
+          ─ Siklus 3: Git/GitHub (PAT), git pull deploy, htop/netstat monitoring
+          Cross-check against:
+          - LK 4 Refleksi Siklus 1, 2, 3 (PDF di /artefak)
+          - Modul Ajar / RPP Bab 1–7
+          - Lampiran 7 & 8 penilaian GP
+          Inconsistency between homepage and assessment documents WILL be
+          flagged by PPG evaluators. Verify before final submission.
+      */}
 
       {/* ==================================================================
           ARTIFACTS / PROJECTS SECTION
@@ -232,7 +359,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Cards grid */}
+          {/* Cards grid — compact teasers */}
           <div className="grid gap-6 md:grid-cols-3">
             {artifactTeasers.map((artifact, index) => {
               const IconComponent = artifact.icon;
@@ -247,11 +374,11 @@ export default function HomePage() {
                     <div className="absolute inset-[-1px] rounded-xl bg-gradient-to-b from-cyan-500/10 via-transparent to-blue-500/10" />
                   </div>
 
-                  <div className="relative space-y-4">
-                    {/* Header — cycle label + icon */}
+                  <div className="relative space-y-3">
+                    {/* Header — cycle label + week range + icon */}
                     <div className="flex items-center justify-between">
                       <span className="font-mono text-xs text-zinc-600">
-                        {artifact.cycle}
+                        {artifact.cycle} · {artifact.weekRange}
                       </span>
                       <div className="flex size-9 items-center justify-center rounded-lg border border-white/[0.06] bg-white/[0.03]">
                         <IconComponent className="size-4 text-zinc-500 transition-colors group-hover:text-cyan-400" />
@@ -263,13 +390,8 @@ export default function HomePage() {
                       {artifact.title}
                     </h3>
 
-                    {/* Description */}
-                    <p className="text-sm leading-relaxed text-zinc-500">
-                      {artifact.description}
-                    </p>
-
                     {/* Tags */}
-                    <div className="flex flex-wrap gap-1.5 pt-1">
+                    <div className="flex flex-wrap gap-1.5">
                       {artifact.tags.map((tag) => (
                         <span
                           key={tag}
@@ -281,7 +403,7 @@ export default function HomePage() {
                     </div>
 
                     {/* Arrow indicator */}
-                    <div className="flex items-center gap-1 pt-2 text-xs text-zinc-600 transition-colors group-hover:text-cyan-400">
+                    <div className="flex items-center gap-1 pt-1 text-xs text-zinc-600 transition-colors group-hover:text-cyan-400">
                       <span>Lihat Detail</span>
                       <ArrowUpRight className="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>

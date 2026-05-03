@@ -27,8 +27,8 @@ interface TimelineEntry {
 const workEntries: readonly TimelineEntry[] = [
   {
     period: "2025 — Sekarang",
-    role: "Mahasiswa PPG Prajabatan",
-    institution: "Praktik Pengalaman Lapangan (PPL)",
+    role: "Vocational Teacher Intern",
+    institution: "SMK Negeri 1 Surabaya",
     description:
       "Melaksanakan 3 siklus praktik mengajar terbimbing. Fokus: Kurikulum Vokasi, konfigurasi DHCP Server, dan Web Deployment berbasis Nginx.",
     icon: BookOpen,
@@ -36,19 +36,28 @@ const workEntries: readonly TimelineEntry[] = [
   },
   {
     period: "2025 — Sekarang",
-    role: "SMKS Tunas Bangsa Pare",
-    institution: "Pengajar Penuh Waktu & Admin Lab",
+    role: "Vocational Teacher & Admin Lab",
+    institution: "SMKS Tunas Bangsa Pare",
     description:
       "Mengajar Konsentrasi Keahlian TKJ pada mata pelajaran Administrasi Sistem Jaringan. Mengelola laboratorium jaringan dan merancang praktikum berbasis industri.",
+    icon: School,
+    iconColor: "text-indigo-400", // Saya ubah sedikit menjadi indigo agar tidak sama persis dengan cyan di bawah
+  },
+  {
+    period: "2023",
+    role: "Vocational Teacher Intern",
+    institution: "SMK Negeri 1 Kediri",
+    description:
+      "Merancang perangkat pembelajaran vokasi dan memfasilitasi kelas teori serta praktik Administrasi Sistem Jaringan (ASJ).",
     icon: School,
     iconColor: "text-cyan-400",
   },
   {
-    period: "2024",
-    role: "Dinas Komunikasi dan Informatika (Diskominfo)",
-    institution: "Fullstack Developer Intern",
+    period: "2023",
+    role: "Fullstack Developer Intern",
+    institution: "Dinas Komunikasi dan Informatika (Diskominfo)",
     description:
-      "Merancang dan membangun aplikasi web internal menggunakan Next.js dan Laravel. Mengimplementasikan RESTful API dan optimasi database pada shared hosting.",
+      "Mengembangkan dan memelihara aplikasi web dari frontend hingga integrasi backend. Bertanggung jawab atas bug fixing, optimasi basis data, dan deployment sistem sesuai standar industri.",
     icon: Code2,
     iconColor: "text-blue-400",
   },
@@ -59,21 +68,20 @@ const workEntries: readonly TimelineEntry[] = [
    ============================================================================ */
 const studiesEntries: readonly TimelineEntry[] = [
   {
-    period: "2025 — Sekarang",
-    role: "Program Profesi Guru Kejuruan TKJ",
-    institution: "PPG Prajabatan",
+    period: "2026 — Sekarang",
+    role: "Universitas Negeri Surabaya (UNESA)",
+    institution: "Pendidikan Profesi Guru",
     description:
-      "Program sertifikasi profesi guru yang fokus pada pengembangan kompetensi pedagogik, profesional, sosial, dan kepribadian untuk guru kejuruan TKJ.",
+      "Program sertifikasi profesi guru resmi pemerintah. Berfokus pada pengembangan kompetensi komprehensif (pedagogik, profesional, sosial, kepribadian) dan integrasi Praktik Pengalaman Lapangan (PPL) untuk mencetak pendidik vokasi yang kompeten.",
     icon: Award,
     iconColor: "text-amber-400",
   },
   {
-    period: "2021 — 2025",
+    period: "2020 — 2025",
     role: "Universitas Negeri Surabaya (UNESA)",
     institution: "S1 Pendidikan Teknologi Informasi",
     description:
-      "Mendalami pendidikan teknologi informasi dengan filosofi 'Logic First, Syntax Later'. Fokus pada pengembangan software dan pedagogik teknologi. IPK: 3.78.",
-    icon: GraduationCap,
+      "Lulusan dengan IPK 3.78 yang memiliki minat kuat pada Software Development. Menggabungkan fondasi akademik, kemampuan problem-solving, dan kedisiplinan tinggi untuk beradaptasi serta berkontribusi di lingkungan IT profesional.", icon: GraduationCap,
     iconColor: "text-violet-400",
   },
 ] as const;
