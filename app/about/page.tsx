@@ -22,7 +22,7 @@ import { Badge } from "@/components/ui/badge";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Profil Mahasiswa PPG Prajabatan — Muslich Wahyu R., Vocational IT Educator & Developer. Narasi perjalanan, inspirasi mengajar, dan model guru yang dituju.",
+    "Profil Mahasiswa PPG Prajabatan — Muslich Wahyu Romadhon, Vocational IT Educator & Developer. Narasi perjalanan, inspirasi mengajar, dan model guru yang dituju.",
 };
 
 /* ============================================================================
@@ -228,7 +228,7 @@ export default function AboutPage() {
 
                 {/* Name */}
                 <h3 className="text-base font-bold tracking-tight text-white">
-                  Muslich Wahyu R.
+                  Muslich Wahyu Romadhon
                 </h3>
 
                 {/* Tags */}

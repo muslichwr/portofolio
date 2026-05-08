@@ -8,6 +8,9 @@ import {
   Compass,
   BookOpen,
   Wrench,
+  Users,
+  User,
+  Target,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -39,25 +42,25 @@ interface ActionItem {
 
 const rtlItems: readonly ActionItem[] = [
   {
-    title: "Pelatihan Differentiated Learning (TaRL)",
+    title: "Penyusunan Panduan Praktikum (Jobsheet) yang Mandiri",
     description:
-      "Mengikuti pelatihan spesifik terkait Differentiated Learning (TaRL) untuk memetakan gaya belajar siswa vokasi secara lebih akurat sebelum semester dimulai.",
-    category: "Pedagogi",
+      "Untuk mengatasi kendala kewalahan mengelola waktu lab dan penggunaan bahasa yang terlalu teknis, saya akan menyusun ulang modul praktikum dengan bahasa yang lebih sederhana dan instruksi yang bersifat self-explanatory. Tujuannya agar siswa dapat mencoba secara mandiri terlebih dahulu, sehingga saya tidak terjebak dalam troubleshooting individual yang memakan waktu terlalu lama.",
+    category: "Bahan Ajar",
     icon: BookOpen,
   },
   {
-    title: "Sistem Auto-Grading Lokal",
+    title: "Implementasi Sistem Tutor Sebaya (Peer Tutoring)",
     description:
-      "Mengembangkan sistem auto-grading lokal berbasis skrip untuk mempercepat evaluasi praktikum jaringan (Cisco Packet Tracer/Mikrotik), sehingga waktu guru dapat difokuskan pada pendampingan siswa yang tertinggal.",
-    category: "Teknologi",
-    icon: Wrench,
+      "Membentuk kelompok belajar kecil di kelas di mana siswa yang lebih cepat memahami materi dapat membantu rekan-rekannya yang mengalami kendala teknis ringan. Strategi ini bertujuan agar manajemen waktu di lab lebih efisien dan perhatian pendidik tidak hanya terserap pada satu atau dua siswa yang mengalami error unik.",
+    category: "Metode Pembelajaran",
+    icon: User,
   },
   {
-    title: "Modul Interaktif Literasi Awal",
+    title: "Pemetaan Ulang Prioritas Materi Kurikulum",
     description:
-      "Menyusun modul interaktif berbasis web untuk menstandarkan literasi awal siswa sebelum sesi lab dimulai, meminimalisir bottleneck pemahaman dasar.",
-    category: "Kurikulum",
-    icon: Compass,
+      "Melakukan evaluasi dan penyederhanaan pada urutan materi pembelajaran agar lebih realistis untuk diselesaikan dalam satu semester. Dengan menentukan materi inti yang paling krusial, target capaian pembelajaran diharapkan dapat terpenuhi secara tuntas tanpa harus mengorbankan kedalaman pemahaman siswa.",
+    category: "Manajemen Kurikulum",
+    icon: Target,
   },
 ] as const;
 
@@ -71,32 +74,37 @@ interface AnalysisPoint {
 
 const strengths: readonly AnalysisPoint[] = [
   {
-    title: "Penguasaan Materi Teknis",
+    title: "Membawa Pengalaman Nyata",
     description:
-      "Penguasaan materi teknis yang mendalam (DHCP Server, Nginx, Next.js, Laravel, Flutter) memungkinkan penyampaian yang otentik dan berbasis pengalaman industri nyata.",
+      "Berbekal pengalaman magang di Diskominfo, saya bisa memberikan contoh kasus riil di kelas. Saat mengajar materi web atau jaringan, saya bisa menceritakan mengapa hal tersebut berguna nanti saat mereka lulus.",
   },
   {
-    title: "Integrasi Tools Industri",
+    title: "Fokus pada Praktik",
     description:
-      "Kemampuan mengintegrasikan tools dan workflow industri ke dalam konteks kelas, membuat siswa terpapar langsung pada standar kerja profesional.",
+      "Saya lebih nyaman mengajak siswa langsung mencoba di depan komputer, sehingga kelas terasa lebih hidup dibandingkan hanya mencatat teori di papan tulis.",
   },
   {
-    title: "Pendekatan Praktis & Kontekstual",
+    title: "Menekankan Pemahaman Logika",
     description:
-      "Pendekatan praktis membuat siswa lebih mudah memahami abstraksi jaringan dan programming melalui studi kasus nyata dari pengalaman magang di Diskominfo Kediri.",
+      "Berpegang pada prinsip 'Logic First, Syntax Later', saya selalu membiasakan siswa paham alurnya dulu sebelum mengetik perintah di server. Kebiasaan ini pelan-pelan mengurangi kecenderungan siswa yang biasanya hanya sekadar copy-paste dari modul tanpa paham maksudnya.",
   },
 ] as const;
 
 const weaknesses: readonly AnalysisPoint[] = [
   {
-    title: "Manajemen Waktu Transisi",
+    title: "Kewalahan Mengelola Waktu Lab",
     description:
-      "Manajemen waktu saat transisi antara penyampaian teori dan sesi lab praktik masih perlu ditingkatkan, terutama pada sesi dengan kompleksitas materi tinggi.",
+      "Saat sesi praktik dimulai dan banyak komputer siswa mengalami error secara bersamaan, saya masih sering keteteran membagi waktu untuk mendampingi mereka satu per satu.",
   },
   {
-    title: "Penyederhanaan Bahasa Teknis",
+    title: "Bahasa Terlalu Teknis",
     description:
-      "Tantangan dalam menyederhanakan bahasa teknis tingkat lanjut agar mudah dicerna oleh siswa dengan tingkat literasi awal yang beragam, tanpa mengorbankan akurasi terminologi.",
+      "Terkadang saya tidak sadar menggunakan istilah IT tingkat lanjut yang masih asing bagi anak SMK, sehingga ada siswa yang bingung dan saya harus mengulang penjelasan dari awal.",
+  },
+  {
+    title: "Target Materi Tidak Tuntas",
+    description:
+      "Saat mengajar praktikum, ternyata dinamika di kelas memakan waktu jauh lebih lama dari perkiraan di RPP. Jujur saja, masih ada beberapa materi inti yang belum sempat saya sentuh atau terpaksa diajarkan buru-buru karena keterbatasan waktu lab dan kurang matangnya perkiraan alokasi waktu dari saya.",
   },
 ] as const;
 
@@ -125,9 +133,9 @@ export default function RefleksiPage() {
 
           {/* Subtitle */}
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">
-            Narasi reflektif tentang perjalanan profesional, analisis diri
-            secara jujur, serta komitmen pengembangan berkelanjutan sebagai
-            pendidik vokasi yang berorientasi pada industri.
+            Evaluasi jujur mengenai pengalaman mengajar selama PPL dan
+            langkah kecil yang akan saya ambil untuk menjadi guru yang lebih
+            baik.
           </p>
         </div>
       </section>
@@ -149,7 +157,7 @@ export default function RefleksiPage() {
                 Filosofi Mengajar
               </p>
               <h2 className="text-2xl font-extrabold tracking-tighter text-white md:text-3xl">
-                Misi & Karakter Guru Profesional
+                Model Guru yang Dituju & Filosofi
               </h2>
             </div>
           </div>
@@ -157,67 +165,20 @@ export default function RefleksiPage() {
           {/* Content — editorial style */}
           <div className="space-y-6 text-base leading-relaxed text-zinc-400">
             <p>
-              Sebagai pendidik vokasi berlatar belakang{" "}
+              Sebagai lulusan S1 Teknik Informatika yang punya minat di
+              software development, tujuan saya menjadi guru SMK sebenarnya
+              sederhana: saya ingin membantu siswa belajar IT dengan cara yang
+              lebih relevan dan tidak membosankan. Saya berpegang pada prinsip{" "}
               <span className="font-medium text-zinc-200">
-                Fullstack Developer
+                &quot;Logic First, Syntax Later&quot;
               </span>
-              , visi saya adalah menjembatani kesenjangan antara kurikulum
-              SMK dan{" "}
-              <span className="font-medium text-zinc-200">
-                best-practice industri nyata
-              </span>
-              . Model guru yang saya tuju adalah fasilitator yang adaptif,
-              berorientasi pada pemecahan masalah (
-              <span className="font-medium text-zinc-200">
-                Problem-Solver
-              </span>
-              ), dan mengutamakan filosofi{" "}
-              <span className="font-medium italic text-zinc-200">
-                &quot;low cost, low latency&quot;
-              </span>{" "}
-              dalam efisiensi pembelajaran.
+              —saya ingin melatih anak-anak agar paham logikanya dulu, baru
+              memikirkan sintaks atau error kodenya. Ke depannya, saya ingin
+              menjadi sosok guru (fasilitator) yang sabar, bisa diajak diskusi
+              layaknya teman belajar, dan bisa memberi gambaran dasar tentang
+              bagaimana tools IT (seperti Git atau Nginx) dipakai di dunia kerja
+              tanpa harus memakai bahasa yang terlalu rumit.
             </p>
-
-            <p>
-              Saya menanamkan prinsip{" "}
-              <span className="font-medium text-zinc-200">
-                Growth Mindset
-              </span>{" "}
-              dalam setiap sesi pembelajaran. Ketika siswa menghadapi error
-              pada konfigurasi server atau bug pada kode mereka, saya
-              mendorong mereka untuk melihatnya bukan sebagai kegagalan,
-              melainkan sebagai proses belajar yang natural dan esensial.
-            </p>
-          </div>
-
-          {/* Core philosophy quote */}
-          <blockquote className="border-l-2 border-zinc-700 pl-6">
-            <p className="text-lg font-medium italic tracking-tight text-zinc-300 md:text-xl">
-              &ldquo;Aku belum Berhasil, Bukan tidak Berhasil&rdquo;
-            </p>
-            <footer className="mt-2 text-sm text-zinc-600">
-              — Prinsip yang saya tanamkan agar siswa tangguh menghadapi
-              error dan bug, baik dalam kode maupun kehidupan.
-            </footer>
-          </blockquote>
-
-          {/* Core character badges */}
-          <div className="flex flex-wrap gap-2">
-            {[
-              "Adaptif",
-              "Problem-Solver",
-              "Growth Mindset",
-              "Industry-Oriented",
-              "Fasilitator",
-            ].map((trait) => (
-              <Badge
-                key={trait}
-                variant="outline"
-                className="border-zinc-800 text-zinc-400"
-              >
-                {trait}
-              </Badge>
-            ))}
           </div>
         </div>
       </section>
@@ -327,10 +288,9 @@ export default function RefleksiPage() {
           </div>
 
           <p className="text-base leading-relaxed text-zinc-400">
-            Berdasarkan analisis kekuatan dan kelemahan di atas, berikut
-            adalah rencana tindak lanjut konkret yang akan saya
-            implementasikan untuk meningkatkan kualitas pembelajaran dan
-            kompetensi profesional secara berkelanjutan.
+            Berdasarkan evaluasi terhadap kendala yang dihadapi selama PPL, berikut adalah
+            langkah-langkah konkret yang akan saya ambil untuk meningkatkan kualitas
+            pembelajaran di masa mendatang
           </p>
 
           {/* RTL cards */}

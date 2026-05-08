@@ -19,25 +19,25 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Muslich Wahyu R. | Pendidik Vokasi & Developer",
+    default: "Muslich Wahyu Romadhon | IT Educator",
     template: "%s | Portfolio",
   },
   description:
-    "E-Portfolio UTS PPL Terbimbing — Praktik Pengalaman Lapangan Pendidikan Profesi Guru Prajabatan. Fullstack Developer & Pendidik Vokasi TKJ.",
+    "E-Portfolio UTS PPL Terbimbing — Praktik Pengalaman Lapangan Pendidikan Profesi Guru Prajabatan.",
   keywords: [
     "E-Portfolio",
     "PPL Terbimbing",
     "PPG Prajabatan",
-    "Pendidik Vokasi",
+    "IT Educator",
     "Fullstack Developer",
     "TKJ",
     "Next.js",
   ],
-  authors: [{ name: "Muslich Wahyu Ramadhan" }],
+  authors: [{ name: "Muslich Wahyu Romadhon" }],
   openGraph: {
-    title: "Muslich Wahyu R. | Pendidik Vokasi & Developer",
+    title: "Muslich Wahyu Romadhon | IT Educator",
     description:
-      "E-Portfolio UTS PPL Terbimbing — Fullstack Developer & Pendidik Vokasi TKJ.",
+      "E-Portfolio UTS PPL Terbimbing.",
     type: "website",
     locale: "id_ID",
   },

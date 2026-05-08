@@ -54,12 +54,12 @@ const socialLinks = [
     icon: GitHubIcon,
   },
   {
-    href: "https://linkedin.com/in/muslichwr",
+    href: "https://linkedin.com/in/muslich-wahyu-romadhon",
     label: "LinkedIn",
     icon: LinkedInIcon,
   },
   {
-    href: "https://instagram.com/muslichwr",
+    href: "https://instagram.com/mumussyy",
     label: "Instagram",
     icon: InstagramIcon,
   },
