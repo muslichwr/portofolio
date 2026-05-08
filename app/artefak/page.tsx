@@ -62,10 +62,10 @@ const artifacts = [
       "Untuk kelas dengan kemampuan dasar lebih rendah: fase Exploration diperpanjang dengan video tutorial pendek sebelum praktik langsung.",
     ],
     downloads: [
-      { label: "RPP / Modul Ajar Bab 1–2", href: "#" },
-      { label: "LK 4 Refleksi Siklus 1", href: "#" },
-      { label: "Lampiran 7 — Penilaian Perangkat Pembelajaran (GP)", href: "#" },
-      { label: "Lampiran 8 — Penilaian Praktik Mengajar (GP)", href: "#" },
+      { label: "RPP / Modul Ajar Bab 1–2", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+      { label: "LK 4 Refleksi Siklus 1", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+      { label: "Lampiran 7 — Penilaian Perangkat Pembelajaran (GP)", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+      { label: "Lampiran 8 — Penilaian Praktik Mengajar (GP)", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
     ],
   },
 
@@ -115,10 +115,10 @@ const artifacts = [
       "Panduan bergambar konfigurasi DNS klien (Windows & MacOS) disiapkan dan dibagikan sebelum sesi BIND9 dimulai.",
     ],
     downloads: [
-      { label: "RPP / Modul Ajar Bab 3–5", href: "#" },
-      { label: "LK 4 Refleksi Siklus 2", href: "#" },
-      { label: "Lampiran 7 — Penilaian Perangkat Pembelajaran (GP)", href: "#" },
-      { label: "Lampiran 8 — Penilaian Praktik Mengajar (GP)", href: "#" },
+      { label: "RPP / Modul Ajar Bab 3–5", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+      { label: "LK 4 Refleksi Siklus 2", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+      { label: "Lampiran 7 — Penilaian Perangkat Pembelajaran (GP)", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+      { label: "Lampiran 8 — Penilaian Praktik Mengajar (GP)", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
     ],
   },
 
@@ -168,10 +168,10 @@ const artifacts = [
       "Monitoring server dikembangkan sebagai topik tersendiri dengan Netdata sebagai alat visualisasi yang lebih menarik bagi generasi Z.",
     ],
     downloads: [
-      { label: "RPP / Modul Ajar Bab 6–7", href: "#" },
-      { label: "LK 4 Refleksi Siklus 3", href: "#" },
-      { label: "Lampiran 7 — Penilaian Perangkat Pembelajaran (GP)", href: "#" },
-      { label: "Lampiran 8 — Penilaian Praktik Mengajar (GP)", href: "#" },
+      { label: "RPP / Modul Ajar Bab 6–7", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+      { label: "LK 4 Refleksi Siklus 3", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+      { label: "Lampiran 7 — Penilaian Perangkat Pembelajaran (GP)", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+      { label: "Lampiran 8 — Penilaian Praktik Mengajar (GP)", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
     ],
   },
 ] as const;

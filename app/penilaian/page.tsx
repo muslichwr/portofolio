@@ -218,6 +218,21 @@ function ScoreBar({
 }
 
 /* ============================================================================
+   DATA — Downloads
+   ============================================================================ */
+const lampiran7Downloads = [
+  { label: "Lampiran 7 · Siklus 1", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+  { label: "Lampiran 7 · Siklus 2", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+  { label: "Lampiran 7 · Siklus 3", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+];
+
+const lampiran8Downloads = [
+  { label: "Lampiran 8 · Siklus 1", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+  { label: "Lampiran 8 · Siklus 2", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+  { label: "Lampiran 8 · Siklus 3", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+];
+
+/* ============================================================================
    PAGE COMPONENT
    ============================================================================ */
 export default function PenilaianPage() {
@@ -544,28 +559,27 @@ export default function PenilaianPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                {[1, 2, 3].map((siklus) => (
+                {lampiran7Downloads.map((doc, index) => (
                   <div
-                    key={`l7-s${siklus}`}
+                    key={`l7-s${index + 1}`}
                     className="flex items-center justify-between rounded-lg border border-zinc-800 bg-zinc-900/50 p-3"
                   >
                     <div className="flex items-center gap-3">
                       <FileText className="size-4 text-zinc-400" />
                       <div>
                         <p className="text-sm font-medium text-white">
-                          Lampiran 7 · Siklus {siklus}
+                          {doc.label}
                         </p>
                         <p className="text-xs text-zinc-500">PDF Document</p>
                       </div>
                     </div>
-                    <a href="#" download>
-                      <button
-                        type="button"
-                        className="flex items-center gap-1.5 rounded-md border border-zinc-700 px-3 py-1.5 text-xs text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
-                      >
-                        <Download className="size-3" />
-                        Unduh
-                      </button>
+                    <a
+                      href={doc.href}
+                      download
+                      className="flex shrink-0 items-center gap-1.5 rounded-md border border-zinc-700 px-3 py-1.5 text-xs text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
+                    >
+                      <Download className="size-3" />
+                      Unduh
                     </a>
                   </div>
                 ))}
@@ -580,28 +594,27 @@ export default function PenilaianPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                {[1, 2, 3].map((siklus) => (
+                {lampiran8Downloads.map((doc, index) => (
                   <div
-                    key={`l8-s${siklus}`}
+                    key={`l8-s${index + 1}`}
                     className="flex items-center justify-between rounded-lg border border-zinc-800 bg-zinc-900/50 p-3"
                   >
                     <div className="flex items-center gap-3">
                       <FileText className="size-4 text-zinc-400" />
                       <div>
                         <p className="text-sm font-medium text-white">
-                          Lampiran 8 · Siklus {siklus}
+                          {doc.label}
                         </p>
                         <p className="text-xs text-zinc-500">PDF Document</p>
                       </div>
                     </div>
-                    <a href="#" download>
-                      <button
-                        type="button"
-                        className="flex items-center gap-1.5 rounded-md border border-zinc-700 px-3 py-1.5 text-xs text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
-                      >
-                        <Download className="size-3" />
-                        Unduh
-                      </button>
+                    <a
+                      href={doc.href}
+                      download
+                      className="flex shrink-0 items-center gap-1.5 rounded-md border border-zinc-700 px-3 py-1.5 text-xs text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
+                    >
+                      <Download className="size-3" />
+                      Unduh
                     </a>
                   </div>
                 ))}
