@@ -58,13 +58,6 @@ interface StatMetric {
   readonly label: string;
 }
 
-const statsMetrics: readonly StatMetric[] = [
-  { value: "3", label: "Siklus Mengajar" },
-  { value: "30", label: "Murid Terdidik" },
-  { value: "7", label: "Bab Modul Ajar" },
-  { value: "93%", label: "Berhasil Demo Final" },
-] as const;
-
 /* ============================================================================
    DATA — Model Guru karakter cards
    ============================================================================ */
@@ -167,18 +160,17 @@ export default function HomePage() {
         id="hero"
         className="relative flex min-h-[90vh] flex-col items-center justify-center px-6 py-10"
       >
-        <div className="mx-auto w-full max-w-7xl text-center">
+        <div className="mx-auto w-full max-w-4xl text-center">
           {/* ── Profile Module — Avatar + Name + Badge ── */}
           <div className="mb-10 flex flex-col items-center gap-4">
-            {/* Avatar with subtle glow */}
             <div className="relative">
               <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-teal-500/20 blur-md" />
               <Image
                 src={profilePhoto}
                 alt="Muslich Wahyu Romadhon"
-                width={64}
-                height={64}
-                className="relative size-16 rounded-full border border-white/10 object-cover"
+                width={96}
+                height={96}
+                className="relative size-24 rounded-full border border-white/10 object-cover"
                 priority
               />
             </div>
@@ -210,7 +202,7 @@ export default function HomePage() {
             VOCATIONAL IT
             <br />
             <span className="bg-gradient-to-r from-white via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
-              EDUCATOR &amp; DEV
+              EDUCATOR
             </span>
           </h1>
 
@@ -242,27 +234,6 @@ export default function HomePage() {
                 </a>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* ==================================================================
-          STATS BAR — Quantitative proof of teaching scale
-          ================================================================== */}
-      <section id="stats" className="px-6 py-12">
-        <div className="mx-auto max-w-4xl">
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {statsMetrics.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-xl bg-white/[0.02] px-6 py-5 text-center"
-              >
-                <p className="text-3xl font-extrabold tracking-tight text-white">
-                  {stat.value}
-                </p>
-                <p className="mt-1 text-xs text-zinc-500">{stat.label}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

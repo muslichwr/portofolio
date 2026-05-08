@@ -110,7 +110,7 @@ export default function RefleksiPage() {
           HERO / PAGE HEADER
           ================================================================ */}
       <section className="px-6 pb-8 pt-24 md:pt-32">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-4xl">
           {/* Kicker */}
           <p className="mb-3 font-mono text-xs uppercase tracking-widest text-zinc-600">
             Introspeksi Profesional
@@ -132,13 +132,13 @@ export default function RefleksiPage() {
         </div>
       </section>
 
-      <Separator className="mx-auto max-w-7xl bg-zinc-800/50" />
+      <Separator className="mx-auto max-w-4xl bg-zinc-800/50" />
 
       {/* ================================================================
           SECTION 1: MISI & KARAKTER GURU PROFESIONAL
           ================================================================ */}
       <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl space-y-8">
+        <div className="mx-auto max-w-4xl space-y-8">
           {/* Section header */}
           <div className="flex items-start gap-4">
             <div className="flex size-10 shrink-0 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
@@ -222,13 +222,13 @@ export default function RefleksiPage() {
         </div>
       </section>
 
-      <Separator className="mx-auto max-w-7xl bg-zinc-800/50" />
+      <Separator className="mx-auto max-w-4xl bg-zinc-800/50" />
 
       {/* ================================================================
           SECTION 2: ANALISIS DIRI — KEKUATAN & KELEMAHAN
           ================================================================ */}
       <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl space-y-12">
+        <div className="mx-auto max-w-4xl space-y-12">
           {/* Section header */}
           <div className="flex items-start gap-4">
             <div className="flex size-10 shrink-0 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
@@ -302,13 +302,13 @@ export default function RefleksiPage() {
         </div>
       </section>
 
-      <Separator className="mx-auto max-w-7xl bg-zinc-800/50" />
+      <Separator className="mx-auto max-w-4xl bg-zinc-800/50" />
 
       {/* ================================================================
           SECTION 3: RENCANA TINDAK LANJUT (RTL)
           ================================================================ */}
       <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl space-y-8">
+        <div className="mx-auto max-w-4xl space-y-8">
           {/* Section header */}
           <div className="flex items-start gap-4">
             <div className="flex size-10 shrink-0 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">

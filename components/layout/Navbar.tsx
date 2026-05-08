@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/artefak", label: "Artefak & Analisis" },
   { href: "/penilaian", label: "Penilaian" },
   { href: "/refleksi", label: "Refleksi" },

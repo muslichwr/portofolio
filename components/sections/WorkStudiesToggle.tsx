@@ -81,7 +81,7 @@ const studiesEntries: readonly TimelineEntry[] = [
     role: "Universitas Negeri Surabaya (UNESA)",
     institution: "S1 Pendidikan Teknologi Informasi",
     description:
-      "Lulusan dengan IPK 3.78 yang memiliki minat kuat pada Software Development. Menggabungkan fondasi akademik, kemampuan problem-solving, dan kedisiplinan tinggi untuk beradaptasi serta berkontribusi di lingkungan IT profesional.", icon: GraduationCap,
+      "Lulusan dengan IPK 3.78 yang memiliki minat kuat pada Software Development dan Teknologi Jaringan. Menggabungkan fondasi akademik, kemampuan problem-solving, dan kedisiplinan tinggi untuk beradaptasi serta berkontribusi di lingkungan profesional.", icon: GraduationCap,
     iconColor: "text-violet-400",
   },
 ] as const;

@@ -83,11 +83,10 @@ export function Footer() {
           {/* Brand identity */}
           <div className="space-y-2">
             <p className="text-lg font-bold tracking-tight text-white">
-              Portfolio.
+              Muslich Wahyu Romadhon
             </p>
             <p className="max-w-xs text-sm leading-relaxed text-zinc-500">
-              Pendidik Vokasi &amp; Software Developer — Membangun jembatan
-              antara industri teknologi dan pendidikan kejuruan.
+              Vocational IT Educator
             </p>
           </div>
 
