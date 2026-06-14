@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import profilePhoto from "@/assets/images/muslich1.png";
+import profilePhoto from "@/assets/images/muslich1.jpg";
 import {
   ArrowLeft,
   ArrowRight,

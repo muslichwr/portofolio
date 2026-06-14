@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import profilePhoto from "@/assets/images/muslich1.png";
+import profilePhoto from "@/assets/images/muslich1.jpg";
 import { ArrowRight, ArrowUpRight, Server, Globe, Code2, Target, Layers, Zap, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { WorkStudiesToggle } from "@/components/sections/WorkStudiesToggle";
