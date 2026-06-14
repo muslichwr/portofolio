@@ -334,23 +334,6 @@ export default function RefleksiPage() {
             })}
           </div>
 
-          {/* Closing statement */}
-          <div className="rounded-md border border-zinc-800/50 bg-zinc-900/30 p-6">
-            <p className="text-sm leading-relaxed text-zinc-400">
-              Seluruh rencana tindak lanjut ini dirancang dengan prinsip{" "}
-              <span className="font-medium text-zinc-200">
-                low cost, low latency
-              </span>{" "}
-              — memanfaatkan sumber daya yang tersedia secara maksimal tanpa
-              mengorbankan kualitas output. Sebagai pendidik yang juga
-              seorang developer, saya percaya bahwa{" "}
-              <span className="font-medium text-zinc-200">
-                iterasi berkelanjutan
-              </span>{" "}
-              adalah kunci pertumbuhan — baik dalam kode maupun dalam
-              praktik mengajar.
-            </p>
-          </div>
         </div>
       </section>
     </>

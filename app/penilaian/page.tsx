@@ -23,7 +23,7 @@ import { Separator } from "@/components/ui/separator";
 export const metadata: Metadata = {
   title: "Penilaian",
   description:
-    "Rekapitulasi transparansi evaluasi — Lampiran 7 Instrumen Penilaian Penyusunan Perangkat Pembelajaran & Lampiran 8 Penilaian Praktik Mengajar 3 Siklus PPL Terbimbing.",
+    "Rekapitulasi hasil penilaian Lampiran 7 dan Lampiran 8 pada tiga siklus PPL Terbimbing. Skor mentah dari instrumen penilaian dikonversi ke skala 100 untuk menampilkan perkembangan perangkat pembelajaran dan praktik mengajar secara transparan.",
 };
 
 /* ============================================================================
@@ -39,88 +39,112 @@ interface CycleMetric {
 interface TeachingCycle {
   readonly cycle: string;
   readonly label: string;
+  readonly rawScore: number;
+  readonly rawMaxScore: number;
   readonly overallScore: number;
   readonly highlight: string;
   readonly metrics: readonly CycleMetric[];
 }
 
 /* ============================================================================
+   HELPERS
+   ============================================================================ */
+function formatScore(score: number) {
+  return score.toLocaleString("id-ID", {
+    minimumFractionDigits: Number.isInteger(score) ? 0 : 2,
+    maximumFractionDigits: 2,
+  });
+}
+
+function formatDelta(value: number) {
+  const sign = value > 0 ? "+" : "";
+  return `${sign}${formatScore(value)}`;
+}
+
+/* ============================================================================
    DATA — Lampiran 7 (Penilaian Rancangan Pembelajaran — 3 Siklus)
-   NOTE: Skor placeholder. Update dengan skor resmi GP setelah penilaian.
+   Skor dikonversi dari skor mentah / 80 × 100.
    ============================================================================ */
 const lampiran7Cycles: readonly TeachingCycle[] = [
   {
     cycle: "Siklus 1",
     label: "OS Server & Web Server Dasar",
-    overallScore: 87,
-    highlight: "Fondasi Perencanaan",
+    rawScore: 67,
+    rawMaxScore: 80,
+    overallScore: 83.75,
+    highlight: "Dasar Rancangan",
     metrics: [
-      { metric: "Identitas dan Kompetensi", icon: FileText, score: 88, maxScore: 100 },
-      { metric: "Pengembangan Materi, Bahan, Sumber, dan Media", icon: BookOpen, score: 86, maxScore: 100 },
-      { metric: "Skenario Kegiatan Pembelajaran", icon: Monitor, score: 89, maxScore: 100 },
-      { metric: "Penilaian", icon: ClipboardCheck, score: 85, maxScore: 100 },
+      { metric: "Identitas dan Kompetensi", icon: FileText, score: 87.5, maxScore: 100 },
+      { metric: "Pengembangan Materi, Bahan, Sumber, dan Media", icon: BookOpen, score: 85.71, maxScore: 100 },
+      { metric: "Skenario Kegiatan Pembelajaran", icon: Monitor, score: 79.17, maxScore: 100 },
+      { metric: "Penilaian", icon: ClipboardCheck, score: 83.33, maxScore: 100 },
     ],
   },
   {
     cycle: "Siklus 2",
     label: "Full Stack Environment & DNS Lokal",
-    overallScore: 91,
-    highlight: "Peningkatan Signifikan",
+    rawScore: 67,
+    rawMaxScore: 80,
+    overallScore: 83.75,
+    highlight: "Konsistensi Rancangan",
     metrics: [
-      { metric: "Identitas dan Kompetensi", icon: FileText, score: 92, maxScore: 100 },
-      { metric: "Pengembangan Materi, Bahan, Sumber, dan Media", icon: BookOpen, score: 91, maxScore: 100 },
-      { metric: "Skenario Kegiatan Pembelajaran", icon: Monitor, score: 92, maxScore: 100 },
-      { metric: "Penilaian", icon: ClipboardCheck, score: 89, maxScore: 100 },
+      { metric: "Identitas dan Kompetensi", icon: FileText, score: 100, maxScore: 100 },
+      { metric: "Pengembangan Materi, Bahan, Sumber, dan Media", icon: BookOpen, score: 82.14, maxScore: 100 },
+      { metric: "Skenario Kegiatan Pembelajaran", icon: Monitor, score: 79.17, maxScore: 100 },
+      { metric: "Penilaian", icon: ClipboardCheck, score: 75, maxScore: 100 },
     ],
   },
   {
     cycle: "Siklus 3",
     label: "Git Deployment & Final Project Demo",
-    overallScore: 96,
-    highlight: "Pencapaian Optimal",
+    rawScore: 68,
+    rawMaxScore: 80,
+    overallScore: 85,
+    highlight: "Perbaikan Bertahap",
     metrics: [
-      { metric: "Identitas dan Kompetensi", icon: FileText, score: 97, maxScore: 100 },
-      { metric: "Pengembangan Materi, Bahan, Sumber, dan Media", icon: BookOpen, score: 96, maxScore: 100 },
-      { metric: "Skenario Kegiatan Pembelajaran", icon: Monitor, score: 97, maxScore: 100 },
-      { metric: "Penilaian", icon: ClipboardCheck, score: 94, maxScore: 100 },
+      { metric: "Identitas dan Kompetensi", icon: FileText, score: 93.75, maxScore: 100 },
+      { metric: "Pengembangan Materi, Bahan, Sumber, dan Media", icon: BookOpen, score: 85.71, maxScore: 100 },
+      { metric: "Skenario Kegiatan Pembelajaran", icon: Monitor, score: 75, maxScore: 100 },
+      { metric: "Penilaian", icon: ClipboardCheck, score: 91.67, maxScore: 100 },
     ],
   },
 ] as const;
 
 /* ============================================================================
    DATA — Lampiran 8 (Penilaian Pelaksanaan Pembelajaran — 3 Siklus)
-   NOTE: Skor placeholder. Update dengan skor resmi GP setelah penilaian.
+   Skor dikonversi dari skor mentah / 80 × 100.
    ============================================================================ */
-
 const lampiran8Cycles: readonly TeachingCycle[] = [
   {
     cycle: "Siklus 1",
     label: "OS Server & Web Server Dasar",
-    overallScore: 88,
-    highlight: "Fondasi Pedagogis",
+    rawScore: 67,
+    rawMaxScore: 80,
+    overallScore: 83.75,
+    highlight: "Fondasi Praktik",
     metrics: [
       {
         metric: "Membuka Pelajaran",
         icon: FileText,
-        score: 86,
+        score: 75,
         maxScore: 100,
       },
       {
         metric: "Melaksanakan Kegiatan Inti Pelajaran",
         icon: Monitor,
-        score: 90,
+        score: 88.64,
         maxScore: 100,
       },
       {
         metric: "Menutup Pembelajaran",
         icon: ClipboardCheck,
-        score: 87,
+        score: 75,
         maxScore: 100,
       },
       {
         metric: "Faktor Penunjang",
         icon: BookOpen,
-        score: 89,
+        score: 80,
         maxScore: 100,
       },
     ],
@@ -128,31 +152,33 @@ const lampiran8Cycles: readonly TeachingCycle[] = [
   {
     cycle: "Siklus 2",
     label: "Full Stack Environment & DNS Lokal",
-    overallScore: 92,
-    highlight: "Peningkatan Signifikan",
+    rawScore: 71,
+    rawMaxScore: 80,
+    overallScore: 88.75,
+    highlight: "Peningkatan Praktik",
     metrics: [
       {
         metric: "Membuka Pelajaran",
         icon: FileText,
-        score: 91,
+        score: 100,
         maxScore: 100,
       },
       {
         metric: "Melaksanakan Kegiatan Inti Pelajaran",
         icon: Monitor,
-        score: 93,
+        score: 81.82,
         maxScore: 100,
       },
       {
         metric: "Menutup Pembelajaran",
         icon: ClipboardCheck,
-        score: 90,
+        score: 100,
         maxScore: 100,
       },
       {
         metric: "Faktor Penunjang",
         icon: BookOpen,
-        score: 93,
+        score: 95,
         maxScore: 100,
       },
     ],
@@ -160,31 +186,33 @@ const lampiran8Cycles: readonly TeachingCycle[] = [
   {
     cycle: "Siklus 3",
     label: "Git Deployment & Final Project Demo",
-    overallScore: 95,
-    highlight: "Pencapaian Optimal",
+    rawScore: 69,
+    rawMaxScore: 80,
+    overallScore: 86.25,
+    highlight: "Stabil Tinggi",
     metrics: [
       {
         metric: "Membuka Pelajaran",
         icon: FileText,
-        score: 94,
+        score: 100,
         maxScore: 100,
       },
       {
         metric: "Melaksanakan Kegiatan Inti Pelajaran",
         icon: Monitor,
-        score: 96,
+        score: 88.64,
         maxScore: 100,
       },
       {
         metric: "Menutup Pembelajaran",
         icon: ClipboardCheck,
-        score: 94,
+        score: 75,
         maxScore: 100,
       },
       {
         metric: "Faktor Penunjang",
         icon: BookOpen,
-        score: 96,
+        score: 85,
         maxScore: 100,
       },
     ],
@@ -211,7 +239,7 @@ function ScoreBar({
         />
       </div>
       <span className="shrink-0 font-mono text-sm font-semibold text-zinc-200">
-        {score}
+        {formatScore(score)}
       </span>
     </div>
   );
@@ -221,15 +249,15 @@ function ScoreBar({
    DATA — Downloads
    ============================================================================ */
 const lampiran7Downloads = [
-  { label: "Lampiran 7 · Siklus 1", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
-  { label: "Lampiran 7 · Siklus 2", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
-  { label: "Lampiran 7 · Siklus 3", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+  { label: "Lampiran 7 · Siklus 1", href: "https://drive.google.com/file/d/1_1OW8PhuADKKc1INR4q_ixhIkWJuweul/view?usp=drive_link" },
+  { label: "Lampiran 7 · Siklus 2", href: "https://drive.google.com/file/d/1oNuhUvzMpid9cpmR8PIt4xrohct0NThD/view?usp=drive_link" },
+  { label: "Lampiran 7 · Siklus 3", href: "https://drive.google.com/file/d/14yuX0ecREEf5mC8sHM_IWMv-K99R4rOp/view?usp=drive_link" },
 ];
 
 const lampiran8Downloads = [
-  { label: "Lampiran 8 · Siklus 1", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
-  { label: "Lampiran 8 · Siklus 2", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
-  { label: "Lampiran 8 · Siklus 3", href: "https://file-examples.com/storage/febe64b6b869fdd6596fb2b/2017/10/file-example_PDF_1MB.pdf" },
+  { label: "Lampiran 8 · Siklus 1", href: "https://drive.google.com/file/d/1J2ip4MbdvF_KPODPEIQFoglIKHwgmJfd/view?usp=drive_link" },
+  { label: "Lampiran 8 · Siklus 2", href: "https://drive.google.com/file/d/1vZuxiZHHYtyXvh5u6m_AteZuMuQTlhQs/view?usp=drive_link" },
+  { label: "Lampiran 8 · Siklus 3", href: "https://drive.google.com/file/d/1HD2TaEYL3mCzviWq80ls24cD554brqR4/view?usp=drive_link" },
 ];
 
 /* ============================================================================
@@ -259,9 +287,9 @@ export default function PenilaianPage() {
           {/* Subtitle */}
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">
             Rekapitulasi penilaian dari Guru Pamong (GP) untuk penyusunan
-            perangkat dan praktik mengajar. Seluruh skor ditampilkan secara
-            transparan sebagai bentuk akuntabilitas dan refleksi pertumbuhan
-            profesional.
+            perangkat pembelajaran dan praktik mengajar. Skor mentah dari
+            instrumen penilaian dikonversi ke skala 100 agar perkembangan
+            setiap siklus dapat dibaca secara lebih setara dan transparan.
           </p>
         </div>
       </section>
@@ -290,8 +318,9 @@ export default function PenilaianPage() {
             </div>
             <p className="max-w-xl text-sm leading-relaxed text-zinc-500">
               Instrumen penilaian penyusunan perangkat pembelajaran
-              (RPP/Modul Ajar) yang dinilai oleh Guru Pamong sepanjang 3
-              siklus PPL Terbimbing.
+              (RPP/Modul Ajar) yang dinilai oleh Guru Pamong sepanjang tiga
+              siklus PPL Terbimbing. Nilai akhir dihitung dengan rumus
+              skor perolehan dibagi 80, kemudian dikalikan 100.
             </p>
           </div>
 
@@ -307,7 +336,10 @@ export default function PenilaianPage() {
                     {cycle.cycle}
                   </p>
                   <p className="mt-2 text-4xl font-extrabold tracking-tighter text-white md:text-5xl">
-                    {cycle.overallScore}
+                    {formatScore(cycle.overallScore)}
+                  </p>
+                  <p className="mt-1 font-mono text-xs text-zinc-600">
+                    {cycle.rawScore}/{cycle.rawMaxScore}
                   </p>
                   <Badge
                     variant="outline"
@@ -324,8 +356,10 @@ export default function PenilaianPage() {
           <div className="mb-12 flex items-center justify-center gap-2 text-sm text-zinc-500">
             <TrendingUp className="size-4 text-emerald-500" />
             <span>
-              Peningkatan{" "}
-              <span className="font-semibold text-emerald-400">+{lampiran7Cycles[lampiran7Cycles.length - 1].overallScore - lampiran7Cycles[0].overallScore} poin</span>{" "}
+              Perubahan total{" "}
+              <span className="font-semibold text-emerald-400">
+                {formatDelta(lampiran7Cycles[lampiran7Cycles.length - 1].overallScore - lampiran7Cycles[0].overallScore)} poin
+              </span>{" "}
               dari Siklus 1 ke Siklus 3
             </span>
           </div>
@@ -341,7 +375,7 @@ export default function PenilaianPage() {
                   <div className="flex items-center justify-between">
                     <div>
                       <CardDescription className="font-mono text-xs uppercase tracking-widest text-zinc-600">
-                        {cycle.cycle}
+                        {cycle.cycle} · {cycle.rawScore}/{cycle.rawMaxScore}
                       </CardDescription>
                       <CardTitle className="mt-1 text-lg font-bold tracking-tight text-white">
                         {cycle.label}
@@ -349,7 +383,7 @@ export default function PenilaianPage() {
                     </div>
                     <div className="flex size-12 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
                       <span className="text-lg font-extrabold text-white">
-                        {cycle.overallScore}
+                        {formatScore(cycle.overallScore)}
                       </span>
                     </div>
                   </div>
@@ -374,23 +408,21 @@ export default function PenilaianPage() {
                   })}
 
                   {/* Cycle growth indicator (for cycles 2 & 3) */}
-                  {cycleIndex > 0 && (
-                    <div className="flex items-center gap-1.5 pt-2 text-xs text-zinc-600">
-                      <TrendingUp className="size-3 text-emerald-600" />
-                      <span>
-                        +
-                        {cycle.overallScore -
-                          lampiran7Cycles[cycleIndex - 1].overallScore}{" "}
-                        poin dari {lampiran7Cycles[cycleIndex - 1].cycle}
-                      </span>
-                    </div>
-                  )}
+                  {cycleIndex > 0 && (() => {
+                    const delta = cycle.overallScore - lampiran7Cycles[cycleIndex - 1].overallScore;
+                    return (
+                      <div className="flex items-center gap-1.5 pt-2 text-xs text-zinc-600">
+                        <TrendingUp className={`size-3 ${delta >= 0 ? "text-emerald-600" : "text-amber-600"}`} />
+                        <span>
+                          {formatDelta(delta)} poin dari {lampiran7Cycles[cycleIndex - 1].cycle}
+                        </span>
+                      </div>
+                    );
+                  })()}
                 </CardContent>
               </Card>
             ))}
           </div>
-
-
         </div>
       </section>
 
@@ -418,8 +450,9 @@ export default function PenilaianPage() {
             </div>
             <p className="max-w-xl text-sm leading-relaxed text-zinc-500">
               Progresivitas penilaian praktik mengajar dari Siklus 1 hingga
-              Siklus 3, menunjukkan pertumbuhan kompetensi pedagogis secara
-              konsisten.
+              Siklus 3. Skor menunjukkan dinamika pelaksanaan pembelajaran,
+              mulai dari membuka pelajaran, kegiatan inti, penutup, hingga
+              faktor penunjang.
             </p>
           </div>
 
@@ -435,7 +468,10 @@ export default function PenilaianPage() {
                     {cycle.cycle}
                   </p>
                   <p className="mt-2 text-4xl font-extrabold tracking-tighter text-white md:text-5xl">
-                    {cycle.overallScore}
+                    {formatScore(cycle.overallScore)}
+                  </p>
+                  <p className="mt-1 font-mono text-xs text-zinc-600">
+                    {cycle.rawScore}/{cycle.rawMaxScore}
                   </p>
                   <Badge
                     variant="outline"
@@ -452,8 +488,10 @@ export default function PenilaianPage() {
           <div className="mb-12 flex items-center justify-center gap-2 text-sm text-zinc-500">
             <TrendingUp className="size-4 text-emerald-500" />
             <span>
-              Peningkatan{" "}
-              <span className="font-semibold text-emerald-400">+7 poin</span>{" "}
+              Perubahan total{" "}
+              <span className="font-semibold text-emerald-400">
+                {formatDelta(lampiran8Cycles[lampiran8Cycles.length - 1].overallScore - lampiran8Cycles[0].overallScore)} poin
+              </span>{" "}
               dari Siklus 1 ke Siklus 3
             </span>
           </div>
@@ -469,7 +507,7 @@ export default function PenilaianPage() {
                   <div className="flex items-center justify-between">
                     <div>
                       <CardDescription className="font-mono text-xs uppercase tracking-widest text-zinc-600">
-                        {cycle.cycle}
+                        {cycle.cycle} · {cycle.rawScore}/{cycle.rawMaxScore}
                       </CardDescription>
                       <CardTitle className="mt-1 text-lg font-bold tracking-tight text-white">
                         {cycle.label}
@@ -477,7 +515,7 @@ export default function PenilaianPage() {
                     </div>
                     <div className="flex size-12 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
                       <span className="text-lg font-extrabold text-white">
-                        {cycle.overallScore}
+                        {formatScore(cycle.overallScore)}
                       </span>
                     </div>
                   </div>
@@ -502,22 +540,21 @@ export default function PenilaianPage() {
                   })}
 
                   {/* Cycle growth indicator (for cycles 2 & 3) */}
-                  {cycleIndex > 0 && (
-                    <div className="flex items-center gap-1.5 pt-2 text-xs text-zinc-600">
-                      <TrendingUp className="size-3 text-emerald-600" />
-                      <span>
-                        +
-                        {cycle.overallScore -
-                          lampiran8Cycles[cycleIndex - 1].overallScore}{" "}
-                        poin dari {lampiran8Cycles[cycleIndex - 1].cycle}
-                      </span>
-                    </div>
-                  )}
+                  {cycleIndex > 0 && (() => {
+                    const delta = cycle.overallScore - lampiran8Cycles[cycleIndex - 1].overallScore;
+                    return (
+                      <div className="flex items-center gap-1.5 pt-2 text-xs text-zinc-600">
+                        <TrendingUp className={`size-3 ${delta >= 0 ? "text-emerald-600" : "text-amber-600"}`} />
+                        <span>
+                          {formatDelta(delta)} poin dari {lampiran8Cycles[cycleIndex - 1].cycle}
+                        </span>
+                      </div>
+                    );
+                  })()}
                 </CardContent>
               </Card>
             ))}
           </div>
-
         </div>
       </section>
 
@@ -545,7 +582,7 @@ export default function PenilaianPage() {
             </div>
             <p className="max-w-xl text-sm leading-relaxed text-zinc-500">
               Dokumen penilaian resmi yang diisi oleh Guru Pamong (GP) sepanjang
-              3 siklus PPL Terbimbing.
+              tiga siklus PPL Terbimbing.
             </p>
           </div>
 
