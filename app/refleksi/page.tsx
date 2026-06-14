@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   Lightbulb,
   Shield,
   AlertTriangle,
   CheckCircle2,
   ArrowUpRight,
+  ArrowRight,
   Compass,
   BookOpen,
   Wrench,
@@ -334,6 +336,35 @@ export default function RefleksiPage() {
             })}
           </div>
 
+        </div>
+      </section>
+
+      <Separator className="mx-auto max-w-4xl bg-zinc-800/50" />
+
+      {/* ================================================================
+          CTA — Refleksi Akhir PPL Terbimbing
+          ================================================================ */}
+      <section className="px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="mb-3 font-mono text-xs uppercase tracking-widest text-zinc-600">
+            E-Portfolio 2
+          </p>
+          <h2 className="text-2xl font-extrabold tracking-tighter text-white md:text-3xl">
+            Refleksi Akhir PPL Terbimbing
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-zinc-500">
+            Baca refleksi akhir, filosofi mengajar, dan nilai-nilai keguruan
+            yang terbentuk selama tiga siklus praktik pembelajaran terbimbing.
+          </p>
+          <div className="mt-8">
+            <Link
+              href="/refleksi-akhir"
+              className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-6 py-3 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
+            >
+              Buka Refleksi Akhir
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
       </section>
     </>

@@ -384,13 +384,20 @@ export default function HomePage() {
             })}
           </div>
 
-          {/* CTA Button */}
-          <div className="mt-14 flex justify-center">
+          {/* CTA Buttons */}
+          <div className="mt-14 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/artefak"
               className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-6 py-3 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
             >
               Lihat Analisis Lengkap
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/refleksi-akhir"
+              className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-6 py-3 text-sm font-medium text-zinc-300 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.08] hover:text-white"
+            >
+              Refleksi Akhir PPL
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

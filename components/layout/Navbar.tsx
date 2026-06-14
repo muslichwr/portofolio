@@ -13,7 +13,17 @@ const navLinks = [
   { href: "/artefak", label: "Artefak & Analisis" },
   { href: "/penilaian", label: "Penilaian" },
   { href: "/refleksi", label: "Refleksi" },
+  { href: "/refleksi-akhir", label: "Refleksi Akhir" },
 ] as const;
+
+/** Determine whether a nav link is active for the current pathname.
+ *  - Home (`/`) only matches exactly.
+ *  - Other links match exactly OR when pathname is a nested child (`href + "/…"`).
+ *  - This prevents `/refleksi` from matching `/refleksi-akhir`. */
+function isActiveLink(href: string, pathname: string): boolean {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 export function Navbar() {
   const pathname = usePathname();
@@ -46,10 +56,7 @@ export function Navbar() {
         {/* Desktop Links */}
         <div className="hidden items-center gap-0.5 md:flex">
           {navLinks.map((link) => {
-            const isActive =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(link.href.replace("/#", "/"));
+            const isActive = isActiveLink(link.href, pathname);
 
             return (
               <Link
@@ -97,10 +104,7 @@ export function Navbar() {
           >
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => {
-                const isActive =
-                  link.href === "/"
-                    ? pathname === "/"
-                    : pathname.startsWith(link.href.replace("/#", "/"));
+                const isActive = isActiveLink(link.href, pathname);
 
                 return (
                   <Link
