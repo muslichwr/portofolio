@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import { Heart } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 /* ============================================================================
