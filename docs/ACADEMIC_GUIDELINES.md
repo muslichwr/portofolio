@@ -230,11 +230,11 @@ All 11 academic references present in the portfolio codebase are cataloged below
 ### 11. Reflection on Teaching Action and Student Learning (Lefebvre et al.)
 - **Author(s):** Julie Lefebvre, Hélène Lefebvre, Jérôme Gauvin-Lepage, Raymonde Gosselin, & Dan Lecocq (Lefebvre et al.)
 - **Year:** 2023
-- **Title:** "Reflection on teaching action and student learning: A study of pre-service teachers' reflective practice"
+- **Title:** "Reflection on teaching action and student learning"
 - **Publication / Source:** *Teaching and Teacher Education*, Volume 134, Article 104305
 - **DOI / Stable Identifier:** `10.1016/j.tate.2023.104305`
 - **Repository Location:** `app/about/page.tsx` (line 102: `"Menerapkan refleksi terstruktur terhadap tindakan mengajar dan respons belajar murid (Lefebvre et al., 2023)..."`)
-- **Concept / Established Name:** Pre-service teacher reflection linking teaching interventions to student learning outcomes
+- **Concept / Established Name:** Reflection on teaching practice and its relationship with factors that may facilitate or hinder student learning
 - **Original Disciplinary Domain:** Teacher Education / Reflective Practice
 - **Current Portfolio Usage:** Cited as justification for continuous cycle-over-cycle iterative reflective improvement.
 - **Bibliographic Verification:** `VERIFIED`
