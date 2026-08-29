@@ -9,7 +9,8 @@ import {
   Paperclip,
   FlagTriangleRight,
   FileText,
-  Download,
+  FileCheck,
+  ExternalLink,
   ArrowRight,
   User,
 } from "lucide-react";
@@ -78,7 +79,7 @@ interface ReflectionSection {
 
 interface CourseArtifact {
   readonly label: string;
-  readonly href: string;
+  readonly href: string | null;
 }
 
 interface CourseData {
@@ -86,6 +87,8 @@ interface CourseData {
   readonly title: string;
   readonly pertemuan: string;
   readonly categoryBadge?: string;
+  /** Dedicated Google Drive URL for the formal completed LK 2 PDF worksheet */
+  readonly lk2PdfHref: string | null;
   readonly sections: readonly ReflectionSection[];
   readonly artifacts: readonly CourseArtifact[];
   /** Optional link to another page (e.g. /artefak for Course 4) */
@@ -151,6 +154,7 @@ const courses: readonly CourseData[] = [
     tabLabel: "MK 1 · Filosofi Pendidikan",
     title: "Filosofi Pendidikan dan Pendidikan Nilai",
     pertemuan: "Pertemuan II",
+    lk2PdfHref: null,
     sections: [
       {
         fourCKey: "connection",
@@ -214,9 +218,9 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "Aktivitas 1.6 · Jurnal Refleksi", href: "" },
-      { label: "Aktivitas 1.5 · Analisis & Modifikasi Modul Ajar/RPP", href: "" },
-      { label: "3.E · Refleksi dan Tindak Lanjut", href: "" },
+      { label: "Aktivitas 1.6 · Jurnal Refleksi", href: null },
+      { label: "Aktivitas 1.5 · Analisis & Modifikasi Modul Ajar/RPP", href: null },
+      { label: "3.E · Refleksi dan Tindak Lanjut", href: null },
     ],
   },
 
@@ -227,6 +231,7 @@ const courses: readonly CourseData[] = [
     tabLabel: "MK 2 · Peserta Didik",
     title: "Pemahaman tentang Peserta Didik dan Pembelajaran",
     pertemuan: "Pertemuan III",
+    lk2PdfHref: null,
     sections: [
       {
         fourCKey: "connection",
@@ -290,10 +295,10 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 1.E · Refleksi Teori Perkembangan", href: "" },
-      { label: "LK 2.D & 2.E · Sintesis Kasus Pak Anto", href: "" },
-      { label: "LK 3.E · Refleksi Teori Belajar Bu Sinta", href: "" },
-      { label: "LK 4A & 4B · Asesmen Awal & Profiling 34 Siswa X RPL", href: "" },
+      { label: "LK 1.E · Refleksi Teori Perkembangan", href: null },
+      { label: "LK 2.D & 2.E · Sintesis Kasus Pak Anto", href: null },
+      { label: "LK 3.E · Refleksi Teori Belajar Bu Sinta", href: null },
+      { label: "LK 4A & 4B · Asesmen Awal & Profiling 34 Siswa X RPL", href: null },
     ],
   },
 
@@ -304,6 +309,7 @@ const courses: readonly CourseData[] = [
     tabLabel: "MK 3 · Pembelajaran Mendalam",
     title: "Pembelajaran Mendalam dan Asesmen (PMA) Dasar SMK",
     pertemuan: "Pertemuan IV",
+    lk2PdfHref: null,
     sections: [
       {
         fourCKey: "connection",
@@ -367,11 +373,11 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 1.C & 1.D · Analisis Kasus Kesiapan Kerja", href: "" },
-      { label: "LK 2.D · Sintesis Keselarasan Tujuan, Aktivitas & Asesmen", href: "" },
-      { label: "LK 2.E · Refleksi dan Tindak Lanjut", href: "" },
-      { label: "LK 3.D · Template Perencanaan Pembelajaran UbD", href: "" },
-      { label: "LK 3.E & 4.A · Refleksi & RTL Perancangan Pembelajaran", href: "" },
+      { label: "LK 1.C & 1.D · Analisis Kasus Kesiapan Kerja", href: null },
+      { label: "LK 2.D · Sintesis Keselarasan Tujuan, Aktivitas & Asesmen", href: null },
+      { label: "LK 2.E · Refleksi dan Tindak Lanjut", href: null },
+      { label: "LK 3.D · Template Perencanaan Pembelajaran UbD", href: null },
+      { label: "LK 3.E & 4.A · Refleksi & RTL Perancangan Pembelajaran", href: null },
     ],
   },
 
@@ -382,6 +388,7 @@ const courses: readonly CourseData[] = [
     tabLabel: "MK 4 · PPL Terbimbing",
     title: "Praktik Pengalaman Lapangan (PPL) Terbimbing",
     pertemuan: "Pertemuan V",
+    lk2PdfHref: null,
     sections: [
       {
         fourCKey: "connection",
@@ -445,11 +452,11 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 3 · Refleksi Praktik Asistensi", href: "" },
-      { label: "LK 4 · Refleksi Siklus 1", href: "" },
-      { label: "LK 4 · Refleksi Siklus 2", href: "" },
-      { label: "LK 4 · Refleksi Siklus 3", href: "" },
-      { label: "Lampiran 7 & 8 · Rekap Siklus 1–3", href: "" },
+      { label: "LK 3 · Refleksi Praktik Asistensi", href: null },
+      { label: "LK 4 · Refleksi Siklus 1", href: null },
+      { label: "LK 4 · Refleksi Siklus 2", href: null },
+      { label: "LK 4 · Refleksi Siklus 3", href: null },
+      { label: "Lampiran 7 & 8 · Rekap Siklus 1–3", href: null },
     ],
     crossLink: {
       label: "Lihat Artefak & Analisis Lengkap",
@@ -464,6 +471,7 @@ const courses: readonly CourseData[] = [
     tabLabel: "MK 5 · Growth Mindset",
     title: "Pola Pikir Bertumbuh (Growth Mindset)",
     pertemuan: "Pertemuan VI",
+    lk2PdfHref: null,
     sections: [
       {
         fourCKey: "connection",
@@ -477,7 +485,7 @@ const courses: readonly CourseData[] = [
         title: "Challenge",
         question: "2. Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?",
         content:
-          "Tantangannya adalah tidak semua siswa memiliki daya juang yang sama. Ada siswa yang ketika mengalami error langsung bertanya, melihat pekerjaan teman, atau cepat menyerah. Di sisi guru, terkadang juga lebih mudah melihat hasil akhir daripada proses yang dilalui siswa. Karena itu, menerapkan growth mindset membutuhkan kesabaran dalam mendampingi siswa agar mau mencoba kembali sebelum diberikan solusi.",
+          "Tantangan utamanya adalah tidak semua siswa memiliki daya juang yang sama. Ada siswa yang ketika mengalami error langsung bertanya, melihat pekerjaan teman, atau cepat menyerah. Di sisi guru, terkadang juga lebih mudah melihat hasil akhir daripada proses yang dilalui siswa. Karena itu, menerapkan growth mindset membutuhkan kesabaran dalam mendampingi siswa agar mau mencoba kembali sebelum diberikan solusi.",
       },
       {
         fourCKey: "concept",
@@ -527,9 +535,9 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 3.2 · Aku Belum Berhasil, Bukan Tidak Berhasil", href: "" },
-      { label: "LK 3.3 · Masalahku adalah Sahabat Belajarku", href: "" },
-      { label: "LK 2.2 · Belajar dari Cara Otak Belajar", href: "" },
+      { label: "LK 3.2 · Aku Belum Berhasil, Bukan Tidak Berhasil", href: null },
+      { label: "LK 3.3 · Masalahku adalah Sahabat Belajarku", href: null },
+      { label: "LK 2.2 · Belajar dari Cara Otak Belajar", href: null },
     ],
   },
 
@@ -541,6 +549,7 @@ const courses: readonly CourseData[] = [
     title: "Pengembangan Kebugaran Jasmani",
     pertemuan: "Pertemuan VII",
     categoryBadge: "Mata Kuliah Selektif/Elektif",
+    lk2PdfHref: null,
     sections: [
       {
         fourCKey: "connection",
@@ -585,7 +594,7 @@ const courses: readonly CourseData[] = [
             label: "Alasan Pemilihan",
             question: "Mengapa artefak tersebut yang saya pilih?",
             content:
-              "Artefak tersebut saya pilih karena merekam secara utuh perjalanan perubahan kebiasaan fisik saya secara kronologis; mulai dari asesmen awal dan penurunan berat badan (TKJU), perencanaan intervensi mandiri (Logbook), refleksi efektivitas latihan (kardio 20 menit), hingga kemampuan mengaplikasikan teori kebugaran menjadi sebuah rancangan program sekolah (Sekolah Sehat & Bugar) yang masif dan terstruktur untuk siswa kejuruan.",
+              "Artefak tersebut saya pilih karena merekam secara utuh perjalanan perubahan kebiasaan fisik saya secara kronologis; mulai dari asesmen awal dan penurunan berat badan (TKJU), perencanaan intervensi mandiri (Logbook), refleksi efektivitas latihan (kardio 20 menit), hingga kemampuan mengaplikasikannya ke dalam praktik nyata melalui sebuah rancangan program sekolah (Sekolah Sehat & Bugar) yang masif dan terstruktur untuk siswa kejuruan.",
           },
           {
             label: "Bagian yang Mendukung Refleksi",
@@ -604,11 +613,11 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 1.D · Laporan Diagnostik Kebugaran Personal", href: "" },
-      { label: "LK 1.E · Refleksi Kesiapan Mental & Fisik Guru", href: "" },
-      { label: "LK 2.D · Logbook Kardio & Manajemen Stres", href: "" },
-      { label: "LK 2.E · Refleksi Sesi Latihan Kardio Minggu 1", href: "" },
-      { label: "Proposal Program · Sekolah Sehat & Bugar", href: "" },
+      { label: "LK 1.D · Laporan Diagnostik Kebugaran Personal", href: null },
+      { label: "LK 1.E · Refleksi Kesiapan Mental & Fisik Guru", href: null },
+      { label: "LK 2.D · Logbook Kardio & Manajemen Stres", href: null },
+      { label: "LK 2.E · Refleksi Sesi Latihan Kardio Minggu 1", href: null },
+      { label: "Proposal Program · Sekolah Sehat & Bugar", href: null },
     ],
   },
 ];
@@ -773,41 +782,87 @@ function AccordionSection({
   );
 }
 
-/** Download / Evidence component for artifact files */
-function ArtifactDownload({
+interface FormalLk2CardProps {
+  readonly courseTitle: string;
+  readonly href: string | null;
+}
+
+/** Formal completed LK 2 worksheet slot (distinct from supporting learning artifacts) */
+function FormalLk2Card({ courseTitle, href }: FormalLk2CardProps) {
+  const isAvailable = Boolean(href && href.trim() !== "");
+
+  return (
+    <div className="flex flex-col gap-3 rounded-lg border border-zinc-800 bg-zinc-900/40 p-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex items-start gap-3">
+        <div className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
+          <FileCheck className="size-4 text-zinc-400" />
+        </div>
+        <div className="space-y-1">
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+              LK 2 · Dokumen Resmi
+            </span>
+          </div>
+          <p className="text-sm font-semibold text-white">
+            Refleksi Pengalaman Belajar — {courseTitle}
+          </p>
+          <p className="text-xs text-zinc-400">
+            Lembar kerja refleksi formal untuk mata kuliah ini.
+          </p>
+        </div>
+      </div>
+
+      {isAvailable ? (
+        <a
+          href={href!}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex shrink-0 items-center gap-1.5 rounded-md border border-zinc-700 bg-zinc-900 px-3.5 py-2 text-xs font-medium text-white transition-colors hover:border-zinc-500 hover:bg-zinc-800"
+        >
+          <span>Buka Dokumen LK 2</span>
+          <ExternalLink className="size-3.5 text-zinc-400" />
+        </a>
+      ) : (
+        <span className="flex shrink-0 items-center self-start rounded-md border border-zinc-800 bg-zinc-900/80 px-2.5 py-1.5 font-mono text-[11px] text-zinc-500 sm:self-center">
+          Tautan belum tersedia
+        </span>
+      )}
+    </div>
+  );
+}
+
+/** Evidence component for supporting learning artifact files */
+function ArtifactEvidenceItem({
   label,
   href,
 }: {
   label: string;
-  href: string;
+  href: string | null;
 }) {
-  const isAvailable = Boolean(href && href !== "#" && href.trim() !== "");
+  const isAvailable = Boolean(href && href.trim() !== "");
 
   return (
     <div className="flex items-center justify-between rounded-lg border border-zinc-800 bg-zinc-900/50 p-3">
       <div className="flex items-center gap-3">
-        <FileText className="size-4 text-zinc-400 shrink-0" />
+        <FileText className="size-4 shrink-0 text-zinc-400" />
         <div>
           <p className="text-sm font-medium text-white">{label}</p>
-          <p className="text-xs text-zinc-500">
-            {isAvailable ? "Dokumen PDF" : "Arsip Bukti LK 2"}
-          </p>
+          <p className="text-xs text-zinc-500">Artefak Pembelajaran</p>
         </div>
       </div>
       {isAvailable ? (
         <a
-          href={href}
+          href={href!}
           target="_blank"
           rel="noopener noreferrer"
-          download
           className="flex shrink-0 items-center gap-1.5 rounded-md border border-zinc-700 px-3 py-1.5 text-xs text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
         >
-          <Download className="size-3" />
-          Unduh
+          <span>Lihat Artefak</span>
+          <ExternalLink className="size-3" />
         </a>
       ) : (
         <span className="flex shrink-0 items-center rounded-md border border-zinc-800 bg-zinc-900/80 px-2.5 py-1 font-mono text-[11px] text-zinc-500">
-          Dokumen Terarsip
+          Tautan belum tersedia
         </span>
       )}
     </div>
@@ -885,24 +940,52 @@ function CourseContent({ course }: { course: CourseData }) {
         ))}
       </div>
 
-      {/* Artifact download / Evidence section */}
-      <div className="space-y-3">
-        <div className="flex items-center gap-2">
-          <div className="flex size-7 shrink-0 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
-            <Download className="size-3.5 text-zinc-500" />
+      {/* Evidence Section: Formal LK 2 + Supporting Artifacts */}
+      <div className="space-y-6">
+        {/* 1. Formal LK 2 Document */}
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="flex size-7 shrink-0 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
+              <FileCheck className="size-3.5 text-zinc-500" />
+            </div>
+            <h4 className="font-mono text-xs font-medium uppercase tracking-wider text-zinc-500">
+              Dokumen Resmi LK 2
+            </h4>
           </div>
-          <h4 className="font-mono text-xs font-medium uppercase tracking-wider text-zinc-500">
-            Dokumen Pendukung
-          </h4>
-        </div>
-        <div className={cn("pl-9", course.artifacts.length > 1 ? "grid grid-cols-1 gap-3 md:grid-cols-2" : "")}>
-          {course.artifacts.map((art) => (
-            <ArtifactDownload
-              key={art.label}
-              label={art.label}
-              href={art.href}
+          <div className="pl-9">
+            <FormalLk2Card
+              courseTitle={course.title}
+              href={course.lk2PdfHref}
             />
-          ))}
+          </div>
+        </div>
+
+        {/* 2. Supporting Learning Artifacts */}
+        <div className="space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="flex size-7 shrink-0 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
+              <FileText className="size-3.5 text-zinc-500" />
+            </div>
+            <h4 className="font-mono text-xs font-medium uppercase tracking-wider text-zinc-500">
+              Artefak Pembelajaran Pendukung
+            </h4>
+          </div>
+          <div
+            className={cn(
+              "pl-9",
+              course.artifacts.length > 1
+                ? "grid grid-cols-1 gap-3 md:grid-cols-2"
+                : ""
+            )}
+          >
+            {course.artifacts.map((art) => (
+              <ArtifactEvidenceItem
+                key={art.label}
+                label={art.label}
+                href={art.href}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
