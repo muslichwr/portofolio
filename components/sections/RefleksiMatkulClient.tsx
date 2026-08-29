@@ -221,7 +221,7 @@ const courses: readonly CourseData[] = [
         title: "Concept",
         question: "3. Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?",
         content:
-          "Konsep utama yang paling relevan bagi saya meliputi Teori Perkembangan, Teori Belajar (terutama Konstruktivisme, Humanisme, dan Vygotsky), Pembelajaran Sosial Emosional (CASEL), serta penciptaan iklim belajar yang aman (Mastery Climate). Sebagai muaranya, saya belajar betapa pentingnya Asesmen Diagnostik untuk memetakan tingkat kesiapan dan gaya belajar siswa sebelum merancang modul ajar yang berdiferensiasi (TaRL).",
+          "Konsep utama yang paling relevan bagi saya meliputi Teori Perkembangan, Teori Belajar (terutama Konstruktivisme, Humanisme, dan Vygotsky), Pembelajaran Sosial Emosional (CASEL), serta penciptaan iklim belajar yang aman (Mastery Climate). Sebagai muaranya, saya belajar betapa pentingnya Asesmen Diagnostik untuk memetakan tingkat kesiapan dan profil belajar siswa sebelum merancang modul ajar yang berdiferensiasi (TaRL).",
       },
       {
         fourCKey: "change",
@@ -242,7 +242,7 @@ const courses: readonly CourseData[] = [
         title: "Kesimpulan Mata Kuliah",
         question: "Sintesis menyeluruh hasil refleksi pengalaman belajar mata kuliah.",
         content:
-          "Mata kuliah Pemahaman tentang Peserta Didik dan Pembelajaran memberikan wawasan baru bagi saya bahwa perancangan pembelajaran yang efektif harus selalu berawal dari pengenalan yang mendalam terhadap kondisi pesertanya. Melalui pembelajaran ini, saya menyadari bahwa kesulitan siswa dalam merangkai baris kode sering kali bukan karena mereka tidak mampu, melainkan karena strategi mengajar yang belum mengakomodasi tahapan perkembangan dan gaya belajar mereka. Ke depan, berbekal keterampilan asesmen dan strategi diferensiasi yang telah saya susun (seperti pada LK 4), saya berkomitmen untuk menciptakan kelas Pemrograman Web yang inklusif, adaptif, dan memberikan ruang aman bagi setiap siswa untuk berlatih menjadi pemecah masalah yang tangguh.",
+          "Mata kuliah Pemahaman tentang Peserta Didik dan Pembelajaran memberikan wawasan baru bagi saya bahwa perancangan pembelajaran yang efektif harus selalu berawal dari pengenalan yang mendalam terhadap kondisi pesertanya. Melalui pembelajaran ini, saya menyadari bahwa kesulitan siswa dalam merangkai baris kode sering kali bukan karena mereka tidak mampu, melainkan karena strategi mengajar yang belum mengakomodasi tahapan perkembangan dan profil belajar mereka. Ke depan, berbekal keterampilan asesmen dan strategi diferensiasi yang telah saya susun (seperti pada LK 4), saya berkomitmen untuk menciptakan kelas Pemrograman Web yang inklusif, adaptif, dan memberikan ruang aman bagi setiap siswa untuk berlatih menjadi pemecah masalah yang tangguh.",
       },
     ],
     artifacts: [

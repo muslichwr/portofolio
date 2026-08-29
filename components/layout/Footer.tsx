@@ -109,7 +109,7 @@ export function Footer() {
         {/* Bottom section */}
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <p className="text-xs text-zinc-600">
-            &copy; {currentYear} Muslich Wahyu Ramadhan. All rights reserved.
+            &copy; {currentYear} Muslich Wahyu Romadhon. All rights reserved.
           </p>
 
           {/* Social links */}

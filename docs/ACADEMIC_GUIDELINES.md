@@ -46,7 +46,7 @@ To prevent treating the mere existence of a publication as validation of how a t
 2. **Distinct Disciplinary Domains:** Explicitly record the original disciplinary origin of every theory (e.g., cognitive psychology, second-language acquisition, science education) and flag cross-domain applications for review.
 3. **No Secondary-Source Misattribution:** Do not attribute foundational models to secondary authors who merely applied or adapted them (e.g., Abell & Volkmann applied the 5E cycle in science assessment, but did not originate the BSCS 5E Model).
 4. **No Unsupported Causal Inferences:** Do not assert that a theoretical framework "caused" student success. Use disciplined phrasing: instructional interventions were *guided by*, *informed by*, or *structured around* the concept.
-5. **No Fixed "Learning Style" Conflation:** When citing Tomlinson's Differentiated Instruction, adhere to her canonical dimensions (**Readiness, Interest, Learning Profile**). Avoid asserting that students must be categorized and taught according to debunked fixed "learning styles."
+5. **No Fixed "Learning Style" Conflation:** When citing Tomlinson's Differentiated Instruction, adhere to her canonical dimensions (**Readiness, Interest, Learning Profile**). Avoid asserting that students must be categorized and taught according to debunked fixed "learning styles." The *learning profile / profil belajar* construct must never be interpreted as a fixed learner type or as justification for matching instruction to fixed learning styles.
 
 ---
 
@@ -78,15 +78,16 @@ All 11 academic references present in the portfolio codebase are cataloged below
 - **Title:** *Seamless Assessment in Science: A Guide for Elementary and Middle School Teachers*
 - **Publication / Source:** Heinemann / NSTA Press
 - **DOI / Stable Identifier:** ISBN: 978-0-325-00769-4
-- **Repository Location:** `app/artefak/page.tsx` (lines 38–41)
+- **Repository Location:** `app/artefak/page.tsx` (lines 38–41: labeled as `"Model 5E dalam Asesmen — Abell & Volkmann (2006)"`)
 - **Concept / Established Name:** 5E Instructional Model (Engagement, Exploration, Explanation, Elaboration, Evaluation) in Inquiry and Assessment
 - **Original Disciplinary Domain:** Science Education / Pedagogical Assessment
-- **Current Portfolio Usage:** Structuring the procedural phases of Ubuntu Server installation from live demonstration (Engagement) to student evaluation.
+- **Current Portfolio Usage:** Structuring the procedural phases of Ubuntu Server installation from live demonstration (Engagement) to student evaluation, applying assessment within 5E.
 - **Bibliographic Verification:** `VERIFIED`
 - **Portfolio Application Verification:** `LIMITED`
 - **Analysis & Traceability:**
   - *Bibliographic Accuracy:* Abell & Volkmann (2006) is a valid, published work focusing on embedding assessment within the 5E inquiry cycle.
-  - *Attribution Limitation:* Abell & Volkmann should **not** be presented as the originators of the 5E Model. The BSCS 5E Instructional Model was originated by Rodger W. Bybee and the BSCS team (Bybee et al., 1989 / 2006). The portfolio uses Abell & Volkmann as a secondary application source.
+  - *Attribution Limitation:* Abell & Volkmann are presented accurately as applying/embedding assessment within the 5E cycle rather than originating the model itself (originated by Bybee et al., BSCS).
+  - *Remediation (2026-08-29):* Label clarified to `"Model 5E dalam Asesmen — Abell & Volkmann (2006)"` with explicit description of assessment integration.
 
 ---
 
@@ -96,15 +97,16 @@ All 11 academic references present in the portfolio codebase are cataloged below
 - **Title:** *How to Differentiate Instruction in Mixed-Ability Classrooms* (2nd ed.) / *The Differentiated Classroom: Responding to the Needs of All Learners*
 - **Publication / Source:** Association for Supervision and Curriculum Development (ASCD)
 - **DOI / Stable Identifier:** ISBN: 978-0-87120-512-4
-- **Repository Location:** `app/artefak/page.tsx` (lines 43–46), `components/sections/RefleksiMatkulClient.tsx` (Course 6)
+- **Repository Location:** `app/artefak/page.tsx` (lines 43–46), `components/sections/RefleksiMatkulClient.tsx` (Course 6), `app/about/page.tsx` (line 84)
 - **Concept / Established Name:** Differentiated Instruction (DI)
 - **Original Disciplinary Domain:** Curriculum Design / General Pedagogy
-- **Current Portfolio Usage:** Providing tiered challenge levels (advanced server configuration vs. step-by-step guidance) based on initial student readiness.
+- **Current Portfolio Usage:** Structuring tiered scaffolding based on student readiness and prior technical experience.
 - **Bibliographic Verification:** `VERIFIED`
-- **Portfolio Application Verification:** `LIMITED`
+- **Portfolio Application Verification:** `APPROPRIATE`
 - **Analysis & Traceability:**
-  - *Siklus 1 Application:* The tiered scaffolding in `app/artefak/page.tsx` is appropriately based on technical readiness (prior Linux exposure).
-  - *Editorial Flag:* In `app/about/page.tsx` (line 84), the text mentions *"gaya belajar"* alongside cognitive readiness. Tomlinson emphasizes readiness, interest, and learning profile, but rigid matching to "learning styles" (e.g., VAK) lacks empirical support. Future copy should anchor strictly on **readiness** (*kesiapan belajar*) and **prior knowledge**.
+  - *Theoretical Dimensions vs. Operational Descriptors:* Tomlinson's (2000, 2001) established theoretical dimensions of differentiated instruction are **Readiness**, **Interest**, and **Learning Profile**. The website's operational phrasing (*"kesiapan belajar, pengetahuan awal, dan kebutuhan dukungan teknis"*) functions as a context-specific operational description of entry-level learner baseline in a vocational IT laboratory, rather than redefining the canonical theoretical dimensions.
+  - *Learning Profile Guardrail:* The construct of *learning profile / profil belajar* must not be interpreted as a fixed learner type or used as justification for matching instruction to fixed learning styles (*gaya belajar*).
+  - *Siklus 1 Application:* Tiered scaffolding in `app/artefak/page.tsx` is appropriately based on technical readiness (prior Linux exposure).
 
 ---
 
@@ -197,15 +199,15 @@ All 11 academic references present in the portfolio codebase are cataloged below
 - **Title:** "Communicative competence: Some roles of comprehensible input and comprehensible output in its development"
 - **Publication / Source:** In S. Gass & C. Madden (Eds.), *Input in second language acquisition* (pp. 235–253). Rowley, MA: Newbury House
 - **DOI / Stable Identifier:** ISBN: 978-0-88377-293-5
-- **Repository Location:** `app/artefak/page.tsx` (lines 147–150: labeled as `"Output-based Learning — Swain (1985)"`)
+- **Repository Location:** `app/artefak/page.tsx` (lines 147–150: labeled as `"Comprehensible Output Hypothesis — Swain (1985)"`)
 - **Concept / Established Name:** Comprehensible Output Hypothesis / The Output Hypothesis (*NOT* formally established as "Output-based Learning")
 - **Original Disciplinary Domain:** Second-Language Acquisition (SLA) / Applied Linguistics
-- **Current Portfolio Usage:** Justifying peer-to-peer technical explanations and verbal architecture presentations.
+- **Current Portfolio Usage:** Analogical application justifying peer-to-peer technical explanations and verbal architecture presentations.
 - **Bibliographic Verification:** `VERIFIED`
 - **Portfolio Application Verification:** `REVIEW_REQUIRED`
 - **Analysis & Traceability:**
-  - *Naming Issue:* Swain's theory is the **Comprehensible Output Hypothesis**. "Output-based Learning" is an informal phrasing.
-  - *Cross-Domain Translation:* Swain formulated the hypothesis for language acquisition (producing language forces grammatical processing). Applying it to vocational IT verbal presentations requires an explicit conceptual bridge (e.g., technical articulation as technical communication).
+  - *Naming Resolution (2026-08-29):* Standardized from the informal `"Output-based Learning"` to the canonically accurate `"Comprehensible Output Hypothesis"`.
+  - *Cross-Domain Translation:* Swain formulated the hypothesis for language acquisition (producing language forces grammatical processing). The portfolio presents the connection as an explicit analogical application to technical communication and verbal articulation.
 
 ---
 
@@ -226,18 +228,17 @@ All 11 academic references present in the portfolio codebase are cataloged below
 ---
 
 ### 11. Reflection on Teaching Action and Student Learning (Lefebvre et al.)
-- **Author(s):** Julie Lefebvre, Marie-France Boulay, & Colette Gervais (Lefebvre et al.)
+- **Author(s):** Julie Lefebvre, Hélène Lefebvre, Jérôme Gauvin-Lepage, Raymonde Gosselin, & Dan Lecocq (Lefebvre et al.)
 - **Year:** 2023
 - **Title:** "Reflection on teaching action and student learning: A study of pre-service teachers' reflective practice"
 - **Publication / Source:** *Teaching and Teacher Education*, Volume 134, Article 104305
 - **DOI / Stable Identifier:** `10.1016/j.tate.2023.104305`
-- **Repository Location:** `app/about/page.tsx` (line 102: `"Menerapkan model praktik refleksi (Levebvre, 2023)..."`)
+- **Repository Location:** `app/about/page.tsx` (line 102: `"Menerapkan refleksi terstruktur terhadap tindakan mengajar dan respons belajar murid (Lefebvre et al., 2023)..."`)
 - **Concept / Established Name:** Pre-service teacher reflection linking teaching interventions to student learning outcomes
 - **Original Disciplinary Domain:** Teacher Education / Reflective Practice
 - **Current Portfolio Usage:** Cited as justification for continuous cycle-over-cycle iterative reflective improvement.
 - **Bibliographic Verification:** `VERIFIED`
-- **Portfolio Application Verification:** `REVIEW_REQUIRED`
+- **Portfolio Application Verification:** `LIMITED`
 - **Analysis & Traceability:**
-  - *Author Spelling:* The website misspells the surname as **`Levebvre`** instead of **`Lefebvre`**.
-  - *Codification Limitation:* The publication is an empirical research article investigating reflective practice in teacher education; it does **not** establish a standardized, codified framework known as the *"Lefebvre Reflective Model"*.
-  - *Action:* The reference is real and relevant, but its characterization as a formal named model must be treated as `REVIEW_REQUIRED`.
+  - *Author Spelling (Resolved 2026-08-29):* Corrected typo **`Levebvre`** to **`Lefebvre et al.`**.
+  - *Application Alignment & Scope:* The revised wording is conceptually aligned with the publication's focus on reflection on teaching action and student learning. The portfolio does not claim to reproduce the study's specific reflective procedures or constitute a formally named reflective model.

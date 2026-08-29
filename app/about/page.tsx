@@ -81,7 +81,7 @@ const kompetensiList: readonly Kompetensi[] = [
     number: "02",
     title: "Diferensiasi Pembelajaran",
     description:
-      "Merancang aktivitas dan scaffolding yang berbeda berdasarkan profil belajar murid — kognitif, gaya belajar, dan kesiapan teknis.",
+      "Merancang aktivitas dan scaffolding yang berbeda berdasarkan profil belajar murid — kesiapan belajar, pengetahuan awal, dan kebutuhan dukungan teknis.",
   },
   {
     number: "03",
@@ -99,7 +99,7 @@ const kompetensiList: readonly Kompetensi[] = [
     number: "05",
     title: "Refleksi Iteratif",
     description:
-      "Menerapkan model praktik refleksi (Levebvre, 2023) secara konsisten di setiap siklus untuk menghasilkan perbaikan yang terukur dan nyata.",
+      "Menerapkan refleksi terstruktur terhadap tindakan mengajar dan respons belajar murid (Lefebvre et al., 2023) secara konsisten di setiap siklus untuk menghasilkan perbaikan nyata.",
   },
 ] as const;
 

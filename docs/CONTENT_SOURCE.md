@@ -12,20 +12,21 @@ This document serves as the **canonical source of truth** for all factual inform
   - `app/layout.tsx` (lines 22, 36, 38)
   - `app/page.tsx` (lines 170, 179)
   - `app/about/page.tsx` (lines 25, 186, 221, 231)
-  - `components/layout/Footer.tsx` (lines 57, 86)
+  - `components/layout/Footer.tsx` (lines 57, 86, 112)
   - `components/sections/RefleksiMatkulClient.tsx` (line 29)
-  - `components/layout/Footer.tsx` (line 112: `"Muslich Wahyu Ramadhan"`)
-- **Status:** `INCONSISTENT`
-- **Notes:** Line 112 of `components/layout/Footer.tsx` contains the typo `"Muslich Wahyu Ramadhan"`. All other repository references consistently use `"Muslich Wahyu Romadhon"`.
+- **Status:** `CONSISTENT` (Resolved: 2026-08-29)
+- **Previous Status:** `INCONSISTENT`
+- **Notes:** Line 112 of `components/layout/Footer.tsx` previously contained the typo `"Muslich Wahyu Ramadhan"`, which was corrected to `"Muslich Wahyu Romadhon"`. All repository references consistently use `"Muslich Wahyu Romadhon"`.
 
 ### Bachelor Education (Degree & Major)
 - **Canonical Value:** `S1 Pendidikan Teknologi Informasi`
 - **Found In:**
   - `app/about/page.tsx` (line 270: `"S1 Pendidikan Teknologi Informasi"`)
   - `components/sections/WorkStudiesToggle.tsx` (line 82: `"S1 Pendidikan Teknologi Informasi"`)
-  - `app/refleksi/page.tsx` (line 170: `"S1 Teknik Informatika"`)
-- **Status:** `INCONSISTENT`
-- **Notes:** `app/refleksi/page.tsx` (line 170) mistakenly states `"S1 Teknik Informatika"`. The canonical degree is `"S1 Pendidikan Teknologi Informasi"`.
+  - `app/refleksi/page.tsx` (line 170: `"S1 Pendidikan Teknologi Informasi"`)
+- **Status:** `CONSISTENT` (Resolved: 2026-08-29)
+- **Previous Status:** `INCONSISTENT`
+- **Notes:** `app/refleksi/page.tsx` (line 170) previously stated `"S1 Teknik Informatika"`, which was corrected to canonical `"S1 Pendidikan Teknologi Informasi"`.
 
 ### Higher Education Institution
 - **Canonical Value:** `Universitas Negeri Surabaya (UNESA)`
@@ -68,8 +69,9 @@ This document serves as the **canonical source of truth** for all factual inform
   - `components/sections/WorkStudiesToggle.tsx` (line 31)
   - `app/about/page.tsx` (line 132)
   - `app/refleksi-akhir/page.tsx` (lines 39, 56, 250)
-- **Status:** `INCONSISTENT` (Topic description conflict)
-- **Notes:** `WorkStudiesToggle.tsx` line 33 mentions `"konfigurasi DHCP Server, dan Web Deployment berbasis Nginx"`, whereas the documented 3 PPL cycles actually cover Linux Server OS, SSH, Apache2, Nginx, PHP-FPM, Laravel, BIND9 DNS, and Git Deployment. No DHCP Server content exists in the 3 PPL cycles.
+- **Status:** `CONSISTENT` (Resolved: 2026-08-29)
+- **Previous Status:** `INCONSISTENT` (Topic description conflict)
+- **Notes:** `WorkStudiesToggle.tsx` line 33 previously mentioned `"konfigurasi DHCP Server"`, which was corrected to match the canonical 3 PPL cycles (`"Linux Server OS, konfigurasi DNS Server, dan Web Deployment berbasis Nginx"`). No DHCP Server content exists in the 3 PPL cycles.
 
 ### Vocational Teacher & Lab Administrator
 - **Canonical Value:** `SMKS Tunas Bangsa Pare` (Tahun 2025 — Sekarang)
@@ -211,7 +213,7 @@ This document serves as the **canonical source of truth** for all factual inform
 - **Pedagogical Foundations:**
   - Metacognition (Flavell, 1979) via pre-demo verification checklists.
   - Flow Theory (Csikszentmihalyi, 1990) during real-time `htop` server monitoring.
-  - Comprehensible Output Hypothesis (Swain, 1985; labeled in repository as Output-based Learning) via peer explanations and formal demonstration panels.
+  - Comprehensible Output Hypothesis (Swain, 1985; applied analogously to vocational technical communication) via peer explanations and formal demonstration panels.
 - **Key Successes:** Independent end-to-end server deployment demo before Guru Pamong and Dosen Pembimbing; architectural system diagram clarified component interactions; voluntary presentation model fostered student initiative.
 - **Key Constraints:** Context-switching friction in SSH key setup for GitHub (resolved by migrating to HTTPS + PAT); students forgetting Windows DNS adapter reconfiguration; verbal technical articulation gap despite technical completion.
 - **Contextual Adjustments:** Standardized pre-demo checklist; integrated early technical communication drills ("Technical Talks") starting from Cycle 1.

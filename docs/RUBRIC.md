@@ -32,7 +32,7 @@ This document maps all portfolio content against the evaluation rubrics of **UTS
 - **Evidence:**
   - *Siklus 1:* Zone of Proximal Development (Vygotsky, 1978), 5E Instructional Model in Assessment (Abell & Volkmann, 2006; secondary adopter of Bybee BSCS model), Differentiated Instruction (Tomlinson, 2000).
   - *Siklus 2:* Cognitive Load Theory (Sweller, 1988), Transfer of Learning (Perkins & Salomon, 1992), Mediated Learning Experience (Feuerstein).
-  - *Siklus 3:* Metacognition (Flavell, 1979), Flow Theory (Csikszentmihalyi, 1990), Comprehensible Output Hypothesis (Swain, 1985; labeled in repository as Output-based Learning).
+  - *Siklus 3:* Metacognition (Flavell, 1979), Flow Theory (Csikszentmihalyi, 1990), Comprehensible Output Hypothesis (Swain, 1985; applied analogously to vocational technical communication).
 - **Portfolio Location:** `/artefak` (per-cycle *Landasan Teori Pedagogis* section)
 - **Relevant Files:**
   - `app/artefak/page.tsx` (lines 31–47, 82–98, 135–151)
@@ -87,7 +87,7 @@ This document maps all portfolio content against the evaluation rubrics of **UTS
 - **Relevant Files:**
   - `app/refleksi/page.tsx`
 - **Status:** `COMPLETE`
-- **Gap:** Note the bachelor degree naming conflict on `app/refleksi/page.tsx` (line 170) marked as `INCONSISTENT` in `docs/CONTENT_SOURCE.md`.
+- **Gap:** None. The bachelor degree naming conflict on `app/refleksi/page.tsx` (line 170) has been resolved to `S1 Pendidikan Teknologi Informasi`.
 
 ---
 

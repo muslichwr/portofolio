@@ -167,7 +167,7 @@ export default function RefleksiPage() {
           {/* Content — editorial style */}
           <div className="space-y-6 text-base leading-relaxed text-zinc-400">
             <p>
-              Sebagai lulusan S1 Teknik Informatika yang punya minat di
+              Sebagai lulusan S1 Pendidikan Teknologi Informasi yang punya minat di
               software development, tujuan saya menjadi guru SMK sebenarnya
               sederhana: saya ingin membantu siswa belajar IT dengan cara yang
               lebih relevan dan tidak membosankan. Saya berpegang pada prinsip{" "}

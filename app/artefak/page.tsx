@@ -35,9 +35,9 @@ const artifacts = [
           "Prinsip ZPD diterapkan melalui scaffolding bertahap. Peserta didik memperoleh panduan awal berupa cheat-sheet perintah CLI, kemudian dukungan tersebut dikurangi secara perlahan agar mereka mulai membangun kemandirian. Peserta didik yang lebih cepat memahami materi diarahkan menjadi tutor sebaya sehingga proses belajar tidak hanya bergantung pada guru, tetapi juga berlangsung melalui interaksi antarpeserta didik.",
       },
       {
-        name: "Siklus 5E — Abell & Volkmann (2006)",
+        name: "Model 5E dalam Asesmen — Abell & Volkmann (2006)",
         description:
-          "Alur pembelajaran dirancang mengikuti tahapan Engagement, Exploration, Explanation, Elaboration, dan Evaluation. Pada tahap Engagement, guru mendemonstrasikan penggunaan VirtualBox dan alur kerja server secara interaktif untuk membangun rasa ingin tahu. Selanjutnya, peserta didik diberi kesempatan mengeksplorasi, menjelaskan temuan, mengembangkan hasil praktik, dan melakukan evaluasi terhadap proses yang telah dilakukan.",
+          "Alur pembelajaran menerapkan tahapan 5E (Engagement, Exploration, Explanation, Elaboration, Evaluation) dengan integrasi asesmen merujuk pada pendekatan Abell & Volkmann (2006). Pada tahap Engagement, guru mendemonstrasikan penggunaan VirtualBox dan alur kerja server secara interaktif untuk membangun rasa ingin tahu, dilanjutkan eksplorasi mandiri, penjelasan konsep, elaborasi konfigurasi, dan evaluasi hasil belajar peserta didik.",
       },
       {
         name: "Diferensiasi Pembelajaran — Tomlinson (2000)",
@@ -144,9 +144,9 @@ const artifacts = [
           "Aktivitas monitoring menggunakan htop menunjukkan keterlibatan belajar yang tinggi karena peserta didik dapat mengamati proses server secara real-time. Kondisi ini dimanfaatkan untuk memperkuat eksplorasi, sehingga peserta didik tidak hanya menjalankan perintah, tetapi juga memahami hubungan antara aktivitas sistem, penggunaan sumber daya, dan stabilitas layanan.",
       },
       {
-        name: "Output-based Learning — Swain (1985)",
+        name: "Comprehensible Output Hypothesis — Swain (1985)",
         description:
-          "Kemampuan komunikasi teknis dikembangkan melalui kegiatan peer explanation dan demo formal. Peserta didik terlebih dahulu menjelaskan arsitektur server kepada teman, kemudian mempresentasikan hasil akhir di hadapan penguji. Latihan output secara bertahap membantu peserta didik menyusun penjelasan yang lebih runtut dan meningkatkan kepercayaan diri.",
+          "Prinsip Output Hypothesis (Swain, 1985) diaplikasikan sebagai analogi dalam melatih komunikasi teknis kejuruan. Melalui kegiatan peer explanation dan demo formal, peserta didik didorong untuk memproduksi artikulasi teknis secara lisan, di mana proses menyusun penjelasan membantu memperjelas pemahaman arsitektur sistem mereka sendiri.",
       },
     ],
     strengths: [

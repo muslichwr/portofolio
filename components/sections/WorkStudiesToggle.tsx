@@ -30,7 +30,7 @@ const workEntries: readonly TimelineEntry[] = [
     role: "Vocational Teacher Intern",
     institution: "SMK Negeri 1 Surabaya",
     description:
-      "Melaksanakan 3 siklus praktik mengajar terbimbing. Fokus: Kurikulum Vokasi, konfigurasi DHCP Server, dan Web Deployment berbasis Nginx.",
+      "Melaksanakan 3 siklus praktik mengajar terbimbing. Fokus: Kurikulum Vokasi, Linux Server OS, konfigurasi DNS Server, dan Web Deployment berbasis Nginx.",
     icon: BookOpen,
     iconColor: "text-emerald-400",
   },
