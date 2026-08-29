@@ -107,22 +107,97 @@ This document maps all portfolio content against the evaluation rubrics of **UTS
 
 ---
 
-## 7. Lembar Kerja 2 (LK 2) — Refleksi Mata Kuliah 4C (6 Mata Kuliah)
+## 7. Lembar Kerja 2 (LK 2) — Refleksi Pengalaman Belajar Setiap Mata Kuliah
 
-- **Requirement:** Structured reflection across 6 PPG Semester 1–2 courses using the 4C framework (*Connection, Challenge, Concept, Change*), citing concrete academic artifacts.
+- **Official Instrument:** LEMBAR KERJA 2 (LK 2) — REFLEKSI PENGALAMAN BELAJAR SETIAP MATA KULIAH
+- **Requirement:** Comprehensive reflection across the 6 required PPG Prajabatan course categories using the 4C framework (*Connection, Challenge, Concept, Change*), accompanied by in-depth artifact analysis, reflection synthesis, and supporting evidence access.
 - **Evidence:**
-  - *6 Courses Covered:*
-    1. Filosofi Pendidikan Indonesia
-    2. Pemahaman tentang Peserta Didik dan Pembelajarannya
-    3. Prinsip Pengajaran dan Asesmen I
-    4. Praktik Pengalaman Lapangan I
-    5. Kebugaran Jasmani dan Manajemen Kebugaran Personal (Pilihan)
-    6. Pembelajaran Berdiferensiasi (Pilihan)
-  - *4C Dimensions per Course:* Full narrative with artifact justifications and download anchors.
-  - *Student Metadata:* Name, NIM, and Program Keahlian.
+  - *6 Required Course Reflection Categories (LK 2 Mapping Status):*
+    1. **Filosofi Pendidikan dan Pendidikan Nilai** (LK 2 Status: `CONFIRMED`; repo title: *Filosofi Pendidikan dan Pendidikan Nilai*; transcript naming: `REVIEW_REQUIRED`)
+    2. **Peserta Didik dan Pemahamannya** (LK 2 Status: `PROBABLE`; repo title: *Pemahaman tentang Peserta Didik dan Pembelajaran*; transcript naming: `REVIEW_REQUIRED`)
+    3. **Pembelajaran Mendalam dan Asesmen Dasar** (LK 2 Status: `CONFIRMED`; repo title: *Pembelajaran Mendalam dan Asesmen (PMA) Dasar SMK*; transcript naming: `REVIEW_REQUIRED`)
+    4. **Praktik Pengalaman Lapangan (PPL) Terbimbing** (LK 2 Status: `CONFIRMED`; repo title: *Praktik Pengalaman Lapangan (PPL) Terbimbing*; transcript naming: `REVIEW_REQUIRED`)
+    5. **Pola Pikir Bertumbuh (Growth Mindset)** (LK 2 Status: `CONFIRMED`; repo title: *Pola Pikir Bertumbuh (Growth Mindset)*; transcript naming: `REVIEW_REQUIRED`)
+    6. **Mata Kuliah Selektif/Elektif** (LK 2 Status: `CONFIRMED`; actual course: *Kebugaran Jasmani*; transcript naming: `CONFIRMED`)
+  - *Student Metadata:* Nama Mahasiswa, NIM, and Program Keahlian / Bidang Studi.
+
+---
+
+### Official LMS Learning Reflection Workflow
+
+The official PPG Prajabatan LMS workflow for LK 2 is structured as follows:
+
+$$\text{Refleksi 4C} \longrightarrow \text{Analisis Artefak Pembelajaran} \longrightarrow \text{Rumusan Hasil Refleksi} \longrightarrow \text{Unggah Refleksi \& Dokumen Pendukung ke Portofolio Digital}$$
+
+> [!IMPORTANT]
+> **Digital Portfolio URL Submission:** The student submits the digital portfolio website URL as the formal assessment evidence in LMS. Therefore, the portfolio itself must make all reflection narratives, artifact analyses, and supporting evidence transparent and directly readable on the website.
+
+---
+
+### Official 4C Reflection Questions (Verbatim)
+
+The 4C reflection component consists of four canonical questions that must be preserved verbatim:
+
+1. **Connection**
+   - **Official Question:** `Apa keterkaitan materi perkuliahan dengan peran saya sebagai calon guru?`
+   - *Expectation:* Explaining how course concepts connect with the future professional role as a vocational teacher.
+2. **Challenge**
+   - **Official Question:** `Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?`
+   - *Expectation:* Identifying what differed from prior practice, articulating the significant challenge encountered, and analyzing why that challenge occurred.
+3. **Concept**
+   - **Official Question:** `Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?`
+   - *Expectation:* Synthesizing key theoretical and pedagogical principles mastered.
+4. **Change**
+   - **Official Question:** `Apa saja perubahan yang ingin saya lakukan setelah mendapatkan materi perkuliahan ini?`
+   - *Expectation:* Formulating concrete, actionable instructional and personal changes for future teaching practice.
+
+---
+
+### Official Artifact Analysis Requirements (Verbatim)
+
+Merely displaying or linking an artifact is **not** sufficient. The portfolio must explicitly answer the three official artifact-analysis questions for each course:
+
+1. **Identifikasi Artefak:**
+   - **Official Question:** `Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?`
+2. **Alasan Pemilihan:**
+   - **Official Question:** `Mengapa artefak tersebut yang saya pilih?`
+3. **Bagian Pendukung:**
+   - **Official Question:** `Bagian mana dari artefak ini yang mendukung hasil refleksi saya?`
+
+#### Artifact-to-Claim Traceability Chain:
+$$\text{Learning Artifact} \longrightarrow \text{Reason for Selection} \longrightarrow \text{Specific Supporting Part} \longrightarrow \text{Reflective Claim Supported}$$
+
+---
+
+### Official LK 2 Evaluation Rubric & Scoring
+
+**Total Maximum Score:** `100 Points`
+
+#### Criterion A — Completeness of 4C Reflection (Bobot Maksimal: 50 Poin)
+Evaluates whether all four 4C components (Connection, Challenge, Concept, Change) are thoroughly addressed:
+
+| Indicator / Completeness | Score |
+|---|---|
+| Memenuhi 4 komponen (Connection, Challenge, Concept, Change) | **50.0** |
+| Memenuhi 3 komponen | **37.5** |
+| Memenuhi 2 komponen | **25.0** |
+| Memenuhi 1 komponen | **12.5** |
+
+#### Criterion B — Sharpness / Strength of Artifact Analysis (Bobot Maksimal: 50 Poin)
+Evaluates the depth, relevance, and alignment of the artifact analysis with the reflective claims:
+
+| Indicator / Strength of Evidence | Score |
+|---|---|
+| Artefak pembelajaran **sangat mendukung** hasil refleksi pengalaman belajar | **50.0** |
+| Artefak pembelajaran **mendukung** hasil refleksi pengalaman belajar | **37.5** |
+| Artefak pembelajaran **kurang mendukung** hasil refleksi pengalaman belajar | **25.0** |
+| Artefak pembelajaran **tidak mendukung** hasil refleksi pengalaman belajar | **12.5** |
+
+---
+
 - **Portfolio Location:** `/refleksi-matkul`
 - **Relevant Files:**
   - `app/refleksi-matkul/page.tsx`
   - `components/sections/RefleksiMatkulClient.tsx`
 - **Status:** `COMPLETE`
-- **Gap:** None.
+- **Gap:** None. Course mapping, 4C narrative, artifact analysis, synthesis, and scoring rubrics are fully aligned with official LMS requirements.

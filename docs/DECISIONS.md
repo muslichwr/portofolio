@@ -48,6 +48,18 @@ This document records architectural, technical, and editorial decisions that sha
 - **Alternatives Considered:** Keeping rules inside `.agents/rules/portoflio.md` only. Rejected due to token bloat, rule overlapping, and lack of modularity.
 - **Consequences:** All AI agents and developers must consult `docs/CONTENT_SOURCE.md` before making factual claims and follow `docs/ACADEMIC_GUIDELINES.md` before introducing theoretical citations.
 
+### 2026-08-29 — DEC-006: Dual-Format Evidence Strategy for Refleksi Mata Kuliah (LK 2)
+- **Status:** `ACCEPTED`
+- **Context:** The official PPG Prajabatan LMS evaluation requires students to submit a public digital portfolio website URL, while the formal course assessment instrument remains the completed Lembar Kerja 2 (LK 2) worksheet document.
+- **Decision:** Implement a dual-format evidence presentation strategy for the Refleksi Mata Kuliah section (`/refleksi-matkul`):
+  1. *Primary presentation:* Fully readable, in-depth 4C reflection narrative, artifact analysis, and reflection synthesis rendered directly on the digital portfolio.
+  2. *Formal supporting evidence:* Downloadable formal LK 2 worksheet PDF for each course, alongside links to authentic learning artifacts.
+  - The PDF does **not** replace the website reflection; the website does **not** replace the formal LK 2 document.
+- **Evidence Architecture:**
+  $$\text{Course} \longrightarrow \text{Connection} \longrightarrow \text{Challenge} \longrightarrow \text{Concept} \longrightarrow \text{Change} \longrightarrow \text{Artifact Analysis} \longrightarrow \text{Reflection Synthesis} \longrightarrow \text{Supporting Documents}\begin{cases}\text{LK 2 PDF}\\\text{Learning Artifact}\end{cases}$$
+- **Reason:** Ensures evaluators assessing via the digital portfolio website have immediate, transparent access to all reflective claims, while preserving formal institutional compliance through downloadable LK 2 PDF instruments.
+- **Consequences:** Evaluators can assess reflections directly on-screen without requiring external downloads, while official verification can still inspect the formal LK 2 PDFs.
+
 ---
 
 ## Decision Record Template (for Future Decisions)

@@ -264,3 +264,32 @@ Conversion Formula: $\text{Skor Konversi} = \frac{\text{Skor Mentah}}{80} \times
 | LK 4 Refleksi Siklus 3 | `https://drive.google.com/file/d/1INyogUmrNagcepkGDABciYpKG3u2tiKS/view?usp=drive_link` | `/artefak` | `CONSISTENT` |
 | Lampiran 7 — Perangkat Pembelajaran Siklus 3 | `https://drive.google.com/file/d/14yuX0ecREEf5mC8sHM_IWMv-K99R4rOp/view?usp=drive_link` | `/artefak`, `/penilaian` | `CONSISTENT` |
 | Lampiran 8 — Praktik Mengajar Siklus 3 | `https://drive.google.com/file/d/1HD2TaEYL3mCzviWq80ls24cD554brqR4/view?usp=drive_link` | `/artefak`, `/penilaian` | `CONSISTENT` |
+
+---
+
+## 9. Lembar Kerja 2 (LK 2) — Course Mapping & Academic Facts
+
+The official LMS guidelines and LK 2 assessment instrument define 6 required course reflection categories for PPG Prajabatan. To maintain academic rigor without imposing administrative blockers on portfolio evaluation, the documentation tracks two separate dimensions:
+1. **LK 2 Category Mapping Status:** Whether the portfolio satisfies the pedagogical and reflective requirements of the official LK 2 instrument.
+2. **Formal Transcript Course Name Status:** Whether the formal administrative course title on university transcripts has been officially verified.
+
+### Required Course Reflection Categories & Dual-Status Mapping
+
+| No | Official LK 2 Category | Rendered Course Title (Repo Evidence) | LK 2 Mapping Status | Transcript Naming Status | Audit Notes |
+|---|---|---|---|---|---|
+| 1 | **Filosofi Pendidikan dan Pendidikan Nilai** | *Filosofi Pendidikan dan Pendidikan Nilai* | `CONFIRMED` | `REVIEW_REQUIRED` | Complete 4C reflection & artifacts (Akt 1.5, 1.6, 3.E) verbatim matching LK 2 category. Formal transcript naming (*...Pendidikan Indonesia* vs *...Pendidikan Nilai*) remains under review. |
+| 2 | **Peserta Didik dan Pemahamannya** | *Pemahaman tentang Peserta Didik dan Pembelajaran* | `PROBABLE` | `REVIEW_REQUIRED` | Complete 4C reflection & artifacts (LK 1.E, 2.D, 3.E, 4A/4B profiling). Exact transcript title (*...Pembelajaran* vs *...Pembelajarannya*) remains under review. |
+| 3 | **Pembelajaran Mendalam dan Asesmen Dasar** | *Pembelajaran Mendalam dan Asesmen (PMA) Dasar SMK* | `CONFIRMED` | `REVIEW_REQUIRED` | Complete 4C reflection & artifacts (LK 1.C, 1.D, 2.E, 3.D, 3.E, 4.A) on Deep Learning & UbD. Obsolete inference to *Prinsip Pengajaran dan Asesmen I* is removed. |
+| 4 | **Praktik Pengalaman Lapangan (PPL) Terbimbing** | *Praktik Pengalaman Lapangan (PPL) Terbimbing* | `CONFIRMED` | `REVIEW_REQUIRED` | Empirical teaching practicum at SMKN 1 Surabaya (Kelas XI RPL), LK 3, LK 4 Siklus 1–3, Lampiran 7 & 8 scores. Formal transcript course code/title (e.g. *PPL I*) remains under review. |
+| 5 | **Pola Pikir Bertumbuh (Growth Mindset)** | *Pola Pikir Bertumbuh (Growth Mindset)* | `CONFIRMED` | `REVIEW_REQUIRED` | Complete 4C reflection & artifacts (LK 2.2, 3.2, 3.3) on Carol Dweck's Growth Mindset. Erroneous equivalence to *Pembelajaran Berdiferensiasi* is completely removed. |
+| 6 | **Mata Kuliah Selektif/Elektif** | *Pengembangan Kebugaran Jasmani* | `CONFIRMED` | `CONFIRMED` | Explicitly confirmed by portfolio owner as the actual elective course taken (*Kebugaran Jasmani*). Complete diagnostics and program proposals in repo (LK 1.D, 1.E, 2.D, 2.E). |
+
+### Elective Course Verification
+- **Official LK 2 Category:** `Mata Kuliah Selektif/Elektif`
+- **Actual Course Taken:** `Kebugaran Jasmani` (specifically, *Pengembangan Kebugaran Jasmani* / *Kebugaran Jasmani dan Manajemen Kebugaran Personal*)
+- **LK 2 Mapping Status:** `CONFIRMED`
+- **Formal Transcript Status:** `CONFIRMED`
+- **Future UI Labeling Recommendation (for future remediation pass):**
+  - Primary Course Title: `Kebugaran Jasmani`
+  - Context / Category Badge: `Mata Kuliah Selektif/Elektif`
+  - *Note:* Do not rename application source code during documentation passes.

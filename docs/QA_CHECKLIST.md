@@ -34,7 +34,25 @@ This checklist defines the criteria required before any branch merge, release, o
 
 ---
 
-## 3. UI, Responsiveness, & Visual Quality
+## 3. Lembar Kerja 2 (LK 2) — Refleksi Mata Kuliah Quality Checks
+
+- [ ] **All Six Courses Represented:** All six required course reflection categories are present and mapped.
+- [ ] **Elective Course Traceability:** *Kebugaran Jasmani* is traceable as the official Selective/Elective course (*Mata Kuliah Selektif/Elektif*).
+- [ ] **Connection Component:** Every course contains a substantive *Connection* reflection answering the official prompt (*Apa keterkaitan materi perkuliahan dengan peran saya sebagai calon guru?*).
+- [ ] **Challenge Component:** Every course contains a substantive *Challenge* reflection answering the official prompt (*Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?*), identifying the significant challenge and explaining why it occurred.
+- [ ] **Concept Component:** Every course contains a substantive *Concept* reflection answering the official prompt (*Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?*).
+- [ ] **Change Component:** Every course contains a substantive *Change* reflection answering the official prompt (*Apa saja perubahan yang ingin saya lakukan setelah mendapatkan materi perkuliahan ini?*).
+- [ ] **Artifact Identification:** Every selected learning artifact is explicitly identified with its formal code/title.
+- [ ] **Reason for Selection:** The pedagogical and experiential rationale for selecting each artifact is explicitly articulated.
+- [ ] **Specific Supporting Part:** Specific excerpts, sections, or outputs within each artifact are directly connected to the reflective claims.
+- [ ] **Artifact Analysis Rigor:** Document download links are not treated as substitutes for in-depth artifact analysis ($\text{Artifact} \to \text{Reason} \to \text{Supporting Part} \to \text{Reflective Claim}$).
+- [ ] **Reflection Synthesis:** Comprehensive overall conclusion / synthesis is present for every course.
+- [ ] **Supporting Artifact Access:** Direct access to authentic supporting learning artifacts is functional.
+- [ ] **Formal LK 2 PDF Document:** Completed official LK 2 PDF document is attached/available when finalized.
+
+---
+
+## 4. UI, Responsiveness, & Visual Quality
 
 - [ ] **Desktop Layout (>= 1024px):** Floating pill navbar centered, hero typography balanced, 2-column and 3-column grids aligned.
 - [ ] **Tablet Layout (768px - 1023px):** Grids adapt smoothly; text remains legible without awkward line wraps.
@@ -45,7 +63,7 @@ This checklist defines the criteria required before any branch merge, release, o
 
 ---
 
-## 4. Accessibility (A11y)
+## 5. Accessibility (A11y)
 
 - [ ] **Semantic HTML:** Proper landmark elements (`<header role="banner">`, `<main>`, `<footer role="contentinfo">`, `<nav aria-label="...">`, `<article>`, `<section>`).
 - [ ] **Heading Order:** Single `<h1>` per page without skipped heading levels.
@@ -56,7 +74,7 @@ This checklist defines the criteria required before any branch merge, release, o
 
 ---
 
-## 5. Navigation & Link Integrity
+## 6. Navigation & Link Integrity
 
 - [ ] **All Routes Reachable:**
   - [x] `/` (Homepage)
@@ -72,7 +90,7 @@ This checklist defines the criteria required before any branch merge, release, o
 
 ---
 
-## 6. Engineering, Build Health, & Workspace Verification
+## 7. Engineering, Build Health, & Workspace Verification
 
 Execute and verify the following commands from the project root:
 

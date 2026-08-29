@@ -17,7 +17,7 @@ This repository houses the personal, academic, and professional E-Portfolio of *
 - **Key Deliverables Represented:**
   - **UTS PPL Terbimbing (E-Portfolio 1):** Detailed teaching cycle artifact analysis, pedagogical theory integration, failure factor identification, constraints, contextual adjustments, and Lampiran 7 & 8 assessment data.
   - **Refleksi Akhir (E-Portfolio 2):** Comprehensive end-of-practicum reflection, mentoring feedback from Guru Pamong (GP), core teacher values, and teaching philosophy (*Logic First, Syntax Later*).
-  - **Refleksi Mata Kuliah (LK 2):** In-depth reflection across 6 core PPG courses using the 4C framework (*Connection, Challenge, Concept, Change*).
+  - **Refleksi Mata Kuliah (LK 2):** In-depth reflection across the 6 required PPG course categories (including core and selective/elective courses) using the 4C framework (*Connection, Challenge, Concept, Change*).
 
 ---
 
