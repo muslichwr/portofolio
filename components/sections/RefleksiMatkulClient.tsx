@@ -62,11 +62,18 @@ type FourCKey = keyof typeof fourCColors;
 /* ============================================================================
    TYPES
    ============================================================================ */
+interface ReflectionSubItem {
+  readonly label: string;
+  readonly question: string;
+  readonly content: string;
+}
+
 interface ReflectionSection {
   readonly fourCKey: FourCKey | "artefak" | "kesimpulan";
   readonly title: string;
   readonly question?: string;
-  readonly content: string;
+  readonly content?: string;
+  readonly subItems?: readonly ReflectionSubItem[];
 }
 
 interface CourseArtifact {
@@ -78,6 +85,7 @@ interface CourseData {
   readonly tabLabel: string;
   readonly title: string;
   readonly pertemuan: string;
+  readonly categoryBadge?: string;
   readonly sections: readonly ReflectionSection[];
   readonly artifacts: readonly CourseArtifact[];
   /** Optional link to another page (e.g. /artefak for Course 4) */
@@ -132,7 +140,7 @@ const rubricItems = [
    2. Challenge
    3. Concept
    4. Change
-   5. Analisis Artefak Pendukung
+   5. Analisis Artefak Pendukung (3 Sub-Item Terstruktur)
    6. Kesimpulan Mata Kuliah
    ============================================================================ */
 const courses: readonly CourseData[] = [
@@ -176,8 +184,26 @@ const courses: readonly CourseData[] = [
         fourCKey: "artefak",
         title: "Analisis Artefak Pendukung",
         question: "Analisis artefak pembelajaran sebagai bukti dukung hasil refleksi pengalaman belajar.",
-        content:
-          "1. Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?\nArtefak yang saya pilih adalah Aktivitas 1.6 Jurnal Refleksi, Aktivitas 1.5 Analisis dan Modifikasi Modul Ajar/RPP, serta 3.E Refleksi dan Tindak Lanjut.\n\n2. Mengapa artefak tersebut yang saya pilih?\nKetiga artefak tersebut menunjukkan proses pemahaman saya mulai dari refleksi terhadap pemikiran Ki Hadjar Dewantara, penerapannya dalam rancangan pembelajaran, hingga pemahaman bahwa pendidikan vokasi juga perlu mengembangkan nilai dan karakter siswa.\n\n3. Bagian mana dari artefak ini yang mendukung hasil refleksi saya?\nJurnal Refleksi mendukung pemahaman tentang menuntun serta kodrat alam dan zaman. Analisis Modul Ajar menunjukkan penerapannya melalui pembelajaran kontekstual dan pendampingan sesuai kemampuan siswa. Sementara itu, Refleksi dan Tindak Lanjut memperkuat pemahaman bahwa guru vokasi juga bertanggung jawab menanamkan nilai, etika, dan kerja sama dalam pembelajaran.",
+        subItems: [
+          {
+            label: "Artefak yang Dipilih",
+            question: "Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?",
+            content:
+              "Artefak yang saya pilih adalah Aktivitas 1.6 Jurnal Refleksi, Aktivitas 1.5 Analisis dan Modifikasi Modul Ajar/RPP, serta 3.E Refleksi dan Tindak Lanjut.",
+          },
+          {
+            label: "Alasan Pemilihan",
+            question: "Mengapa artefak tersebut yang saya pilih?",
+            content:
+              "Ketiga artefak tersebut menunjukkan proses pemahaman saya mulai dari refleksi terhadap pemikiran Ki Hadjar Dewantara, penerapannya dalam rancangan pembelajaran, hingga pemahaman bahwa pendidikan vokasi juga perlu mengembangkan nilai dan karakter siswa.",
+          },
+          {
+            label: "Bagian yang Mendukung Refleksi",
+            question: "Bagian mana dari artefak ini yang mendukung hasil refleksi saya?",
+            content:
+              "Jurnal Refleksi mendukung pemahaman tentang menuntun serta kodrat alam dan zaman. Analisis Modul Ajar menunjukkan penerapannya melalui pembelajaran kontekstual dan pendampingan sesuai kemampuan siswa. Sementara itu, Refleksi dan Tindak Lanjut memperkuat pemahaman bahwa guru vokasi juga bertanggung jawab menanamkan nilai, etika, dan kerja sama dalam pembelajaran.",
+          },
+        ],
       },
       {
         fourCKey: "kesimpulan",
@@ -188,9 +214,9 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "Aktivitas 1.6 · Jurnal Refleksi", href: "#" },
-      { label: "Aktivitas 1.5 · Analisis & Modifikasi Modul Ajar/RPP", href: "#" },
-      { label: "3.E · Refleksi dan Tindak Lanjut", href: "#" },
+      { label: "Aktivitas 1.6 · Jurnal Refleksi", href: "" },
+      { label: "Aktivitas 1.5 · Analisis & Modifikasi Modul Ajar/RPP", href: "" },
+      { label: "3.E · Refleksi dan Tindak Lanjut", href: "" },
     ],
   },
 
@@ -214,14 +240,14 @@ const courses: readonly CourseData[] = [
         title: "Challenge",
         question: "2. Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?",
         content:
-          "Tantangan utamanya adalah menggeser kebiasaan dari model instruksi langsung (direct instruction) yang seragam menuju pembelajaran yang berdiferensiasi. Sebelumnya, saya cenderung menyamaratakan target praktik coding untuk semua siswa. Kini saya menyadari bahwa kepasifan siswa seringkali muncul karena kecemasan (membutuhkan pendekatan Humanisme), siswa yang gaduh butuh aktivitas kinestetik, dan siswa pemula sangat membutuhkan pendampingan bertahap (scaffolding) agar tidak mudah frustrasi saat menghadapi error pada kode mereka.",
+          "Tantangan utamanya adalah menggeser kebiasaan dari model instruksi langsung (direct instruction) yang seragam menuju pembelajaran yang berdiferensiasi. Sebelumnya, saya cenderung menyamaratakan target praktik coding untuk semua siswa. Kini saya menyadari bahwa kepasifan siswa dapat muncul karena berbagai kondisi. Siswa yang cemas saat menghadapi error memerlukan dukungan yang membuat mereka merasa aman, sedangkan siswa yang kurang terlibat perlu diberi aktivitas praktik yang lebih aktif dan kesempatan berpartisipasi. Siswa pemula juga membutuhkan pendampingan bertahap (scaffolding) agar tidak mudah frustrasi saat menghadapi error pada kode mereka.",
       },
       {
         fourCKey: "concept",
         title: "Concept",
         question: "3. Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?",
         content:
-          "Konsep utama yang paling relevan bagi saya meliputi Teori Perkembangan, Teori Belajar (terutama Konstruktivisme, Humanisme, dan Vygotsky), Pembelajaran Sosial Emosional (CASEL), serta penciptaan iklim belajar yang aman (Mastery Climate). Sebagai muaranya, saya belajar betapa pentingnya Asesmen Diagnostik untuk memetakan tingkat kesiapan dan profil belajar siswa sebelum merancang modul ajar yang berdiferensiasi (TaRL).",
+          "Konsep utama yang paling relevan bagi saya meliputi Teori Perkembangan, Teori Belajar (terutama Konstruktivisme, Humanisme, dan Vygotsky), Pembelajaran Sosial Emosional (CASEL), serta penciptaan iklim belajar yang aman (Mastery Climate). Sebagai muaranya, saya belajar betapa pentingnya Asesmen Diagnostik untuk memetakan tingkat kesiapan, pengetahuan awal, dan kebutuhan dukungan siswa sebelum merancang modul ajar yang berdiferensiasi (TaRL).",
       },
       {
         fourCKey: "change",
@@ -234,22 +260,40 @@ const courses: readonly CourseData[] = [
         fourCKey: "artefak",
         title: "Analisis Artefak Pendukung",
         question: "Analisis artefak pembelajaran sebagai bukti dukung hasil refleksi pengalaman belajar.",
-        content:
-          "1. Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?\nArtefak yang saya pilih sebagai bukti dukung adalah LK 1.E (Refleksi Teori Perkembangan), LK 2.D dan 2.E (Sintesis & Rencana Strategi Pembelajaran Kasus Pak Anto), LK 3.E (Refleksi Teori Belajar Bu Sinta), serta LK 4A dan 4B (Asesmen Awal, Profiling 34 Siswa Kelas X RPL, dan Rekomendasi Desain Pembelajaran).\n\n2. Mengapa artefak tersebut yang saya pilih?\nRangkaian artefak ini dipilih karena mampu merekam jejak perkembangan pemahaman saya secara utuh. Dimulai dari analisis teoritis melalui studi kasus (Pak Anto dan Bu Sinta), hingga kemampuan mengaplikasikannya ke dalam praktik nyata melalui profiling kondisi kelas sesungguhnya dan perancangan Project Based Learning (PjBL) pembuatan website profil digital.\n\n3. Bagian mana dari artefak ini yang mendukung hasil refleksi saya?\nLK 1.E dan 3.E menjadi bukti pemahaman saya tentang pentingnya bimbingan bertahap (scaffolding) dan ruang aman psikologis. LK 2.D merinci analisis penyelesaian masalah menggunakan pendekatan sosial-emosional (PSE). Bagian paling krusial ada pada LK 4A dan 4B, di mana saya memetakan 4 kelompok kesiapan belajar siswa (dari Sangat Siap hingga Perlu Pendampingan) dan menyusun strategi diferensiasi konten, proses, serta produk pada praktik pemrograman web.",
+        subItems: [
+          {
+            label: "Artefak yang Dipilih",
+            question: "Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?",
+            content:
+              "Artefak yang saya pilih sebagai bukti dukung adalah LK 1.E (Refleksi Teori Perkembangan), LK 2.D dan 2.E (Sintesis & Rencana Strategi Pembelajaran Kasus Pak Anto), LK 3.E (Refleksi Teori Belajar Bu Sinta), serta LK 4A dan 4B (Asesmen Awal, Profiling 34 Siswa Kelas X RPL, dan Rekomendasi Desain Pembelajaran).",
+          },
+          {
+            label: "Alasan Pemilihan",
+            question: "Mengapa artefak tersebut yang saya pilih?",
+            content:
+              "Rangkaian artefak ini dipilih karena mampu merekam jejak perkembangan pemahaman saya secara utuh. Dimulai dari analisis teoritis melalui studi kasus (Pak Anto dan Bu Sinta), hingga kemampuan mengaplikasikannya ke dalam praktik nyata melalui profiling kondisi kelas sesungguhnya dan perancangan Project Based Learning (PjBL) pembuatan website profil digital.",
+          },
+          {
+            label: "Bagian yang Mendukung Refleksi",
+            question: "Bagian mana dari artefak ini yang mendukung hasil refleksi saya?",
+            content:
+              "LK 1.E dan 3.E menjadi bukti pemahaman saya tentang pentingnya bimbingan bertahap (scaffolding) dan ruang aman psikologis. LK 2.D merinci analisis penyelesaian masalah menggunakan pendekatan sosial-emosional (PSE). Bagian paling krusial ada pada LK 4A dan 4B, di mana saya memetakan 4 kelompok kesiapan belajar siswa (dari Sangat Siap hingga Perlu Pendampingan) dan menyusun strategi diferensiasi konten, proses, serta produk pada praktik pemrograman web.",
+          },
+        ],
       },
       {
         fourCKey: "kesimpulan",
         title: "Kesimpulan Mata Kuliah",
         question: "Sintesis menyeluruh hasil refleksi pengalaman belajar mata kuliah.",
         content:
-          "Mata kuliah Pemahaman tentang Peserta Didik dan Pembelajaran memberikan wawasan baru bagi saya bahwa perancangan pembelajaran yang efektif harus selalu berawal dari pengenalan yang mendalam terhadap kondisi pesertanya. Melalui pembelajaran ini, saya menyadari bahwa kesulitan siswa dalam merangkai baris kode sering kali bukan karena mereka tidak mampu, melainkan karena strategi mengajar yang belum mengakomodasi tahapan perkembangan dan profil belajar mereka. Ke depan, berbekal keterampilan asesmen dan strategi diferensiasi yang telah saya susun (seperti pada LK 4), saya berkomitmen untuk menciptakan kelas Pemrograman Web yang inklusif, adaptif, dan memberikan ruang aman bagi setiap siswa untuk berlatih menjadi pemecah masalah yang tangguh.",
+          "Mata kuliah Pemahaman tentang Peserta Didik dan Pembelajaran memberikan wawasan baru bagi saya bahwa perancangan pembelajaran yang efektif harus selalu berawal dari pengenalan yang mendalam terhadap kondisi pesertanya. Melalui pembelajaran ini, saya menyadari bahwa kesulitan siswa dalam merangkai baris kode sering kali bukan karena mereka tidak mampu, melainkan karena strategi mengajar yang belum mengakomodasi tahapan perkembangan, kesiapan belajar, dan kebutuhan dukungan mereka. Ke depan, berbekal keterampilan asesmen dan strategi diferensiasi yang telah saya susun (seperti pada LK 4), saya berkomitmen untuk menciptakan kelas Pemrograman Web yang inklusif, adaptif, dan memberikan ruang aman bagi setiap siswa untuk berlatih menjadi pemecah masalah yang tangguh.",
       },
     ],
     artifacts: [
-      { label: "LK 1.E · Refleksi Teori Perkembangan", href: "#" },
-      { label: "LK 2.D & 2.E · Sintesis Kasus Pak Anto", href: "#" },
-      { label: "LK 3.E · Refleksi Teori Belajar Bu Sinta", href: "#" },
-      { label: "LK 4A & 4B · Asesmen Awal & Profiling 34 Siswa X RPL", href: "#" },
+      { label: "LK 1.E · Refleksi Teori Perkembangan", href: "" },
+      { label: "LK 2.D & 2.E · Sintesis Kasus Pak Anto", href: "" },
+      { label: "LK 3.E · Refleksi Teori Belajar Bu Sinta", href: "" },
+      { label: "LK 4A & 4B · Asesmen Awal & Profiling 34 Siswa X RPL", href: "" },
     ],
   },
 
@@ -293,8 +337,26 @@ const courses: readonly CourseData[] = [
         fourCKey: "artefak",
         title: "Analisis Artefak Pendukung",
         question: "Analisis artefak pembelajaran sebagai bukti dukung hasil refleksi pengalaman belajar.",
-        content:
-          "1. Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?\nArtefak yang menjadi bukti pemahaman saya meliputi LK 1.C dan 1.D (Analisis Kasus Kesiapan Kerja), LK 2.E (Sintesis Keselarasan Tujuan, Aktivitas, dan Asesmen), LK 3.D (Template Perencanaan Pembelajaran UbD), serta LK 3.E dan 4.A (Refleksi dan Rencana Tindak Lanjut Perancangan Pembelajaran).\n\n2. Mengapa artefak tersebut yang saya pilih?\nRangkaian artefak tersebut saya pilih karena merepresentasikan alur berpikir saya secara kronologis. Dimulai dari mengkritisi praktik mengajar konvensional yang mematikan nalar (LK 1), menyintesis solusi melalui kerangka UbD (LK 2), hingga akhirnya saya mampu merancang sebuah modul ajar nyata berbasis unjuk kerja (Deployment Aplikasi Web Laravel menggunakan Nginx) yang sangat kontekstual dengan kompetensi PPLG (LK 3 dan 4).\n\n3. Bagian mana dari artefak ini yang mendukung hasil refleksi saya?\nLK 1.D menunjukkan analisis saya bahwa kompetensi lulusan SMK gagal terbentuk jika ruang praktik dihilangkan. LK 2.E memuat refleksi saya mengenai tantangan menggeser pedagogi ke heutagogi (pembelajaran mandiri). Bukti terkuat ada pada LK 3.D dan 3.E, di mana saya berhasil merancang instrumen asesmen autentik (rubrik unjuk kerja deployment) yang tidak hanya menilai produk web yang berhasil diakses (live), tetapi juga menilai ketaatan pada SOP (security file .env) dan kemampuan siswa membaca error log saat melakukan troubleshooting.",
+        subItems: [
+          {
+            label: "Artefak yang Dipilih",
+            question: "Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?",
+            content:
+              "Artefak yang menjadi bukti pemahaman saya meliputi LK 1.C dan 1.D (Analisis Kasus Kesiapan Kerja), LK 2.D (Sintesis Keselarasan Tujuan, Aktivitas, dan Asesmen), LK 2.E (Refleksi dan Tindak Lanjut), LK 3.D (Template Perencanaan Pembelajaran UbD), serta LK 3.E dan 4.A (Refleksi dan Rencana Tindak Lanjut Perancangan Pembelajaran).",
+          },
+          {
+            label: "Alasan Pemilihan",
+            question: "Mengapa artefak tersebut yang saya pilih?",
+            content:
+              "Rangkaian artefak tersebut saya pilih karena merepresentasikan alur berpikir saya secara kronologis. Dimulai dari mengkritisi praktik mengajar konvensional yang mematikan nalar (LK 1), menyintesis solusi melalui kerangka UbD (LK 2), hingga akhirnya saya mampu merancang sebuah modul ajar nyata berbasis unjuk kerja (Deployment Aplikasi Web Laravel menggunakan Nginx) yang sangat kontekstual dengan kompetensi PPLG (LK 3 dan 4).",
+          },
+          {
+            label: "Bagian yang Mendukung Refleksi",
+            question: "Bagian mana dari artefak ini yang mendukung hasil refleksi saya?",
+            content:
+              "LK 1.D menunjukkan analisis saya bahwa kompetensi lulusan SMK gagal terbentuk jika ruang praktik dihilangkan. LK 2.D menunjukkan proses penyelarasan tujuan, aktivitas, dan asesmen, sedangkan LK 2.E memuat refleksi serta rencana tindak lanjut terhadap rancangan pembelajaran (termasuk tantangan menggeser pedagogi ke heutagogi). Bukti terkuat ada pada LK 3.D dan 3.E, di mana saya berhasil merancang instrumen asesmen autentik (rubrik unjuk kerja deployment) yang tidak hanya menilai produk web yang berhasil diakses (live), tetapi juga menilai ketaatan pada SOP (security file .env) dan kemampuan siswa membaca error log saat melakukan troubleshooting.",
+          },
+        ],
       },
       {
         fourCKey: "kesimpulan",
@@ -305,10 +367,11 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 1.C & 1.D · Analisis Kasus Kesiapan Kerja", href: "#" },
-      { label: "LK 2.E · Sintesis Keselarasan Tujuan, Aktivitas & Asesmen", href: "#" },
-      { label: "LK 3.D · Template Perencanaan Pembelajaran UbD", href: "#" },
-      { label: "LK 3.E & 4.A · Refleksi & RTL Perancangan Pembelajaran", href: "#" },
+      { label: "LK 1.C & 1.D · Analisis Kasus Kesiapan Kerja", href: "" },
+      { label: "LK 2.D · Sintesis Keselarasan Tujuan, Aktivitas & Asesmen", href: "" },
+      { label: "LK 2.E · Refleksi dan Tindak Lanjut", href: "" },
+      { label: "LK 3.D · Template Perencanaan Pembelajaran UbD", href: "" },
+      { label: "LK 3.E & 4.A · Refleksi & RTL Perancangan Pembelajaran", href: "" },
     ],
   },
 
@@ -352,8 +415,26 @@ const courses: readonly CourseData[] = [
         fourCKey: "artefak",
         title: "Analisis Artefak Pendukung",
         question: "Analisis artefak pembelajaran sebagai bukti dukung hasil refleksi pengalaman belajar.",
-        content:
-          "1. Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?\nArtefak utama yang saya gunakan adalah LK 3 Refleksi Praktik Asistensi, LK 4 Refleksi Praktik Pembelajaran Terbimbing Siklus 1–3, serta Lampiran 7 dan 8 Penilaian Guru Pamong Siklus 1–3.\n\n2. Mengapa artefak tersebut yang saya pilih?\nArtefak tersebut menunjukkan proses PPL secara bertahap, mulai dari keterlibatan dalam pembelajaran, menemukan kendala, melakukan refleksi, sampai memperbaiki praktik pada siklus berikutnya. LK 3 menunjukkan keberhasilan sekaligus kendala saat praktik deployment. Sementara itu, refleksi tiap siklus memperlihatkan perkembangan strategi pembelajaran dan kemandirian siswa.\n\n3. Bagian mana dari artefak ini yang mendukung hasil refleksi saya?\nPada Siklus 1, siswa masih banyak mengalami kesulitan pada CLI dan proses troubleshooting. Pada Siklus 3, siswa mulai mampu membaca log error dan memperbaiki kesalahan sendiri serta memahami alur kerja yang lebih dekat dengan dunia industri. Lampiran 7 dan 8 menjadi bukti tambahan berupa penilaian Guru Pamong terhadap perangkat dan pelaksanaan pembelajaran pada setiap siklus.",
+        subItems: [
+          {
+            label: "Artefak yang Dipilih",
+            question: "Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?",
+            content:
+              "Artefak utama yang saya gunakan adalah LK 3 Refleksi Praktik Asistensi, LK 4 Refleksi Praktik Pembelajaran Terbimbing Siklus 1–3, serta Lampiran 7 dan 8 Penilaian Guru Pamong Siklus 1–3.",
+          },
+          {
+            label: "Alasan Pemilihan",
+            question: "Mengapa artefak tersebut yang saya pilih?",
+            content:
+              "Artefak tersebut menunjukkan proses PPL secara bertahap, mulai dari keterlibatan dalam pembelajaran, menemukan kendala, melakukan refleksi, sampai memperbaiki praktik pada siklus berikutnya. LK 3 menunjukkan keberhasilan sekaligus kendala saat praktik deployment. Sementara itu, refleksi tiap siklus memperlihatkan perkembangan strategi pembelajaran dan kemandirian siswa.",
+          },
+          {
+            label: "Bagian yang Mendukung Refleksi",
+            question: "Bagian mana dari artefak ini yang mendukung hasil refleksi saya?",
+            content:
+              "Pada Siklus 1, siswa masih banyak mengalami kesulitan pada CLI dan proses troubleshooting. Pada Siklus 3, siswa mulai mampu membaca log error dan memperbaiki kesalahan sendiri serta memahami alur kerja yang lebih dekat dengan dunia industri. Lampiran 7 dan 8 menjadi bukti tambahan berupa penilaian Guru Pamong terhadap perangkat dan pelaksanaan pembelajaran pada setiap siklus.",
+          },
+        ],
       },
       {
         fourCKey: "kesimpulan",
@@ -364,11 +445,11 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 3 · Refleksi Praktik Asistensi", href: "#" },
-      { label: "LK 4 · Refleksi Siklus 1", href: "#" },
-      { label: "LK 4 · Refleksi Siklus 2", href: "#" },
-      { label: "LK 4 · Refleksi Siklus 3", href: "#" },
-      { label: "Lampiran 7 & 8 · Rekap Siklus 1–3", href: "#" },
+      { label: "LK 3 · Refleksi Praktik Asistensi", href: "" },
+      { label: "LK 4 · Refleksi Siklus 1", href: "" },
+      { label: "LK 4 · Refleksi Siklus 2", href: "" },
+      { label: "LK 4 · Refleksi Siklus 3", href: "" },
+      { label: "Lampiran 7 & 8 · Rekap Siklus 1–3", href: "" },
     ],
     crossLink: {
       label: "Lihat Artefak & Analisis Lengkap",
@@ -416,8 +497,26 @@ const courses: readonly CourseData[] = [
         fourCKey: "artefak",
         title: "Analisis Artefak Pendukung",
         question: "Analisis artefak pembelajaran sebagai bukti dukung hasil refleksi pengalaman belajar.",
-        content:
-          "1. Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?\nSaya memilih LK 3.2 “Aku Belum Berhasil, Bukan Tidak Berhasil”, LK 3.3 “Masalahku adalah Sahabat Belajarku”, dan LK 2.2 “Belajar dari Cara Otak Belajar”.\n\n2. Mengapa artefak tersebut yang saya pilih?\nKetiga artefak tersebut paling menunjukkan pemahaman saya tentang perubahan pola pikir, cara menghadapi kesalahan, serta tindakan yang dapat dilakukan guru untuk membantu siswa tetap mau belajar dan mencoba.\n\n3. Bagian mana dari artefak ini yang mendukung hasil refleksi saya?\nLK 3.2 menunjukkan bahwa kegagalan dapat dipandang seperti proses debugging, yaitu mencari bagian yang salah lalu memperbaikinya. LK 3.3 membahas strategi seperti scaffolding, memberi ruang aman untuk salah, dan memecah tugas menjadi bagian yang lebih kecil. Sementara LK 2.2 menekankan pentingnya umpan balik terhadap usaha dan penggunaan kesalahan sebagai bahan perbaikan.",
+        subItems: [
+          {
+            label: "Artefak yang Dipilih",
+            question: "Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?",
+            content:
+              "Saya memilih LK 3.2 “Aku Belum Berhasil, Bukan Tidak Berhasil”, LK 3.3 “Masalahku adalah Sahabat Belajarku”, dan LK 2.2 “Belajar dari Cara Otak Belajar”.",
+          },
+          {
+            label: "Alasan Pemilihan",
+            question: "Mengapa artefak tersebut yang saya pilih?",
+            content:
+              "Ketiga artefak tersebut paling menunjukkan pemahaman saya tentang perubahan pola pikir, cara menghadapi kesalahan, serta tindakan yang dapat dilakukan guru untuk membantu siswa tetap mau belajar dan mencoba.",
+          },
+          {
+            label: "Bagian yang Mendukung Refleksi",
+            question: "Bagian mana dari artefak ini yang mendukung hasil refleksi saya?",
+            content:
+              "LK 3.2 menunjukkan bahwa kegagalan dapat dipandang seperti proses debugging, yaitu mencari bagian yang salah lalu memperbaikinya. LK 3.3 membahas strategi seperti scaffolding, memberi ruang aman untuk salah, dan memecah tugas menjadi bagian yang lebih kecil. Sementara LK 2.2 menekankan pentingnya umpan balik terhadap usaha dan penggunaan kesalahan sebagai bahan perbaikan.",
+          },
+        ],
       },
       {
         fourCKey: "kesimpulan",
@@ -428,9 +527,9 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 3.2 · Aku Belum Berhasil, Bukan Tidak Berhasil", href: "#" },
-      { label: "LK 3.3 · Masalahku adalah Sahabat Belajarku", href: "#" },
-      { label: "LK 2.2 · Belajar dari Cara Otak Belajar", href: "#" },
+      { label: "LK 3.2 · Aku Belum Berhasil, Bukan Tidak Berhasil", href: "" },
+      { label: "LK 3.3 · Masalahku adalah Sahabat Belajarku", href: "" },
+      { label: "LK 2.2 · Belajar dari Cara Otak Belajar", href: "" },
     ],
   },
 
@@ -441,6 +540,7 @@ const courses: readonly CourseData[] = [
     tabLabel: "MK 6 · Kebugaran Jasmani",
     title: "Pengembangan Kebugaran Jasmani",
     pertemuan: "Pertemuan VII",
+    categoryBadge: "Mata Kuliah Selektif/Elektif",
     sections: [
       {
         fourCKey: "connection",
@@ -474,8 +574,26 @@ const courses: readonly CourseData[] = [
         fourCKey: "artefak",
         title: "Analisis Artefak Pendukung",
         question: "Analisis artefak pembelajaran sebagai bukti dukung hasil refleksi pengalaman belajar.",
-        content:
-          "1. Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?\nArtefak yang saya gunakan adalah LK 1.D (Laporan Diagnostik Kebugaran Personal), LK 1.E (Refleksi Kesiapan Mental dan Fisik Guru), LK 2.D (Logbook Program Kardio dan Manajemen Stres), LK 2.E (Refleksi Sesi Latihan Kardio Minggu 1), serta rancangan Proposal Program Kebugaran \"Sekolah Sehat & Bugar\".\n\n2. Mengapa artefak tersebut yang saya pilih?\nArtefak tersebut saya pilih karena merekam secara utuh perjalanan perubahan kebiasaan fisik saya secara kronologis; mulai dari asesmen awal dan penurunan berat badan (TKJU), perencanaan intervensi mandiri (Logbook), refleksi efektivitas latihan (kardio 20 menit), hingga kemampuan mengaplikasikan teori kebugaran menjadi sebuah rancangan program sekolah (Sekolah Sehat & Bugar) yang masif dan terstruktur untuk siswa kejuruan.\n\n3. Bagian mana dari artefak ini yang mendukung hasil refleksi saya?\nLK 1.D membuktikan progres kebugaran personal saya dengan capaian 22 repetisi step test dan penurunan berat badan. LK 2.D dan 2.E mendokumentasikan progres kardio saya dari yang awalnya terengah-engah di menit ke-7 menjadi mampu berlari konstan 20 menit, lengkap dengan catatan manajemen stres. Sementara itu, Proposal Program menyoroti strategi spesifik seperti integrasi Posture Break di laboratorium komputer, yang membuktikan pemahaman saya terhadap kebutuhan gerak siswa vokasi.",
+        subItems: [
+          {
+            label: "Artefak yang Dipilih",
+            question: "Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?",
+            content:
+              "Artefak yang saya gunakan adalah LK 1.D (Laporan Diagnostik Kebugaran Personal), LK 1.E (Refleksi Kesiapan Mental dan Fisik Guru), LK 2.D (Logbook Program Kardio dan Manajemen Stres), LK 2.E (Refleksi Sesi Latihan Kardio Minggu 1), serta rancangan Proposal Program Kebugaran \"Sekolah Sehat & Bugar\".",
+          },
+          {
+            label: "Alasan Pemilihan",
+            question: "Mengapa artefak tersebut yang saya pilih?",
+            content:
+              "Artefak tersebut saya pilih karena merekam secara utuh perjalanan perubahan kebiasaan fisik saya secara kronologis; mulai dari asesmen awal dan penurunan berat badan (TKJU), perencanaan intervensi mandiri (Logbook), refleksi efektivitas latihan (kardio 20 menit), hingga kemampuan mengaplikasikan teori kebugaran menjadi sebuah rancangan program sekolah (Sekolah Sehat & Bugar) yang masif dan terstruktur untuk siswa kejuruan.",
+          },
+          {
+            label: "Bagian yang Mendukung Refleksi",
+            question: "Bagian mana dari artefak ini yang mendukung hasil refleksi saya?",
+            content:
+              "LK 1.D membuktikan progres kebugaran personal saya dengan capaian 22 repetisi step test dan penurunan berat badan. LK 2.D dan 2.E mendokumentasikan progres kardio saya dari yang awalnya terengah-engah di menit ke-7 menjadi mampu berlari konstan 20 menit, lengkap dengan catatan manajemen stres. Sementara itu, Proposal Program menyoroti strategi spesifik seperti integrasi Posture Break di laboratorium komputer, yang membuktikan pemahaman saya terhadap kebutuhan gerak siswa vokasi.",
+          },
+        ],
       },
       {
         fourCKey: "kesimpulan",
@@ -486,14 +604,14 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 1.D · Laporan Diagnostik Kebugaran Personal", href: "#" },
-      { label: "LK 1.E · Refleksi Kesiapan Mental & Fisik Guru", href: "#" },
-      { label: "LK 2.D · Logbook Kardio & Manajemen Stres", href: "#" },
-      { label: "LK 2.E · Refleksi Sesi Latihan Kardio Minggu 1", href: "#" },
-      { label: "Proposal Program · Sekolah Sehat & Bugar", href: "#" },
+      { label: "LK 1.D · Laporan Diagnostik Kebugaran Personal", href: "" },
+      { label: "LK 1.E · Refleksi Kesiapan Mental & Fisik Guru", href: "" },
+      { label: "LK 2.D · Logbook Kardio & Manajemen Stres", href: "" },
+      { label: "LK 2.E · Refleksi Sesi Latihan Kardio Minggu 1", href: "" },
+      { label: "Proposal Program · Sekolah Sehat & Bugar", href: "" },
     ],
   },
-] as const;
+];
 
 /* ============================================================================
    SUB-COMPONENTS
@@ -548,7 +666,7 @@ function RubricBanner() {
   );
 }
 
-/** Collapsible accordion section for each 4C reflection area */
+/** Collapsible accordion section for each 4C reflection area & artifact analysis */
 function AccordionSection({
   section,
 }: {
@@ -621,9 +739,32 @@ function AccordionSection({
                   </p>
                 </div>
               )}
-              <div className="text-sm leading-relaxed text-zinc-400 space-y-3">
-                {renderContent(section.content)}
-              </div>
+              {section.subItems && section.subItems.length > 0 ? (
+                <div className="space-y-3 pt-1">
+                  {section.subItems.map((item, idx) => (
+                    <div
+                      key={item.label || idx}
+                      className="rounded-lg border border-zinc-800/60 bg-zinc-900/30 p-3.5 space-y-2"
+                    >
+                      <div className="space-y-1">
+                        <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-zinc-400">
+                          {item.label}
+                        </span>
+                        <p className="text-xs italic text-zinc-400">
+                          {item.question}
+                        </p>
+                      </div>
+                      <div className="text-sm leading-relaxed text-zinc-300">
+                        {renderContent(item.content)}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : section.content ? (
+                <div className="text-sm leading-relaxed text-zinc-400 space-y-3">
+                  {renderContent(section.content)}
+                </div>
+              ) : null}
             </div>
           </motion.div>
         )}
@@ -632,7 +773,7 @@ function AccordionSection({
   );
 }
 
-/** Download component for artifact files — matches app/penilaian/page.tsx pattern */
+/** Download / Evidence component for artifact files */
 function ArtifactDownload({
   label,
   href,
@@ -640,25 +781,35 @@ function ArtifactDownload({
   label: string;
   href: string;
 }) {
+  const isAvailable = Boolean(href && href !== "#" && href.trim() !== "");
+
   return (
     <div className="flex items-center justify-between rounded-lg border border-zinc-800 bg-zinc-900/50 p-3">
       <div className="flex items-center gap-3">
-        <FileText className="size-4 text-zinc-400" />
+        <FileText className="size-4 text-zinc-400 shrink-0" />
         <div>
           <p className="text-sm font-medium text-white">{label}</p>
-          <p className="text-xs text-zinc-500">PDF Document</p>
+          <p className="text-xs text-zinc-500">
+            {isAvailable ? "Dokumen PDF" : "Arsip Bukti LK 2"}
+          </p>
         </div>
       </div>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        download
-        className="flex shrink-0 items-center gap-1.5 rounded-md border border-zinc-700 px-3 py-1.5 text-xs text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
-      >
-        <Download className="size-3" />
-        Unduh
-      </a>
+      {isAvailable ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          download
+          className="flex shrink-0 items-center gap-1.5 rounded-md border border-zinc-700 px-3 py-1.5 text-xs text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
+        >
+          <Download className="size-3" />
+          Unduh
+        </a>
+      ) : (
+        <span className="flex shrink-0 items-center rounded-md border border-zinc-800 bg-zinc-900/80 px-2.5 py-1 font-mono text-[11px] text-zinc-500">
+          Dokumen Terarsip
+        </span>
+      )}
     </div>
   );
 }
@@ -672,18 +823,26 @@ function CourseContent({ course }: { course: CourseData }) {
       transition={{ duration: 0.3, ease: "easeOut" }}
       className="space-y-6"
     >
-      {/* Course header with student metadata */}
+      {/* Course header with student metadata & elective context */}
       <Card className="border-zinc-800/50 bg-zinc-950">
         <CardHeader className="space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <Badge
                 variant="outline"
                 className="border-zinc-700 font-mono text-zinc-400"
               >
                 {course.pertemuan}
               </Badge>
-              <span className="h-px w-8 bg-zinc-800/50 sm:w-16" aria-hidden="true" />
+              {course.categoryBadge && (
+                <Badge
+                  variant="outline"
+                  className="border-zinc-700 bg-zinc-900/60 font-mono text-[11px] text-zinc-400"
+                >
+                  {course.categoryBadge}
+                </Badge>
+              )}
+              <span className="hidden h-px w-8 bg-zinc-800/50 sm:block sm:w-16" aria-hidden="true" />
             </div>
 
             {/* Student Info Badges */}
@@ -726,7 +885,7 @@ function CourseContent({ course }: { course: CourseData }) {
         ))}
       </div>
 
-      {/* Artifact download */}
+      {/* Artifact download / Evidence section */}
       <div className="space-y-3">
         <div className="flex items-center gap-2">
           <div className="flex size-7 shrink-0 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
@@ -804,9 +963,6 @@ export function RefleksiMatkulClient() {
           </div>
 
           {/* Active Tab Content */}
-          {/* NOTE: Nama mata kuliah elektif spesifik belum diketahui saat prompt
-              ini ditulis. Update "Selektif/Elektif" menjadi nama mata kuliah
-              yang sebenarnya diambil sebelum submit final. */}
           <CourseContent
             key={courses[activeTabIndex].tabLabel}
             course={courses[activeTabIndex]}
