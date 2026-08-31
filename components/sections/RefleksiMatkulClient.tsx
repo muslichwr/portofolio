@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  CheckCircle,
   ChevronDown,
   Paperclip,
   FlagTriangleRight,
@@ -12,9 +11,7 @@ import {
   FileCheck,
   ExternalLink,
   ArrowRight,
-  User,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardHeader,
@@ -22,15 +19,6 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-
-/* ============================================================================
-   STUDENT METADATA
-   ============================================================================ */
-const studentInfo = {
-  name: "Muslich Wahyu Romadhon",
-  nim: "2500103916524004",
-  prodi: "Pengembangan Perangkat Lunak dan Gim",
-} as const;
 
 /* ============================================================================
    4C ACCENT COLOR MAP
@@ -85,8 +73,6 @@ interface CourseArtifact {
 interface CourseData {
   readonly tabLabel: string;
   readonly title: string;
-  readonly pertemuan: string;
-  readonly categoryBadge?: string;
   /** Dedicated Google Drive URL for the formal completed LK 2 PDF worksheet */
   readonly lk2PdfHref: string | null;
   readonly sections: readonly ReflectionSection[];
@@ -130,14 +116,6 @@ function renderContent(text: string): React.ReactNode {
 }
 
 /* ============================================================================
-   RUBRIC CHECKLIST DATA
-   ============================================================================ */
-const rubricItems = [
-  "Kelengkapan refleksi 4 komponen (Connection, Challenge, Concept, Change) — 50 poin",
-  "Ketajaman analisis artefak pembelajaran — 50 poin",
-] as const;
-
-/* ============================================================================
    COURSE DATA — 6 Courses (Mata Kuliah) with 6-section structure:
    1. Connection
    2. Challenge
@@ -153,8 +131,7 @@ const courses: readonly CourseData[] = [
   {
     tabLabel: "MK 1 · Filosofi Pendidikan",
     title: "Filosofi Pendidikan dan Pendidikan Nilai",
-    pertemuan: "Pertemuan II",
-    lk2PdfHref: null,
+    lk2PdfHref: "https://drive.google.com/file/d/1Hsw_bpM9ub4zq9K24pf52p-cJSMfNHTU/view?usp=drive_link",
     sections: [
       {
         fourCKey: "connection",
@@ -218,9 +195,9 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "Aktivitas 1.6 · Jurnal Refleksi", href: null },
-      { label: "Aktivitas 1.5 · Analisis & Modifikasi Modul Ajar/RPP", href: null },
-      { label: "3.E · Refleksi dan Tindak Lanjut", href: null },
+      { label: "Aktivitas 1.6 · Jurnal Refleksi", href: "https://drive.google.com/file/d/1SmBdLtNF9s2MDeZEpiSoxAC2dDl_NvZj/view?usp=drive_link" },
+      { label: "Aktivitas 1.5 · Analisis & Modifikasi Modul Ajar/RPP", href: "https://drive.google.com/file/d/1B229s4ndWBY5l5q0ySS2X9KFSAVtKW_U/view?usp=drive_link" },
+      { label: "3.E · Refleksi dan Tindak Lanjut", href: "https://drive.google.com/file/d/1zTf49OzpseefmgVbfQMAo6rnLmdvgwQ9/view?usp=drive_link" },
     ],
   },
 
@@ -230,8 +207,7 @@ const courses: readonly CourseData[] = [
   {
     tabLabel: "MK 2 · Peserta Didik",
     title: "Pemahaman tentang Peserta Didik dan Pembelajaran",
-    pertemuan: "Pertemuan III",
-    lk2PdfHref: null,
+    lk2PdfHref: "https://drive.google.com/file/d/12Ik2Jp8-aqWmEsyS5kncrgUvEODTKXyi/view?usp=drive_link",
     sections: [
       {
         fourCKey: "connection",
@@ -295,10 +271,10 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 1.E · Refleksi Teori Perkembangan", href: null },
-      { label: "LK 2.D & 2.E · Sintesis Kasus Pak Anto", href: null },
-      { label: "LK 3.E · Refleksi Teori Belajar Bu Sinta", href: null },
-      { label: "LK 4A & 4B · Asesmen Awal & Profiling 34 Siswa X RPL", href: null },
+      { label: "LK 1.E · Refleksi Teori Perkembangan", href: "https://drive.google.com/file/d/1RPzjNgs41jb0iomzs3v4hxumyvASVlyP/view?usp=drive_link" },
+      { label: "LK 2.D & 2.E · Sintesis Kasus Pak Anto", href: "https://drive.google.com/file/d/1B3mESDJTb-b4sj9_k4AjALrMp8Fl5lto/view?usp=drive_link" },
+      { label: "LK 3.E · Refleksi Teori Belajar Bu Sinta", href: "https://drive.google.com/file/d/1nCTN6FzI78o6kZ9S6A_YyKrsV-M-EKOr/view?usp=drive_link" },
+      { label: "LK 4A & 4B · Asesmen Awal & Profiling 34 Siswa X RPL", href: "https://docs.google.com/document/d/17N2DksuBFnLl3stZbOu5hVZDPTuE3mUm/edit?usp=drive_link&ouid=116097001817209864458&rtpof=true&sd=true" },
     ],
   },
 
@@ -308,8 +284,7 @@ const courses: readonly CourseData[] = [
   {
     tabLabel: "MK 3 · Pembelajaran Mendalam",
     title: "Pembelajaran Mendalam dan Asesmen (PMA) Dasar SMK",
-    pertemuan: "Pertemuan IV",
-    lk2PdfHref: null,
+    lk2PdfHref: "https://drive.google.com/file/d/1WmhOSGkJYULGcGqmqqe4N-3-Yscax_-O/view?usp=drive_link",
     sections: [
       {
         fourCKey: "connection",
@@ -373,11 +348,11 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 1.C & 1.D · Analisis Kasus Kesiapan Kerja", href: null },
-      { label: "LK 2.D · Sintesis Keselarasan Tujuan, Aktivitas & Asesmen", href: null },
-      { label: "LK 2.E · Refleksi dan Tindak Lanjut", href: null },
-      { label: "LK 3.D · Template Perencanaan Pembelajaran UbD", href: null },
-      { label: "LK 3.E & 4.A · Refleksi & RTL Perancangan Pembelajaran", href: null },
+      { label: "LK 1.C & 1.D · Analisis Kasus Kesiapan Kerja", href: "https://drive.google.com/file/d/1yoNYqy_64hmcpwL7fXjJFERgK0pCM560/view?usp=drive_link" },
+      { label: "LK 2.D · Sintesis Keselarasan Tujuan, Aktivitas & Asesmen", href: "https://drive.google.com/file/d/15D_17y-aRNoRxJEadkzDXr4lU9R5wR-O/view?usp=drive_link" },
+      { label: "LK 2.E · Refleksi dan Tindak Lanjut", href: "https://drive.google.com/file/d/1pfz6c0tlbyR_NE3AKRrbwJArH9jRwjO1/view?usp=drive_link" },
+      { label: "LK 3.D · Template Perencanaan Pembelajaran UbD", href: "https://drive.google.com/file/d/1wOzupHhfRDk7J2-V1gKzNdg-mryRJVEE/view?usp=drive_link" },
+      { label: "LK 3.E & 4.A · Refleksi & RTL Perancangan Pembelajaran", href: "https://drive.google.com/file/d/1Ws5T3eoPwbde5tTLw1vzIM_Bw4DJdwOX/view?usp=drive_link" },
     ],
   },
 
@@ -387,8 +362,7 @@ const courses: readonly CourseData[] = [
   {
     tabLabel: "MK 4 · PPL Terbimbing",
     title: "Praktik Pengalaman Lapangan (PPL) Terbimbing",
-    pertemuan: "Pertemuan V",
-    lk2PdfHref: null,
+    lk2PdfHref: "https://drive.google.com/file/d/1OQ4vQnECX8DbztJkCE-ka38rwSSYvL5J/view?usp=drive_link",
     sections: [
       {
         fourCKey: "connection",
@@ -452,11 +426,10 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 3 · Refleksi Praktik Asistensi", href: null },
-      { label: "LK 4 · Refleksi Siklus 1", href: null },
-      { label: "LK 4 · Refleksi Siklus 2", href: null },
-      { label: "LK 4 · Refleksi Siklus 3", href: null },
-      { label: "Lampiran 7 & 8 · Rekap Siklus 1–3", href: null },
+      { label: "LK 3 · Refleksi Praktik Asistensi", href: "https://drive.google.com/file/d/1wvLCND3v0a5zll5FunPq2Uhotzl0XvmR/view?usp=drive_link" },
+      { label: "LK 4 · Refleksi Siklus 1", href: "https://drive.google.com/file/d/1wTQeMN3ydOJDT32gZZF10HT2QWVnoEbG/view?usp=drive_link" },
+      { label: "LK 4 · Refleksi Siklus 2", href: "https://drive.google.com/file/d/1ca1GNnvo8BEZmE_YF_BdNe-6wDhxTTdl/view?usp=drive_link" },
+      { label: "LK 4 · Refleksi Siklus 3", href: "https://drive.google.com/file/d/1dzUVTWgV5sEqf3zoF1HYZuSpFsZzUGFu/view?usp=drive_link" },
     ],
     crossLink: {
       label: "Lihat Artefak & Analisis Lengkap",
@@ -470,8 +443,7 @@ const courses: readonly CourseData[] = [
   {
     tabLabel: "MK 5 · Growth Mindset",
     title: "Pola Pikir Bertumbuh (Growth Mindset)",
-    pertemuan: "Pertemuan VI",
-    lk2PdfHref: null,
+    lk2PdfHref: "https://drive.google.com/file/d/11Tsl-ziUqbDaosIcw6GPCBo1S7bkU3lq/view?usp=drive_link",
     sections: [
       {
         fourCKey: "connection",
@@ -535,9 +507,9 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 3.2 · Aku Belum Berhasil, Bukan Tidak Berhasil", href: null },
-      { label: "LK 3.3 · Masalahku adalah Sahabat Belajarku", href: null },
-      { label: "LK 2.2 · Belajar dari Cara Otak Belajar", href: null },
+      { label: "LK 3.2 · Aku Belum Berhasil, Bukan Tidak Berhasil", href: "https://drive.google.com/file/d/1id71fXmX3L6NKwmM5xZneYDucYwFbE0p/view?usp=drive_link" },
+      { label: "LK 3.3 · Masalahku adalah Sahabat Belajarku", href: "https://drive.google.com/file/d/1mlXSAWcXB6_50Xrd86zGgMXs48Qo7EYg/view?usp=drive_link" },
+      { label: "LK 2.2 · Belajar dari Cara Otak Belajar", href: "https://drive.google.com/file/d/1yHS47Odw1daKwYmi3LaACJjXDIQGleS9/view?usp=drive_link" },
     ],
   },
 
@@ -547,9 +519,7 @@ const courses: readonly CourseData[] = [
   {
     tabLabel: "MK 6 · Kebugaran Jasmani",
     title: "Pengembangan Kebugaran Jasmani",
-    pertemuan: "Pertemuan VII",
-    categoryBadge: "Mata Kuliah Selektif/Elektif",
-    lk2PdfHref: null,
+    lk2PdfHref: "https://drive.google.com/file/d/1ylD6A6Tqhy5GrbDAdViv1_kr6_7y4Bc4/view?usp=drive_link",
     sections: [
       {
         fourCKey: "connection",
@@ -613,11 +583,11 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 1.D · Laporan Diagnostik Kebugaran Personal", href: null },
-      { label: "LK 1.E · Refleksi Kesiapan Mental & Fisik Guru", href: null },
-      { label: "LK 2.D · Logbook Kardio & Manajemen Stres", href: null },
-      { label: "LK 2.E · Refleksi Sesi Latihan Kardio Minggu 1", href: null },
-      { label: "Proposal Program · Sekolah Sehat & Bugar", href: null },
+      { label: "LK 1.D · Laporan Diagnostik Kebugaran Personal", href: "https://drive.google.com/file/d/1aLdsUnfzG0z5Xv49v280d1NNOYSZejrF/view?usp=drive_link" },
+      { label: "LK 1.E · Refleksi Kesiapan Mental & Fisik Guru", href: "https://drive.google.com/file/d/1Q4As7GbHEWCtP9mIR-cdZRqwp-E-nvRM/view?usp=drive_link" },
+      { label: "LK 2.D · Logbook Kardio & Manajemen Stres", href: "https://drive.google.com/file/d/1cck_Js6-L67M_x7ZMZSiW_7j2CFH7Its/view?usp=drive_link" },
+      { label: "LK 2.E · Refleksi Sesi Latihan Kardio Minggu 1", href: "https://drive.google.com/file/d/1CMYh3buZ432cjt-EF0L_RGJNF-BVUpkF/view?usp=drive_link" },
+      { label: "Proposal Program · Sekolah Sehat & Bugar", href: "https://drive.google.com/file/d/1e5rF31sHq19Y9pGv88m4fH0gQ79zTfG5/view?usp=drive_link" },
     ],
   },
 ];
@@ -625,55 +595,6 @@ const courses: readonly CourseData[] = [
 /* ============================================================================
    SUB-COMPONENTS
    ============================================================================ */
-
-/** Collapsible rubric banner — same pattern as CpmkBanner */
-function RubricBanner() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="mx-auto max-w-4xl px-6">
-      <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="w-full flex items-center justify-between p-4 rounded-lg border border-zinc-800/60 bg-zinc-900/30 hover:border-zinc-700/60 transition-colors text-left"
-        aria-expanded={isOpen}
-      >
-        <div className="flex items-center gap-3">
-          <CheckCircle className="size-4 text-emerald-500/80 shrink-0" />
-          <span className="text-sm font-medium text-zinc-300">
-            Komponen Penilaian LK 2 yang Dipenuhi
-          </span>
-        </div>
-        <ChevronDown
-          className={cn(
-            "size-4 text-zinc-500 transition-transform duration-200 shrink-0",
-            isOpen && "rotate-180"
-          )}
-        />
-      </button>
-
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <div className="px-4 py-3 space-y-2.5 border-x border-b border-zinc-800/60 rounded-b-lg bg-zinc-900/20">
-              {rubricItems.map((item) => (
-                <div key={item} className="flex items-start gap-2.5">
-                  <CheckCircle className="size-3.5 mt-0.5 text-emerald-500/70 shrink-0" />
-                  <span className="text-xs text-zinc-400">{item}</span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
 
 /** Collapsible accordion section for each 4C reflection area & artifact analysis */
 function AccordionSection({
@@ -878,52 +799,9 @@ function CourseContent({ course }: { course: CourseData }) {
       transition={{ duration: 0.3, ease: "easeOut" }}
       className="space-y-6"
     >
-      {/* Course header with student metadata & elective context */}
+      {/* Course header */}
       <Card className="border-zinc-800/50 bg-zinc-950">
-        <CardHeader className="space-y-4">
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex flex-wrap items-center gap-3">
-              <Badge
-                variant="outline"
-                className="border-zinc-700 font-mono text-zinc-400"
-              >
-                {course.pertemuan}
-              </Badge>
-              {course.categoryBadge && (
-                <Badge
-                  variant="outline"
-                  className="border-zinc-700 bg-zinc-900/60 font-mono text-[11px] text-zinc-400"
-                >
-                  {course.categoryBadge}
-                </Badge>
-              )}
-              <span className="hidden h-px w-8 bg-zinc-800/50 sm:block sm:w-16" aria-hidden="true" />
-            </div>
-
-            {/* Student Info Badges */}
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge
-                variant="outline"
-                className="border-zinc-800 bg-zinc-900/60 font-mono text-[11px] text-zinc-400"
-              >
-                <User className="mr-1 size-3 text-zinc-500" />
-                {studentInfo.name}
-              </Badge>
-              <Badge
-                variant="outline"
-                className="border-zinc-800 bg-zinc-900/60 font-mono text-[11px] text-zinc-500"
-              >
-                NIM: {studentInfo.nim}
-              </Badge>
-              <Badge
-                variant="outline"
-                className="border-zinc-800 bg-zinc-900/60 text-[11px] text-zinc-500"
-              >
-                {studentInfo.prodi}
-              </Badge>
-            </div>
-          </div>
-
+        <CardHeader>
           <CardTitle className="text-xl font-bold tracking-tight text-white md:text-2xl">
             {course.title}
           </CardTitle>
@@ -1012,46 +890,32 @@ export function RefleksiMatkulClient() {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   return (
-    <>
-      {/* ================================================================
-          RUBRIC SUMMARY BANNER
-          ================================================================ */}
-      <section className="py-6">
-        <RubricBanner />
-      </section>
-
-      <Separator className="mx-auto max-w-4xl bg-zinc-800/50" />
-
-      {/* ================================================================
-          COURSE TABS + CONTENT
-          ================================================================ */}
-      <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-4xl space-y-8">
-          {/* Tab Bar */}
-          <div className="flex flex-wrap gap-2">
-            {courses.map((course, index) => (
-              <button
-                key={course.tabLabel}
-                onClick={() => setActiveTabIndex(index)}
-                className={cn(
-                  "rounded-md border px-3 py-2 text-xs font-medium transition-all duration-200",
-                  activeTabIndex === index
-                    ? "border-white/20 bg-white/[0.08] text-white"
-                    : "border-zinc-800/60 bg-zinc-900/30 text-zinc-500 hover:border-zinc-700 hover:text-zinc-300"
-                )}
-              >
-                {course.tabLabel}
-              </button>
-            ))}
-          </div>
-
-          {/* Active Tab Content */}
-          <CourseContent
-            key={courses[activeTabIndex].tabLabel}
-            course={courses[activeTabIndex]}
-          />
+    <section className="px-6 py-16 md:py-24">
+      <div className="mx-auto max-w-4xl space-y-8">
+        {/* Tab Bar */}
+        <div className="flex flex-wrap gap-2">
+          {courses.map((course, index) => (
+            <button
+              key={course.tabLabel}
+              onClick={() => setActiveTabIndex(index)}
+              className={cn(
+                "rounded-md border px-3 py-2 text-xs font-medium transition-all duration-200",
+                activeTabIndex === index
+                  ? "border-white/20 bg-white/[0.08] text-white"
+                  : "border-zinc-800/60 bg-zinc-900/30 text-zinc-500 hover:border-zinc-700 hover:text-zinc-300"
+              )}
+            >
+              {course.tabLabel}
+            </button>
+          ))}
         </div>
-      </section>
-    </>
+
+        {/* Active Tab Content */}
+        <CourseContent
+          key={courses[activeTabIndex].tabLabel}
+          course={courses[activeTabIndex]}
+        />
+      </div>
+    </section>
   );
 }

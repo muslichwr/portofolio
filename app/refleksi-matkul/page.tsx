@@ -24,7 +24,7 @@ export default function RefleksiMatkulPage() {
         <div className="mx-auto max-w-4xl">
           {/* Eyebrow */}
           <p className="mb-3 font-mono text-xs uppercase tracking-widest text-zinc-600">
-            LEMBAR KERJA 2 — REFLEKSI PENGALAMAN BELAJAR
+            LEMBAR KERJA 2 — REFLEKSI PENGALAMAN BELAJAR SEMESTER 1
           </p>
 
           {/* Massive title */}
@@ -37,7 +37,7 @@ export default function RefleksiMatkulPage() {
           {/* Subtitle */}
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">
             Refleksi pengalaman belajar dari 6 mata kuliah yang ditempuh
-            sepanjang Semester 1–2, disusun menggunakan model 4C:
+            di Semester 1, disusun menggunakan model 4C:
             Connection, Challenge, Concept, dan Change.
           </p>
         </div>
@@ -107,7 +107,7 @@ export default function RefleksiMatkulPage() {
       <Separator className="mx-auto max-w-4xl bg-zinc-800/50" />
 
       {/* ================================================================
-          INTERACTIVE CLIENT SECTIONS (Rubric Banner + Course Tabs)
+          INTERACTIVE CLIENT SECTIONS (Course Tabs)
           ================================================================ */}
       <RefleksiMatkulClient />
     </>

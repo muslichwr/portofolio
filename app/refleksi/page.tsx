@@ -167,19 +167,21 @@ export default function RefleksiPage() {
           {/* Content — editorial style */}
           <div className="space-y-6 text-base leading-relaxed text-zinc-400">
             <p>
-              Sebagai lulusan S1 Pendidikan Teknologi Informasi yang punya minat di
-              software development, tujuan saya menjadi guru SMK sebenarnya
-              sederhana: saya ingin membantu siswa belajar IT dengan cara yang
-              lebih relevan dan tidak membosankan. Saya berpegang pada prinsip{" "}
+              Sebagai lulusan S1 Pendidikan Teknologi Informasi yang memiliki
+              ketertarikan pada software development, saya ingin menjadi guru SMK
+              yang membantu peserta didik mempelajari teknologi informasi secara
+              relevan, kontekstual, dan tidak berhenti pada hafalan sintaks. Saya
+              berpegang pada prinsip{" "}
               <span className="font-medium text-zinc-200">
                 &quot;Logic First, Syntax Later&quot;
               </span>
-              —saya ingin melatih anak-anak agar paham logikanya dulu, baru
-              memikirkan sintaks atau error kodenya. Ke depannya, saya ingin
-              menjadi sosok guru (fasilitator) yang sabar, bisa diajak diskusi
-              layaknya teman belajar, dan bisa memberi gambaran dasar tentang
-              bagaimana tools IT (seperti Git atau Nginx) dipakai di dunia kerja
-              tanpa harus memakai bahasa yang terlalu rumit.
+              , yaitu membangun pemahaman terhadap logika, alur berpikir, dan cara
+              memecahkan masalah terlebih dahulu sebelum peserta didik berhadapan
+              dengan detail sintaks dalam bahasa pemrograman. Ke depan, saya ingin
+              berkembang sebagai guru sekaligus fasilitator yang sabar, terbuka
+              untuk berdiskusi layaknya teman belajar, serta mampu memperkenalkan
+              teknologi dan praktik kerja di bidang IT, seperti Git, Linux, atau
+              Nginx, melalui bahasa yang dekat dengan tingkat pemahaman peserta didik.
             </p>
           </div>
         </div>
