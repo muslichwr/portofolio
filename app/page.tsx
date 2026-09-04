@@ -206,6 +206,11 @@ export default function HomePage() {
             </span>
           </h1>
 
+          {/* ── Supporting Subtitle ── */}
+          <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-zinc-400 sm:text-base">
+            <span className="text-zinc-200">Logic First, Syntax Later.</span> Pembelajaran Mendalam untuk kelas vokasi yang berakar pada masalah nyata dan dunia kerja.
+          </p>
+
           {/* CTA Button — navigates to /about */}
           <div className="mt-8">
             <Link
@@ -251,6 +256,9 @@ export default function HomePage() {
             <h2 className="text-3xl font-extrabold tracking-tighter text-white md:text-5xl">
               Model Guru yang Dituju
             </h2>
+            <p className="mt-4 max-w-xl text-sm leading-relaxed text-zinc-500">
+              Empat karakter ini menjadi cara saya menerjemahkan Pembelajaran Mendalam ke dalam praktik nyata sebagai guru vokasi.
+            </p>
           </div>
 
           {/* Karakter cards grid */}

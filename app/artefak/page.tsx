@@ -203,8 +203,10 @@ export default function ArtefakPage() {
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">
             Analisis penyusunan dan implementasi modul ajar dalam tiga siklus
             PPL Terbimbing, mencakup dasar pedagogis, dinamika pembelajaran,
-            kendala praktik, capaian peserta didik, dan rencana penyesuaian
-            untuk konteks kelas kejuruan yang berbeda.
+            kendala praktik, capaian peserta didik, dan rencana penyesuaian.
+            Rangkaian siklus ini memperlihatkan penerapan bertahap prinsip
+            Pembelajaran Mendalam dalam laboratorium IT vokasi—menghubungkan tugas kejuruan
+            yang autentik, troubleshooting berkesadaran, serta kemandirian belajar siswa.
           </p>
         </div>
       </section>

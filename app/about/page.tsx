@@ -327,16 +327,29 @@ export default function AboutPage() {
           </div>
 
           {/* Misi Mengajar callout */}
-          <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-8 text-center md:p-12">
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-zinc-600">
-              Misi Mengajar
-            </p>
-            <p className="mx-auto max-w-2xl text-base leading-relaxed text-zinc-300 md:text-lg">
-              Mencetak generasi muda yang tidak hanya kompeten secara teknis,
-              tetapi mampu berpikir kritis dalam memecahkan masalah nyata di
-              industri dan menjadi guru yang terus berkembang bersama
-              muridnya.
-            </p>
+          <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-8 md:p-10">
+            <div className="text-center">
+              <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-zinc-600">
+                Misi Mengajar
+              </p>
+              <p className="mx-auto max-w-2xl text-base leading-relaxed text-zinc-300 md:text-lg">
+                Mencetak generasi muda yang tidak hanya kompeten secara teknis,
+                tetapi mampu berpikir kritis dalam memecahkan masalah nyata di
+                industri dan menjadi guru yang terus berkembang bersama
+                muridnya.
+              </p>
+            </div>
+
+            <div className="mx-auto my-6 max-w-2xl border-t border-white/[0.06]" />
+
+            <div className="mx-auto max-w-2xl space-y-2 text-left">
+              <p className="font-mono text-xs uppercase tracking-wider text-zinc-500">
+                Pendekatan: Pembelajaran Mendalam
+              </p>
+              <p className="text-sm leading-relaxed text-zinc-400">
+                Dalam pembelajaran vokasi IT, misi ini saya wujudkan melalui pendekatan Pembelajaran Mendalam: menghadirkan tugas dan simulasi industri yang <span className="font-medium text-zinc-200">bermakna</span> (seperti deployment server riil), melatih siswa menelusuri log dan melakukan troubleshooting secara <span className="font-medium text-zinc-200">berkesadaran</span>, serta memberi ruang belajar yang <span className="font-medium text-zinc-200">menggembirakan</span> di mana error menjadi sarana berharga untuk bertumbuh.
+              </p>
+            </div>
           </div>
         </div>
       </section>

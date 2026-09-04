@@ -498,8 +498,10 @@ export default function RefleksiAkhirPage() {
               perintah sebelum mereka menghafal bentuk sintaksnya. Dalam
               pembelajaran server dan deployment, perintah yang diketik bisa
               berubah sesuai versi sistem, konfigurasi, atau kebutuhan proyek.
-              Karena itu, saya ingin siswa memahami alasan sebuah langkah
-              dilakukan, bukan hanya menyalin perintah dari modul.
+              Prinsip ini menjadi cara saya menumbuhkan Pembelajaran Mendalam:
+              memprioritaskan pemahaman logika arsitektur dan kesadaran troubleshooting
+              mandiri di atas sekadar hafalan sintaks, sehingga proses belajar tetap
+              bermakna dan relevan dengan tantangan kerja nyata.
             </p>
 
             <p>
