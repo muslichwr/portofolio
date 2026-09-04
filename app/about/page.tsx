@@ -327,9 +327,10 @@ export default function AboutPage() {
           </div>
 
           {/* Misi Mengajar callout */}
-          <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-8 md:p-10">
+          <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 md:p-8 space-y-6">
+            {/* Mission Statement */}
             <div className="text-center">
-              <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-zinc-600">
+              <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-zinc-600">
                 Misi Mengajar
               </p>
               <p className="mx-auto max-w-2xl text-base leading-relaxed text-zinc-300 md:text-lg">
@@ -340,15 +341,120 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="mx-auto my-6 max-w-2xl border-t border-white/[0.06]" />
+            <div className="border-t border-white/[0.06]" />
 
-            <div className="mx-auto max-w-2xl space-y-2 text-left">
-              <p className="font-mono text-xs uppercase tracking-wider text-zinc-500">
-                Pendekatan: Pembelajaran Mendalam
+            {/* Context Label & 3 Dimensions */}
+            <div className="space-y-4">
+              <div>
+                <p className="font-mono text-xs uppercase tracking-wider text-zinc-500">
+                  Pendekatan: Pembelajaran Mendalam
+                </p>
+                <p className="mt-1 text-sm leading-relaxed text-zinc-400">
+                  Dalam pembelajaran vokasi IT, misi ini diwujudkan melalui tiga dimensi praktis yang saling terhubung:
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+                <div className="rounded-lg border border-white/[0.04] bg-white/[0.01] p-4">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-wider text-zinc-300">
+                    Bermakna
+                  </p>
+                  <p className="mt-1 text-xs font-medium text-zinc-400">
+                    Problem nyata &amp; konteks dunia kerja
+                  </p>
+                  <p className="mt-2 text-xs leading-relaxed text-zinc-500">
+                    Materi dan tugas dihubungkan langsung dengan skenario teknis industri nyata, seperti pengelolaan server dan deployment riil.
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-white/[0.04] bg-white/[0.01] p-4">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-wider text-zinc-300">
+                    Berkesadaran
+                  </p>
+                  <p className="mt-1 text-xs font-medium text-zinc-400">
+                    Troubleshooting, analisis log &amp; refleksi
+                  </p>
+                  <p className="mt-2 text-xs leading-relaxed text-zinc-500">
+                    Siswa dibimbing memahami alur proses, membaca pesan error secara kritis, dan merefleksikan setiap tindakan sebelum mengambil langkah berikutnya.
+                  </p>
+                </div>
+
+                <div className="rounded-lg border border-white/[0.04] bg-white/[0.01] p-4">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-wider text-zinc-300">
+                    Menggembirakan
+                  </p>
+                  <p className="mt-1 text-xs font-medium text-zinc-400">
+                    Ruang mencoba, memperbaiki, dan merasakan keberhasilan
+                  </p>
+                  <p className="mt-2 text-xs leading-relaxed text-zinc-500">
+                    Menyediakan ruang aman untuk bereksplorasi, belajar dari kesalahan tanpa takut dihakimi, dan merasakan kepuasan saat sistem berhasil berjalan.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Mini Framework: Alur Praktik */}
+            <div className="rounded-lg border border-white/[0.04] bg-white/[0.01] p-4">
+              <p className="mb-3 font-mono text-[11px] uppercase tracking-wider text-zinc-500">
+                Alur Praktik: Dari Problem ke Kemandirian
               </p>
-              <p className="text-sm leading-relaxed text-zinc-400">
-                Dalam pembelajaran vokasi IT, misi ini saya wujudkan melalui pendekatan Pembelajaran Mendalam: menghadirkan tugas dan simulasi industri yang <span className="font-medium text-zinc-200">bermakna</span> (seperti deployment server riil), melatih siswa menelusuri log dan melakukan troubleshooting secara <span className="font-medium text-zinc-200">berkesadaran</span>, serta memberi ruang belajar yang <span className="font-medium text-zinc-200">menggembirakan</span> di mana error menjadi sarana berharga untuk bertumbuh.
-              </p>
+              <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between text-xs">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-zinc-500">01</span>
+                  <span className="font-medium text-zinc-300">Problem Nyata</span>
+                </div>
+                <span className="hidden text-zinc-600 sm:inline" aria-hidden="true">→</span>
+                <span className="text-zinc-600 sm:hidden text-center text-[10px]" aria-hidden="true">↓</span>
+
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-zinc-500">02</span>
+                  <span className="font-medium text-zinc-300">Pahami Sistem</span>
+                </div>
+                <span className="hidden text-zinc-600 sm:inline" aria-hidden="true">→</span>
+                <span className="text-zinc-600 sm:hidden text-center text-[10px]" aria-hidden="true">↓</span>
+
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-zinc-500">03</span>
+                  <span className="font-medium text-zinc-300">Troubleshooting</span>
+                </div>
+                <span className="hidden text-zinc-600 sm:inline" aria-hidden="true">→</span>
+                <span className="text-zinc-600 sm:hidden text-center text-[10px]" aria-hidden="true">↓</span>
+
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-zinc-500">04</span>
+                  <span className="font-medium text-zinc-300">Refleksi &amp; Perbaikan</span>
+                </div>
+                <span className="hidden text-zinc-600 sm:inline" aria-hidden="true">→</span>
+                <span className="text-zinc-600 sm:hidden text-center text-[10px]" aria-hidden="true">↓</span>
+
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-zinc-500">05</span>
+                  <span className="font-medium text-zinc-200">Kemandirian</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Evidence Bridge Links */}
+            <div className="flex flex-col gap-3 pt-2 border-t border-white/[0.06] sm:flex-row sm:items-center sm:justify-between text-xs">
+              <Link
+                href="/artefak"
+                className="group inline-flex items-center gap-1.5 font-mono text-zinc-400 hover:text-white transition-colors"
+              >
+                <span>Lihat Praktik PPL</span>
+                <ArrowRight className="size-3 text-zinc-500 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+
+              <div className="flex items-center gap-2 font-mono">
+                <span className="text-zinc-600 hidden sm:inline" aria-hidden="true">·</span>
+                <Link
+                  href="/refleksi-matkul"
+                  className="group inline-flex items-center gap-1.5 text-zinc-400 hover:text-white transition-colors"
+                >
+                  <span>Lihat Refleksi Mata Kuliah (LK 2)</span>
+                  <span className="text-zinc-600 text-[11px]">(MK 3 · PMA)</span>
+                  <ArrowRight className="size-3 text-zinc-500 transition-transform group-hover:translate-x-0.5" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

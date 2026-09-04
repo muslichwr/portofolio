@@ -208,7 +208,12 @@ export default function HomePage() {
 
           {/* ── Supporting Subtitle ── */}
           <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-zinc-400 sm:text-base">
-            <span className="text-zinc-200">Logic First, Syntax Later.</span> Pembelajaran Mendalam untuk kelas vokasi yang berakar pada masalah nyata dan dunia kerja.
+            Pembelajaran Mendalam untuk kelas vokasi yang dekat dengan problem nyata dan dunia kerja.
+          </p>
+
+          {/* ── Triad Dimensions ── */}
+          <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500 sm:text-xs">
+            Bermakna · Berkesadaran · Menggembirakan
           </p>
 
           {/* CTA Button — navigates to /about */}
@@ -257,7 +262,7 @@ export default function HomePage() {
               Model Guru yang Dituju
             </h2>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-zinc-500">
-              Empat karakter ini menjadi cara saya menerjemahkan Pembelajaran Mendalam ke dalam praktik nyata sebagai guru vokasi.
+              Empat karakter ini menjadi cara saya menerjemahkan Pembelajaran Mendalam ke dalam praktik sebagai guru vokasi.
             </p>
           </div>
 

@@ -204,10 +204,29 @@ export default function ArtefakPage() {
             Analisis penyusunan dan implementasi modul ajar dalam tiga siklus
             PPL Terbimbing, mencakup dasar pedagogis, dinamika pembelajaran,
             kendala praktik, capaian peserta didik, dan rencana penyesuaian.
-            Rangkaian siklus ini memperlihatkan penerapan bertahap prinsip
-            Pembelajaran Mendalam dalam laboratorium IT vokasi—menghubungkan tugas kejuruan
-            yang autentik, troubleshooting berkesadaran, serta kemandirian belajar siswa.
+            Tiga siklus PPL ini menunjukkan praktik yang sejalan dengan
+            Pembelajaran Mendalam dalam laboratorium IT vokasi.
           </p>
+
+          {/* Orientation Cue */}
+          <div className="mt-6 flex flex-wrap items-center gap-2 font-mono text-[11px] text-zinc-500">
+            <span className="uppercase tracking-wider text-zinc-600">Orientasi:</span>
+            <div className="flex items-center gap-1.5 rounded-md border border-zinc-800/80 bg-zinc-900/40 px-2.5 py-1">
+              <span className="font-semibold text-zinc-300">Bermakna</span>
+              <span className="text-zinc-600">·</span>
+              <span>Problem nyata &amp; konteks kerja</span>
+            </div>
+            <div className="flex items-center gap-1.5 rounded-md border border-zinc-800/80 bg-zinc-900/40 px-2.5 py-1">
+              <span className="font-semibold text-zinc-300">Berkesadaran</span>
+              <span className="text-zinc-600">·</span>
+              <span>Troubleshooting &amp; membaca log</span>
+            </div>
+            <div className="flex items-center gap-1.5 rounded-md border border-zinc-800/80 bg-zinc-900/40 px-2.5 py-1">
+              <span className="font-semibold text-zinc-300">Menggembirakan</span>
+              <span className="text-zinc-600">·</span>
+              <span>Ruang mencoba &amp; keberhasilan</span>
+            </div>
+          </div>
         </div>
       </section>
 
