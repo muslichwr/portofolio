@@ -46,14 +46,14 @@ const artifacts = [
       },
     ],
     strengths: [
-      "Demonstrasi VirtualBox pada awal pembelajaran mampu meningkatkan perhatian dan keterlibatan peserta didik karena mereka dapat melihat secara langsung hubungan antara materi server dan aktivitas praktik yang akan dilakukan.",
-      "Strategi tutor sebaya berkembang secara positif. Peserta didik yang lebih cepat menyelesaikan tugas berperan membantu teman yang mengalami kendala, sehingga interaksi belajar menjadi lebih kolaboratif.",
-      "Mini-presentasi hasil web statis pada akhir Siklus 1 memberikan pengalaman keberhasilan yang konkret karena peserta didik dapat menampilkan halaman web dari browser host masing-masing.",
-      "Keberhasilan melakukan remote access melalui Putty menjadi pengalaman belajar penting karena peserta didik mulai memahami fungsi SSH sebagai bagian dari pengelolaan server secara jarak jauh.",
+      "Pada demonstrasi VirtualBox di awal pembelajaran, peserta didik melihat hubungan antara materi server dan langkah praktik yang akan dilakukan.",
+      "Peserta didik yang lebih cepat menyelesaikan tugas membantu teman yang mengalami kendala selama praktik.",
+      "Pada mini-presentasi di akhir Siklus 1, peserta didik menampilkan hasil web statis dari browser host masing-masing.",
+      "Peserta didik mencoba remote access melalui Putty untuk mengelola server secara jarak jauh menggunakan SSH.",
     ],
     weaknesses: [
       "Sebagian peserta didik mengalami kendala \"Network Unreachable\" ketika melakukan konfigurasi IP Address. Kendala ini dipengaruhi oleh perbedaan versi Ubuntu yang digunakan, yaitu Ubuntu 20.04 dengan ifupdown dan Ubuntu 22.04 dengan netplan. Modul ajar pada tahap awal belum sepenuhnya mengakomodasi variasi metode konfigurasi tersebut.",
-      "Manajemen waktu pada salah satu pertemuan belum optimal karena sebagian besar waktu akhir digunakan untuk troubleshooting bersama, sehingga sesi refleksi individu belum dapat dilaksanakan secara maksimal.",
+      "Pada salah satu pertemuan, sebagian besar waktu akhir digunakan untuk troubleshooting bersama. Waktu untuk sesi refleksi individu menjadi terbatas.",
       "Rubrik penilaian formatif masih perlu diperjelas agar observasi praktik tidak hanya berbasis kesan umum, tetapi memiliki indikator yang lebih terukur dan sesuai dengan tujuan pembelajaran.",
     ],
     adjustments: [
@@ -98,9 +98,9 @@ const artifacts = [
     ],
     strengths: [
       "Strategi triase error yang diterapkan pada pertemuan praktik membantu proses pendampingan menjadi lebih terarah ketika beberapa kendala teknis muncul secara bersamaan.",
-      "Pelibatan peserta didik yang lebih siap sebagai konsultan error meningkatkan kepercayaan diri mereka sekaligus memperkuat budaya belajar kolaboratif di kelas.",
+      "Peserta didik yang lebih siap berperan sebagai konsultan error untuk membantu teman menelusuri kendala teknis.",
       "Penggunaan checkpoint named-checkzone pada konfigurasi BIND9 membantu peserta didik memeriksa validitas zona DNS sebelum melanjutkan ke tahap pengujian, sehingga proses debugging menjadi lebih sistematis.",
-      "Asesmen sumatif berupa demonstrasi akses web Laravel melalui domain lokal memberikan pengalaman autentik karena peserta didik dapat melihat hasil konfigurasi server, aplikasi, dan DNS secara terpadu.",
+      "Pada asesmen sumatif, peserta didik mendemonstrasikan akses web Laravel melalui domain lokal untuk memeriksa hasil konfigurasi server, aplikasi, dan DNS secara terpadu.",
     ],
     weaknesses: [
       "Sebagian peserta didik mengalami kendala akibat perbedaan nama paket PHP pada versi Ubuntu yang berbeda, misalnya php7.4 dan php8.1. Hal ini menunjukkan bahwa modul ajar perlu memuat panduan variasi paket perangkat lunak, bukan hanya satu skenario instalasi.",
@@ -141,7 +141,7 @@ const artifacts = [
       {
         name: "Flow Theory — Csikszentmihalyi (1990)",
         description:
-          "Aktivitas monitoring menggunakan htop menunjukkan keterlibatan belajar yang tinggi karena peserta didik dapat mengamati proses server secara real-time. Kondisi ini dimanfaatkan untuk memperkuat eksplorasi, sehingga peserta didik tidak hanya menjalankan perintah, tetapi juga memahami hubungan antara aktivitas sistem, penggunaan sumber daya, dan stabilitas layanan.",
+          "Saat menggunakan htop, peserta didik menunjukkan minat untuk mengamati proses server secara real-time. Aktivitas ini digunakan untuk membahas hubungan antara proses sistem, penggunaan sumber daya, dan stabilitas layanan.",
       },
       {
         name: "Comprehensible Output Hypothesis — Swain (1985)",
@@ -150,9 +150,9 @@ const artifacts = [
       },
     ],
     strengths: [
-      "Sebagian besar peserta didik berhasil menyelesaikan demonstrasi server production simulasi secara mandiri, sehingga menunjukkan bahwa integrasi materi dari siklus sebelumnya dapat dipahami dalam bentuk proyek akhir.",
+      "Pada proyek akhir, sebagian besar peserta didik menyelesaikan demonstrasi server production simulasi secara mandiri dengan menggabungkan materi dari siklus sebelumnya.",
       "Diagram arsitektur server yang digunakan sejak awal pertemuan membantu peserta didik melihat hubungan antara komponen Ubuntu Server, web server, aplikasi, DNS, Git, dan monitoring secara lebih utuh.",
-      "Strategi presentasi sukarela menciptakan suasana belajar yang positif karena peserta didik yang siap dapat maju lebih awal dan membangun motivasi bagi teman lainnya.",
+      "Presentasi sukarela memberi kesempatan peserta didik yang sudah siap untuk maju lebih awal.",
       "Peer evaluation memberikan ruang bagi peserta didik untuk memberi umpan balik terhadap hasil kerja teman secara jujur, konstruktif, dan relevan dengan indikator proyek.",
     ],
     weaknesses: [

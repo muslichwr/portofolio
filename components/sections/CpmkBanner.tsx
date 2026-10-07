@@ -30,7 +30,7 @@ export function CpmkBanner() {
         <div className="flex items-center gap-3">
           <CheckCircle className="w-4 h-4 text-emerald-500/80 shrink-0" />
           <span className="text-sm font-medium text-zinc-300">
-            Komponen Analisis E-Portfolio 1 yang Dipenuhi
+          Komponen Analisis E-Portfolio 1
           </span>
         </div>
         <ChevronDown

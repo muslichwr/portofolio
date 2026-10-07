@@ -214,7 +214,7 @@ const courses: readonly CourseData[] = [
         title: "Connection",
         question: "1. Apa keterkaitan materi perkuliahan dengan peran saya sebagai calon guru?",
         content:
-          "Materi ini menyadarkan saya bahwa guru tidak sekadar menyelesaikan tuntutan kurikulum, melainkan memfasilitasi kebutuhan peserta didik. Dalam konteks guru PPLG, tingkat kesiapan siswa saat belajar coding (seperti dasar HTML/CSS) sangat beragam. Teori perkembangan dan teori belajar berfungsi sebagai panduan bagi saya untuk memahami karakteristik kognitif, sosial-emosional, dan minat siswa, sehingga saya dapat merancang pembelajaran yang benar-benar relevan dengan kondisi kelas.",
+          "Materi ini membantu saya melihat kebutuhan peserta didik saat menyusun pembelajaran. Dalam konteks guru PPLG, tingkat kesiapan siswa saat belajar coding (seperti dasar HTML/CSS) beragam. Teori perkembangan dan teori belajar menjadi panduan untuk memahami karakteristik kognitif, sosial-emosional, dan minat siswa, lalu menyesuaikan rancangan pembelajaran dengan kondisi kelas.",
       },
       {
         fourCKey: "challenge",
@@ -228,7 +228,7 @@ const courses: readonly CourseData[] = [
         title: "Concept",
         question: "3. Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?",
         content:
-          "Konsep utama yang paling relevan bagi saya meliputi Teori Perkembangan, Teori Belajar (terutama Konstruktivisme, Humanisme, dan Vygotsky), Pembelajaran Sosial Emosional (CASEL), serta penciptaan iklim belajar yang aman (Mastery Climate). Sebagai muaranya, saya belajar betapa pentingnya Asesmen Diagnostik untuk memetakan tingkat kesiapan, pengetahuan awal, dan kebutuhan dukungan siswa sebelum merancang modul ajar yang berdiferensiasi (TaRL).",
+          "Konsep yang saya pelajari meliputi Teori Perkembangan, Teori Belajar (terutama Konstruktivisme, Humanisme, dan Vygotsky), Pembelajaran Sosial Emosional (CASEL), serta iklim belajar yang aman (Mastery Climate). Asesmen Diagnostik digunakan untuk memetakan kesiapan, pengetahuan awal, dan kebutuhan dukungan siswa sebelum merancang modul ajar yang berdiferensiasi (TaRL).",
       },
       {
         fourCKey: "change",
@@ -252,7 +252,7 @@ const courses: readonly CourseData[] = [
             label: "Alasan Pemilihan",
             question: "Mengapa artefak tersebut yang saya pilih?",
             content:
-              "Rangkaian artefak ini dipilih karena mampu merekam jejak perkembangan pemahaman saya secara utuh. Dimulai dari analisis teoritis melalui studi kasus (Pak Anto dan Bu Sinta), hingga kemampuan mengaplikasikannya ke dalam praktik nyata melalui profiling kondisi kelas sesungguhnya dan perancangan Project Based Learning (PjBL) pembuatan website profil digital.",
+              "Saya memilih rangkaian artefak ini karena memperlihatkan proses dari analisis studi kasus (Pak Anto dan Bu Sinta), profiling kondisi kelas, hingga perancangan Project Based Learning (PjBL) pembuatan website profil digital.",
           },
           {
             label: "Bagian yang Mendukung Refleksi",
@@ -267,7 +267,7 @@ const courses: readonly CourseData[] = [
         title: "Kesimpulan Mata Kuliah",
         question: "Sintesis menyeluruh hasil refleksi pengalaman belajar mata kuliah.",
         content:
-          "Mata kuliah Pemahaman tentang Peserta Didik dan Pembelajaran memberikan wawasan baru bagi saya bahwa perancangan pembelajaran yang efektif harus selalu berawal dari pengenalan yang mendalam terhadap kondisi pesertanya. Melalui pembelajaran ini, saya menyadari bahwa kesulitan siswa dalam merangkai baris kode sering kali bukan karena mereka tidak mampu, melainkan karena strategi mengajar yang belum mengakomodasi tahapan perkembangan, kesiapan belajar, dan kebutuhan dukungan mereka. Ke depan, berbekal keterampilan asesmen dan strategi diferensiasi yang telah saya susun (seperti pada LK 4), saya berkomitmen untuk menciptakan kelas Pemrograman Web yang inklusif, adaptif, dan memberikan ruang aman bagi setiap siswa untuk berlatih menjadi pemecah masalah yang tangguh.",
+          "Mata kuliah Pemahaman tentang Peserta Didik dan Pembelajaran membantu saya mempertimbangkan kondisi siswa saat merancang pembelajaran. Kesulitan menulis kode perlu ditelaah bersama kesiapan belajar, tahapan perkembangan, dan dukungan yang diberikan, sebelum saya menyimpulkan kemampuan siswa. Ke depan, saya ingin menggunakan rancangan asesmen dan strategi diferensiasi pada LK 4 untuk menyesuaikan pendampingan di kelas Pemrograman Web, agar siswa dapat bertanya dan mencoba tanpa takut salah.",
       },
     ],
     artifacts: [
@@ -291,28 +291,28 @@ const courses: readonly CourseData[] = [
         title: "Connection",
         question: "1. Apa keterkaitan materi perkuliahan dengan peran saya sebagai calon guru?",
         content:
-          "Mata kuliah Pembelajaran Mendalam dan Asesmen (PMA) Dasar SMK sangat relevan dengan peran saya sebagai calon guru vokasi (PPLG). Materi ini menyadarkan saya bahwa tugas utama guru SMK bukanlah sekadar mentransfer pengetahuan teknis (coding), melainkan menjembatani teori di kelas dengan realitas dunia kerja. Melalui pendekatan Deep Learning, saya belajar bagaimana merancang pengalaman belajar yang bermakna (meaningful), berkesadaran (mindful), dan menggembirakan (joyful) agar siswa tidak hanya mencapai level \"tahu\", tetapi juga \"mampu melakukan\" dan memecahkan masalah layaknya profesional di industri.",
+          "Dalam mata kuliah Pembelajaran Mendalam dan Asesmen (PMA) Dasar SMK, saya belajar menghubungkan materi coding dengan kegiatan praktik sebagai calon guru vokasi (PPLG). Melalui pendekatan Deep Learning, saya mempelajari pembelajaran yang bermakna (meaningful), berkesadaran (mindful), dan menggembirakan (joyful). Saya ingin siswa dapat menjelaskan langkah yang diambil saat menerapkan materi dan menelusuri masalah selama praktik.",
       },
       {
         fourCKey: "challenge",
         title: "Challenge",
         question: "2. Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?",
         content:
-          "Tantangan terbesarnya adalah membongkar kebiasaan mengajar yang masih didominasi metode ceramah (teacher-centered) atau pemberian tutorial step-by-step yang kaku. Selama ini, saya menyadari bahwa asesmen di kelas produktif sering kali terjebak pada tes kognitif (pilihan ganda) atau sekadar menilai hasil akhir produk. Mata kuliah ini memaksa saya untuk bergeser merancang asesmen autentik berbasis unjuk kerja (project/work-based) yang memotret proses berpikir kritis, kemampuan troubleshooting, dan kolaborasi siswa secara holistik, bukan sekadar nilai akhir.",
+          "Tantangan bagi saya adalah mengurangi ketergantungan pada ceramah (teacher-centered) dan tutorial step-by-step. Saya juga perlu meninjau asesmen yang hanya menggunakan tes kognitif (pilihan ganda) atau hasil akhir produk. Dalam mata kuliah ini, saya belajar merancang asesmen autentik berbasis unjuk kerja (project/work-based) yang menilai proses pemecahan masalah, troubleshooting, dan kolaborasi selama praktik.",
       },
       {
         fourCKey: "concept",
         title: "Concept",
         question: "3. Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?",
         content:
-          "Konsep utama yang paling fundamental bagi saya adalah Keselarasan Konstruktif (Constructive Alignment) melalui kerangka Understanding by Design (UbD). Saya belajar bagaimana menyelaraskan Capaian Pembelajaran (CP) dengan Asesmen yang autentik, lalu merancang Aktivitas Belajar berbasis proyek nyata. Selain itu, saya juga mempelajari pentingnya Work-Related Learning (WRL) dan integrasi Desain Universal untuk Pembelajaran (DUP/UDL) guna mengakomodasi keberagaman kesiapan belajar siswa melalui scaffolding dan tutor sebaya (peer-teaching).",
+          "Melalui Keselarasan Konstruktif (Constructive Alignment) dan kerangka Understanding by Design (UbD), saya belajar menyelaraskan Capaian Pembelajaran (CP), asesmen autentik, dan aktivitas belajar berbasis proyek. Saya juga mempelajari Work-Related Learning (WRL) serta Desain Universal untuk Pembelajaran (DUP/UDL) untuk menyesuaikan dukungan dengan kesiapan siswa melalui scaffolding dan tutor sebaya (peer-teaching).",
       },
       {
         fourCKey: "change",
         title: "Change",
         question: "4. Apa saja perubahan yang ingin saya lakukan setelah mendapatkan materi perkuliahan ini?",
         content:
-          "Ke depannya, saya berkomitmen penuh untuk mengeliminasi penggunaan asesmen hafalan pada mata pelajaran produktif. Saya akan membiasakan penerapan Project-Based Learning (PjBL) yang disimulasikan seperti Surat Perintah Kerja (SPK) dari klien industri, seperti praktik deployment aplikasi. Saya juga akan membudayakan \"Lingkaran Refleksi\" di akhir proyek, di mana kegagalan atau error code tidak dihakimi sebagai nilai buruk, melainkan dibedah bersama sebagai proses debugging untuk membangun growth mindset siswa.",
+          "Ke depan, saya ingin mengurangi asesmen yang hanya mengandalkan hafalan pada mata pelajaran produktif. Saya akan mencoba Project-Based Learning (PjBL) dengan tugas yang disimulasikan sebagai Surat Perintah Kerja (SPK) dari klien industri, seperti praktik deployment aplikasi. Saya juga ingin menggunakan \"Lingkaran Refleksi\" di akhir proyek untuk membahas error code dan langkah debugging bersama, sebagai latihan growth mindset.",
       },
       {
         fourCKey: "artefak",
@@ -329,13 +329,13 @@ const courses: readonly CourseData[] = [
             label: "Alasan Pemilihan",
             question: "Mengapa artefak tersebut yang saya pilih?",
             content:
-              "Rangkaian artefak tersebut saya pilih karena merepresentasikan alur berpikir saya secara kronologis. Dimulai dari mengkritisi praktik mengajar konvensional yang mematikan nalar (LK 1), menyintesis solusi melalui kerangka UbD (LK 2), hingga akhirnya saya mampu merancang sebuah modul ajar nyata berbasis unjuk kerja (Deployment Aplikasi Web Laravel menggunakan Nginx) yang sangat kontekstual dengan kompetensi PPLG (LK 3 dan 4).",
+              "Rangkaian artefak ini memperlihatkan urutan pekerjaan saya: menelaah keterbatasan praktik mengajar pada LK 1, menyusun rancangan melalui kerangka UbD pada LK 2, lalu merancang modul ajar berbasis unjuk kerja Deployment Aplikasi Web Laravel menggunakan Nginx untuk kompetensi PPLG pada LK 3 dan 4.",
           },
           {
             label: "Bagian yang Mendukung Refleksi",
             question: "Bagian mana dari artefak ini yang mendukung hasil refleksi saya?",
             content:
-              "LK 1.D menunjukkan analisis saya bahwa kompetensi lulusan SMK gagal terbentuk jika ruang praktik dihilangkan. LK 2.D menunjukkan proses penyelarasan tujuan, aktivitas, dan asesmen, sedangkan LK 2.E memuat refleksi serta rencana tindak lanjut terhadap rancangan pembelajaran (termasuk tantangan menggeser pedagogi ke heutagogi). Bukti terkuat ada pada LK 3.D dan 3.E, di mana saya berhasil merancang instrumen asesmen autentik (rubrik unjuk kerja deployment) yang tidak hanya menilai produk web yang berhasil diakses (live), tetapi juga menilai ketaatan pada SOP (security file .env) dan kemampuan siswa membaca error log saat melakukan troubleshooting.",
+              "LK 1.D memuat analisis saya tentang keterbatasan pembelajaran SMK ketika kesempatan praktik dikurangi. LK 2.D menunjukkan penyelarasan tujuan, aktivitas, dan asesmen, sedangkan LK 2.E memuat refleksi serta rencana tindak lanjut terhadap rancangan pembelajaran (termasuk tantangan menggeser pedagogi ke heutagogi). LK 3.D dan 3.E memuat instrumen asesmen autentik berupa rubrik unjuk kerja deployment. Rubrik ini menilai akses produk web (live), ketaatan pada SOP (security file .env), dan kemampuan membaca error log saat troubleshooting.",
           },
         ],
       },
@@ -344,7 +344,7 @@ const courses: readonly CourseData[] = [
         title: "Kesimpulan Mata Kuliah",
         question: "Sintesis menyeluruh hasil refleksi pengalaman belajar mata kuliah.",
         content:
-          "Mata kuliah Pembelajaran Mendalam dan Asesmen (PMA) Dasar SMK memberikan titik balik yang tegas bagi saya bahwa kualitas lulusan vokasi sangat ditentukan oleh bagaimana guru mendesain pengalaman belajarnya. Saya menyadari bahwa kepasifan siswa, seperti pada kasus SMK Karya Nyata, sering kali berakar dari metode pengajaran yang monoton dan asesmen yang tidak relevan dengan tuntutan zaman. Berbekal pemahaman kerangka Understanding by Design (UbD), saya kini lebih mantap untuk merancang pembelajaran PPLG yang bertumpu pada proyek nyata industri (Work-Related Learning). Ke depan, saya akan terus mengasah kemampuan menyusun rubrik asesmen autentik yang mampu mengukur hard skills (coding/deployment) sekaligus soft skills (problem solving, kolaborasi) secara berimbang. Harapannya, kelas saya tidak hanya menjadi tempat berlatih merangkai baris kode, tetapi menjadi simulator dunia kerja yang mencetak generasi vokasi yang adaptif, reflektif, dan berdaya saing global.",
+          "Mata kuliah Pembelajaran Mendalam dan Asesmen (PMA) Dasar SMK membantu saya meninjau hubungan antara rancangan pembelajaran dan kesempatan siswa untuk berlatih. Dalam kasus SMK Karya Nyata, saya menelaah metode pengajaran dan asesmen yang digunakan serta kaitannya dengan kepasifan siswa. Melalui kerangka Understanding by Design (UbD), saya belajar menyelaraskan tujuan, kegiatan, dan asesmen dalam proyek PPLG berbasis Work-Related Learning. Ke depan, saya ingin memperbaiki rubrik asesmen autentik agar dapat menilai hard skills (coding/deployment) serta soft skills (problem solving, kolaborasi), termasuk langkah yang diambil siswa ketika menemukan error.",
       },
     ],
     artifacts: [
@@ -547,7 +547,7 @@ const courses: readonly CourseData[] = [
         title: "Change",
         question: "4. Apa saja perubahan yang ingin saya lakukan setelah mendapatkan materi perkuliahan ini?",
         content:
-          "Secara personal, saya akan mempertahankan rutinitas gym yang sudah berhasil menurunkan BMI saya ke tingkat ideal (22,57), sambil konsisten menyisipkan kardio ringan dan peregangan fleksibilitas. Dalam konteks sekolah, saya ingin menginisiasi program kebugaran seperti \"Gerak Aktif Pagi\" atau membiasakan Posture Break (peregangan mikro 5-7 menit) di sela-sela jam pelajaran produktif komputer. Tujuannya agar siswa tidak hanya cerdas secara teknis, tetapi juga memiliki ketahanan fisik dan postur yang baik saat memasuki dunia kerja industri 4.0.",
+          "Saya ingin mempertahankan rutinitas gym, kardio ringan, dan peregangan. Dalam catatan latihan ini, BMI saya turun menjadi 22,57. Di sekolah, saya ingin mencoba program kebugaran seperti \"Gerak Aktif Pagi\" atau Posture Break (peregangan mikro 5-7 menit) di sela-sela jam pelajaran produktif komputer. Tujuannya memberi waktu bergerak setelah duduk lama dan mengenalkan kebiasaan menjaga postur saat bekerja di depan komputer.",
       },
       {
         fourCKey: "artefak",
@@ -564,13 +564,13 @@ const courses: readonly CourseData[] = [
             label: "Alasan Pemilihan",
             question: "Mengapa artefak tersebut yang saya pilih?",
             content:
-              "Artefak tersebut saya pilih karena merekam secara utuh perjalanan perubahan kebiasaan fisik saya secara kronologis; mulai dari asesmen awal dan penurunan berat badan (TKJU), perencanaan intervensi mandiri (Logbook), refleksi efektivitas latihan (kardio 20 menit), hingga kemampuan mengaplikasikannya ke dalam praktik nyata melalui sebuah rancangan program sekolah (Sekolah Sehat & Bugar) yang masif dan terstruktur untuk siswa kejuruan.",
+              "Artefak ini memuat asesmen awal dan penurunan berat badan (TKJU), perencanaan latihan mandiri (Logbook), refleksi latihan kardio 20 menit, serta rancangan program Sekolah Sehat & Bugar untuk siswa kejuruan. Rangkaian tersebut memperlihatkan catatan latihan pribadi dan rencana penerapannya di sekolah.",
           },
           {
             label: "Bagian yang Mendukung Refleksi",
             question: "Bagian mana dari artefak ini yang mendukung hasil refleksi saya?",
             content:
-              "LK 1.D membuktikan progres kebugaran personal saya dengan capaian 22 repetisi step test dan penurunan berat badan. LK 2.D dan 2.E mendokumentasikan progres kardio saya dari yang awalnya terengah-engah di menit ke-7 menjadi mampu berlari konstan 20 menit, lengkap dengan catatan manajemen stres. Sementara itu, Proposal Program menyoroti strategi spesifik seperti integrasi Posture Break di laboratorium komputer, yang membuktikan pemahaman saya terhadap kebutuhan gerak siswa vokasi.",
+              "LK 1.D memuat catatan kebugaran saya berupa capaian 22 repetisi step test dan penurunan berat badan. LK 2.D dan 2.E mendokumentasikan perkembangan kardio dari yang awalnya terengah-engah di menit ke-7 menjadi mampu berlari konstan 20 menit, beserta catatan manajemen stres. Proposal Program memuat rencana integrasi Posture Break di laboratorium komputer untuk memberi siswa waktu bergerak di sela praktik.",
           },
         ],
       },
@@ -579,7 +579,7 @@ const courses: readonly CourseData[] = [
         title: "Kesimpulan Mata Kuliah",
         question: "Sintesis menyeluruh hasil refleksi pengalaman belajar mata kuliah.",
         content:
-          "Mata kuliah Pengembangan Kebugaran Jasmani memberikan titik balik paradigma bahwa kesehatan fisik adalah fondasi utama dari kesiapan kerja, baik bagi saya sebagai pendidik maupun bagi siswa SMK yang saya ajar. Keberhasilan personal saya dalam mengatur komposisi tubuh dan meningkatkan kapasitas jantung-paru menyadarkan saya bahwa kebugaran dapat dicapai oleh siapa saja, terlepas dari seberapa padat jadwal yang dimiliki, asalkan terprogram dengan baik. Ke depan, saya berkomitmen untuk mempertahankan gaya hidup aktif ini dan mengaplikasikan edukasi ergonomi kerja serta manajemen istirahat aktif (seperti Posture Break) di dalam kelas. Harapannya, saya tidak hanya mencetak programmer yang kompeten, tetapi juga meluluskan generasi vokasi yang sehat, tangguh, dan produktif secara fisik maupun mental.",
+          "Mata kuliah Pengembangan Kebugaran Jasmani membantu saya meninjau kebiasaan latihan dan waktu yang dihabiskan di depan komputer. Dari catatan latihan pribadi, saya belajar mengatur latihan kekuatan, kardio, dan peregangan di tengah tugas PPG. Ke depan, saya ingin mempertahankan rutinitas tersebut dan mengenalkan ergonomi kerja serta istirahat aktif seperti Posture Break di kelas. Rencana ini masih perlu disesuaikan dengan waktu pelajaran dan kondisi siswa.",
       },
     ],
     artifacts: [

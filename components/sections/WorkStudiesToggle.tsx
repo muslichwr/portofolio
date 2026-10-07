@@ -39,7 +39,7 @@ const workEntries: readonly TimelineEntry[] = [
     role: "Vocational Teacher & Admin Lab",
     institution: "SMKS Tunas Bangsa Pare",
     description:
-      "Mengajar Konsentrasi Keahlian TKJ pada mata pelajaran Administrasi Sistem Jaringan. Mengelola laboratorium jaringan dan merancang praktikum berbasis industri.",
+      "Mengajar Konsentrasi Keahlian TKJ pada mata pelajaran Administrasi Sistem Jaringan. Mengelola laboratorium jaringan dan merancang kegiatan praktikum.",
     icon: School,
     iconColor: "text-indigo-400", // Saya ubah sedikit menjadi indigo agar tidak sama persis dengan cyan di bawah
   },
@@ -57,7 +57,7 @@ const workEntries: readonly TimelineEntry[] = [
     role: "Fullstack Developer Intern",
     institution: "Dinas Komunikasi dan Informatika (Diskominfo)",
     description:
-      "Mengembangkan dan memelihara aplikasi web dari frontend hingga integrasi backend. Bertanggung jawab atas bug fixing, optimasi basis data, dan deployment sistem sesuai standar industri.",
+      "Mengembangkan dan memelihara aplikasi web dari frontend hingga integrasi backend. Menangani bug fixing, optimasi basis data, dan deployment sistem.",
     icon: Code2,
     iconColor: "text-blue-400",
   },
@@ -72,7 +72,7 @@ const studiesEntries: readonly TimelineEntry[] = [
     role: "Universitas Negeri Surabaya (UNESA)",
     institution: "Pendidikan Profesi Guru",
     description:
-      "Program sertifikasi profesi guru resmi pemerintah. Berfokus pada pengembangan kompetensi komprehensif (pedagogik, profesional, sosial, kepribadian) dan integrasi Praktik Pengalaman Lapangan (PPL) untuk mencetak pendidik vokasi yang kompeten.",
+      "Program sertifikasi profesi guru resmi pemerintah. Mempelajari kompetensi pedagogik, profesional, sosial, dan kepribadian melalui perkuliahan serta Praktik Pengalaman Lapangan (PPL).",
     icon: Award,
     iconColor: "text-amber-400",
   },
@@ -81,7 +81,7 @@ const studiesEntries: readonly TimelineEntry[] = [
     role: "Universitas Negeri Surabaya (UNESA)",
     institution: "S1 Pendidikan Teknologi Informasi",
     description:
-      "Lulusan dengan IPK 3.78 yang memiliki minat kuat pada Software Development dan Teknologi Jaringan. Menggabungkan fondasi akademik, kemampuan problem-solving, dan kedisiplinan tinggi untuk beradaptasi serta berkontribusi di lingkungan profesional.", icon: GraduationCap,
+      "Lulusan dengan IPK 3.78 dan minat pada Software Development serta Teknologi Jaringan.", icon: GraduationCap,
     iconColor: "text-violet-400",
   },
 ] as const;

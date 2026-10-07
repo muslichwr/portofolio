@@ -450,9 +450,8 @@ export default function RefleksiAkhirPage() {
                 Alih-alih langsung menunjukkan jawaban, saya lebih sering
                 bertanya seperti, &ldquo;Bagian mana yang terakhir kamu
                 ubah?&rdquo; atau &ldquo;Apa yang tertulis di log paling
-                bawah?&rdquo; Pertanyaan sederhana seperti ini membuat siswa
-                mulai melihat error sebagai petunjuk, bukan sebagai jalan
-                buntu.
+                bawah?&rdquo; Saya menggunakan pertanyaan ini untuk membantu siswa
+                membaca error sebagai petunjuk saat menelusuri masalah.
               </p>
               <p>
                 Umpan balik tersebut menjadi bekal penting untuk PPL Mandiri.
@@ -490,18 +489,15 @@ export default function RefleksiAkhirPage() {
           {/* Philosophy prose */}
           <div className="space-y-6 text-base leading-relaxed text-zinc-400">
             <p>
-              Saya memegang prinsip{" "}
+              Saya mengutamakan{" "}
               <span className="font-semibold text-zinc-200">
-                &ldquo;Logic First, Syntax Later&rdquo;
-              </span>
-              . Bagi saya, siswa perlu memahami alur berpikir di balik sebuah
-              perintah sebelum mereka menghafal bentuk sintaksnya. Dalam
+                pemahaman alur dan alasan di balik perintah
+              </span>{" "}
+              sebelum siswa menghafal sintaks. Dalam
               pembelajaran server dan deployment, perintah yang diketik bisa
               berubah sesuai versi sistem, konfigurasi, atau kebutuhan proyek.
-              Prinsip ini menjadi cara saya menumbuhkan Pembelajaran Mendalam:
-              memprioritaskan pemahaman logika arsitektur dan kesadaran troubleshooting
-              mandiri di atas sekadar hafalan sintaks, sehingga proses belajar tetap
-              bermakna dan relevan dengan tantangan kerja nyata.
+              Karena itu, saya mengajak siswa memahami arsitektur sistem dan
+              menelusuri masalah sebelum mencoba perintah berikutnya.
             </p>
 
             <p>
@@ -509,7 +505,7 @@ export default function RefleksiAkhirPage() {
               pertama yang memberi jawaban. Dalam kelas kejuruan, siswa perlu
               diberi ruang untuk mencoba, salah, membaca pesan error, lalu
               memperbaiki langkahnya. Peran saya adalah menjaga proses itu tetap
-              aman, terarah, dan bermakna. Ketika siswa menghadapi{" "}
+              aman dan terarah. Ketika siswa menghadapi{" "}
               <span className="font-mono text-xs text-zinc-300">
                 502 Bad Gateway
               </span>{" "}
@@ -523,17 +519,13 @@ export default function RefleksiAkhirPage() {
             </p>
 
             <p>
-              Pembelajaran kejuruan menurut saya harus dekat dengan dunia kerja.
-              Oleh karena itu, materi seperti{" "}
+              Saya ingin mengenalkan kebiasaan pengelolaan sistem melalui{" "}
               <span className="font-medium text-zinc-200">
                 Git workflow, deployment pipeline, server monitoring
               </span>
-              , dan SOP server production perlu dikenalkan sejak di sekolah.
-              Bukan agar siswa terlihat seperti profesional sebelum waktunya,
-              tetapi agar mereka mulai memahami kebiasaan kerja yang aman,
-              rapi, dan bertanggung jawab. Saya ingin membantu siswa tumbuh
-              menjadi pribadi yang mandiri, teliti, kolaboratif, dan siap
-              belajar ketika menghadapi masalah baru.
+              , dan SOP server production. Melalui praktik tersebut, saya ingin
+              siswa belajar memeriksa perubahan, menjaga konfigurasi, dan bekerja
+              bersama saat menghadapi masalah.
             </p>
           </div>
         </div>

@@ -189,7 +189,7 @@ const lampiran8Cycles: readonly TeachingCycle[] = [
     rawScore: 69,
     rawMaxScore: 80,
     overallScore: 86.25,
-    highlight: "Stabil Tinggi",
+    highlight: "Perubahan Nilai Praktik",
     metrics: [
       {
         metric: "Membuka Pelajaran",
@@ -449,7 +449,7 @@ export default function PenilaianPage() {
               </div>
             </div>
             <p className="max-w-xl text-sm leading-relaxed text-zinc-500">
-              Progresivitas penilaian praktik mengajar dari Siklus 1 hingga
+              Perkembangan nilai praktik mengajar dari Siklus 1 hingga
               Siklus 3. Skor menunjukkan dinamika pelaksanaan pembelajaran,
               mulai dari membuka pelajaran, kegiatan inti, penutup, hingga
               faktor penunjang.

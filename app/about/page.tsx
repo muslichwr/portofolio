@@ -39,19 +39,19 @@ const guruKarakterCards: readonly GuruKarakter[] = [
     icon: Target,
     title: "Guru Reflektif",
     description:
-      "Menjadikan setiap siklus mengajar sebagai sumber data untuk perbaikan. Refleksi bukan formalitas — ia adalah mesin pertumbuhan.",
+      "Setiap siklus saya gunakan untuk melihat bagian pembelajaran yang perlu diperbaiki pada pertemuan berikutnya.",
   },
   {
     icon: Layers,
     title: "Guru Fasilitatif",
     description:
-      "Lebih banyak bertanya daripada menjawab. Memberi ruang murid bergulat dengan masalah sebelum jawaban diberikan.",
+      "Mengajukan pertanyaan dan memberi waktu murid mencoba menyelesaikan masalah sebelum saya memberi jawaban.",
   },
   {
     icon: Zap,
     title: "Guru Inovatif",
     description:
-      "Mengintegrasikan stack teknologi industri nyata ke dalam setiap praktikum pembelajaran vokasi.",
+      "Menggunakan Linux, Git, dan Nginx dalam praktik pengelolaan server dan deployment aplikasi web.",
   },
   {
     icon: Users,
@@ -75,7 +75,7 @@ const kompetensiList: readonly Kompetensi[] = [
     number: "01",
     title: "Pedagogical Content Knowledge",
     description:
-      "Memahami tidak hanya sekadar teori, tetapi cara terbaik mengajarkannya sesuai konteks vokasi dan tingkat kemampuan murid.",
+      "Memahami materi dan memilih cara mengajarkannya sesuai konteks vokasi serta tingkat kemampuan murid.",
   },
   {
     number: "02",
@@ -87,19 +87,19 @@ const kompetensiList: readonly Kompetensi[] = [
     number: "03",
     title: "Asesmen Autentik & Formatif",
     description:
-      "Membangun sistem penilaian berbasis rubrik terukur yang memberikan feedback bermakna, bukan sekadar angka akhir.",
+      "Menggunakan rubrik untuk menilai proses dan hasil praktik serta memberi umpan balik tentang bagian yang perlu diperbaiki.",
   },
   {
     number: "04",
     title: "Komunikasi Teknis",
     description:
-      "Melatih murid menjelaskan arsitektur dan konfigurasi sistem secara lisan — kompetensi kritis yang sering diabaikan di pendidikan vokasi.",
+      "Melatih murid menjelaskan arsitektur dan konfigurasi sistem secara lisan, termasuk langkah yang diambil saat menemui kendala.",
   },
   {
     number: "05",
     title: "Refleksi Iteratif",
     description:
-      "Menerapkan refleksi terstruktur terhadap tindakan mengajar dan respons belajar murid (Lefebvre et al., 2023) secara konsisten di setiap siklus untuk menghasilkan perbaikan nyata.",
+      "Menelaah tindakan mengajar dan respons belajar murid (Lefebvre et al., 2023) pada setiap siklus untuk menentukan penyesuaian berikutnya.",
   },
 ] as const;
 
@@ -151,7 +151,7 @@ const timelineMilestones: readonly TimelineMilestone[] = [
     period: "April 2026 (Minggu 13–15)",
     label: "Siklus 3 — Git Deployment & Final Project",
     description:
-      "Siklus puncak: version control dengan Git, deployment pipeline, monitoring server, dan demo server production simulasi.",
+      "Siklus ketiga mengintegrasikan materi sebelumnya melalui version control dengan Git, deployment pipeline, monitoring server, dan demo server production simulasi.",
     tag: "Selesai ✓",
     tagVariant: "completed",
   },
@@ -291,7 +291,7 @@ export default function AboutPage() {
                 Inspirasi
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-500">
-                Motivasi saya menjadi pendidik berawal dari kenyamanan berinteraksi dengan anak usia remaja. Dinamika mereka membuat saya berjiwa muda sekaligus menyadarkan saya akan tanggung jawab moral untuk mendidik karakter dan etika dasar mereka. Inspirasi terbesar saya adalah guru SMK saya yang luar biasa sabar saat membimbing praktik kejuruan. Keteladanan beliau menyadarkan saya bahwa guru yang baik tidak hanya mentransfer ilmu, tetapi juga membimbing sepenuh hati.
+                Saya tertarik menjadi pendidik karena merasa nyaman berinteraksi dengan remaja. Saya juga ingin membantu mereka belajar tentang tanggung jawab dan etika. Guru SMK saya menjadi salah satu inspirasi karena kesabarannya saat membimbing praktik kejuruan. Dari beliau, saya belajar untuk memberi penjelasan sekaligus mendampingi siswa dengan sabar selama praktik.
               </p>
             </div>
 
@@ -304,7 +304,7 @@ export default function AboutPage() {
                 Tujuan Profesional
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-500">
-                Melalui program PPG Prajabatan ini, tujuan utama saya adalah mengasah kompetensi pedagogik untuk menjadi guru profesional yang reflektif dan inspiratif. Saya ingin mampu menciptakan lingkungan belajar yang aman, memanfaatkan teknologi secara bijak, serta mendidik peserta didik tidak hanya secara kognitif, tetapi juga membentuk karakter mereka sesuai nilai-nilai luhur.
+                Melalui program PPG Prajabatan, saya ingin belajar mengevaluasi pembelajaran dan menyesuaikan cara mengajar dengan kebutuhan siswa. Saya ingin menyediakan ruang belajar yang aman untuk bertanya dan mencoba, menggunakan teknologi sesuai kebutuhan pembelajaran, serta membiasakan tanggung jawab dan etika selama praktik.
               </p>
             </div>
           </div>
@@ -334,10 +334,9 @@ export default function AboutPage() {
                 Misi Mengajar
               </p>
               <p className="mx-auto max-w-2xl text-base leading-relaxed text-zinc-300 md:text-lg">
-                Mencetak generasi muda yang tidak hanya kompeten secara teknis,
-                tetapi mampu berpikir kritis dalam memecahkan masalah nyata di
-                industri dan menjadi guru yang terus berkembang bersama
-                muridnya.
+                Saya ingin membantu siswa membangun kemampuan teknis sekaligus
+                kebiasaan memecahkan masalah secara mandiri, sambil terus
+                memperbaiki cara saya mengajar.
               </p>
             </div>
 
@@ -363,7 +362,7 @@ export default function AboutPage() {
                     Problem nyata &amp; konteks dunia kerja
                   </p>
                   <p className="mt-2 text-xs leading-relaxed text-zinc-500">
-                    Materi dan tugas dihubungkan langsung dengan skenario teknis industri nyata, seperti pengelolaan server dan deployment riil.
+                    Materi dan tugas menggunakan kegiatan pengelolaan server dan deployment aplikasi web.
                   </p>
                 </div>
 

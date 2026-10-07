@@ -83,12 +83,12 @@ const strengths: readonly AnalysisPoint[] = [
   {
     title: "Fokus pada Praktik",
     description:
-      "Saya lebih nyaman mengajak siswa langsung mencoba di depan komputer, sehingga kelas terasa lebih hidup dibandingkan hanya mencatat teori di papan tulis.",
+      "Saya lebih nyaman mengajak siswa mencoba langsung di depan komputer sambil membahas langkah dan kendala yang mereka temui.",
   },
   {
     title: "Menekankan Pemahaman Logika",
     description:
-      "Berpegang pada prinsip 'Logic First, Syntax Later', saya selalu membiasakan siswa paham alurnya dulu sebelum mengetik perintah di server. Kebiasaan ini pelan-pelan mengurangi kecenderungan siswa yang biasanya hanya sekadar copy-paste dari modul tanpa paham maksudnya.",
+      "Saya membiasakan siswa memahami alur dan alasan di balik suatu langkah sebelum mengetik perintah di server. Tujuannya agar mereka dapat menjelaskan langkah yang diambil, bukan hanya menyalin perintah dari modul.",
   },
 ] as const;
 
@@ -169,17 +169,16 @@ export default function RefleksiPage() {
             <p>
               Sebagai lulusan S1 Pendidikan Teknologi Informasi yang memiliki
               ketertarikan pada software development, saya ingin menjadi guru SMK
-              yang membantu peserta didik mempelajari teknologi informasi secara
-              relevan, kontekstual, dan tidak berhenti pada hafalan sintaks. Saya
-              berpegang pada prinsip{" "}
+              yang membantu peserta didik mempelajari teknologi informasi
+              melalui praktik dan memahami alasan di balik setiap langkah. Saya
+              lebih mengutamakan{" "}
               <span className="font-medium text-zinc-200">
-                &quot;Logic First, Syntax Later&quot;
+                pemahaman alur sebelum hafalan sintaks
               </span>
-              , yaitu membangun pemahaman terhadap logika, alur berpikir, dan cara
-              memecahkan masalah terlebih dahulu sebelum peserta didik berhadapan
-              dengan detail sintaks dalam bahasa pemrograman. Ke depan, saya ingin
-              berkembang sebagai guru sekaligus fasilitator yang sabar, terbuka
-              untuk berdiskusi layaknya teman belajar, serta mampu memperkenalkan
+              . Siswa perlu memahami logika dan cara memecahkan masalah sebelum
+              mempelajari detail sintaks dalam bahasa pemrograman. Ke depan, saya
+              ingin lebih sabar mendampingi praktik, memberi ruang untuk berdiskusi,
+              serta memperkenalkan
               teknologi dan praktik kerja di bidang IT, seperti Git, Linux, atau
               Nginx, melalui bahasa yang dekat dengan tingkat pemahaman peserta didik.
             </p>

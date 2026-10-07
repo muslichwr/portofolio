@@ -72,7 +72,7 @@ const guruKarakterCards: readonly GuruKarakter[] = [
     icon: Target,
     title: "Guru Reflektif",
     description:
-      "Belajar dari setiap siklus mengajar secara iteratif dan terstruktur berdasarkan data nyata di kelas.",
+      "Menggunakan catatan dari setiap siklus mengajar untuk melihat bagian pembelajaran yang perlu diperbaiki.",
   },
   {
     icon: Layers,
@@ -84,7 +84,7 @@ const guruKarakterCards: readonly GuruKarakter[] = [
     icon: Zap,
     title: "Guru Inovatif",
     description:
-      "Mengintegrasikan teknologi dan tools industri nyata ke dalam setiap praktikum pembelajaran vokasi.",
+      "Menggunakan Linux, Git, dan Nginx dalam praktik pengelolaan server dan deployment aplikasi web.",
   },
   {
     icon: Users,
@@ -208,7 +208,7 @@ export default function HomePage() {
 
           {/* ── Supporting Subtitle ── */}
           <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Pembelajaran Mendalam untuk kelas vokasi yang dekat dengan problem nyata dan dunia kerja.
+            Mengajar praktik IT melalui konfigurasi server, deployment aplikasi web, dan penelusuran error.
           </p>
 
           {/* ── Triad Dimensions ── */}
@@ -337,9 +337,9 @@ export default function HomePage() {
               Artefak Pembelajaran
             </h2>
             <p className="mt-5 max-w-lg text-sm leading-relaxed text-zinc-500">
-              Kumpulan artefak dari 3 siklus PPL Terbimbing yang memuat analisis
-              mendalam, teori pedagogis, dan refleksi berbasis konteks
-              pembelajaran nyata.
+              Kumpulan artefak dari 3 siklus PPL Terbimbing, beserta analisis
+              pembelajaran, teori pedagogis, dan refleksi atas kendala
+              selama praktik.
             </p>
           </div>
 
