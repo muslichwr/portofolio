@@ -24,6 +24,13 @@ const artifacts = [
     title: "OS Server & Web Server Dasar",
     techTags: ["Ubuntu Server", "SSH", "Apache2"],
     pedagogyTags: ["PjBL", "Vygotsky ZPD"],
+    summary: {
+      problem: "Konfigurasi IP menemui Network Unreachable; panduan awal belum mencakup perbedaan ifupdown dan netplan. Waktu refleksi berkurang karena troubleshooting.",
+      action: "Panduan CLI diberikan bertahap; siswa yang lebih cepat menyelesaikan tugas membantu teman yang mengalami kendala.",
+      evidence: "Dokumen pendukung: Modul Ajar Bab 1–2, LK 4 Refleksi Siklus 1, dan Lampiran 7/8 penilaian Guru Pamong.",
+      result: "Pada mini-presentasi, siswa menampilkan web statis dari browser host; mereka juga mencoba akses SSH melalui Putty.",
+      reflection: "Modul perlu memuat dua jalur konfigurasi dan langkah identifikasi versi OS; rubrik formatif perlu diperjelas.",
+    },
     context:
       "Siklus 1 diarahkan untuk membangun pemahaman awal peserta didik terhadap pengelolaan sistem operasi server dan layanan web dasar. Materi pembelajaran mencakup instalasi Ubuntu Server pada VirtualBox, konfigurasi jaringan melalui ifupdown atau netplan, akses jarak jauh menggunakan SSH dengan Putty, serta publikasi halaman web statis menggunakan Apache2. Cakupan tersebut dipilih untuk mengenalkan keterkaitan antara konsep server, konfigurasi jaringan, dan penerapan layanan web dalam konteks pembelajaran kejuruan.",
     theoryIntro:
@@ -77,6 +84,13 @@ const artifacts = [
     title: "Full Stack Environment & DNS Server Lokal",
     techTags: ["Nginx", "Laravel", "PHP-FPM", "BIND9"],
     pedagogyTags: ["PjBL", "Cognitive Load Theory"],
+    summary: {
+      problem: "Materi PHP/MySQL/Composer/Laravel padat; praktik juga menemui kendala permission, APP_KEY, versi paket, socket PHP-FPM, dan DNS klien.",
+      action: "Materi dibagi menjadi unit kecil dengan checkpoint, triase error, pengecekan versi PHP/socket, serta validasi zona BIND9 melalui named-checkzone.",
+      evidence: "Dokumen pendukung: Modul Ajar Bab 3–5, LK 4 Refleksi Siklus 2, dan Lampiran 7/8 penilaian Guru Pamong.",
+      result: "Siswa mendemonstrasikan akses Laravel melalui domain lokal; konfigurasi DNS pada Windows Host masih menjadi kendala.",
+      reflection: "Instalasi environment perlu dibagi menjadi dua pertemuan, disertai panduan variasi paket dan konfigurasi DNS klien.",
+    },
     context:
       "Siklus 2 mengembangkan fondasi pembelajaran pada siklus sebelumnya menuju pengelolaan lingkungan aplikasi web yang lebih kompleks. Peserta didik mempelajari instalasi PHP, MySQL, Composer, dan Laravel; migrasi layanan web dari Apache2 ke Nginx dengan PHP-FPM dan Server Block; serta konfigurasi DNS Server lokal menggunakan BIND9 melalui Forward Zone dan Reverse Zone. Rangkaian materi ini dirancang agar peserta didik memahami bagaimana aplikasi web dapat dikembangkan, dikonfigurasi, dan diakses melalui nama domain lokal dalam simulasi lingkungan kerja bidang teknologi.",
     theories: [
@@ -130,6 +144,13 @@ const artifacts = [
     title: "Git Deployment & Monitoring Server — Final Project",
     techTags: ["Git", "GitHub", "htop", "netstat"],
     pedagogyTags: ["PjBL", "Metacognition", "Flow Theory"],
+    summary: {
+      problem: "Setup SSH key membingungkan sebagian siswa; DNS klien masih terlewat saat demo, dan penjelasan arsitektur server belum lancar.",
+      action: "Autentikasi beralih ke HTTPS dengan Personal Access Token; siswa menggunakan pre-demo checklist dan berlatih menjelaskan arsitektur sistem.",
+      evidence: "Dokumen pendukung: Modul Ajar Bab 6–7, LK 4 Refleksi Siklus 3, dan Lampiran 7/8 penilaian Guru Pamong.",
+      result: "Dalam narasi praktik, sebagian besar siswa menyelesaikan demo server simulasi secara mandiri; penjelasan arsitektur masih menjadi kendala.",
+      reflection: "Checklist perlu distandarisasi, panduan autentikasi perlu bergambar, dan latihan komunikasi teknis perlu dimulai lebih awal.",
+    },
     context:
       "Siklus 3 menjadi tahap integrasi dari kompetensi yang telah dibangun pada dua siklus sebelumnya. Peserta didik menggabungkan konfigurasi server, aplikasi web, domain lokal, version control, deployment, dan monitoring ke dalam simulasi server production. Cakupan materi meliputi penggunaan Git dan GitHub melalui Personal Access Token, pembaruan aplikasi menggunakan git pull, pemantauan sumber daya server dengan htop dan netstat, serta final project berupa demonstrasi server production simulasi secara end-to-end di hadapan guru pamong dan dosen pembimbing.",
     theories: [
@@ -254,6 +275,7 @@ export default function ArtefakPage() {
               cycle={artifact.cycle}
               techTags={[...artifact.techTags]}
               pedagogyTags={[...artifact.pedagogyTags]}
+              summary={artifact.summary}
               context={artifact.context}
               theoryIntro={"theoryIntro" in artifact ? artifact.theoryIntro : undefined}
               theories={[...artifact.theories.map((t) => ({ ...t }))]}

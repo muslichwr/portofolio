@@ -85,7 +85,7 @@ Dokumen lama mencatat identifier mahasiswa pada header LK 2. Header/identifier t
 
 | Model/source | Fields penting | Dampak perubahan |
 |---|---|---|
-| `ArtifactCardProps`, ArtifactCard | title, cycle, techTags, pedagogyTags, context, optional theoryIntro, theories `{name, description}`, strengths, weaknesses, adjustments, downloads `{label, href}`, optional index | Content berasal dari `artifacts` pada page Artefak; thumbnail/structured result/evidence preview belum tersedia |
+| `ArtifactCardProps`, ArtifactCard | title, cycle, techTags, pedagogyTags, summary `{problem, action, evidence, result, reflection}`, context, optional theoryIntro, theories `{name, description}`, strengths, weaknesses, adjustments, downloads `{label, href}`, optional index | Content berasal dari `artifacts` pada page Artefak; thumbnail/evidence preview belum tersedia; summary hasil berasal dari narasi, bukan pengukuran baru |
 | `TeachingCycle`, page Penilaian | cycle, label, rawScore, rawMaxScore, overallScore, highlight, metrics `{metric, icon, score, maxScore}` | Overall score tersimpan eksplisit, bukan dihitung otomatis dari rawScore; perubahan harus menjaga konsistensi konversi |
 | `TimelineEntry`, WorkStudiesToggle | period, role, institution, description, icon, iconColor | Array workEntries/studiesEntries terpisah dari timeline PPG About; periksa semua narasi terkait |
 | `CourseData`, RefleksiMatkulClient | tabLabel, title, lk2PdfHref `string\|null`, sections, artifacts, optional crossLink/devNote | Default tab index 0; enam course; all linked values currently non-null |
@@ -256,9 +256,17 @@ Inventory berikut mencatat yang digunakan kode, bukan bibliography terverifikasi
 - **Rationale:** Pembaca profesional memahami praktik tanpa harus membaca seluruh analisis.
 - **Expected behavior:** Problem → Action → Evidence → Result → Reflection atau struktur ekuivalen, dengan detail akademik dipertahankan.
 - **Acceptance criteria:** Tiap kasus memiliki masalah/tindakan/bukti/hasil/refleksi nyata; evidence yang belum tersedia diberi kebutuhan; ringkasan tidak mengubah proposal tindakan menjadi hasil yang sudah terjadi.
-- **Status:** Proposed.
-- **Related page/component:** Artefak, ArtifactCard, teaser Home.
-- **Verification:** Struktur ringkas belum diimplementasikan.
+- **Status:** Implemented.
+- **Related page/component:** Artefak, ArtifactCard; teaser Home tidak diubah dalam task ini.
+- **Verification:** Tiga objek summary dirender sebagai Ringkasan Kasus (Masalah/Tindakan/Bukti/Hasil/Refleksi) setelah tags, sebelum konteks. Seluruh detail dan URL lama dipertahankan. Hasil berasal dari narasi, bukan pengukuran baru; dokumen eksternal hanya disebut sebagai pendukung dan isinya belum diverifikasi. Desktop 1440px serta TypeScript/lint/build diperiksa pada task ini.
+
+Penelusuran ringkasan ke source lama [app/artefak/page.tsx](app/artefak/page.tsx):
+
+| Siklus | Masalah | Tindakan | Bukti | Hasil | Refleksi |
+|---|---|---|---|---|---|
+| 1 | weaknesses: Network Unreachable, versi OS, waktu refleksi | theories ZPD dan strengths: panduan CLI/tutor sebaya | downloads: Modul Bab 1–2, LK 4 S1, L7/L8 | strengths: mini-presentasi web statis dan Putty | adjustments/weaknesses: dua jalur konfigurasi, identifikasi OS, rubrik formatif |
+| 2 | weaknesses: kepadatan materi, permission/APP_KEY, paket/socket, DNS klien | theories/strengths: unit kecil, checkpoint, triase, verifikasi PHP/socket, named-checkzone | downloads: Modul Bab 3–5, LK 4 S2, L7/L8 | strengths/weaknesses: demo domain lokal dan kendala DNS Windows Host | adjustments: dua pertemuan, variasi paket, panduan DNS klien |
+| 3 | weaknesses: SSH key, DNS klien, penjelasan arsitektur | weaknesses/theories: peralihan HTTPS/PAT, pre-demo checklist, peer explanation | downloads: Modul Bab 6–7, LK 4 S3, L7/L8 | strengths/weaknesses: demo mandiri dalam narasi dan keterbatasan penjelasan lisan | adjustments/weaknesses: standardisasi checklist, panduan bergambar, komunikasi teknis lebih awal |
 
 ### FR-EVIDENCE-001
 
@@ -487,7 +495,7 @@ Inventory berikut mencatat yang digunakan kode, bukan bibliography terverifikasi
 | ID | Label | Temuan / sumber | Dampak dan requirement |
 |---|---|---|---|
 | ISSUE-001 | ISSUE | Hero Home CTA menuju About; filosofi eksplisit hanya refleksi | Jalur bukti profesional dapat diperjelas; FR-HOME-002 |
-| ISSUE-002 | ISSUE | Karakter guru berulang Home/About/Akhir; kasus belum memiliki summary standar | Kurangi repetisi claim melalui evidence; FR-CASE-002, FR-EVIDENCE-002 |
+| ISSUE-002 | ISSUE | Repetisi karakter guru Home/About/Akhir perlu dievaluasi; tiga kasus kini memiliki summary standar (FR-CASE-002) | Kurangi repetisi claim melalui evidence; FR-CASE-002, FR-EVIDENCE-002 |
 | ISSUE-003 | ISSUE | 42 URL ditemukan; isi seluruh evidence belum diperiksa | Akses/link bukan sertifikasi keaslian; FR-EVIDENCE-002, FR-ACADEMIC-002 |
 | ISSUE-004 | ISSUE | TrendingUp pada delta negatif di Penilaian | Indikator arah belum koheren; FR-ASSESSMENT-002 |
 | ISSUE-005 | ISSUE | LK 4 S1/S2/S3 memakai file ID berbeda di Artefak dan tab PPL course | Bisa versi berbeda, belum terbukti salah; FR-EVIDENCE-002 |

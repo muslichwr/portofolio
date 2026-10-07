@@ -2,7 +2,7 @@
 
 Baseline: **7 Oktober 2026**, commit aplikasi `4c043ef`. Dibangun dari audit repository/production dan perbandingan dengan [PRD](../../PRD.md), [SRS](../../SRS.md), [DESIGN](../../DESIGN.md), dan [AGENTS](../../AGENTS.md).
 
-Ini roadmap, bukan changelog atau izin implementasi. **DECISION:** tugas fondasi berhenti pada dokumentasi. Task berikutnya hanya mengizinkan grouping semester pada Navbar desktop (FR-NAV-003); pekerjaan aplikasi lain tetap menunggu instruksi terpisah. Requirement Proposed tidak berubah menjadi keputusan final hanya karena dicantumkan sebagai task.
+Ini roadmap, bukan changelog atau izin implementasi. **DECISION:** tugas fondasi berhenti pada dokumentasi. Task lanjutan telah mengizinkan grouping semester desktop (FR-NAV-003) dan Ringkasan Kasus di Artefak (FR-CASE-002); pekerjaan lain tetap menunggu instruksi terpisah. Requirement Proposed tidak berubah menjadi keputusan final hanya karena dicantumkan sebagai task.
 
 Status phase: **NOT STARTED**, **IN PROGRESS**, **BLOCKED**, **DONE**. DONE hanya jika exit criteria terpenuhi. BLOCKED digunakan bila dependensi nyata menghalangi task, dengan sumber/dampak dijelaskan; kebutuhan konfirmasi mendatang tidak otomatis berarti seluruh phase saat ini BLOCKED.
 
@@ -15,7 +15,7 @@ Status phase: **NOT STARTED**, **IN PROGRESS**, **BLOCKED**, **DONE**. DONE hany
 | 2 | Evidence & Academic Integrity | NOT STARTED |
 | 3 | Information Architecture & Reflections | IN PROGRESS |
 | 4 | Homepage & Positioning | NOT STARTED |
-| 5 | Teaching Cases & Assessment | NOT STARTED |
+| 5 | Teaching Cases & Assessment | IN PROGRESS |
 | 6 | SEO & Final Verification | NOT STARTED |
 
 Urutan menempatkan reliability/accessibility awal, verifikasi evidence sebelum penguatan claim, dan keputusan IA sebelum perubahan entry point. Audit indexing/visual dapat dilakukan ketika akses tersedia; roadmap tidak mensyaratkan menunggu phase akhir untuk mengetahui masalah mendasar. Scope implementasi tiap task tetap harus diminta/disetujui pemilik.
@@ -231,7 +231,7 @@ FR-CASE-001, FR-CASE-002, FR-EVIDENCE-001, FR-EVIDENCE-002, FR-ASSESSMENT-001, F
 
 ### Tasks
 
-- Tulis ringkasan tiga kasus dengan Problem/Action/Evidence/Result/Reflection dari fakta/evidence yang sudah dipetakan.
+- DONE (FR-CASE-002): tiga Ringkasan Kasus dari narasi source, dengan Masalah/Tindakan/Bukti/Hasil/Refleksi. Penelusuran tercatat di SRS; dokumen eksternal belum diverifikasi isinya.
 - Pertahankan long-form teori, kendala, penyesuaian, dan dokumen; jangan menjadikan rencana perbaikan sebagai hasil intervensi.
 - Tonjolkan bagian evidence yang tersedia; tampilkan kebutuhan yang belum ada tanpa visual/before-after rekaan.
 - Kurangi claim karakter yang berulang melalui tautan ke kasus; periksa konsistensi teaser Home/About/Akhir.
@@ -251,7 +251,7 @@ Inti setiap kasus dapat dipindai dan detail tetap tersedia; evidence nyata dapat
 
 ### Status
 
-**NOT STARTED**. Dependensi: evidence Phase 2 dan keputusan presentasi yang relevan.
+**IN PROGRESS**. Ringkasan tiga kasus selesai; penelusuran isi evidence eksternal dan konsistensi indikator penilaian masih pending. Exit criteria phase belum seluruhnya terpenuhi; task ini tidak melanjutkan pekerjaan lain. Dependensi tersisa: evidence Phase 2 dan keputusan presentasi terkait.
 
 ## Phase 6 — SEO & Final Verification
 

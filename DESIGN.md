@@ -8,7 +8,7 @@ Baseline: **7 Oktober 2026**, commit `4c043ef`. Deskripsi CURRENT STATE diturunk
 
 Komentar CSS menyebut brutalist/Amaral aesthetic; WorkStudiesToggle menyebut `rafaelamaral.dev`. Ini jejak inspirasi pada source, bukan bukti keputusan pemilik atau izin menyalin asset pihak lain. Dark theme dan stack dipertahankan sebagai baseline untuk perubahan terbatas.
 
-**DECISION:** kejelasan, evidence, suara personal profesional, kedalaman akademik, accessibility, responsive behavior, dan maintainability memandu pengembangan. **PROPOSED:** ringkasan profesional/case study yang lebih mudah dipindai. Tidak ada redesign atau desain layar baru yang disetujui oleh dokumentasi ini.
+**DECISION:** kejelasan, evidence, suara personal profesional, kedalaman akademik, accessibility, responsive behavior, dan maintainability memandu pengembangan. **CURRENT STATE:** tiga ArtifactCard memiliki Ringkasan Kasus sesuai FR-CASE-002. **PROPOSED:** penguatan ringkasan profesional pada homepage. Tidak ada redesign atau desain layar baru yang disetujui oleh dokumentasi ini.
 
 ## Visual Language
 
@@ -101,7 +101,7 @@ Default verification mendatang: 360/390, 768, 1440 CSS px dan zoom 200%, dengan 
 | Navbar | [Navbar.tsx](components/layout/Navbar.tsx) | Shared client nav, parent/child active, scroll state, dropdown semester desktop dan panel mobile; panel bukan Sheet |
 | Footer | [Footer.tsx](components/layout/Footer.tsx) | Shared server footer, subset nav, sosial, current year saat render |
 | SmoothScrollProvider | [smooth-scroll.tsx](components/providers/smooth-scroll.tsx) | Lenis global dan rAF; tidak mengelola route/content data |
-| ArtifactCard | [ArtifactCard.tsx](components/sections/ArtifactCard.tsx) | Client motion reveal; ParagraphSection, TheorySection, ListSection, DownloadGrid sebagai helper internal |
+| ArtifactCard | [ArtifactCard.tsx](components/sections/ArtifactCard.tsx) | Client motion reveal; Ringkasan Kasus inline; ParagraphSection, TheorySection, ListSection, DownloadGrid sebagai helper internal |
 | CpmkBanner | [CpmkBanner.tsx](components/sections/CpmkBanner.tsx) | Accordion empat komponen analisis; bukan sertifikasi pemenuhan rubrik |
 | WorkStudiesToggle | [WorkStudiesToggle.tsx](components/sections/WorkStudiesToggle.tsx) | Tab pengalaman/pendidikan dan timeline; default Work |
 | RefleksiMatkulClient | [RefleksiMatkulClient.tsx](components/sections/RefleksiMatkulClient.tsx) | Enam course, AccordionSection, CourseContent, FormalLk2Card, ArtifactEvidenceItem, renderContent |
@@ -126,7 +126,7 @@ Hero, CTA, timeline About/Akhir, assessment card, dan reflection card adalah **p
 |---|---|
 | Home | Hero avatar/nama/location badge/positioning/Pembelajaran Mendalam/CTA/sosial → Model Guru (4 karakter) → Work & Studies → teaser 3 artefak + CTA Artefak/Refleksi Akhir |
 | About | Page hero → Narasi & Perjalanan (profil, biografi, inspirasi, tujuan) → Model Guru (pendekatan Pembelajaran Mendalam/alur praktik, CTA, karakter, kompetensi, role model Palmer) → Timeline PPG |
-| Artefak | Hero/penjelasan/orientasi Pembelajaran Mendalam → CpmkBanner → tiga ArtifactCard; setiap card: cycle/title/tags → konteks → teori → keberhasilan → kendala → penyesuaian → dokumen |
+| Artefak | Hero/penjelasan/orientasi Pembelajaran Mendalam → CpmkBanner → tiga ArtifactCard; setiap card: cycle/title/tags → Ringkasan Kasus (Masalah/Tindakan/Bukti/Hasil/Refleksi; dl lima baris, md label/value dua kolom, border zinc-800, bg-zinc-900/30) → konteks → teori → keberhasilan → kendala → penyesuaian → dokumen |
 | Penilaian | Hero Transparansi Evaluasi → Penilaian Perangkat L7 (rekap + rincian 3 siklus) → Praktik Mengajar L8 (rekap + rincian 3 siklus) → download L7/L8 |
 | Refleksi PPL | Hero Refleksi & Visi Pendidik → model/filosofi → strengths/weaknesses → tiga RTL → CTA Refleksi Akhir |
 | Refleksi Akhir | Hero → perjalanan 6 tahap → tantangan/solusi 4 kasus → feedback GP → filosofi → nilai guru 4 item → empat link pendukung |
@@ -189,7 +189,6 @@ Semua item berikut **PROPOSED** dan bukan spesifikasi redesign final:
 | Arah | Requirement | Kebutuhan sebelum implementasi |
 |---|---|---|
 | Homepage positioning/filsafat/CTA praktik | FR-HOME-002 | Copy dan tujuan link disetujui; gunakan fakta tersedia |
-| Case study dengan ringkasan cepat | FR-CASE-002 | Kasus/evidence aktual dipetakan; detail akademik tetap tersedia |
 | Evidence dekat claim, lebih sedikit repetisi | FR-EVIDENCE-002 | Resource/hasil/diagram diverifikasi atau ditandai belum tersedia |
 | Navigasi dan refleksi lebih jelas | FR-NAV-002, FR-REFLECTION-004 | Pemetaan konten/URL dan keputusan pemilik |
 | Indikator penilaian non-linear koheren | FR-ASSESSMENT-002 | Nilai dipertahankan; simbol positif/nol/negatif bermakna |

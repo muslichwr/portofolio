@@ -44,6 +44,14 @@ interface ArtifactCardProps {
   techTags: string[];
   /** Tag pedagogi */
   pedagogyTags: string[];
+  /** Ringkasan dari narasi siklus; hasil observasi bukan pengukuran baru. */
+  summary: {
+    problem: string;
+    action: string;
+    evidence: string;
+    result: string;
+    reflection: string;
+  };
   /** Tujuan dan konteks materi */
   context: string;
   /** Optional intro paragraph before theory list */
@@ -227,6 +235,7 @@ export function ArtifactCard({
   cycle,
   techTags,
   pedagogyTags,
+  summary,
   context,
   theoryIntro,
   theories,
@@ -290,6 +299,26 @@ export function ArtifactCard({
 
         {/* ---- Content: Analysis Sections + Downloads ---- */}
         <CardContent className="space-y-6 pt-6">
+          <section className="rounded-lg border border-zinc-800 bg-zinc-900/30 p-4 md:p-5" aria-label={`Ringkasan kasus ${cycle}`}>
+            <h3 className="mb-4 font-mono text-xs font-medium uppercase tracking-wider text-zinc-300">
+              Ringkasan Kasus
+            </h3>
+            <dl className="space-y-3">
+              {([
+                ["problem", "Masalah"],
+                ["action", "Tindakan"],
+                ["evidence", "Bukti"],
+                ["result", "Hasil"],
+                ["reflection", "Refleksi"],
+              ] as const).map(([key, label]) => (
+                <div key={key} className="grid gap-1 md:grid-cols-[88px_1fr] md:gap-4">
+                  <dt className="text-sm font-medium text-zinc-300">{label}</dt>
+                  <dd className="text-sm leading-relaxed text-zinc-400">{summary[key]}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+
           <ParagraphSection
             icon={FileText}
             label="Konteks & Tujuan"
