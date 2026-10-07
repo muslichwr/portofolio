@@ -44,7 +44,7 @@ Bagi pemilik, pengalaman mengajar dan kompetensi IT membutuhkan satu tempat yang
 
 ### Current architecture
 
-| Navbar | Route | Peran |
+| Halaman (tersedia melalui Navbar) | Route | Peran |
 |---|---|---|
 | Home | `/` | Identitas, karakter guru, pengalaman/pendidikan, teaser praktik |
 | About | `/about` | Profil, narasi, pendekatan, kompetensi, role model, timeline |
@@ -54,7 +54,7 @@ Bagi pemilik, pengalaman mengajar dan kompetensi IT membutuhkan satu tempat yang
 | Refleksi Akhir | `/refleksi-akhir` | Perjalanan PPL, tantangan, feedback, filosofi, nilai guru |
 | Refleksi Mata Kuliah | `/refleksi-matkul` | Enam mata kuliah, 4C, analisis artefak, kesimpulan, LK 2 |
 
-Navbar memuat semua route; footer memuat subset Beranda, Artefak, Penilaian, Refleksi. CTA utama hero menuju About. Teaser dan CTA akhir homepage menuju Artefak; CTA tambahan menuju Refleksi Akhir. About menuju Artefak dan Refleksi Mata Kuliah. Refleksi PPL menuju Refleksi Akhir. Refleksi Akhir menuju Artefak, Penilaian, Refleksi PPL, dan About. Tab PPL pada Refleksi Mata Kuliah menuju Artefak.
+**DECISION / CURRENT STATE (7 Oktober 2026):** desktop Navbar berisi Home, About, Semester 1, Semester 2. Semester 1 mengelompokkan Artefak & Analisis, Penilaian, Refleksi PPL, dan Refleksi Akhir; Semester 2 berisi Refleksi Mata Kuliah. Panel menampilkan subtitle serta deskripsi singkat tiap tujuan. Ini grouping navigasi saja: tujuh route tetap sama; mobile tetap menampilkan tujuh link langsung. Footer memuat subset Beranda, Artefak, Penilaian, Refleksi. CTA utama hero menuju About. Teaser dan CTA akhir homepage menuju Artefak; CTA tambahan menuju Refleksi Akhir. About menuju Artefak dan Refleksi Mata Kuliah. Refleksi PPL menuju Refleksi Akhir. Refleksi Akhir menuju Artefak, Penilaian, Refleksi PPL, dan About. Tab PPL pada Refleksi Mata Kuliah menuju Artefak.
 
 ### Identified issues
 
@@ -95,7 +95,7 @@ Untuk produk berikutnya, **PROPOSED**:
 
 ## Non-Goals
 
-- Pada tugas ini: redesign, rewrite halaman, perubahan routing/component, refactor, upgrade dependency, deployment, dan commit.
+- Tugas fondasi dokumentasi tidak mengimplementasikan roadmap. Task navigasi berikutnya hanya mengubah grouping desktop; redesign, rewrite halaman, perubahan route, refactor, upgrade dependency, deployment, dan commit tetap di luar scope.
 - Untuk arah produk saat ini: LMS, CBT, manajemen kelas, autentikasi, dashboard admin, CMS, atau backend baru tanpa kebutuhan dan persetujuan terpisah.
 - Menghapus kedalaman akademik demi tampilan profesional, menambah evidence palsu, mengklaim semua rubrik terpenuhi, atau menjamin SEO/performa tanpa pengukuran.
 
@@ -109,6 +109,7 @@ Untuk produk berikutnya, **PROPOSED**:
 | OWN-004 | DECISION | Evidence nyata dan nilai non-linear | Instruksi pemilik; dilarang mengubah angka demi narasi peningkatan |
 | OWN-005 | DECISION | Dokumentasi dahulu, tanpa implementasi roadmap/commit | Batas task eksplisit; review pemilik mendahului pekerjaan aplikasi |
 | OWN-006 | DECISION | Konsolidasi dokumentasi lama ke struktur baru | Pilihan pemilik saat perencanaan; penghapusan lama selain AGENTS dipertahankan |
+| OWN-007 | DECISION | Desktop Home/About + dropdown Semester 1/2; route dan mobile dipertahankan | Instruksi eksplisit pemilik 7 Oktober 2026; panel kompak dengan subtitle/deskripsi, parent/child active, tanpa landing page semester atau placeholder. Alternatif enam label tetap Proposed; konten halaman tidak diklasifikasi ulang. |
 | HIST-001 | CURRENT STATE — riwayat | Git mencatat pembentukan lapisan docs pada 2026-08-29 | `git show 4c043ef:docs/DECISIONS.md`; pemisahan konteks/fakta/desain/engineering tetap berguna, nama file lama tidak lagi canonical |
 | HIST-002 | CURRENT STATE — riwayat | DEC-006 lama mencatat narasi website + LK 2 + artefak | Source mata kuliah mendukung pola ini; alasan kepatuhan LMS belum diperiksa terhadap instrumen resmi |
 | HIST-003 | CURRENT STATE — riwayat | DEC-001–005 lama berlabel ACCEPTED (INFERRED) | Dark theme, server pages, CSS score bars, Lenis, dan topik praktik ditemukan di kode; motivasi desain dan manfaat performa bukan keputusan owner yang terverifikasi |

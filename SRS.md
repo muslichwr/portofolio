@@ -29,7 +29,7 @@ Semua page berikut tidak memiliki directive `use client`. Build menghasilkan rou
 | `/refleksi-akhir` | [app/refleksi-akhir/page.tsx](app/refleksi-akhir/page.tsx) | Timeline, tantangan/solusi, feedback, filosofi, nilai guru | Artefak, Penilaian, Refleksi PPL, About |
 | `/refleksi-matkul` | [app/refleksi-matkul/page.tsx](app/refleksi-matkul/page.tsx) | Pengantar 4C, RefleksiMatkulClient | LK 2/artefak eksternal; tab PPL menuju Artefak |
 
-Navbar berisi tujuh route. Route aktif cocok exact atau child dengan delimiter `/`; `/refleksi` tidak cocok dengan `/refleksi-akhir`. Footer hanya memuat `/`, `/artefak`, `/penilaian`, `/refleksi`. `_not-found` adalah route internal hasil framework, bukan halaman produk kedelapan. Tidak ditemukan nested content route, dynamic segment, API route, middleware, atau custom error/loading page pada tree utama.
+Navbar memberi akses ke tujuh route: desktop Home/About ditambah dropdown Semester 1 (Artefak, Penilaian, Refleksi PPL, Refleksi Akhir) dan Semester 2 (Refleksi Mata Kuliah); mobile tetap tujuh link langsung. Grouping tidak membuat route/redirect baru (FR-NAV-003). Route aktif cocok exact atau child dengan delimiter `/`; `/refleksi` tidak cocok dengan `/refleksi-akhir`. Footer hanya memuat `/`, `/artefak`, `/penilaian`, `/refleksi`. `_not-found` adalah route internal hasil framework, bukan halaman produk kedelapan. Tidak ditemukan nested content route, dynamic segment, API route, middleware, atau custom error/loading page pada tree utama.
 
 ### Data flow dan batas server/client
 
@@ -45,7 +45,7 @@ Konstanta TSX + foto lokal + URL dokumen eksternal
 
 Client boundaries eksplisit: Navbar, SmoothScrollProvider, ArtifactCard, CpmkBanner, WorkStudiesToggle, RefleksiMatkulClient, dan primitive Separator/Sheet/Progress. Footer dan score calculation berada di server source. Badge/Button memakai primitive Base UI; jangan mengasumsikan seluruh primitive bebas JavaScript hanya dari directive file lokal.
 
-State memakai React `useState`, tidak disimpan ke database, URL, atau localStorage. Refresh mengembalikan state awal. Navbar menutup menu ketika link mobile dipilih; penanganan Escape/focus management tidak ditemukan di kode custom. Tab mata kuliah merender satu course; pergantian key meremount isi dan mereset accordion. Modal rubrik tidak ditemukan pada implementasi saat ini meskipun disebut dokumen engineering lama.
+State memakai React `useState`, tidak disimpan ke database, URL, atau localStorage. Refresh mengembalikan state awal. Navbar menutup menu ketika link mobile dipilih. Dropdown desktop menutup saat tujuan dipilih, klik di luar, fokus meninggalkan desktop nav, atau Escape; Escape mengembalikan fokus ke tombol semester. Menu mobile tetap seperti baseline. Tab mata kuliah merender satu course; pergantian key meremount isi dan mereset accordion. Modal rubrik tidak ditemukan pada implementasi saat ini meskipun disebut dokumen engineering lama.
 
 ### Tooling dan configuration
 
@@ -199,7 +199,7 @@ Inventory berikut mencatat yang digunakan kode, bukan bibliography terverifikasi
 - **Nama:** Navigasi baseline.
 - **Deskripsi:** Menghubungkan tujuh route utama dan subset footer.
 - **Rationale:** Semua area akademik/profesional dapat ditemukan.
-- **Expected behavior:** Desktop links, menu mobile, active match exact/child; klik link mobile menutup menu.
+- **Expected behavior:** Desktop Home/About dan dropdown semester (FR-NAV-003), menu mobile tujuh link, active match exact/child; klik link mobile menutup menu.
 - **Acceptance criteria:** Semua href internal resolve; `/refleksi` tidak aktif pada `/refleksi-akhir`; menu tersedia di bawah breakpoint md.
 - **Status:** Implemented.
 - **Related page/component:** Navbar, Footer.
@@ -214,7 +214,18 @@ Inventory berikut mencatat yang digunakan kode, bukan bibliography terverifikasi
 - **Acceptance criteria:** Peta current→target, dampak konten/URL, journey kedua audiens, serta keputusan pemilik tercatat sebelum perubahan navigasi/route.
 - **Status:** Proposed.
 - **Related page/component:** Navbar/Footer, seluruh halaman.
-- **Verification:** Belum ada user testing atau keputusan IA final.
+- **Verification:** Evaluasi IA menyeluruh belum selesai; keputusan grouping desktop terbatas tercatat di FR-NAV-003 dan OWN-007.
+
+### FR-NAV-003
+
+- **Nama:** Grouping semester pada desktop.
+- **Deskripsi:** Home/About tetap langsung; Semester 1 dan Semester 2 membuka panel kompak dengan judul, subtitle, deskripsi link, dan nomor urut.
+- **Rationale:** Instruksi pemilik mengelompokkan konten semester tanpa mengubah URL atau desain keseluruhan.
+- **Expected behavior:** Semester 1 menuju `/artefak`, `/penilaian`, `/refleksi`, `/refleksi-akhir`; Semester 2 menuju `/refleksi-matkul`. Satu panel terbuka; toggle, memilih tujuan, klik di luar, fokus keluar, atau Escape menutup panel. Parent aktif mengikuti child route; child aktif ditandai visual dan `aria-current`. Home/About mempertahankan active match.
+- **Acceptance criteria:** Pada desktop 1440px semua tujuh tujuan bekerja, parent/child aktif benar, panel menutup saat memilih tujuan, judul/subtitle/deskripsi sesuai instruksi, serta styling mengikuti floating pill gelap. Tidak ada route, redirect, placeholder, dependency, atau perubahan konten baru. Mobile mempertahankan tujuh link baseline; verifikasi khusus mobile di luar scope task.
+- **Status:** Implemented.
+- **Related page/component:** [Navbar.tsx](components/layout/Navbar.tsx); OWN-007; Phase 3.
+- **Verification:** Pemeriksaan desktop dan tooling task navigasi dicatat pada bagian verifikasi navigasi; izin terbatas ini tidak mengimplementasikan proposal IA lainnya.
 
 ### FR-ABOUT-001
 
@@ -401,7 +412,7 @@ Inventory berikut mencatat yang digunakan kode, bukan bibliography terverifikasi
 - **Acceptance criteria:** Tab/Enter/Space dan pola keyboard tab yang relevan diuji; menu dapat ditutup dan focus dikelola sesuai desain; state diumumkan; link aktif memiliki informasi yang sesuai; accordion memiliki hubungan kontrol/konten.
 - **Status:** Partial.
 - **Related page/component:** Navbar, WorkStudiesToggle, CpmkBanner, RefleksiMatkulClient.
-- **Verification:** Button native dan aria-expanded accordion tersedia; navbar tanpa aria-expanded/controls/current, tab tanpa selected-panel semantics; focus runtime belum diverifikasi.
+- **Verification:** Button native dan aria-expanded accordion tersedia; dropdown desktop memiliki aria-expanded/controls, link desktop aria-current dan Escape/focus return; menu mobile baseline belum memiliki status lengkap, tab tanpa selected-panel semantics. Audit keyboard/focus menyeluruh tetap belum selesai.
 
 ### FR-A11Y-003
 
@@ -509,7 +520,7 @@ Pemeriksaan dilakukan pada tahap audit/perencanaan dalam sesi yang sama, 7 Oktob
 | Static contrast | muted token di root background ≈4,12:1; zinc-600 ≈2,57:1 dengan asumsi opaque/root surface | Glow, opacity, surface, font size, dan computed style seluruh elemen belum diverifikasi |
 | Browser render/interaksi | Chrome headless production timeout; Edge headless lokal ERR_ABORTED/timeout | Mobile, overflow, focus, keyboard, accordion, tab, dan kontras render belum dinyatakan lolos |
 
-## Verifikasi Dokumentasi Setelah Penulisan
+## Verifikasi Dokumentasi Setelah Penulisan (Baseline sebelum Task Navigasi)
 
 Pemeriksaan terarah pada 7 Oktober 2026 menggunakan Python serta TypeScript AST yang sudah tersedia, tanpa menambahkan test tooling/script tracked:
 
@@ -519,6 +530,10 @@ Pemeriksaan terarah pada 7 Oktober 2026 menggunakan Python serta TypeScript AST 
 - 42 record EVD dan 15 issue teridentifikasi; URL inventory cocok persis dengan URL unik source aktif.
 - Hash source/config/assets yang ada sebelum tugas cocok setelah penulisan. Perubahan hanya dokumen/router yang diizinkan; penghapusan awal CLAUDE dan sembilan dokumen lama tetap dipertahankan.
 - Review whitespace dan diff selesai; tidak ada commit, deploy, atau implementasi roadmap. Verification ini tidak menutup gap aplikasi yang tercatat di atas.
+
+## Verifikasi Task Navigasi Desktop (7 Oktober 2026)
+
+FR-NAV-003 diverifikasi pada build lokal production menggunakan Chrome headless dengan viewport 1440 x 1000. Home/About dan lima child link berhasil navigasi; parent semester dan child aktif benar; panel menutup saat memilih tujuan. Kedua panel menampilkan judul, subtitle, deskripsi, dan nomor; satu panel terbuka; Escape mengembalikan fokus; klik di luar menutup. Screenshot kedua panel diperiksa terhadap visual floating pill gelap dan tidak ditemukan overflow desktop. Tujuh route merespons HTTP 200; tidak ada browser error pada sesi tersebut. TypeScript dan build berhasil; lint exit 0 dengan 16 warning baseline, tanpa warning baru. Mobile, browser lain, dan audit accessibility menyeluruh tidak termasuk verifikasi ini.
 
 ## Inventory Dokumen Eksternal
 

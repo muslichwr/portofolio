@@ -2,7 +2,7 @@
 
 Baseline: **7 Oktober 2026**, commit aplikasi `4c043ef`. Dibangun dari audit repository/production dan perbandingan dengan [PRD](../../PRD.md), [SRS](../../SRS.md), [DESIGN](../../DESIGN.md), dan [AGENTS](../../AGENTS.md).
 
-Ini roadmap, bukan changelog atau izin implementasi. **DECISION:** tugas saat ini berhenti pada dokumentasi. Semua phase aplikasi di bawah belum dijalankan. Requirement Proposed tidak berubah menjadi keputusan final hanya karena dicantumkan sebagai task.
+Ini roadmap, bukan changelog atau izin implementasi. **DECISION:** tugas fondasi berhenti pada dokumentasi. Task berikutnya hanya mengizinkan grouping semester pada Navbar desktop (FR-NAV-003); pekerjaan aplikasi lain tetap menunggu instruksi terpisah. Requirement Proposed tidak berubah menjadi keputusan final hanya karena dicantumkan sebagai task.
 
 Status phase: **NOT STARTED**, **IN PROGRESS**, **BLOCKED**, **DONE**. DONE hanya jika exit criteria terpenuhi. BLOCKED digunakan bila dependensi nyata menghalangi task, dengan sumber/dampak dijelaskan; kebutuhan konfirmasi mendatang tidak otomatis berarti seluruh phase saat ini BLOCKED.
 
@@ -13,7 +13,7 @@ Status phase: **NOT STARTED**, **IN PROGRESS**, **BLOCKED**, **DONE**. DONE hany
 | 0 | Dokumentasi & Guardrails | DONE |
 | 1 | Technical Health & Accessibility | NOT STARTED |
 | 2 | Evidence & Academic Integrity | NOT STARTED |
-| 3 | Information Architecture & Reflections | NOT STARTED |
+| 3 | Information Architecture & Reflections | IN PROGRESS |
 | 4 | Homepage & Positioning | NOT STARTED |
 | 5 | Teaching Cases & Assessment | NOT STARTED |
 | 6 | SEO & Final Verification | NOT STARTED |
@@ -150,10 +150,11 @@ ISSUE-007: tujuh link valid tetapi istilah refleksi berdekatan dan bahasa label 
 
 ### Requirements
 
-FR-NAV-001, FR-NAV-002, FR-REFLECTION-001, FR-REFLECTION-002, FR-REFLECTION-003, FR-REFLECTION-004, FR-A11Y-002.
+FR-NAV-001, FR-NAV-002, FR-NAV-003, FR-REFLECTION-001, FR-REFLECTION-002, FR-REFLECTION-003, FR-REFLECTION-004, FR-A11Y-002.
 
 ### Tasks
 
+- Grouping desktop Semester 1/2 selesai dalam scope FR-NAV-003; tujuh URL, konten, footer, dan menu mobile dipertahankan.
 - Buat pemetaan current→target untuk opsi Beranda/Profil/Praktik Mengajar/Bukti & Penilaian/Refleksi/Mata Kuliah.
 - Evaluasi label/grouping dahulu; bandingkan terhadap perubahan route atau penggabungan isi sebagai alternatif yang lebih besar.
 - Pastikan tujuan refleksi diri, sintesis PPL, dan course tetap berbeda dan mudah ditemukan.
@@ -174,7 +175,7 @@ Keputusan IA pemilik tercatat beserta mapping, konsekuensi, dan compatibility pl
 
 ### Status
 
-**NOT STARTED**. Enam label merupakan opsi, bukan keputusan route final.
+**IN PROGRESS**. Grouping desktop terbatas telah diimplementasikan (FR-NAV-003); evaluasi journey/refleksi menyeluruh dan exit criteria phase belum selesai. Enam label tetap opsi. Tidak ada izin melanjutkan task lain setelah navigasi ini.
 
 ## Phase 4 — Homepage & Positioning
 

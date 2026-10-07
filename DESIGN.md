@@ -85,7 +85,7 @@ Nilai default Tailwind terpasang: sm **40rem**, md **48rem**, lg **64rem**. Pada
 | Penilaian | Dua area L7/L8, cards/metric bars | Ringkasan masing-masing tetap grid-cols-3 bahkan mobile; download L7/L8 satu→dua kolom md |
 | Refleksi Akhir | Long-form, timeline, callout, link cards | Nilai guru satu→dua kolom md |
 | Mata Kuliah | Pengantar 4C dan satu active course | Pengantar satu→dua kolom sm→empat lg; tab flex-wrap; dokumen LK2 flex-col→row sm; supporting artifacts dua kolom md |
-| Navbar | Pill centered, fixed, px-4/pt-4, z-50 | Desktop md:flex; tombol mobile md:hidden; panel mobile fixed top-[4.5rem], mx-4 |
+| Navbar | Pill centered, fixed, px-4/pt-4, z-50 | Desktop md:flex: Home/About + dua tombol semester; panel absolute right-0, mt-3, w-[360px], rounded-2xl, bg-zinc-950. Mobile tetap tujuh link, panel fixed top-[4.5rem], mx-4 |
 | Footer | max-w-6xl px-6 py-16 | Susunan flex-col→row md; navigation flex-wrap |
 
 **ISSUE:** overflow, ukuran target kontrol, wrapping judul panjang, ringkasan Penilaian, dan kedekatan menu tetap membutuhkan render test. Lenis CSS memakai width 100vw; dampak scrollbar/overflow belum diverifikasi. Tidak ditemukan jaminan overflow-x hidden global yang dapat diwarisi dari checklist lama.
@@ -98,7 +98,7 @@ Default verification mendatang: 360/390, 768, 1440 CSS px dan zoom 200%, dengan 
 
 | Komponen | Source | Peran dan batas |
 |---|---|---|
-| Navbar | [Navbar.tsx](components/layout/Navbar.tsx) | Shared client nav, route active, scroll state, mobile panel; panel bukan Sheet |
+| Navbar | [Navbar.tsx](components/layout/Navbar.tsx) | Shared client nav, parent/child active, scroll state, dropdown semester desktop dan panel mobile; panel bukan Sheet |
 | Footer | [Footer.tsx](components/layout/Footer.tsx) | Shared server footer, subset nav, sosial, current year saat render |
 | SmoothScrollProvider | [smooth-scroll.tsx](components/providers/smooth-scroll.tsx) | Lenis global dan rAF; tidak mengelola route/content data |
 | ArtifactCard | [ArtifactCard.tsx](components/sections/ArtifactCard.tsx) | Client motion reveal; ParagraphSection, TheorySection, ListSection, DownloadGrid sebagai helper internal |
@@ -138,7 +138,7 @@ Root Navbar/main/Footer mengapit semua anatomy tersebut. Source location dan mod
 
 | Kontrol | State awal dan perilaku source | Batas/gap |
 |---|---|---|
-| Navbar | isMobileOpen false, hasScrolled false; listener passive mengubah style setelah scrollY>20; link mobile menutup panel | Belum ada expanded/controls/current attributes atau handler Escape/focus pada custom menu |
+| Navbar | isMobileOpen false, hasScrolled false, openSemester null; listener passive setelah scrollY>20. Desktop toggle satu panel; link, klik luar, fokus keluar, Escape menutup; Escape fokus ke trigger. Mobile tetap menutup saat link dipilih | Desktop expanded/controls, child/Home/About aria-current, focus-visible, active pill parent; panel opacity/y duration 0.2. Header subtitle, link bernomor/deskripsi, child aktif bg-white/[0.08]. Menu mobile tetap baseline |
 | Work/Studies | activeTab work; dua button memilih data; sliding highlight + AnimatePresence mode wait | Tab bukan ARIA tablist/tabpanel; tidak ada aria-selected/pressed atau arrow-key handler custom |
 | CPMK | isOpen false; button aria-expanded; content ditambahkan/dihapus dengan animasi height/opacity | aria-controls/ID panel tidak ditemukan |
 | Mata kuliah | activeTabIndex 0; enam button; active CourseContent keyed by tabLabel | State tab tidak masuk URL; inactive course tidak dirender; direct link tiap course belum tersedia |
@@ -167,7 +167,7 @@ Motion memakai Framer Motion untuk navbar enter/active pill, mobile panel, Work/
 
 Landmark header/nav/main/footer, `html lang=id`, satu h1 per page, alt foto, social icon labels, serta aria-expanded accordion tersedia. Primitive Button/Badge memiliki focus-visible styles, tetapi sebagian besar kontrol aktif adalah button/link custom; kelas primitive yang belum digunakan bukan bukti seluruh UI memiliki focus yang baik.
 
-**ISSUE:** CardTitle berupa div; Artefak langsung h1→h4; About timeline h2→h4; course header div diikuti h4. Navbar/tab/panel belum lengkap statusnya. Link resource berulang “Unduh”, “Lihat Artefak”, dan “Buka Dokumen LK 2”. Full keyboard/focus audit belum berhasil.
+**ISSUE:** CardTitle berupa div; Artefak langsung h1→h4; About timeline h2→h4; course header div diikuti h4. Menu mobile/tab/panel lain belum lengkap statusnya; dropdown desktop memiliki status expanded dan link aktif (FR-NAV-003). Link resource berulang “Unduh”, “Lihat Artefak”, dan “Buka Dokumen LK 2”. Full keyboard/focus audit belum berhasil.
 
 Perhitungan statis dengan foreground opaque di root background menghasilkan muted token sekitar **4,12:1**, zinc-600 sekitar **2,57:1**. Nilai ini menunjukkan risiko; tidak memperhitungkan seluruh background/glow/opacity/font size atau computed style. Jangan menyatakan semua elemen gagal/lolos dari perhitungan pasangan tunggal.
 
