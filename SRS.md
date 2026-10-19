@@ -28,8 +28,9 @@ Semua page berikut tidak memiliki directive `use client`. Build menghasilkan rou
 | `/refleksi` | [app/refleksi/page.tsx](app/refleksi/page.tsx) | Visi, strength/weakness Cards, RTL | Refleksi Akhir |
 | `/refleksi-akhir` | [app/refleksi-akhir/page.tsx](app/refleksi-akhir/page.tsx) | Timeline, tantangan/solusi, feedback, filosofi, nilai guru | Artefak, Penilaian, Refleksi PPL, About |
 | `/refleksi-matkul` | [app/refleksi-matkul/page.tsx](app/refleksi-matkul/page.tsx) | Pengantar 4C, RefleksiMatkulClient | LK 2/artefak eksternal; tab PPL menuju Artefak |
+| `/refleksi-matkul/semester-2` | [app/refleksi-matkul/semester-2/page.tsx](app/refleksi-matkul/semester-2/page.tsx) | Pengantar 4C dan RefleksiMatkulClient dengan lima course Semester II | PSE berisi refleksi dari PDF pemilik dan empat tautan artefak terverifikasi; dokumen LK 2 dan empat course lain Belum tersedia |
 
-Navbar memberi akses ke tujuh route: desktop Home/About ditambah dropdown Semester 1 (Artefak, Penilaian, Refleksi PPL, Refleksi Akhir) dan Semester 2 (Refleksi Mata Kuliah); mobile tetap tujuh link langsung. Grouping tidak membuat route/redirect baru (FR-NAV-003). Route aktif cocok exact atau child dengan delimiter `/`; `/refleksi` tidak cocok dengan `/refleksi-akhir`. Footer hanya memuat `/`, `/artefak`, `/penilaian`, `/refleksi`. `_not-found` adalah route internal hasil framework, bukan halaman produk kedelapan. Tidak ditemukan nested content route, dynamic segment, API route, middleware, atau custom error/loading page pada tree utama.
+Navbar memberi akses ke delapan route: desktop Home/About ditambah dropdown Semester 1 (Artefak, Penilaian, Refleksi PPL, Refleksi Akhir, Refleksi Mata Kuliah Semester I) dan Semester 2 (Refleksi Mata Kuliah Semester II); mobile memiliki delapan link langsung. OWN-008/FR-REFLECTION-005 menambah nested route Semester II tanpa redirect atau mengganti URL lama. Route aktif memilih tujuan paling spesifik dengan delimiter `/`, sehingga hanya semester yang sesuai ditandai aktif; `/refleksi` tidak cocok dengan `/refleksi-akhir`. Footer tetap memuat `/`, `/artefak`, `/penilaian`, `/refleksi`. `_not-found` adalah route internal framework, bukan halaman produk. Tidak ditemukan dynamic segment, API route, middleware, atau custom error/loading page pada tree utama.
 
 ### Data flow dan batas server/client
 
@@ -88,7 +89,7 @@ Dokumen lama mencatat identifier mahasiswa pada header LK 2. Header/identifier t
 | `ArtifactCardProps`, ArtifactCard | title, cycle, techTags, pedagogyTags, summary `{problem, action, evidence, result, reflection}`, context, optional theoryIntro, theories `{name, description}`, strengths, weaknesses, adjustments, downloads `{label, href}`, optional index | Content berasal dari `artifacts` pada page Artefak; thumbnail/evidence preview belum tersedia; summary hasil berasal dari narasi, bukan pengukuran baru |
 | `TeachingCycle`, page Penilaian | cycle, label, rawScore, rawMaxScore, overallScore, highlight, metrics `{metric, icon, score, maxScore}` | Overall score tersimpan eksplisit, bukan dihitung otomatis dari rawScore; perubahan harus menjaga konsistensi konversi |
 | `TimelineEntry`, WorkStudiesToggle | period, role, institution, description, icon, iconColor | Array workEntries/studiesEntries terpisah dari timeline PPG About; periksa semua narasi terkait |
-| `CourseData`, RefleksiMatkulClient | tabLabel, title, lk2PdfHref `string\|null`, sections, artifacts, optional crossLink/devNote | Default tab index 0; enam course; all linked values currently non-null |
+| `CourseData`, RefleksiMatkulClient | tabLabel, title, lk2PdfHref `string\|null`, sections, artifacts, optional crossLink/devNote | Default tab index 0; default enam course Semester I dengan URL terisi; prop courses memasok lima course Semester II; PSE memiliki enam section terisi dan empat artefak, course lainnya belum diisi; seluruh lk2PdfHref null |
 | `ReflectionSection` | fourCKey connection/challenge/concept/change/artefak/kesimpulan, title, optional question/content/subItems | Semua section accordion default tertutup; subItems memuat label/question/content |
 | `CourseArtifact` | label, href `string\|null` | URL kosong/null menghasilkan label “Tautan belum tersedia”, bukan link palsu |
 | Data inline lainnya | Karakter guru, kompetensi, strengths/weaknesses/RTL, timelineSteps, challenges, guruValues, supportLinks, teaser siklus | Tidak ada content registry bersama; perubahan berisiko menyebabkan perbedaan antarpages |
@@ -197,9 +198,9 @@ Inventory berikut mencatat yang digunakan kode, bukan bibliography terverifikasi
 ### FR-NAV-001
 
 - **Nama:** Navigasi baseline.
-- **Deskripsi:** Menghubungkan tujuh route utama dan subset footer.
+- **Deskripsi:** Menghubungkan delapan route utama dan subset footer.
 - **Rationale:** Semua area akademik/profesional dapat ditemukan.
-- **Expected behavior:** Desktop Home/About dan dropdown semester (FR-NAV-003), menu mobile tujuh link, active match exact/child; klik link mobile menutup menu.
+- **Expected behavior:** Desktop Home/About dan dropdown semester (FR-NAV-003/FR-REFLECTION-005), menu mobile delapan link, active match pada tujuan paling spesifik; klik link mobile menutup menu.
 - **Acceptance criteria:** Semua href internal resolve; `/refleksi` tidak aktif pada `/refleksi-akhir`; menu tersedia di bawah breakpoint md.
 - **Status:** Implemented.
 - **Related page/component:** Navbar, Footer.
@@ -221,8 +222,8 @@ Inventory berikut mencatat yang digunakan kode, bukan bibliography terverifikasi
 - **Nama:** Grouping semester pada desktop.
 - **Deskripsi:** Home/About tetap langsung; Semester 1 dan Semester 2 membuka panel kompak dengan judul, subtitle, deskripsi link, dan nomor urut.
 - **Rationale:** Instruksi pemilik mengelompokkan konten semester tanpa mengubah URL atau desain keseluruhan.
-- **Expected behavior:** Semester 1 menuju `/artefak`, `/penilaian`, `/refleksi`, `/refleksi-akhir`; Semester 2 menuju `/refleksi-matkul`. Satu panel terbuka; toggle, memilih tujuan, klik di luar, fokus keluar, atau Escape menutup panel. Parent aktif mengikuti child route; child aktif ditandai visual dan `aria-current`. Home/About mempertahankan active match.
-- **Acceptance criteria:** Pada desktop 1440px semua tujuh tujuan bekerja, parent/child aktif benar, panel menutup saat memilih tujuan, judul/subtitle/deskripsi sesuai instruksi, serta styling mengikuti floating pill gelap. Tidak ada route, redirect, placeholder, dependency, atau perubahan konten baru. Mobile mempertahankan tujuh link baseline; verifikasi khusus mobile di luar scope task.
+- **Expected behavior:** Semester 1 menuju `/artefak`, `/penilaian`, `/refleksi`, `/refleksi-akhir`, `/refleksi-matkul`; Semester 2 menuju `/refleksi-matkul/semester-2` (OWN-008/FR-REFLECTION-005). Satu panel terbuka; toggle, memilih tujuan, klik di luar, fokus keluar, atau Escape menutup panel. Parent aktif mengikuti child route; child aktif ditandai visual dan `aria-current`. Home/About mempertahankan active match.
+- **Acceptance criteria:** Pada desktop 1440px semua delapan tujuan bekerja, parent/child aktif benar, panel menutup saat memilih tujuan, judul/subtitle/deskripsi sesuai instruksi, serta styling mengikuti floating pill gelap. Grouping mengikuti floating pill yang ada; route baru Semester II diatur FR-REFLECTION-005. Mobile mempertahankan pola link langsung dengan dua tujuan refleksi semester yang jelas; tidak ada dependency baru atau perubahan isi Semester I.
 - **Status:** Implemented.
 - **Related page/component:** [Navbar.tsx](components/layout/Navbar.tsx); OWN-007; Phase 3.
 - **Verification:** Pemeriksaan desktop dan tooling task navigasi dicatat pada bagian verifikasi navigasi; izin terbatas ini tidak mengimplementasikan proposal IA lainnya.
@@ -355,6 +356,17 @@ Penelusuran ringkasan ke source lama [app/artefak/page.tsx](app/artefak/page.tsx
 - **Status:** Proposed.
 - **Related page/component:** Tiga route refleksi, Navbar; ISSUE-006/007.
 - **Verification:** Belum ada keputusan arsitektur refleksi final.
+
+### FR-REFLECTION-005
+
+- **Nama:** Struktur refleksi mata kuliah Semester II.
+- **Deskripsi:** Menyiapkan lima mata kuliah Semester II di route baru tanpa mengubah isi Semester I.
+- **Rationale:** Pengisian refleksi dan evidence dilakukan bertahap berdasarkan konten nyata dari pemilik.
+- **Expected behavior:** `/refleksi-matkul` tetap enam course Semester I. `/refleksi-matkul/semester-2` memuat Pembelajaran Sosial Emosional; Pembelajaran Mendalam dan Asesmen Lanjut; PPL Mandiri; Projek Kepemimpinan; Mata Kuliah Pilihan Selektif/Elektif. Tiap course memiliki Connection, Challenge, Concept, Change, Analisis Artefak Pendukung, dan Kesimpulan Mata Kuliah. Isi/dokumen/artefak awal Belum tersedia, tanpa href palsu. Pengisian PSE diotorisasi pemilik pada 19 Oktober 2026: salin refleksi dari seluruh delapan halaman `artifacts/3.3. Pembelajaran Sosial Emosional.pdf` tanpa perubahan isi akademik; empat artefak memakai URL yang telah tersedia dan diverifikasi. Empat course lain serta Semester I dipertahankan.
+- **Acceptance criteria:** Desain memakai renderer yang sama; lima tab dan enam accordion/course bekerja di 1440px/390px tanpa overflow. Nama elektif tetap generik sampai dikonfirmasi. Data dan 30 URL Semester I dipertahankan. Dropdown Semester 1 menuju refleksi lama, Semester 2 menuju route baru; mobile membedakan keduanya dan penanda aktif tidak ganda.
+- **Status:** Implemented.
+- **Related page/component:** Halaman Semester II, RefleksiMatkulClient, Navbar; OWN-008; Phase 3.
+- **Verification:** Build dan pemeriksaan browser lokal dicatat pada bagian verifikasi Semester II; verifikasi struktur tersebut mendahului pengisian PSE; lihat catatan pengisian PSE berikut.
 
 ### FR-ACADEMIC-001
 
@@ -538,6 +550,18 @@ Pemeriksaan terarah pada 7 Oktober 2026 menggunakan Python serta TypeScript AST 
 - 42 record EVD dan 15 issue teridentifikasi; URL inventory cocok persis dengan URL unik source aktif.
 - Hash source/config/assets yang ada sebelum tugas cocok setelah penulisan. Perubahan hanya dokumen/router yang diizinkan; penghapusan awal CLAUDE dan sembilan dokumen lama tetap dipertahankan.
 - Review whitespace dan diff selesai; tidak ada commit, deploy, atau implementasi roadmap. Verification ini tidak menutup gap aplikasi yang tercatat di atas.
+
+## Verifikasi Struktur Semester II (19 Oktober 2026)
+
+### Pengisian PSE setelah verifikasi struktur
+
+**CURRENT STATE (19 Oktober 2026):** enam accordion PSE telah diisi dari seluruh delapan halaman `artifacts/3.3. Pembelajaran Sosial Emosional.pdf` sesuai instruksi pemilik: empat jawaban 4C, tiga jawaban analisis, dan kesimpulan. Kata dan sudut pandang dipertahankan; hanya whitespace/paragraf dirapikan. Empat URL artefak yang sudah ada berhasil diakses tanpa login (HTTP 200), dengan judul file cocok untuk 1.D, 1.E, 2.E, dan 3.E; isi artefak eksternal tidak diaudit. URL resmi LK 2 tetap null. Empat course lain serta Semester I dipertahankan.
+
+Build dan lint berhasil; lint memiliki delapan warning baseline di file lain. Browser lokal pada 1440 × 1000 dan 390 × 844 memastikan seluruh delapan blok jawaban dan tujuh pertanyaan cocok dengan PDF setelah normalisasi whitespace, enam accordion serta keyboard Enter/Space bekerja, tanpa overflow horizontal, clipping paragraf, atau page error. Bukti dan batas pemeriksaan ada di [laporan PSE](artifacts/pse/README.md). Catatan struktur awal berikut merupakan hasil sebelum pengisian PSE.
+
+FR-REFLECTION-005 diverifikasi pada build lokal production dengan Chromium headless 156.0.8078.4, viewport 1440 x 1000 dan 390 x 844. Seluruh enam tab Semester I dan lima tab Semester II diperiksa pada kedua ukuran: enam accordion/course, keyboard Enter/Space, status Belum tersedia, tanpa clipping/overflow horizontal. Navigasi kedua semester bekerja dan menutup panel; hanya parent semester yang sesuai aktif, termasuk navigasi client dari MK 6 Semester I ke Semester II. Tidak ada console/page error; 251 assertion terarah lolos.
+
+File page Semester I identik byte per byte dan initializer data courses identik dengan sebelum task. Pemeriksaan DOM seluruh course mempertahankan narasi dan 30 URL lama; Semester II tidak memiliki tautan dokumen rekaan. Build berhasil termasuk TypeScript/prerender delapan halaman. Lint exit 0 dengan delapan warning baseline pada file lain. Screenshot dan log tersedia di `artifacts/semester-2/`. Verifikasi lokal ini bukan deployment, pengisian refleksi, audit evidence eksternal, atau sertifikasi accessibility seluruh situs.
 
 ## Verifikasi Navigasi Mobile (19 Oktober 2026)
 

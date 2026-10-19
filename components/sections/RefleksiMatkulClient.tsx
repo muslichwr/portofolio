@@ -70,7 +70,7 @@ interface CourseArtifact {
   readonly href: string | null;
 }
 
-interface CourseData {
+export interface CourseData {
   readonly tabLabel: string;
   readonly title: string;
   /** Dedicated Google Drive URL for the formal completed LK 2 PDF worksheet */
@@ -745,7 +745,7 @@ function FormalLk2Card({ courseTitle, href }: FormalLk2CardProps) {
         </a>
       ) : (
         <span className="flex shrink-0 items-center self-start rounded-md border border-zinc-800 bg-zinc-900/80 px-2.5 py-1.5 font-mono text-[11px] text-zinc-500 sm:self-center">
-          Tautan belum tersedia
+          Belum tersedia
         </span>
       )}
     </div>
@@ -856,6 +856,9 @@ function CourseContent({ course }: { course: CourseData }) {
                 : ""
             )}
           >
+            {course.artifacts.length === 0 && (
+              <p className="text-sm text-zinc-400">Belum tersedia</p>
+            )}
             {course.artifacts.map((art) => (
               <ArtifactEvidenceItem
                 key={art.label}
@@ -886,7 +889,11 @@ function CourseContent({ course }: { course: CourseData }) {
 /* ============================================================================
    MAIN CLIENT COMPONENT
    ============================================================================ */
-export function RefleksiMatkulClient() {
+export function RefleksiMatkulClient({
+  courses: courseList = courses,
+}: {
+  courses?: readonly CourseData[];
+}) {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   return (
@@ -894,7 +901,7 @@ export function RefleksiMatkulClient() {
       <div className="mx-auto max-w-4xl space-y-8">
         {/* Tab Bar */}
         <div className="flex flex-wrap gap-2">
-          {courses.map((course, index) => (
+          {courseList.map((course, index) => (
             <button
               key={course.tabLabel}
               onClick={() => setActiveTabIndex(index)}
@@ -912,8 +919,8 @@ export function RefleksiMatkulClient() {
 
         {/* Active Tab Content */}
         <CourseContent
-          key={courses[activeTabIndex].tabLabel}
-          course={courses[activeTabIndex]}
+          key={courseList[activeTabIndex].tabLabel}
+          course={courseList[activeTabIndex]}
         />
       </div>
     </section>

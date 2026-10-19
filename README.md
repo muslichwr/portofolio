@@ -6,7 +6,7 @@ Portfolio pribadi, profesional, dan akademik milik **Muslich Wahyu Romadhon**, d
 
 - Production: [portofolio-muslich.vercel.app](https://portofolio-muslich.vercel.app/).
 - Nama package: `portofolio`; versi `0.1.0`; private.
-- **CURRENT STATE:** website berjalan dengan tujuh halaman, tiga siklus praktik mengajar, dan enam refleksi mata kuliah.
+- **CURRENT STATE:** website berjalan dengan delapan halaman, tiga siklus praktik mengajar, enam refleksi mata kuliah Semester I, serta lima mata kuliah Semester II: refleksi PSE sudah diisi dari PDF pemilik, empat lainnya belum diisi.
 - **DECISION:** tahap ini membangun dokumentasi. Roadmap merupakan pekerjaan mendatang, bukan izin mengubah aplikasi.
 - Baseline audit: **7 Oktober 2026**, commit `4c043ef`. Rincian hasil dan keterbatasan pemeriksaan ada di [SRS](SRS.md#hasil-verifikasi-baseline).
 

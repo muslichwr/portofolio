@@ -14,7 +14,8 @@ const navLinks = [
   { href: "/penilaian", label: "Penilaian" },
   { href: "/refleksi", label: "Refleksi PPL" },
   { href: "/refleksi-akhir", label: "Refleksi Akhir" },
-  { href: "/refleksi-matkul", label: "Refleksi Mata Kuliah" },
+  { href: "/refleksi-matkul", label: "Refleksi Mata Kuliah Semester I" },
+  { href: "/refleksi-matkul/semester-2", label: "Refleksi Mata Kuliah Semester II" },
 ] as const;
 
 const semesters = [
@@ -27,6 +28,7 @@ const semesters = [
       { ...navLinks[3], description: "Perkembangan perangkat & praktik mengajar" },
       { ...navLinks[4], description: "Evaluasi diri dan rencana tindak lanjut" },
       { ...navLinks[5], description: "Sintesis perjalanan dan pembelajaran PPL" },
+      { ...navLinks[6], description: "Refleksi 4C dan artefak Semester I" },
     ],
   },
   {
@@ -34,7 +36,7 @@ const semesters = [
     label: "Semester 2",
     subtitle: "Pendalaman & Pengembangan Profesional",
     links: [
-      { ...navLinks[6], description: "Refleksi 4C dan artefak pembelajaran" },
+      { ...navLinks[7], description: "Refleksi 4C dan artefak Semester II" },
     ],
   },
 ] as const;
@@ -45,6 +47,11 @@ const semesters = [
  *  - This prevents `/refleksi` from matching `/refleksi-akhir`. */
 function isActiveLink(href: string, pathname: string): boolean {
   if (href === "/") return pathname === "/";
+  // Prefer a more specific destination when both semesters share a route prefix.
+  if (navLinks.some((link) =>
+    link.href.startsWith(`${href}/`) &&
+    (pathname === link.href || pathname.startsWith(`${link.href}/`))
+  )) return false;
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 

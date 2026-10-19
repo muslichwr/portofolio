@@ -52,9 +52,12 @@ Bagi pemilik, pengalaman mengajar dan kompetensi IT membutuhkan satu tempat yang
 | Penilaian | `/penilaian` | Lampiran 7/8, skor per siklus, delta, dokumen |
 | Refleksi PPL | `/refleksi` | Visi, kekuatan, kelemahan, rencana tindak lanjut |
 | Refleksi Akhir | `/refleksi-akhir` | Perjalanan PPL, tantangan, feedback, filosofi, nilai guru |
-| Refleksi Mata Kuliah | `/refleksi-matkul` | Enam mata kuliah, 4C, analisis artefak, kesimpulan, LK 2 |
+| Refleksi Mata Kuliah Semester I | `/refleksi-matkul` | Enam mata kuliah, 4C, analisis artefak, kesimpulan, LK 2; isi dipertahankan |
+| Refleksi Mata Kuliah Semester II | `/refleksi-matkul/semester-2` | Lima mata kuliah, enam bagian/course; refleksi PSE tersedia dari PDF pemilik beserta empat tautan artefak terverifikasi; empat course lain dan dokumen resmi LK 2 belum tersedia |
 
 **DECISION / CURRENT STATE (7 Oktober 2026):** desktop Navbar berisi Home, About, Semester 1, Semester 2. Semester 1 mengelompokkan Artefak & Analisis, Penilaian, Refleksi PPL, dan Refleksi Akhir; Semester 2 berisi Refleksi Mata Kuliah. Panel menampilkan subtitle serta deskripsi singkat tiap tujuan. Ini grouping navigasi saja: tujuh route tetap sama; mobile tetap menampilkan tujuh link langsung. Footer memuat subset Beranda, Artefak, Penilaian, Refleksi. CTA utama hero menuju About. Teaser dan CTA akhir homepage menuju Artefak; CTA tambahan menuju Refleksi Akhir. About menuju Artefak dan Refleksi Mata Kuliah. Refleksi PPL menuju Refleksi Akhir. Refleksi Akhir menuju Artefak, Penilaian, Refleksi PPL, dan About. Tab PPL pada Refleksi Mata Kuliah menuju Artefak.
+
+**DECISION / CURRENT STATE (19 Oktober 2026, OWN-008):** tautan Semester I dipindahkan ke dropdown Semester 1; dropdown Semester 2 menuju `/refleksi-matkul/semester-2`. Mobile memiliki delapan tautan langsung dengan label semester yang berbeda. URL lama, seluruh isi Semester I, footer, dan tautan lain dipertahankan. Halaman baru memakai desain dan renderer refleksi yang sama, tanpa mengarang isi atau URL. Nama mata kuliah elektif masih menunggu konfirmasi. Keputusan ini menggantikan penempatan refleksi mata kuliah pada OWN-007, bukan menyetujui redesign IA lainnya.
 
 ### Identified issues
 
@@ -110,6 +113,7 @@ Untuk produk berikutnya, **PROPOSED**:
 | OWN-005 | DECISION | Dokumentasi dahulu, tanpa implementasi roadmap/commit | Batas task eksplisit; review pemilik mendahului pekerjaan aplikasi |
 | OWN-006 | DECISION | Konsolidasi dokumentasi lama ke struktur baru | Pilihan pemilik saat perencanaan; penghapusan lama selain AGENTS dipertahankan |
 | OWN-007 | DECISION | Desktop Home/About + dropdown Semester 1/2; route dan mobile dipertahankan | Instruksi eksplisit pemilik 7 Oktober 2026; panel kompak dengan subtitle/deskripsi, parent/child active, tanpa landing page semester atau placeholder. Alternatif enam label tetap Proposed; konten halaman tidak diklasifikasi ulang. |
+| OWN-008 | DECISION | Pisahkan refleksi Semester I dan struktur Semester II | Instruksi pemilik 19 Oktober 2026: `/refleksi-matkul` tetap berisi Semester I, tambah `/refleksi-matkul/semester-2` dengan lima mata kuliah dan status Belum tersedia; navigasi semester disesuaikan. Renderer dipakai ulang untuk menjaga desain; tidak membuat landing semester, refleksi, atau URL dokumen rekaan. Menggantikan grouping mata kuliah OWN-007; nama elektif tetap menunggu konfirmasi. |
 | HIST-001 | CURRENT STATE — riwayat | Git mencatat pembentukan lapisan docs pada 2026-08-29 | `git show 4c043ef:docs/DECISIONS.md`; pemisahan konteks/fakta/desain/engineering tetap berguna, nama file lama tidak lagi canonical |
 | HIST-002 | CURRENT STATE — riwayat | DEC-006 lama mencatat narasi website + LK 2 + artefak | Source mata kuliah mendukung pola ini; alasan kepatuhan LMS belum diperiksa terhadap instrumen resmi |
 | HIST-003 | CURRENT STATE — riwayat | DEC-001–005 lama berlabel ACCEPTED (INFERRED) | Dark theme, server pages, CSS score bars, Lenis, dan topik praktik ditemukan di kode; motivasi desain dan manfaat performa bukan keputusan owner yang terverifikasi |

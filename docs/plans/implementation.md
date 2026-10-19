@@ -150,11 +150,11 @@ ISSUE-007: tujuh link valid tetapi istilah refleksi berdekatan dan bahasa label 
 
 ### Requirements
 
-FR-NAV-001, FR-NAV-002, FR-NAV-003, FR-REFLECTION-001, FR-REFLECTION-002, FR-REFLECTION-003, FR-REFLECTION-004, FR-A11Y-002.
+FR-NAV-001, FR-NAV-002, FR-NAV-003, FR-REFLECTION-001, FR-REFLECTION-002, FR-REFLECTION-003, FR-REFLECTION-004, FR-REFLECTION-005, FR-A11Y-002.
 
 ### Tasks
 
-- Grouping desktop Semester 1/2 selesai dalam scope FR-NAV-003; tujuh URL, konten, footer, dan menu mobile dipertahankan.
+- Grouping desktop Semester 1/2 selesai dalam scope FR-NAV-003. OWN-008/FR-REFLECTION-005 menambahkan struktur lima course di `/refleksi-matkul/semester-2`, memindahkan refleksi lama ke dropdown Semester 1, dan membedakan kedua semester di delapan link mobile. Tujuh URL lama, isi Semester I, footer, dan pola menu dipertahankan; refleksi PSE kini diisi verbatim dari PDF delapan halaman pemilik, dengan empat tautan artefak terverifikasi. Pengisian empat course lainnya menunggu konten nyata. Status phase tetap IN PROGRESS; pengisian PSE tidak menuntaskan exit criteria phase.
 - Buat pemetaan current→target untuk opsi Beranda/Profil/Praktik Mengajar/Bukti & Penilaian/Refleksi/Mata Kuliah.
 - Evaluasi label/grouping dahulu; bandingkan terhadap perubahan route atau penggabungan isi sebagai alternatif yang lebih besar.
 - Pastikan tujuan refleksi diri, sintesis PPL, dan course tetap berbeda dan mudah ditemukan.
