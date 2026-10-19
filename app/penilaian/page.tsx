@@ -273,7 +273,7 @@ export default function PenilaianPage() {
       <section className="px-6 pb-8 pt-24 md:pt-32">
         <div className="mx-auto max-w-4xl">
           {/* Kicker */}
-          <p className="mb-3 font-mono text-xs uppercase tracking-widest text-zinc-600">
+          <p className="mb-3 font-mono text-xs uppercase tracking-widest text-zinc-400">
             Transparansi Penilaian
           </p>
 
@@ -304,11 +304,11 @@ export default function PenilaianPage() {
           {/* Section header */}
           <div className="mb-12">
             <div className="mb-4 flex items-center gap-3">
-              <div className="flex size-10 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
                 <FileText className="size-5 text-zinc-400" />
               </div>
               <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-zinc-600">
+                <p className="font-mono text-xs uppercase tracking-widest text-zinc-400">
                   Lampiran 7
                 </p>
                 <h2 className="text-2xl font-extrabold tracking-tighter text-white md:text-3xl">
@@ -316,7 +316,7 @@ export default function PenilaianPage() {
                 </h2>
               </div>
             </div>
-            <p className="max-w-xl text-sm leading-relaxed text-zinc-500">
+            <p className="max-w-xl text-sm leading-relaxed text-zinc-400">
               Instrumen penilaian penyusunan perangkat pembelajaran
               (RPP/Modul Ajar) yang dinilai oleh Guru Pamong sepanjang tiga
               siklus PPL Terbimbing. Nilai akhir dihitung dengan rumus
@@ -325,25 +325,25 @@ export default function PenilaianPage() {
           </div>
 
           {/* Progression overview — big numbers */}
-          <div className="mb-12 grid grid-cols-3 gap-4">
+          <div className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
             {lampiran7Cycles.map((cycle) => (
               <Card
                 key={cycle.cycle}
                 className="border-zinc-800/50 bg-zinc-950 text-center transition-colors hover:border-zinc-700"
               >
                 <CardContent className="px-4 py-6">
-                  <p className="font-mono text-xs text-zinc-600">
+                  <p className="font-mono text-xs text-zinc-400">
                     {cycle.cycle}
                   </p>
                   <p className="mt-2 text-4xl font-extrabold tracking-tighter text-white md:text-5xl">
                     {formatScore(cycle.overallScore)}
                   </p>
-                  <p className="mt-1 font-mono text-xs text-zinc-600">
+                  <p className="mt-1 font-mono text-xs text-zinc-400">
                     {cycle.rawScore}/{cycle.rawMaxScore}
                   </p>
                   <Badge
                     variant="outline"
-                    className="mt-3 border-zinc-800 text-xs text-zinc-500"
+                    className="mt-3 h-auto max-w-full whitespace-normal border-zinc-800 text-xs text-zinc-400"
                   >
                     {cycle.highlight}
                   </Badge>
@@ -353,7 +353,7 @@ export default function PenilaianPage() {
           </div>
 
           {/* Growth indicator */}
-          <div className="mb-12 flex items-center justify-center gap-2 text-sm text-zinc-500">
+          <div className="mb-12 flex items-center justify-center gap-2 text-sm text-zinc-400">
             <TrendingUp className="size-4 text-emerald-500" />
             <span>
               Perubahan total{" "}
@@ -372,16 +372,16 @@ export default function PenilaianPage() {
                 className="border-zinc-800/50 bg-zinc-950 transition-colors hover:border-zinc-700"
               >
                 <CardHeader className="pb-2">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <CardDescription className="font-mono text-xs uppercase tracking-widest text-zinc-600">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="min-w-0 flex-1">
+                      <CardDescription className="font-mono text-xs uppercase tracking-widest text-zinc-400">
                         {cycle.cycle} · {cycle.rawScore}/{cycle.rawMaxScore}
                       </CardDescription>
                       <CardTitle className="mt-1 text-lg font-bold tracking-tight text-white">
                         {cycle.label}
                       </CardTitle>
                     </div>
-                    <div className="flex size-12 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
+                    <div className="flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900 px-2">
                       <span className="text-lg font-extrabold text-white">
                         {formatScore(cycle.overallScore)}
                       </span>
@@ -394,7 +394,7 @@ export default function PenilaianPage() {
                     return (
                       <div key={metricItem.metric} className="space-y-1.5">
                         <div className="flex items-center gap-2">
-                          <IconComponent className="size-3.5 text-zinc-600" />
+                          <IconComponent className="size-3.5 text-zinc-400" />
                           <span className="text-xs font-medium text-zinc-400">
                             {metricItem.metric}
                           </span>
@@ -411,7 +411,7 @@ export default function PenilaianPage() {
                   {cycleIndex > 0 && (() => {
                     const delta = cycle.overallScore - lampiran7Cycles[cycleIndex - 1].overallScore;
                     return (
-                      <div className="flex items-center gap-1.5 pt-2 text-xs text-zinc-600">
+                      <div className="flex items-center gap-1.5 pt-2 text-xs text-zinc-400">
                         <TrendingUp className={`size-3 ${delta >= 0 ? "text-emerald-600" : "text-amber-600"}`} />
                         <span>
                           {formatDelta(delta)} poin dari {lampiran7Cycles[cycleIndex - 1].cycle}
@@ -436,11 +436,11 @@ export default function PenilaianPage() {
           {/* Section header */}
           <div className="mb-12">
             <div className="mb-4 flex items-center gap-3">
-              <div className="flex size-10 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
                 <TrendingUp className="size-5 text-zinc-400" />
               </div>
               <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-zinc-600">
+                <p className="font-mono text-xs uppercase tracking-widest text-zinc-400">
                   Lampiran 8
                 </p>
                 <h2 className="text-2xl font-extrabold tracking-tighter text-white md:text-3xl">
@@ -448,7 +448,7 @@ export default function PenilaianPage() {
                 </h2>
               </div>
             </div>
-            <p className="max-w-xl text-sm leading-relaxed text-zinc-500">
+            <p className="max-w-xl text-sm leading-relaxed text-zinc-400">
               Perkembangan nilai praktik mengajar dari Siklus 1 hingga
               Siklus 3. Skor menunjukkan dinamika pelaksanaan pembelajaran,
               mulai dari membuka pelajaran, kegiatan inti, penutup, hingga
@@ -457,25 +457,25 @@ export default function PenilaianPage() {
           </div>
 
           {/* Progression overview — big numbers */}
-          <div className="mb-12 grid grid-cols-3 gap-4">
+          <div className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
             {lampiran8Cycles.map((cycle) => (
               <Card
                 key={cycle.cycle}
                 className="border-zinc-800/50 bg-zinc-950 text-center transition-colors hover:border-zinc-700"
               >
                 <CardContent className="px-4 py-6">
-                  <p className="font-mono text-xs text-zinc-600">
+                  <p className="font-mono text-xs text-zinc-400">
                     {cycle.cycle}
                   </p>
                   <p className="mt-2 text-4xl font-extrabold tracking-tighter text-white md:text-5xl">
                     {formatScore(cycle.overallScore)}
                   </p>
-                  <p className="mt-1 font-mono text-xs text-zinc-600">
+                  <p className="mt-1 font-mono text-xs text-zinc-400">
                     {cycle.rawScore}/{cycle.rawMaxScore}
                   </p>
                   <Badge
                     variant="outline"
-                    className="mt-3 border-zinc-800 text-xs text-zinc-500"
+                    className="mt-3 h-auto max-w-full whitespace-normal border-zinc-800 text-xs text-zinc-400"
                   >
                     {cycle.highlight}
                   </Badge>
@@ -485,7 +485,7 @@ export default function PenilaianPage() {
           </div>
 
           {/* Growth indicator */}
-          <div className="mb-12 flex items-center justify-center gap-2 text-sm text-zinc-500">
+          <div className="mb-12 flex items-center justify-center gap-2 text-sm text-zinc-400">
             <TrendingUp className="size-4 text-emerald-500" />
             <span>
               Perubahan total{" "}
@@ -504,16 +504,16 @@ export default function PenilaianPage() {
                 className="border-zinc-800/50 bg-zinc-950 transition-colors hover:border-zinc-700"
               >
                 <CardHeader className="pb-2">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <CardDescription className="font-mono text-xs uppercase tracking-widest text-zinc-600">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="min-w-0 flex-1">
+                      <CardDescription className="font-mono text-xs uppercase tracking-widest text-zinc-400">
                         {cycle.cycle} · {cycle.rawScore}/{cycle.rawMaxScore}
                       </CardDescription>
                       <CardTitle className="mt-1 text-lg font-bold tracking-tight text-white">
                         {cycle.label}
                       </CardTitle>
                     </div>
-                    <div className="flex size-12 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
+                    <div className="flex min-h-12 min-w-12 shrink-0 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900 px-2">
                       <span className="text-lg font-extrabold text-white">
                         {formatScore(cycle.overallScore)}
                       </span>
@@ -526,7 +526,7 @@ export default function PenilaianPage() {
                     return (
                       <div key={metricItem.metric} className="space-y-1.5">
                         <div className="flex items-center gap-2">
-                          <IconComponent className="size-3.5 text-zinc-600" />
+                          <IconComponent className="size-3.5 text-zinc-400" />
                           <span className="text-xs font-medium text-zinc-400">
                             {metricItem.metric}
                           </span>
@@ -543,7 +543,7 @@ export default function PenilaianPage() {
                   {cycleIndex > 0 && (() => {
                     const delta = cycle.overallScore - lampiran8Cycles[cycleIndex - 1].overallScore;
                     return (
-                      <div className="flex items-center gap-1.5 pt-2 text-xs text-zinc-600">
+                      <div className="flex items-center gap-1.5 pt-2 text-xs text-zinc-400">
                         <TrendingUp className={`size-3 ${delta >= 0 ? "text-emerald-600" : "text-amber-600"}`} />
                         <span>
                           {formatDelta(delta)} poin dari {lampiran8Cycles[cycleIndex - 1].cycle}
@@ -568,11 +568,11 @@ export default function PenilaianPage() {
           {/* Section header */}
           <div className="mb-12">
             <div className="mb-4 flex items-center gap-3">
-              <div className="flex size-10 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-md border border-zinc-800 bg-zinc-900">
                 <Download className="size-5 text-zinc-400" />
               </div>
               <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-zinc-600">
+                <p className="font-mono text-xs uppercase tracking-widest text-zinc-400">
                   Dokumen Resmi
                 </p>
                 <h2 className="text-2xl font-extrabold tracking-tighter text-white md:text-3xl">
@@ -580,7 +580,7 @@ export default function PenilaianPage() {
                 </h2>
               </div>
             </div>
-            <p className="max-w-xl text-sm leading-relaxed text-zinc-500">
+            <p className="max-w-xl text-sm leading-relaxed text-zinc-400">
               Dokumen penilaian resmi yang diisi oleh Guru Pamong (GP) sepanjang
               tiga siklus PPL Terbimbing.
             </p>
@@ -607,7 +607,7 @@ export default function PenilaianPage() {
                         <p className="text-sm font-medium text-white">
                           {doc.label}
                         </p>
-                        <p className="text-xs text-zinc-500">PDF Document</p>
+                        <p className="text-xs text-zinc-400">PDF Document</p>
                       </div>
                     </div>
                     <a
@@ -642,7 +642,7 @@ export default function PenilaianPage() {
                         <p className="text-sm font-medium text-white">
                           {doc.label}
                         </p>
-                        <p className="text-xs text-zinc-500">PDF Document</p>
+                        <p className="text-xs text-zinc-400">PDF Document</p>
                       </div>
                     </div>
                     <a

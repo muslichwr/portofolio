@@ -455,7 +455,7 @@ Penelusuran ringkasan ke source lama [app/artefak/page.tsx](app/artefak/page.tsx
 - **Acceptance criteria:** Perubahan UI diuji minimal 360/390, 768, dan 1440 CSS px serta zoom 200%; seluruh route tetap terbaca/operable tanpa overflow yang memotong isi. Ukuran ini adalah default verification mendatang, bukan hasil pengujian baseline.
 - **Status:** Implemented.
 - **Related page/component:** Global CSS dan seluruh page/component layout.
-- **Verification:** Responsive classes diperiksa; mobile/tablet/desktop render belum dinyatakan lolos; tiga kolom ringkasan Penilaian tetap perlu diuji pada mobile.
+- **Verification:** Responsive classes diperiksa pada baseline. Task polish 19 Oktober 2026 memverifikasi Penilaian lokal pada Chromium di lebar 360, 390, 640, 768, dan 1440 CSS px: ringkasan satu kolom sebelum sm, tanpa clipping teks atau overflow horizontal; judul dan badge skor tidak bertumpuk. Ini bukan kelulusan seluruh route, zoom 200%, atau browser lain.
 
 ### NFR-MAINT-001
 
@@ -538,6 +538,12 @@ Pemeriksaan terarah pada 7 Oktober 2026 menggunakan Python serta TypeScript AST 
 - 42 record EVD dan 15 issue teridentifikasi; URL inventory cocok persis dengan URL unik source aktif.
 - Hash source/config/assets yang ada sebelum tugas cocok setelah penulisan. Perubahan hanya dokumen/router yang diizinkan; penghapusan awal CLAUDE dan sembilan dokumen lama tetap dipertahankan.
 - Review whitespace dan diff selesai; tidak ada commit, deploy, atau implementasi roadmap. Verification ini tidak menutup gap aplikasi yang tercatat di atas.
+
+## Verifikasi Polish Penilaian (19 Oktober 2026)
+
+Perubahan dibatasi pada class styling halaman Penilaian: ringkasan L7/L8 satu kolom sebelum sm, badge highlight dapat wrap, header rincian memiliki gap dan skor tidak menyusut, serta teks kecil zinc-500/600 dinaikkan ke zinc-400. Nilai, label, URL, dan logika tidak berubah (perbandingan AST setelah mengabaikan className). Screenshot dan pengukuran lokal tersedia di `artifacts/ui-polish/`; artefak dapat diabaikan Git sesuai konfigurasi workspace.
+
+`npm run build` berhasil termasuk TypeScript dan prerender. `npm run lint` exit 0 dengan delapan warning unused declarations pada file lain, tanpa warning Penilaian. Chromium headless 156.0.8078.4 memverifikasi HTTP 200, tanpa page error, clipping teks oleh ancestor, atau overflow horizontal pada lebar 360, 390, 640, 768, dan 1440 CSS px; screenshot 390 x 844 dan 1440 x 1000 diperiksa. Ini verifikasi terbatas Penilaian, bukan audit WCAG/kontras terukur, zoom 200%, seluruh halaman, atau penutupan FR-A11Y-003/ISSUE-012.
 
 ## Verifikasi Task Navigasi Desktop (7 Oktober 2026)
 
