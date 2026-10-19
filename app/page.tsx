@@ -206,16 +206,6 @@ export default function HomePage() {
             </span>
           </h1>
 
-          {/* ── Supporting Subtitle ── */}
-          <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-zinc-400 sm:text-base">
-            Mengajar praktik IT melalui konfigurasi server, deployment aplikasi web, dan penelusuran error.
-          </p>
-
-          {/* ── Triad Dimensions ── */}
-          <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-zinc-500 sm:text-xs">
-            Bermakna · Berkesadaran · Menggembirakan
-          </p>
-
           {/* CTA Button — navigates to /about */}
           <div className="mt-8">
             <Link
