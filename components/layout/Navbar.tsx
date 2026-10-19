@@ -75,14 +75,14 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="fixed top-0 z-50 flex w-full justify-center px-4 pt-4" role="banner">
+    <header className="pointer-events-none fixed top-0 z-50 flex w-full justify-center px-4 pt-4 md:pointer-events-auto" role="banner">
       {/* ── Floating Pill Navbar ── */}
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
         className={cn(
-          "flex items-center gap-1 rounded-full border px-2 py-2 transition-all duration-500",
+          "pointer-events-auto flex items-center gap-1 rounded-full border px-2 py-2 transition-all duration-500",
           hasScrolled
             ? "border-white/10 bg-black/70 shadow-lg shadow-black/20 backdrop-blur-xl"
             : "border-white/[0.06] bg-white/[0.03] backdrop-blur-md"
@@ -222,7 +222,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-[4.5rem] z-40 mx-4 rounded-2xl border border-white/10 bg-black/90 p-4 backdrop-blur-xl md:hidden"
+            className="pointer-events-auto fixed inset-x-0 top-[4.5rem] z-40 mx-4 rounded-2xl border border-white/10 bg-black/90 p-4 backdrop-blur-xl md:hidden"
           >
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => {

@@ -85,7 +85,7 @@ Nilai default Tailwind terpasang: sm **40rem**, md **48rem**, lg **64rem**. Pada
 | Penilaian | Dua area L7/L8, cards/metric bars | Ringkasan satu kolom pada mobile, tiga mulai sm; badge highlight dapat wrap; judul rincian dan skor memiliki gap, skor tidak menyusut; download L7/L8 satu→dua kolom md |
 | Refleksi Akhir | Long-form, timeline, callout, link cards | Nilai guru satu→dua kolom md |
 | Mata Kuliah | Pengantar 4C dan satu active course | Pengantar satu→dua kolom sm→empat lg; tab flex-wrap; dokumen LK2 flex-col→row sm; supporting artifacts dua kolom md |
-| Navbar | Pill centered, fixed, px-4/pt-4, z-50 | Desktop md:flex: Home/About + dua tombol semester; panel absolute right-0, mt-3, w-[360px], rounded-2xl, bg-zinc-950. Mobile tetap tujuh link, panel fixed top-[4.5rem], mx-4 |
+| Navbar | Pill centered, fixed, px-4/pt-4, z-50 | Desktop md:flex: Home/About + dua tombol semester; panel absolute right-0, mt-3, w-[360px], rounded-2xl, bg-zinc-950. Mobile tetap tujuh link, panel fixed top-[4.5rem], mx-4; area header transparan meneruskan pointer di mobile, pill/menu tetap interaktif |
 | Footer | max-w-6xl px-6 py-16 | Susunan flex-col→row md; navigation flex-wrap |
 
 **ISSUE:** overflow, ukuran target kontrol, wrapping judul panjang, ringkasan Penilaian, dan kedekatan menu tetap membutuhkan render test. Lenis CSS memakai width 100vw; dampak scrollbar/overflow belum diverifikasi. Tidak ditemukan jaminan overflow-x hidden global yang dapat diwarisi dari checklist lama.

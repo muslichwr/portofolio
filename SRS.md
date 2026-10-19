@@ -203,7 +203,7 @@ Inventory berikut mencatat yang digunakan kode, bukan bibliography terverifikasi
 - **Acceptance criteria:** Semua href internal resolve; `/refleksi` tidak aktif pada `/refleksi-akhir`; menu tersedia di bawah breakpoint md.
 - **Status:** Implemented.
 - **Related page/component:** Navbar, Footer.
-- **Verification:** Source dan tujuh HTTP 200; interaksi mobile runtime belum diverifikasi.
+- **Verification:** Source dan tujuh HTTP 200 pada baseline. Pemeriksaan mobile lokal 19 Oktober 2026 pada 390 x 844 dan 360 x 800 memverifikasi menu saat awal/scroll, tujuh link terlihat, serta navigasi About menutup menu. Header transparan di luar pill tidak lagi menangkap tap konten; geometri navigasi dipertahankan. Rincian ada pada verifikasi navigasi mobile.
 
 ### FR-NAV-002
 
@@ -538,6 +538,12 @@ Pemeriksaan terarah pada 7 Oktober 2026 menggunakan Python serta TypeScript AST 
 - 42 record EVD dan 15 issue teridentifikasi; URL inventory cocok persis dengan URL unik source aktif.
 - Hash source/config/assets yang ada sebelum tugas cocok setelah penulisan. Perubahan hanya dokumen/router yang diizinkan; penghapusan awal CLAUDE dan sembilan dokumen lama tetap dipertahankan.
 - Review whitespace dan diff selesai; tidak ada commit, deploy, atau implementasi roadmap. Verification ini tidak menutup gap aplikasi yang tercatat di atas.
+
+## Verifikasi Navigasi Mobile (19 Oktober 2026)
+
+Pada build lokal, Chromium headless 156.0.8078.4 menguji Penilaian pada viewport 390 x 844 dan 360 x 800 saat awal, scroll pengantar, dan menu terbuka. Pill tetap 54 x 54 pada y=16; konten yang melewatinya tertutup sementara dan bisa dibaca dengan scroll, sehingga posisi/ukuran dipertahankan. Ditemukan header transparan selebar viewport menghalangi tap Unduh di samping pill: hit-test mengenai HEADER dan tap koordinat tidak menghasilkan click pada link. Setelah pointer events header mobile dinonaktifkan dan diaktifkan kembali pada pill/panel, hit-test mengenai link dan tap menghasilkan satu click. Uji click mencegah navigasi eksternal; akses dokumen tidak diaudit.
+
+Menu awal dan sesudah scroll menampilkan tujuh link, buka/tutup serta navigasi About berhasil pada kedua ukuran. Smoke test menu pada Home/About/Artefak dan dropdown desktop 1440 x 1000 (buka/Escape) lolos. Tidak ada page error/overflow horizontal pada checkpoint Penilaian; geometri pill sebelum/sesudah identik. Build berhasil; lint exit 0 dengan delapan warning lama di file lain. Screenshot dan pengukuran ada di `artifacts/mobile-navigation/`. Pemeriksaan ini tidak mengklaim audit accessibility menyeluruh atau perangkat fisik.
 
 ## Verifikasi Polish Penilaian (19 Oktober 2026)
 

@@ -2,7 +2,7 @@
 
 /.agents/
 
-
+/artifacts
 # dependencies
 /node_modules
 /.pnp
