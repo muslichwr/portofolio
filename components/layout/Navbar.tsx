@@ -16,6 +16,7 @@ const navLinks = [
   { href: "/refleksi-akhir", label: "Refleksi Akhir" },
   { href: "/refleksi-matkul", label: "Refleksi Mata Kuliah Semester I" },
   { href: "/refleksi-matkul/semester-2", label: "Refleksi Mata Kuliah Semester II" },
+  { href: "/e-portfolio-1", label: "E-Portfolio 1" },
 ] as const;
 
 const semesters = [
@@ -37,6 +38,7 @@ const semesters = [
     subtitle: "Pendalaman & Pengembangan Profesional",
     links: [
       { ...navLinks[7], description: "Refleksi 4C dan artefak Semester II" },
+      { ...navLinks[8], description: "Dokumentasi dan analisis PPL Mandiri" },
     ],
   },
 ] as const;
