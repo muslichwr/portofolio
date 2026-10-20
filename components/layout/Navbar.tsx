@@ -29,7 +29,6 @@ const semesters = [
       { ...navLinks[3], description: "Perkembangan perangkat & praktik mengajar" },
       { ...navLinks[4], description: "Evaluasi diri dan rencana tindak lanjut" },
       { ...navLinks[5], description: "Sintesis perjalanan dan pembelajaran PPL" },
-      { ...navLinks[6], description: "Refleksi 4C dan artefak Semester I" },
     ],
   },
   {
@@ -37,6 +36,7 @@ const semesters = [
     label: "Semester 2",
     subtitle: "Pendalaman & Pengembangan Profesional",
     links: [
+      { ...navLinks[6], description: "Refleksi 4C dan artefak Semester I" },
       { ...navLinks[7], description: "Refleksi 4C dan artefak Semester II" },
       { ...navLinks[8], description: "Dokumentasi dan analisis PPL Mandiri" },
     ],

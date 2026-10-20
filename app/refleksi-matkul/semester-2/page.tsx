@@ -269,10 +269,10 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "2.D — Menyusun Rekomendasi Mengenal Alya Sebelum Menyusun Pembelajaran", href: null },
-      { label: "3.D — Menyusun Satu Rencana Pembelajaran untuk Semua Murid", href: null },
-      { label: "4.A — Pelaksanaan Pembelajaran di Sekolah Inklusif", href: null },
-      { label: "4.E — Refleksi dan Tindak Lanjut Pelaksanaan Pembelajaran di Sekolah Inklusif", href: null },
+      { label: "2.D — Menyusun Rekomendasi Mengenal Alya Sebelum Menyusun Pembelajaran", href: "https://drive.google.com/file/d/1068gMMFl7qoD43ctpcv6H_nUpFHNx77V/view?usp=drive_link" },
+      { label: "3.D — Menyusun Satu Rencana Pembelajaran untuk Semua Murid", href: "https://drive.google.com/file/d/1ZkwRUuuScT7HFG8W6uKt3CVpZU8omYi0/view?usp=drive_link" },
+      { label: "4.A — Pelaksanaan Pembelajaran di Sekolah Inklusif", href: "https://drive.google.com/file/d/1Lp96tX-Cy6vmLLyhIpxrwsXlptHU8Pgo/view?usp=drive_link" },
+      { label: "4.E — Refleksi dan Tindak Lanjut Pelaksanaan Pembelajaran di Sekolah Inklusif", href: "https://drive.google.com/file/d/1y5CXFWL8ywVy9QLJxU8ctF4HlWLY5GIg/view?usp=drive_link" },
     ],
   },
 ];
