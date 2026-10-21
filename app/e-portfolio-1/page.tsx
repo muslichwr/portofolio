@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
+import { NonTeachingPhotoCarousel } from "@/components/sections/NonTeachingPhotoCarousel";
+import { nonTeachingPhotos } from "./photos";
 
 export const metadata: Metadata = {
   title: "E-Portfolio 1 — Praktik Mengajar Mandiri",
   description:
-    "Ruang dokumentasi dan analisis PPL Mandiri Semester II: perencanaan, materi, media, video praktik mengajar, kegiatan nonmengajar, dan instrumen penilaian.",
+    "Ruang dokumentasi dan analisis PPL Mandiri Semester II: perencanaan, materi, media, pelaksanaan pembelajaran, kegiatan nonmengajar, dan instrumen penilaian.",
 };
 
 const contents = [
   { id: "perencanaan-pembelajaran", title: "Perencanaan Pembelajaran" },
   { id: "materi-pembelajaran", title: "Materi Pembelajaran" },
   { id: "media-pembelajaran", title: "Media Pembelajaran" },
-  { id: "video-praktik-mengajar", title: "Video Praktik Mengajar" },
+  { id: "pelaksanaan-pembelajaran", title: "Pelaksanaan Pembelajaran" },
   { id: "kegiatan-nonmengajar", title: "Kegiatan Nonmengajar" },
   { id: "instrumen-penilaian", title: "Instrumen Penilaian" },
 ] as const;
@@ -125,36 +127,36 @@ export default function EPortfolio1Page() {
           </div>
         </section>
 
-        <section id="video-praktik-mengajar" aria-label="Video Praktik Mengajar" className="scroll-mt-28 border-t border-zinc-800 py-12 md:py-16">
-          <SectionHeading number="04" title="Video Praktik Mengajar" />
+        <section id="pelaksanaan-pembelajaran" aria-label="Pelaksanaan Pembelajaran" className="scroll-mt-28 border-t border-zinc-800 py-12 md:py-16">
+          <SectionHeading number="04" title="Pelaksanaan Pembelajaran" />
           <div className="space-y-8 md:pl-10">
-            <div className="flex aspect-video items-center justify-center border border-zinc-800 bg-zinc-950/50 p-6">
-              <p className="max-w-xs text-center text-sm leading-relaxed text-zinc-400">
-                Video praktik mengajar dari YouTube akan ditampilkan di sini.
-              </p>
-            </div>
             <div className="max-w-2xl">
-              <h3 className="text-base font-medium text-zinc-200">Analisis pelaksanaan pembelajaran</h3>
+              <p className="text-sm leading-relaxed text-zinc-400">
+                Ruang analisis pelaksanaan praktik mengajar mandiri berdasarkan LK 4
+                untuk empat siklus pembelajaran. Analisis dan tautan dokumen akan
+                ditambahkan setelah sumber tersedia.
+              </p>
               <p className="mt-3 text-sm leading-relaxed text-zinc-400">
-                Ruang untuk analisis pelaksanaan pembelajaran berdasarkan rekaman praktik mengajar.
+                Analisis tertulis ini tidak menggantikan persyaratan video praktik mengajar.
               </p>
             </div>
+            <ol className="divide-y divide-zinc-800 border-y border-zinc-800">
+              {[1, 2, 3, 4].map((cycle) => (
+                <li key={cycle} className="py-6 sm:grid sm:grid-cols-[8rem_1fr] sm:gap-8">
+                  <h3 className="text-base font-medium text-zinc-200">Siklus {cycle}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-zinc-400 sm:mt-0">
+                    Analisis pelaksanaan berdasarkan LK 4 Siklus {cycle} belum ditambahkan.
+                  </p>
+                </li>
+              ))}
+            </ol>
           </div>
         </section>
 
         <section id="kegiatan-nonmengajar" aria-label="Kegiatan Nonmengajar" className="scroll-mt-28 border-t border-zinc-800 py-12 md:py-16">
           <SectionHeading number="05" title="Kegiatan Nonmengajar" />
-          <div className="grid items-start gap-8 md:grid-cols-[3fr_2fr] md:gap-10 md:pl-10">
-            <figure>
-              <div className="flex aspect-[3/2] items-center justify-center border border-zinc-800 bg-zinc-950/50 p-6">
-                <p className="text-center text-sm leading-relaxed text-zinc-400">
-                  Foto kegiatan akan ditambahkan di sini.
-                </p>
-              </div>
-              <figcaption className="mt-3 text-xs leading-relaxed text-zinc-400">
-                Keterangan foto akan menyertai dokumentasi kegiatan.
-              </figcaption>
-            </figure>
+          <div className="space-y-8 md:pl-10">
+            <NonTeachingPhotoCarousel photos={nonTeachingPhotos} />
             <div>
               <h3 className="text-base font-medium text-zinc-200">Uraian kegiatan dan refleksi peran</h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-400">
