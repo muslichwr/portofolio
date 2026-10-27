@@ -56,6 +56,7 @@ export default function RootLayout({
       <body className="relative bg-background text-foreground antialiased selection:bg-white selection:text-black">
         {/* ── Signature Radial Glow — Top-center teal/cyan gradient ── */}
         <div
+          data-site-glow
           className="pointer-events-none fixed inset-x-0 top-0 z-0 h-[600px]"
           aria-hidden="true"
         >

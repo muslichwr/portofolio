@@ -17,6 +17,7 @@ const navLinks = [
   { href: "/refleksi-matkul", label: "Refleksi Mata Kuliah Semester I" },
   { href: "/refleksi-matkul/semester-2", label: "Refleksi Mata Kuliah Semester II" },
   { href: "/e-portfolio-1", label: "E-Portfolio 1" },
+  { href: "/refleksi-program-ppg", label: "Refleksi Program PPG" },
 ] as const;
 
 const semesters = [
@@ -39,6 +40,7 @@ const semesters = [
       { ...navLinks[6], description: "Refleksi 4C dan artefak Semester I" },
       { ...navLinks[7], description: "Refleksi 4C dan artefak Semester II" },
       { ...navLinks[8], description: "Dokumentasi dan analisis PPL Mandiri" },
+      { ...navLinks[9], description: "Tahap 4 — refleksi keseluruhan program" },
     ],
   },
 ] as const;
