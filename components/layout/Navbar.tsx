@@ -14,10 +14,10 @@ const navLinks = [
   { href: "/penilaian", label: "Penilaian" },
   { href: "/refleksi", label: "Refleksi PPL" },
   { href: "/refleksi-akhir", label: "Refleksi Akhir" },
-  { href: "/refleksi-matkul", label: "Refleksi Mata Kuliah Semester I" },
-  { href: "/refleksi-matkul/semester-2", label: "Refleksi Mata Kuliah Semester II" },
-  { href: "/e-portfolio-1", label: "E-Portfolio 1" },
-  { href: "/refleksi-program-ppg", label: "Refleksi Program PPG" },
+  { href: "/e-portfolio-1", label: "PPLM - E-Portfolio 1" },
+  { href: "/refleksi-matkul", label: "SPPG - Refleksi Mata Kuliah Semester I" },
+  { href: "/refleksi-matkul/semester-2", label: "SPPG - Refleksi Mata Kuliah Semester II" },
+  { href: "/refleksi-program-ppg", label: "SPPG - Refleksi Program PPG" },
 ] as const;
 
 const semesters = [

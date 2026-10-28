@@ -203,14 +203,64 @@ const courses: readonly CourseData[] = [
     title: "Projek Kepemimpinan",
     lk2PdfHref: null,
     sections: [
-      { fourCKey: "connection", title: "Connection", content: "Belum tersedia" },
-      { fourCKey: "challenge", title: "Challenge", content: "Belum tersedia" },
-      { fourCKey: "concept", title: "Concept", content: "Belum tersedia" },
-      { fourCKey: "change", title: "Change", content: "Belum tersedia" },
-      { fourCKey: "artefak", title: "Analisis Artefak Pendukung", content: "Belum tersedia" },
-      { fourCKey: "kesimpulan", title: "Kesimpulan Mata Kuliah", content: "Belum tersedia" },
+      {
+        fourCKey: "connection",
+        title: "Connection",
+        question: "1. Apa keterkaitan materi perkuliahan dengan peran saya sebagai calon guru?",
+        content: "Mata kuliah Projek Kepemimpinan memberikan pengalaman kepada saya untuk bekerja bersama anggota tim dalam menyelesaikan kebutuhan nyata di lingkungan sekolah. Melalui pengembangan aplikasi Ruang BK di SMK Negeri 1 Surabaya, saya memahami bahwa kontribusi seorang guru terhadap sekolah tidak terbatas pada kegiatan mengajar di kelas. Guru juga perlu mampu bekerja sama dengan pihak lain, memahami persoalan yang dihadapi sekolah, serta ikut mencari penyelesaian sesuai dengan kemampuan yang dimiliki.\n\nDalam projek ini, saya bertanggung jawab sebagai Backend Developer. Pekerjaan saya mencakup pengelolaan data murid, fungsi layanan BK, pembagian hak akses, dan pertukaran data dengan sistem sekolah. Pengalaman tersebut berkaitan dengan latar belakang saya sebagai calon guru Pengembangan Perangkat Lunak dan Gim. Saya memperoleh kesempatan menerapkan keterampilan teknis dalam pekerjaan bersama yang memiliki pengguna dan kebutuhan nyata. Dari proses ini, saya semakin memahami pentingnya komunikasi, tanggung jawab, dan ketelitian ketika hasil pekerjaan akan digunakan oleh orang lain.",
+      },
+      {
+        fourCKey: "challenge",
+        title: "Challenge",
+        question: "2. Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?",
+        content: "Tantangan yang paling terasa selama projek adalah menyesuaikan pengembangan aplikasi dengan kebutuhan pengguna dan kondisi data sekolah. Pada awal pekerjaan, saya membangun fungsi secara bertahap, mulai dari pengelolaan akun dan pembagian peran hingga pencatatan layanan dan konsultasi. Namun, ketika berbagai fungsi mulai terhubung, perubahan pada satu bagian ternyata dapat memengaruhi bagian lainnya. Pengaturan kewenangan pengguna, misalnya, perlu diperiksa bersama alur pengelolaan informasi agar data yang tampil sesuai dengan tanggung jawab setiap pengguna.\n\nTantangan berikutnya muncul ketika aplikasi mulai menggunakan data dari sistem sekolah. Saya menemukan perbedaan format dan identitas murid yang tidak selalu dapat dicocokkan secara otomatis. Kondisi ini membuat saya perlu menambahkan proses pratinjau, pemeriksaan, dan pencocokan manual. Pengalaman tersebut memperlihatkan bahwa keberhasilan menjalankan kode belum cukup untuk memastikan sebuah fungsi sesuai dengan kebutuhan pengguna. Saya harus mempertimbangkan ketepatan data, kemungkinan kesalahan, serta dampaknya terhadap pekerjaan pihak sekolah. Di tingkat kelompok, perubahan kebutuhan juga membuat jadwal pengembangan bergeser dari rencana awal sehingga koordinasi dan penentuan prioritas menjadi semakin penting.",
+      },
+      {
+        fourCKey: "concept",
+        title: "Concept",
+        question: "3. Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?",
+        content: "Konsep yang paling saya pahami dari Projek Kepemimpinan adalah kepemimpinan kolaboratif dan tanggung jawab berdasarkan peran. Dalam tim Ruang BK, setiap anggota memiliki bidang pekerjaan yang berbeda, mulai dari analisis kebutuhan, perancangan, pengembangan aplikasi, hingga pengujian dan dokumentasi. Meskipun terdapat pembagian tugas, beberapa keputusan tetap memerlukan pembahasan bersama karena hasil pekerjaan satu anggota berhubungan dengan pekerjaan anggota lainnya.\n\nSaya juga belajar bahwa pengambilan keputusan perlu didukung oleh informasi yang dapat diperiksa. Ketika menerima data dari sumber sekolah, saya tidak dapat langsung menganggap seluruh informasi sudah sesuai. Data perlu diperiksa sebelum digunakan, terutama apabila ditemukan perbedaan identitas atau kemungkinan duplikasi. Prinsip yang sama berlaku dalam pengelolaan projek. Masukan Guru BK, hasil pengujian, dan catatan perkembangan menjadi dasar untuk menentukan bagian yang perlu diperbaiki. Bagi saya, kepemimpinan dalam konteks ini terlihat melalui kesediaan bertanggung jawab terhadap keputusan, berkomunikasi dengan anggota lain, dan memperbaiki pekerjaan ketika ditemukan masalah.",
+      },
+      {
+        fourCKey: "change",
+        title: "Change",
+        question: "4. Apa saja perubahan yang ingin saya lakukan setelah mendapatkan materi perkuliahan ini?",
+        content: "Setelah mengikuti Projek Kepemimpinan, saya ingin lebih teratur dalam mempersiapkan dan memeriksa pekerjaan yang melibatkan banyak pihak. Pengalaman mengembangkan Ruang BK membuat saya menyadari perlunya memahami hubungan antarfungsi sejak tahap perencanaan, terutama ketika data digunakan oleh beberapa bagian aplikasi. Pada pekerjaan berikutnya, saya ingin membiasakan pemeriksaan secara bertahap dan mencatat keputusan penting agar perubahan dapat ditelusuri dengan lebih mudah.\n\nSaya juga ingin meningkatkan komunikasi dengan anggota tim dan calon pengguna ketika menentukan kebutuhan atau melakukan perbaikan. Dalam pengembangan aplikasi sekolah, keputusan teknis perlu mempertimbangkan cara kerja pihak yang akan menggunakannya. Sebagai calon guru PPLG, pengalaman ini dapat saya bawa ke pembelajaran berbasis proyek. Saya ingin memberikan kesempatan kepada peserta didik untuk belajar membagi tanggung jawab, memeriksa hasil pekerjaan, menerima masukan, dan menyelesaikan masalah bersama. Dengan demikian, pengalaman belajar melalui projek memiliki hubungan yang lebih jelas dengan praktik kerja dan tanggung jawab profesional.",
+      },
+      {
+        fourCKey: "artefak",
+        title: "Analisis Artefak Pendukung",
+        subItems: [
+          {
+            label: "Artefak yang Dipilih",
+            question: "1. Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung hasil refleksi pengalaman belajar ini?",
+            content: "Artefak utama yang saya pilih adalah LK 1.11 Jurnal Refleksi Kegiatan Projek Kepemimpinan dan Laporan Akhir Projek Kepemimpinan Ruang BK. Jurnal individu memuat target, pekerjaan yang dilakukan, kendala, serta penyesuaian selama empat minggu pengembangan pada September 2026. Sementara itu, laporan kelompok memberikan gambaran mengenai latar belakang permasalahan layanan BK, pembagian tanggung jawab anggota, proses pengembangan, evaluasi, dan tindak lanjut projek.\n\nSaya juga menggunakan Tugas 1.1 Individu tentang pandangan terhadap guru profesional serta Tugas 2.1 Individu tentang identifikasi permasalahan dan keterkaitannya dengan SDGs sebagai artefak pendukung. Kedua tugas tersebut memberikan konteks mengenai pemikiran awal saya tentang tanggung jawab calon guru, persoalan pendidikan, dan pemanfaatan kegiatan berbasis proyek.",
+          },
+          {
+            label: "Alasan Pemilihan",
+            question: "2. Mengapa artefak tersebut yang saya pilih?",
+            content: "Saya memilih LK 1.11 karena dokumen tersebut mencatat pekerjaan dan refleksi saya secara langsung sebagai Backend Developer. Di dalamnya terdapat perkembangan tugas dari pengelolaan fungsi dasar aplikasi sampai penggunaan data dari sistem sekolah. Jurnal tersebut juga mencatat keputusan untuk melakukan pemeriksaan data dan menyediakan pencocokan manual ketika ditemukan perbedaan identitas murid. Bagian-bagian ini membantu saya menjelaskan pengalaman pribadi secara lebih konkret.\n\nLaporan Akhir Projek Kepemimpinan saya pilih karena pekerjaan saya merupakan bagian dari projek kelompok. Melalui laporan tersebut, kontribusi Backend Developer dapat dipahami dalam hubungannya dengan analisis kebutuhan, perancangan, pengembangan antarmuka, pengujian, dan masukan Guru BK. Laporan juga memuat tantangan perubahan kebutuhan, pergeseran jadwal, serta batas pencapaian projek yang perlu dipertimbangkan dalam refleksi.\n\nTugas 1.1 dan Tugas 2.1 melengkapi kedua artefak utama tersebut. Tugas 1.1 memperlihatkan pemahaman awal saya mengenai guru profesional, sedangkan Tugas 2.1 menunjukkan perhatian terhadap persoalan pendidikan serta hubungan pembelajaran dengan kebutuhan nyata. Keduanya tidak digunakan sebagai bukti pelaksanaan Ruang BK, tetapi sebagai konteks pemikiran sebelum dan selama mengikuti pembelajaran.",
+          },
+          {
+            label: "Bagian yang Mendukung Refleksi",
+            question: "3. Bagian mana dari artefak ini yang mendukung hasil refleksi saya?",
+            content: "Pada LK 1.11, catatan minggu pertama menunjukkan bahwa saya mengembangkan fungsi dasar aplikasi secara bertahap dan memeriksa hubungan antara pengelolaan data dan kewenangan pengguna. Catatan minggu kedua memperlihatkan penyesuaian fungsi agar menggunakan data dari sistem, bukan lagi data contoh. Pada minggu ketiga, pekerjaan berlanjut pada impor data murid lintas tahun pelajaran, pengambilan data melalui API Siswa, dan penyediaan proses pratinjau sebelum data digunakan. Minggu keempat mencatat penyesuaian data e-Tatib, pencocokan identitas secara manual, dan persiapan pembaruan otomatis dengan pilihan pemeriksaan manual. Rangkaian ini mendukung refleksi saya mengenai ketelitian, tanggung jawab, dan pentingnya menyesuaikan penyelesaian teknis dengan kondisi nyata.\n\nDalam Laporan Akhir Projek Kepemimpinan, bagian pembagian peran menunjukkan tanggung jawab masing-masing anggota, termasuk tugas saya sebagai Backend Developer. Bagian pelaksanaan dan hasil projek mencatat demonstrasi kepada Guru BK, perubahan fungsi berdasarkan masukan, serta koordinasi dengan pihak sekolah. Bagian tantangan dan solusi memperlihatkan bahwa perubahan kebutuhan, jadwal, pencocokan data, dan kerahasiaan informasi memerlukan keputusan yang melibatkan beberapa bidang pekerjaan. Adapun bagian refleksi individu menjelaskan bahwa pengalaman menangani data dari sumber sekolah membuat saya semakin memperhatikan konsistensi data dan pemeriksaan antarmodul.\n\nBagian-bagian tersebut menjadi bukti bahwa pembelajaran kepemimpinan saya berlangsung melalui pekerjaan, koordinasi, dan refleksi atas masalah yang benar-benar dihadapi. Namun, laporan kelompok masih merupakan draf kerja. Hasil pengembangan aplikasi dan demonstrasi dapat dijelaskan berdasarkan dokumentasi yang tersedia, sedangkan manfaat penggunaan rutin oleh sekolah belum dapat dinyatakan sebagai hasil yang telah terukur.",
+          },
+        ],
+      },
+      {
+        fourCKey: "kesimpulan",
+        title: "Kesimpulan Mata Kuliah",
+        question: "Sintesis menyeluruh hasil refleksi pengalaman belajar mata kuliah.",
+        content: "Melalui Projek Kepemimpinan, saya memperoleh pengalaman bekerja dalam tim untuk mengembangkan aplikasi Ruang BK sesuai kebutuhan sekolah. Peran sebagai Backend Developer memberi kesempatan kepada saya untuk menerapkan keterampilan teknis sekaligus belajar mempertanggungjawabkan keputusan yang berkaitan dengan data, hak akses, dan fungsi layanan. Saya memahami bahwa penyelesaian projek memerlukan komunikasi lintas peran, pemeriksaan hasil pekerjaan, dan kesediaan menyesuaikan rancangan ketika menerima masukan. Pengalaman ini menjadi bekal bagi saya sebagai calon guru PPLG, terutama dalam membimbing kegiatan berbasis proyek yang menuntut kerja sama, ketelitian, dan tanggung jawab terhadap hasil pekerjaan.",
+      },
     ],
-    artifacts: [],
+    artifacts: [
+      { label: "LK 1.11 — Jurnal Refleksi Kegiatan Projek Kepemimpinan", href: null },
+      { label: "Laporan Akhir Projek Kepemimpinan — Ruang BK (draf kerja; dokumentasi hingga 21 Oktober 2026)", href: null },
+      { label: "Tugas 1.1 Individu — Refleksi Guru Profesional", href: null },
+      { label: "Tugas 2.1 Individu — Identifikasi Topik dan SDGs", href: null },
+    ],
   },
   {
     tabLabel: "MK 5 · Pendidikan Inklusi",
@@ -311,7 +361,7 @@ export default function RefleksiMatkulSemester2Page() {
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">
             Struktur refleksi pengalaman belajar dari 5 mata kuliah Semester II, disusun menggunakan model 4C:
             Connection, Challenge, Concept, dan Change.
-            Refleksi Pembelajaran Sosial Emosional, Pembelajaran Mendalam dan Asesmen Lanjut, PPL Mandiri, serta Pendidikan Inklusi telah tersedia. Refleksi Projek Kepemimpinan dan dokumen resmi LK 2 belum tersedia.
+            Refleksi Pembelajaran Sosial Emosional, Pembelajaran Mendalam dan Asesmen Lanjut, PPL Mandiri, Projek Kepemimpinan, serta Pendidikan Inklusi telah tersedia. Dokumen resmi LK 2 belum tersedia.
           </p>
         </div>
       </section>
