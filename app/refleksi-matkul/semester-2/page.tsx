@@ -3,13 +3,41 @@ import { Separator } from "@/components/ui/separator";
 import { RefleksiMatkulClient, type CourseData } from "@/components/sections/RefleksiMatkulClient";
 
 /* ============================================================================
+   SEMESTER II — TAUTAN DOKUMEN RESMI LK 2 (GOOGLE DRIVE)
+   ============================================================================
+   Tempat terpusat untuk mengonfigurasi tautan dokumen LK 2 (Refleksi Pengalaman Belajar).
+   
+   CARA MEMPERBARUI:
+   Tempelkan URL Google Drive publik/terverifikasi menggantikan nilai `null`.
+   Contoh:
+     pembelajaranSosialEmosional: "https://drive.google.com/file/d/EXAMPLE_ID/view?usp=drive_link",
+   ============================================================================ */
+export const lk2Semester2Urls = {
+  /** 1. Pembelajaran Sosial Emosional (PSE) */
+  pembelajaranSosialEmosional: "https://drive.google.com/file/d/1vHgYG-jsGjuM_wUHLOa5Je5QoYI2pKmW/view?usp=drive_link",
+
+  /** 2. Pembelajaran Mendalam dan Asesmen Lanjut (PMAL) */
+  pembelajaranMendalamDanAsesmenLanjut:
+    "https://drive.google.com/file/d/1RGME24LSHixk_k-Q6xW2MAHFyUZ_Da4-/view?usp=drive_link",
+
+  /** 3. Praktik Pengalaman Lapangan (PPL) Mandiri */
+  pplMandiri: "https://drive.google.com/file/d/1_bfqdHM1kyl2CJ40yDS9r-tvRQC72x0n/view?usp=drive_link",
+
+  /** 4. Projek Kepemimpinan */
+  projekKepemimpinan: "https://drive.google.com/file/d/1N37XyhIJBIvmztGxo_pFy0-S5HBYGyOa/view?usp=drive_link",
+
+  /** 5. Pendidikan Inklusi */
+  pendidikanInklusi: "https://drive.google.com/file/d/1GcRKjulNGUJsfaQ1vH2xvrjTsqvkGkYI/view?usp=drive_link",
+};
+
+/* ============================================================================
    SEMESTER II COURSE DATA
    ============================================================================ */
 const courses: readonly CourseData[] = [
   {
     tabLabel: "MK 1 · Sosial Emosional",
     title: "Pembelajaran Sosial Emosional",
-    lk2PdfHref: null,
+    lk2PdfHref: lk2Semester2Urls.pembelajaranSosialEmosional,
     sections: [
       {
         fourCKey: "connection",
@@ -72,7 +100,7 @@ const courses: readonly CourseData[] = [
   {
     tabLabel: "MK 2 · Asesmen Lanjut",
     title: "Pembelajaran Mendalam dan Asesmen Lanjut",
-    lk2PdfHref: null,
+    lk2PdfHref: lk2Semester2Urls.pembelajaranMendalamDanAsesmenLanjut,
     sections: [
       {
         fourCKey: "connection",
@@ -135,7 +163,7 @@ const courses: readonly CourseData[] = [
   {
     tabLabel: "MK 3 · PPL Mandiri",
     title: "Praktik Pengalaman Lapangan (PPL) Mandiri",
-    lk2PdfHref: null,
+    lk2PdfHref: lk2Semester2Urls.pplMandiri,
     sections: [
       {
         fourCKey: "connection",
@@ -201,7 +229,7 @@ const courses: readonly CourseData[] = [
   {
     tabLabel: "MK 4 · Projek Kepemimpinan",
     title: "Projek Kepemimpinan",
-    lk2PdfHref: null,
+    lk2PdfHref: lk2Semester2Urls.projekKepemimpinan,
     sections: [
       {
         fourCKey: "connection",
@@ -256,16 +284,16 @@ const courses: readonly CourseData[] = [
       },
     ],
     artifacts: [
-      { label: "LK 1.11 — Jurnal Refleksi Kegiatan Projek Kepemimpinan", href: null },
-      { label: "Laporan Akhir Projek Kepemimpinan — Ruang BK (draf kerja; dokumentasi hingga 21 Oktober 2026)", href: null },
-      { label: "Tugas 1.1 Individu — Refleksi Guru Profesional", href: null },
-      { label: "Tugas 2.1 Individu — Identifikasi Topik dan SDGs", href: null },
+      { label: "LK 1.11 — Jurnal Refleksi Kegiatan Projek Kepemimpinan", href: "https://drive.google.com/file/d/1SwpUbPmI_bY3lLeKbaeEZIGkZ3uWx-Fq/view?usp=drive_link" },
+      { label: "Laporan Akhir Projek Kepemimpinan — Ruang BK", href: "https://docs.google.com/document/d/1gtANq_J3tXLrQp1s2G9EY3AuN0xua2_heeRhaQ1RyIk/edit?usp=sharing" },
+      { label: "Tugas 1.1 Individu — Refleksi Guru Profesional", href: "https://docs.google.com/document/d/1TMhPRaKuwpD2gAk3i6piy22vKBrG00fL/edit?usp=drive_link&ouid=116097001817209864458&rtpof=true&sd=true" },
+      { label: "Tugas 2.1 Individu — Identifikasi Topik dan SDGs", href: "https://drive.google.com/file/d/1LSrjELgbSuIyYgdu22-IafSpmqjC7BLC/view?usp=drive_link" },
     ],
   },
   {
     tabLabel: "MK 5 · Pendidikan Inklusi",
     title: "Pendidikan Inklusi",
-    lk2PdfHref: null,
+    lk2PdfHref: lk2Semester2Urls.pendidikanInklusi,
     sections: [
       {
         fourCKey: "connection",

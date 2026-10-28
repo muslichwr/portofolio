@@ -740,7 +740,7 @@ function FormalLk2Card({ courseTitle, href }: FormalLk2CardProps) {
           rel="noopener noreferrer"
           className="flex shrink-0 items-center gap-1.5 rounded-md border border-zinc-700 bg-zinc-900 px-3.5 py-2 text-xs font-medium text-white transition-colors hover:border-zinc-500 hover:bg-zinc-800"
         >
-          <span>Buka Dokumen LK 2</span>
+          <span>Lihat LK 2</span>
           <ExternalLink className="size-3.5 text-zinc-400" />
         </a>
       ) : (
