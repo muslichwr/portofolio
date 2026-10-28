@@ -6,7 +6,7 @@ Portfolio pribadi, profesional, dan akademik milik **Muslich Wahyu Romadhon**, d
 
 - Production: [portofolio-muslich.vercel.app](https://portofolio-muslich.vercel.app/).
 - Nama package: `portofolio`; versi `0.1.0`; private.
-- **CURRENT STATE:** website berjalan dengan sebelas halaman, tiga siklus praktik mengajar, enam refleksi mata kuliah Semester I, serta lima mata kuliah Semester II: kelima refleksi (PSE, PMAL, PPL Mandiri, Projek Kepemimpinan, dan Pendidikan Inklusi) sudah diisi dari PDF pemilik. Projek Kepemimpinan mempertahankan kontribusi Backend Developer dalam Ruang BK, batas draf kerja hingga 21 Oktober 2026, serta empat artefak tanpa URL terverifikasi.
+- **CURRENT STATE:** website berjalan dengan dua belas halaman, tiga siklus praktik mengajar, enam refleksi mata kuliah Semester I, serta lima mata kuliah Semester II: kelima refleksi (PSE, PMAL, PPL Mandiri, Projek Kepemimpinan, dan Pendidikan Inklusi) sudah diisi dari PDF pemilik. Projek Kepemimpinan mempertahankan kontribusi Backend Developer dalam Ruang BK, batas draf kerja hingga 21 Oktober 2026, serta empat artefak tanpa URL terverifikasi.
 - **CURRENT STATE (20 Oktober 2026):** `/e-portfolio-1` menyediakan struktur editorial PPL Mandiri dengan enam bagian dan Refleksi Diri; seluruh artefak dan analisis masih placeholder, tersedia melalui Semester 2.
 - **DECISION:** tahap ini membangun dokumentasi. Roadmap merupakan pekerjaan mendatang, bukan izin mengubah aplikasi.
 - Baseline audit: **7 Oktober 2026**, commit `4c043ef`. Rincian hasil dan keterbatasan pemeriksaan ada di [SRS](SRS.md#hasil-verifikasi-baseline).
@@ -16,6 +16,8 @@ Portfolio pribadi, profesional, dan akademik milik **Muslich Wahyu Romadhon**, d
 **CURRENT STATE (28 Oktober 2026):** `/identifikasi-diri` menyajikan Visi Pribadi, Seminar PPG Tahap 1 (LK 1), dari `artifacts/visi-pribadi-lk1-konten.md`: enam paragraf visi dan tujuh langkah verbatim sebagai pandangan awal sebelum Seminar PPG. Tersedia melalui Semester 2/mobile dengan tautan ke refleksi Tahap 4; PDF LK 1 dan URL terverifikasi belum tersedia.
 
 ## Product Context
+
+**CURRENT STATE (28 Oktober 2026, OWN-015):** `/karya-inovasi` menyajikan Seminar PPG Tahap 5, Praktikum Integrasi Laravel dan MySQL untuk kelas XI RPL. Enam bagian dari Markdown pemilik dan LK 4 membedakan persiapan teknis dari rencana kegiatan kelas yang belum diterapkan. Lima dokumen terverifikasi publik ditautkan; prototipe Laravel dan buku HTML belum ditautkan. Akses melalui Semester 2 dan mobile.
 
 Website menghubungkan pendidikan vokasi dengan software development, Linux/server, web infrastructure, troubleshooting, dan refleksi guru. Audiens akademik/PPG membutuhkan analisis serta dokumen pendukung; audiens profesional membutuhkan pemahaman cepat tentang profil, keahlian, pendekatan mengajar, pengalaman, dan bukti praktik.
 

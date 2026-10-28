@@ -31,11 +31,14 @@ Semua page berikut tidak memiliki directive `use client`. Build menghasilkan rou
 | `/refleksi-matkul/semester-2` | [app/refleksi-matkul/semester-2/page.tsx](app/refleksi-matkul/semester-2/page.tsx) | Pengantar 4C dan RefleksiMatkulClient dengan lima course Semester II | PSE dan PMAL berisi refleksi dari PDF pemilik, masing-masing dengan empat tautan artefak terverifikasi; PPL Mandiri terisi dari naskah revisi dengan tujuh status artefak tanpa URL; Pendidikan Inklusi terisi dari PDF pemilik dengan empat artefak tanpa URL; Projek Kepemimpinan terisi dari PDF pemilik dengan empat artefak tanpa URL; dokumen LK 2 belum tersedia |
 | `/refleksi-program-ppg` | [app/refleksi-program-ppg/page.tsx](app/refleksi-program-ppg/page.tsx) | Server page Tahap 4; minimal hero, tiga anchor teks, tiga jawaban LK 3 verbatim | Anchor lokal; tidak menampilkan link dokumen karena URL belum tersedia |
 | `/identifikasi-diri` | [app/identifikasi-diri/page.tsx](app/identifikasi-diri/page.tsx) | Server page Seminar PPG Tahap 1; minimal hero, tiga anchor, enam paragraf visi dan tujuh langkah LK 1 verbatim | Refleksi Program PPG Tahap 4; dokumen pendukung tanpa link karena PDF/URL belum tersedia |
+| `/karya-inovasi` | [app/karya-inovasi/page.tsx](app/karya-inovasi/page.tsx) | Server page Seminar PPG Tahap 5; enam bagian editorial, lima tahap, rencana 240 menit, bobot dan ambang evaluasi | Lima dokumen publik terverifikasi; prototipe Laravel dan buku HTML berupa status non-link |
 | `/e-portfolio-1` | [app/e-portfolio-1/page.tsx](app/e-portfolio-1/page.tsx) | Server page editorial PPL Mandiri; hero, daftar isi enam anchor, enam bagian dan Refleksi Diri; client carousel kegiatan nonmengajar | Anchor lokal; analisis belum diisi dan data foto kosong; carousel interaktif ketika foto asli ditambahkan |
 
-Navbar memberi akses ke sebelas route: desktop Home/About ditambah dropdown Semester 1 (Artefak, Penilaian, Refleksi PPL, Refleksi Akhir) dan Semester 2 (Refleksi Mata Kuliah Semester I, Refleksi Mata Kuliah Semester II, E-Portfolio 1, Refleksi Program PPG, Visi Pribadi); mobile memiliki sebelas link langsung. OWN-014/FR-REFLECTION-007 menambahkan `/identifikasi-diri` pada Semester 2/mobile; grouping lama dipertahankan. OWN-012/FR-REFLECTION-006 menambahkan `/refleksi-program-ppg` tanpa mengubah pengelompokan entri lama. **ISSUE:** penempatan refleksi mata kuliah Semester I aktual berada pada dropdown Semester 2, berbeda dari deskripsi OWN-008 sebelumnya; tidak dipindah dalam task ini. Route aktif memilih tujuan paling spesifik dengan delimiter `/`, sehingga hanya semester yang sesuai ditandai aktif; `/refleksi` tidak cocok dengan `/refleksi-akhir`. Footer tetap memuat `/`, `/artefak`, `/penilaian`, `/refleksi`. `_not-found` adalah route internal framework, bukan halaman produk. Tidak ditemukan dynamic segment, API route, middleware, atau custom error/loading page pada tree utama.
+Navbar menghubungkan dua belas route produk melalui menu desktop/mobile. OWN-015/FR-INNOVATION-001 menambahkan `/karya-inovasi` pada Semester 2 dan daftar mobile; rincian baseline aktual ada di catatan berikut. **ISSUE:** penempatan refleksi mata kuliah Semester I masih pada Semester 2, berbeda dari OWN-008; task ini mempertahankan pengelompokan awal. Active route memakai tujuan paling spesifik dengan delimiter `/`; `/refleksi` tidak cocok dengan `/refleksi-akhir`. Footer tetap memuat `/`, `/artefak`, `/penilaian`, `/refleksi`. `_not-found` adalah route internal framework, bukan halaman produk. Tidak ditemukan dynamic segment, API route, middleware, atau custom error/loading page pada tree utama.
 
 ### Data flow dan batas server/client
+
+**CURRENT STATE (task OWN-015):** tersedia dua belas route produk. Navbar desktop aktual menyediakan sebelas tujuan: Home/About, empat tujuan Semester 1, dan lima tujuan Semester 2 (Visi Pribadi, refleksi mata kuliah I/II, Refleksi Program PPG, Karya Inovasi). Mobile menyediakan dua belas link langsung. `/e-portfolio-1` masih tersedia di mobile tetapi entri desktop dikomentari pada baseline awal task; deskripsi Refleksi Program PPG masih menyebut PPL Mandiri. Ini perbedaan baseline dari narasi navigasi sebelumnya, tidak diperbaiki melalui task halaman inovasi. OWN-015 hanya menambah Karya Inovasi; seluruh tujuan awal dipertahankan.
 
 ```text
 Konstanta TSX + foto lokal + URL dokumen eksternal
@@ -201,9 +204,9 @@ Inventory berikut mencatat yang digunakan kode, bukan bibliography terverifikasi
 ### FR-NAV-001
 
 - **Nama:** Navigasi baseline.
-- **Deskripsi:** Menghubungkan sebelas route utama dan subset footer.
+- **Deskripsi:** Menghubungkan dua belas route utama dan subset footer.
 - **Rationale:** Semua area akademik/profesional dapat ditemukan.
-- **Expected behavior:** Desktop Home/About dan dropdown semester (FR-NAV-003/FR-REFLECTION-005), menu mobile sebelas link, active match pada tujuan paling spesifik; klik link mobile menutup menu.
+- **Expected behavior:** Desktop Home/About dan dropdown semester (FR-NAV-003/FR-REFLECTION-005), menu mobile dua belas link, active match pada tujuan paling spesifik; klik link mobile menutup menu.
 - **Acceptance criteria:** Semua href internal resolve; `/refleksi` tidak aktif pada `/refleksi-akhir`; menu tersedia di bawah breakpoint md.
 - **Status:** Implemented.
 - **Related page/component:** Navbar, Footer.
@@ -393,6 +396,17 @@ Penelusuran ringkasan ke source lama [app/artefak/page.tsx](app/artefak/page.tsx
 - **Status:** Implemented.
 - **Related page/component:** [page.tsx](app/identifikasi-diri/page.tsx), [page.module.css](app/identifikasi-diri/page.module.css), Navbar; OWN-014; Phase 3.
 - **Verification:** Sumber Markdown pemilik; PDF yang disebut naskah tidak ditemukan di workspace dan tidak ada URL publik dalam naskah. Build/lint/TypeScript berhasil; lint 0 error dan 8 warning baseline. Playwright Chromium 156.0.8078.4 pada production lokal (1440 × 1000 dan 390 × 844) memverifikasi enam paragraf, pengantar, tujuh tindakan verbatim, anchor/keyboard, menu dan tautan Tahap 4; tidak ditemukan overflow/clipping atau console/page error. Sebelas route HTTP 200. Screenshot dan rincian tersimpan di `artifacts/identifikasi-diri/README.md`; belum mencakup browser lain atau audit aksesibilitas menyeluruh.
+
+### FR-INNOVATION-001
+
+- **Nama:** Karya Inovasi Pendidikan (Seminar PPG Tahap 5, LK 4).
+- **Deskripsi:** Route Semester II `/karya-inovasi` untuk Praktikum Integrasi Laravel dan MySQL, sasaran kelas XI RPL.
+- **Rationale:** Mendokumentasikan desain pembelajaran beserta perangkat pendukung, membedakan kesiapan teknis dari efektivitas pembelajaran yang belum diuji.
+- **Expected behavior:** Minimal hero dan enam bagian: Identifikasi Kebutuhan dan Tantangan, Gagasan dan Tujuan Inovasi, Riset Sederhana, Produk dan Perangkat Pendukung, Rencana Implementasi, Rancangan Evaluasi. Alur Prediksi → Telusuri → Coba → Buktikan → Jelaskan. Rencana 240 menit (30/25/40/45/45/25/30); bobot 25/35/30/10%, target ≥75 dan pembuktian/penjelasan tingkat baik sebagai ukuran yang direncanakan. Perangkat telah disiapkan secara teknis; kegiatan belum diterapkan bersama siswa.
+- **Acceptance criteria:** Semua bagian sesuai Markdown pemilik dan LK 4; tidak membuat hasil kelas, skor/testimoni, atau klaim efektivitas. Lima link dokumen hanya setelah verifikasi tujuan dan akses anonim; tidak menautkan file privat atau arsip sumber yang belum ditinjau. Daftar editorial dan waktu/bobot responsif tanpa dashboard/dekorasi/animasi/dependency baru. Karya Inovasi di Semester 2/mobile; halaman lain dipertahankan. Build/lint, Playwright 1440 × 1000 dan 390 × 844, screenshot, keyboard/navigasi, serta overflow/clipping diperiksa.
+- **Status:** Implemented.
+- **Related page/component:** [page.tsx](app/karya-inovasi/page.tsx), [content.ts](app/karya-inovasi/content.ts), [page.module.css](app/karya-inovasi/page.module.css), Navbar; OWN-015; Phase 3.
+- **Verification:** Sumber `artifacts/karya-inovasi-ppg-konten.md` dan PDF LK 4 di Drive; lima dokumen memiliki izin anyone/reader dan dapat diunduh tanpa login, dengan judul tujuan sesuai. PPT berbasis gambar diperiksa visual. Prototipe Laravel dan buku HTML belum ditautkan karena belum tersedia paket publik yang selesai ditinjau. Build, lint, dan TypeScript berhasil (lint 0 error, 9 warning baseline). Playwright Chromium 156.0.8078.4 pada 1440 × 1000 dan 390 × 844 memverifikasi enam bagian, lima tahap, total 240 menit/100%, enam anchor dan navigasi; tidak ditemukan overflow/clipping atau console/page error. Dua belas route HTTP 200. Screenshot serta batas pemeriksaan ada di `artifacts/karya-inovasi/README.md`.
 
 ### FR-PORTFOLIO-001
 
@@ -712,3 +726,16 @@ Status semua record: **SOURCE OBSERVED; CONTENT/PUBLIC ACCESS UNVERIFIED**. UI �
 | EVD-040 | LK 2.D · Logbook Kardio & Manajemen Stres | MK 6 · Kebugaran Jasmani · /refleksi-matkul | [Buka resource](https://drive.google.com/file/d/1cck_Js6-L67M_x7ZMZSiW_7j2CFH7Its/view?usp=drive_link); [source](components/sections/RefleksiMatkulClient.tsx) |
 | EVD-041 | LK 2.E · Refleksi Sesi Latihan Kardio Minggu 1 | MK 6 · Kebugaran Jasmani · /refleksi-matkul | [Buka resource](https://drive.google.com/file/d/1CMYh3buZ432cjt-EF0L_RGJNF-BVUpkF/view?usp=drive_link); [source](components/sections/RefleksiMatkulClient.tsx) |
 | EVD-042 | Proposal Program · Sekolah Sehat & Bugar | MK 6 · Kebugaran Jasmani · /refleksi-matkul | [Buka resource](https://drive.google.com/file/d/1e5rF31sHq19Y9pGv88m4fH0gQ79zTfG5/view?usp=drive_link); [source](components/sections/RefleksiMatkulClient.tsx) |
+
+
+### Tambahan inventory Karya Inovasi (OWN-015)
+
+Lima tujuan berikut memiliki izin anyone/reader, judul sesuai, serta unduhan anonim HTTP 200 pada pemeriksaan 28 Oktober 2026. Isi dokumen ditinjau sebagai rancangan/perangkat, bukan bukti pelaksanaan atau hasil kelas. Tidak ada perubahan akses berbagi. Prototipe dan buku HTML belum ditautkan.
+
+| ID | Dokumen | Konteks | Resource / source |
+|---|---|---|---|
+| EVD-043 | 5.2. Unggah Hasil Tahap Penyusunan Karya Inovasi Pendidikan (LK 4).pdf | Seminar PPG Tahap 5 · /karya-inovasi | [Buka resource](https://drive.google.com/file/d/1r02zLNpoLKK_cKRTE4oGZ8ACgHdQBzr_/view?usp=drivesdk); [source](app/karya-inovasi/page.tsx) |
+| EVD-044 | Modul Ajar.docx | Seminar PPG Tahap 5 · /karya-inovasi | [Buka resource](https://docs.google.com/document/d/1pYSbXbOEBjEtzzvBb0I4mPvco0JhIi4J/edit?usp=drivesdk&ouid=116097001817209864458&rtpof=true&sd=true); [source](app/karya-inovasi/page.tsx) |
+| EVD-045 | Instrumen_Asesmen_Inventaris_Kelas_Revisi.docx | Seminar PPG Tahap 5 · /karya-inovasi | [Buka resource](https://docs.google.com/document/d/1JCIMeh9ZfgAbWS5b8x3Yk90d7hIEklri/edit?usp=drivesdk&ouid=116097001817209864458&rtpof=true&sd=true); [source](app/karya-inovasi/page.tsx) |
+| EVD-046 | LKPD_Inventaris_Kelas_Revisi.docx | Seminar PPG Tahap 5 · /karya-inovasi | [Buka resource](https://docs.google.com/document/d/1SILfvzFJ94O--i6mCUzdZHKWma-0bPVh/edit?usp=drivesdk&ouid=116097001817209864458&rtpof=true&sd=true); [source](app/karya-inovasi/page.tsx) |
+| EVD-047 | Bahan Ajar.pptx | Seminar PPG Tahap 5 · /karya-inovasi | [Buka resource](https://docs.google.com/presentation/d/1fwFg2-KwITEtXsYUJPQFVIJQXfuQhunl/edit?usp=drivesdk&ouid=116097001817209864458&rtpof=true&sd=true); [source](app/karya-inovasi/page.tsx) |

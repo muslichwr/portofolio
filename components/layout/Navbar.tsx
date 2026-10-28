@@ -19,6 +19,7 @@ const navLinks = [
   { href: "/refleksi-matkul", label: "SPPG - Refleksi Mata Kuliah Semester I" },
   { href: "/refleksi-matkul/semester-2", label: "SPPG - Refleksi Mata Kuliah Semester II" },
   { href: "/refleksi-program-ppg", label: "SPPG - Refleksi Program PPG" },
+  { href: "/karya-inovasi", label: "SPPG - Karya Inovasi" },
 ] as const;
 
 const semesters = [
@@ -42,6 +43,7 @@ const semesters = [
       { ...navLinks[8], description: "Refleksi 4C dan artefak Semester I" },
       { ...navLinks[9], description: "Refleksi 4C dan artefak Semester II" },
       { ...navLinks[10], description: "Dokumentasi dan analisis PPL Mandiri" },
+      { ...navLinks[11], description: "Desain pembelajaran praktikum Laravel dan MySQL" },
       // { ...navLinks[6], description: "Tahap 4  Refleksi keseluruhan program PPL Mandiri" },
     ],
   },

@@ -1,0 +1,4 @@
+/* Match the existing editorial reading pages. */
+:global(body):has(.page) > :global([data-site-glow]) {
+  display: none;
+}

@@ -150,7 +150,7 @@ ISSUE-007: tujuh link valid tetapi istilah refleksi berdekatan dan bahasa label 
 
 ### Requirements
 
-FR-NAV-001, FR-NAV-002, FR-NAV-003, FR-REFLECTION-001, FR-REFLECTION-002, FR-REFLECTION-003, FR-REFLECTION-004, FR-REFLECTION-005, FR-REFLECTION-006, FR-REFLECTION-007, FR-PORTFOLIO-001, FR-A11Y-002.
+FR-NAV-001, FR-NAV-002, FR-NAV-003, FR-REFLECTION-001, FR-REFLECTION-002, FR-REFLECTION-003, FR-REFLECTION-004, FR-REFLECTION-005, FR-REFLECTION-006, FR-REFLECTION-007, FR-INNOVATION-001, FR-PORTFOLIO-001, FR-A11Y-002.
 
 ### Tasks
 
@@ -160,6 +160,7 @@ FR-NAV-001, FR-NAV-002, FR-NAV-003, FR-REFLECTION-001, FR-REFLECTION-002, FR-REF
 - OWN-012/FR-REFLECTION-006: `/refleksi-program-ppg` ditambahkan sebagai Tahap 4 dengan Minimal Hero + Linear Sections, tiga anchor, dan respons LK 3 verbatim dari DOCX pemilik. Tiga tindakan lanjutan dipertahankan sebagai tiga paragraf. Navigasi Semester 2/mobile ditambah; URL dokumen belum tersedia. Tidak menuntaskan exit criteria phase.
 - OWN-014/FR-REFLECTION-007: `/identifikasi-diri` menyajikan Visi Pribadi Seminar PPG Tahap 1 dari Markdown otoritatif pemilik. Minimal Hero + Linear Sections, enam paragraf visi dan tujuh langkah verbatim, tiga anchor, dokumen pendukung tanpa link karena PDF/URL belum tersedia, serta tautan ke Tahap 4. Entri Semester 2/mobile ditambah; phase tetap IN PROGRESS dan pekerjaan roadmap lain tidak diotorisasi.
 - Buat pemetaan current→target untuk opsi Beranda/Profil/Praktik Mengajar/Bukti & Penilaian/Refleksi/Mata Kuliah.
+- OWN-015/FR-INNOVATION-001: tambah `/karya-inovasi` untuk Seminar PPG Tahap 5 dengan enam bagian editorial dari Markdown dan LK 4, alur lima tahap, rencana 240 menit serta bobot/ambang evaluasi yang direncanakan. Perangkat disiapkan secara teknis; kegiatan kelas belum diterapkan. Lima dokumen publik terverifikasi ditautkan, prototipe dan buku HTML belum ditautkan. Navigasi Semester 2/mobile ditambah; status Phase 3 tetap IN PROGRESS dan tidak menuntaskan exit criteria fase.
 - Evaluasi label/grouping dahulu; bandingkan terhadap perubahan route atau penggabungan isi sebagai alternatif yang lebih besar.
 - Pastikan tujuan refleksi diri, sintesis PPL, dan course tetap berbeda dan mudah ditemukan.
 - Catat dampak link/bookmark, academic journey, metadata, navbar/footer, dan kompatibilitas URL lama.
