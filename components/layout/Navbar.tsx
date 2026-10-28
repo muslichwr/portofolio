@@ -15,6 +15,7 @@ const navLinks = [
   { href: "/refleksi", label: "Refleksi PPL" },
   { href: "/refleksi-akhir", label: "Refleksi Akhir" },
   { href: "/e-portfolio-1", label: "PPLM - E-Portfolio 1" },
+  { href: "/identifikasi-diri", label: "SPPG - Visi Pribadi" },
   { href: "/refleksi-matkul", label: "SPPG - Refleksi Mata Kuliah Semester I" },
   { href: "/refleksi-matkul/semester-2", label: "SPPG - Refleksi Mata Kuliah Semester II" },
   { href: "/refleksi-program-ppg", label: "SPPG - Refleksi Program PPG" },
@@ -37,10 +38,11 @@ const semesters = [
     label: "Semester 2",
     subtitle: "Pendalaman & Pengembangan Profesional",
     links: [
-      { ...navLinks[6], description: "Refleksi 4C dan artefak Semester I" },
-      { ...navLinks[7], description: "Refleksi 4C dan artefak Semester II" },
-      { ...navLinks[8], description: "Dokumentasi dan analisis PPL Mandiri" },
-      { ...navLinks[9], description: "Tahap 4 — refleksi keseluruhan program" },
+      { ...navLinks[7], description: "Identifikasi diri dan visi awal" },
+      { ...navLinks[8], description: "Refleksi 4C dan artefak Semester I" },
+      { ...navLinks[9], description: "Refleksi 4C dan artefak Semester II" },
+      { ...navLinks[10], description: "Dokumentasi dan analisis PPL Mandiri" },
+      // { ...navLinks[6], description: "Tahap 4  Refleksi keseluruhan program PPL Mandiri" },
     ],
   },
 ] as const;

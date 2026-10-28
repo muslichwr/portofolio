@@ -1,0 +1,4 @@
+/* Keep this reading page free of the shared decorative glow. */
+:global(body):has(.page) > :global([data-site-glow]) {
+  display: none;
+}

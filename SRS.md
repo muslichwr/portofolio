@@ -30,9 +30,10 @@ Semua page berikut tidak memiliki directive `use client`. Build menghasilkan rou
 | `/refleksi-matkul` | [app/refleksi-matkul/page.tsx](app/refleksi-matkul/page.tsx) | Pengantar 4C, RefleksiMatkulClient | LK 2/artefak eksternal; tab PPL menuju Artefak |
 | `/refleksi-matkul/semester-2` | [app/refleksi-matkul/semester-2/page.tsx](app/refleksi-matkul/semester-2/page.tsx) | Pengantar 4C dan RefleksiMatkulClient dengan lima course Semester II | PSE dan PMAL berisi refleksi dari PDF pemilik, masing-masing dengan empat tautan artefak terverifikasi; PPL Mandiri terisi dari naskah revisi dengan tujuh status artefak tanpa URL; Pendidikan Inklusi terisi dari PDF pemilik dengan empat artefak tanpa URL; Projek Kepemimpinan terisi dari PDF pemilik dengan empat artefak tanpa URL; dokumen LK 2 belum tersedia |
 | `/refleksi-program-ppg` | [app/refleksi-program-ppg/page.tsx](app/refleksi-program-ppg/page.tsx) | Server page Tahap 4; minimal hero, tiga anchor teks, tiga jawaban LK 3 verbatim | Anchor lokal; tidak menampilkan link dokumen karena URL belum tersedia |
+| `/identifikasi-diri` | [app/identifikasi-diri/page.tsx](app/identifikasi-diri/page.tsx) | Server page Seminar PPG Tahap 1; minimal hero, tiga anchor, enam paragraf visi dan tujuh langkah LK 1 verbatim | Refleksi Program PPG Tahap 4; dokumen pendukung tanpa link karena PDF/URL belum tersedia |
 | `/e-portfolio-1` | [app/e-portfolio-1/page.tsx](app/e-portfolio-1/page.tsx) | Server page editorial PPL Mandiri; hero, daftar isi enam anchor, enam bagian dan Refleksi Diri; client carousel kegiatan nonmengajar | Anchor lokal; analisis belum diisi dan data foto kosong; carousel interaktif ketika foto asli ditambahkan |
 
-Navbar memberi akses ke sepuluh route: desktop Home/About ditambah dropdown Semester 1 (Artefak, Penilaian, Refleksi PPL, Refleksi Akhir) dan Semester 2 (Refleksi Mata Kuliah Semester I, Refleksi Mata Kuliah Semester II, E-Portfolio 1, Refleksi Program PPG); mobile memiliki sepuluh link langsung. OWN-012/FR-REFLECTION-006 menambahkan `/refleksi-program-ppg` tanpa mengubah pengelompokan entri lama. **ISSUE:** penempatan refleksi mata kuliah Semester I aktual berada pada dropdown Semester 2, berbeda dari deskripsi OWN-008 sebelumnya; tidak dipindah dalam task ini. Route aktif memilih tujuan paling spesifik dengan delimiter `/`, sehingga hanya semester yang sesuai ditandai aktif; `/refleksi` tidak cocok dengan `/refleksi-akhir`. Footer tetap memuat `/`, `/artefak`, `/penilaian`, `/refleksi`. `_not-found` adalah route internal framework, bukan halaman produk. Tidak ditemukan dynamic segment, API route, middleware, atau custom error/loading page pada tree utama.
+Navbar memberi akses ke sebelas route: desktop Home/About ditambah dropdown Semester 1 (Artefak, Penilaian, Refleksi PPL, Refleksi Akhir) dan Semester 2 (Refleksi Mata Kuliah Semester I, Refleksi Mata Kuliah Semester II, E-Portfolio 1, Refleksi Program PPG, Visi Pribadi); mobile memiliki sebelas link langsung. OWN-014/FR-REFLECTION-007 menambahkan `/identifikasi-diri` pada Semester 2/mobile; grouping lama dipertahankan. OWN-012/FR-REFLECTION-006 menambahkan `/refleksi-program-ppg` tanpa mengubah pengelompokan entri lama. **ISSUE:** penempatan refleksi mata kuliah Semester I aktual berada pada dropdown Semester 2, berbeda dari deskripsi OWN-008 sebelumnya; tidak dipindah dalam task ini. Route aktif memilih tujuan paling spesifik dengan delimiter `/`, sehingga hanya semester yang sesuai ditandai aktif; `/refleksi` tidak cocok dengan `/refleksi-akhir`. Footer tetap memuat `/`, `/artefak`, `/penilaian`, `/refleksi`. `_not-found` adalah route internal framework, bukan halaman produk. Tidak ditemukan dynamic segment, API route, middleware, atau custom error/loading page pada tree utama.
 
 ### Data flow dan batas server/client
 
@@ -200,9 +201,9 @@ Inventory berikut mencatat yang digunakan kode, bukan bibliography terverifikasi
 ### FR-NAV-001
 
 - **Nama:** Navigasi baseline.
-- **Deskripsi:** Menghubungkan sepuluh route utama dan subset footer.
+- **Deskripsi:** Menghubungkan sebelas route utama dan subset footer.
 - **Rationale:** Semua area akademik/profesional dapat ditemukan.
-- **Expected behavior:** Desktop Home/About dan dropdown semester (FR-NAV-003/FR-REFLECTION-005), menu mobile sepuluh link, active match pada tujuan paling spesifik; klik link mobile menutup menu.
+- **Expected behavior:** Desktop Home/About dan dropdown semester (FR-NAV-003/FR-REFLECTION-005), menu mobile sebelas link, active match pada tujuan paling spesifik; klik link mobile menutup menu.
 - **Acceptance criteria:** Semua href internal resolve; `/refleksi` tidak aktif pada `/refleksi-akhir`; menu tersedia di bawah breakpoint md.
 - **Status:** Implemented.
 - **Related page/component:** Navbar, Footer.
@@ -224,8 +225,8 @@ Inventory berikut mencatat yang digunakan kode, bukan bibliography terverifikasi
 - **Nama:** Grouping semester pada desktop.
 - **Deskripsi:** Home/About tetap langsung; Semester 1 dan Semester 2 membuka panel kompak dengan judul, subtitle, deskripsi link, dan nomor urut.
 - **Rationale:** Instruksi pemilik mengelompokkan konten semester tanpa mengubah URL atau desain keseluruhan.
-- **Expected behavior:** Semester 1 menurut OWN-008 menuju `/artefak`, `/penilaian`, `/refleksi`, `/refleksi-akhir`, `/refleksi-matkul`; Semester 2 menuju `/refleksi-matkul/semester-2` (OWN-008/FR-REFLECTION-005), `/e-portfolio-1` (OWN-010/FR-PORTFOLIO-001), dan `/refleksi-program-ppg` (OWN-012/FR-REFLECTION-006). CURRENT STATE berbeda pada penempatan Semester I seperti dicatat di Current Architecture; task OWN-012 tidak mengubah grouping lama atau memutuskan konflik tersebut. Satu panel terbuka; toggle, memilih tujuan, klik di luar, fokus keluar, atau Escape menutup panel. Parent aktif mengikuti child route; child aktif ditandai visual dan `aria-current`. Home/About mempertahankan active match.
-- **Acceptance criteria:** Pada desktop 1440px semua sepuluh tujuan bekerja, parent/child aktif benar, panel menutup saat memilih tujuan, judul/subtitle/deskripsi sesuai instruksi, serta styling mengikuti floating pill gelap. Grouping mengikuti floating pill yang ada; route baru Semester II diatur FR-REFLECTION-005. Mobile mempertahankan pola link langsung dengan dua tujuan refleksi semester yang jelas; tidak ada dependency baru atau perubahan isi Semester I.
+- **Expected behavior:** Semester 1 menurut OWN-008 menuju `/artefak`, `/penilaian`, `/refleksi`, `/refleksi-akhir`, `/refleksi-matkul`; Semester 2 menuju `/refleksi-matkul/semester-2` (OWN-008/FR-REFLECTION-005), `/e-portfolio-1` (OWN-010/FR-PORTFOLIO-001), `/refleksi-program-ppg` (OWN-012/FR-REFLECTION-006), dan `/identifikasi-diri` (OWN-014/FR-REFLECTION-007). CURRENT STATE berbeda pada penempatan Semester I seperti dicatat di Current Architecture; task OWN-012 tidak mengubah grouping lama atau memutuskan konflik tersebut. Satu panel terbuka; toggle, memilih tujuan, klik di luar, fokus keluar, atau Escape menutup panel. Parent aktif mengikuti child route; child aktif ditandai visual dan `aria-current`. Home/About mempertahankan active match.
+- **Acceptance criteria:** Pada desktop 1440px semua sebelas tujuan bekerja, parent/child aktif benar, panel menutup saat memilih tujuan, judul/subtitle/deskripsi sesuai instruksi, serta styling mengikuti floating pill gelap. Grouping mengikuti floating pill yang ada; route baru Semester II diatur FR-REFLECTION-005. Mobile mempertahankan pola link langsung dengan dua tujuan refleksi semester yang jelas; tidak ada dependency baru atau perubahan isi Semester I.
 - **Status:** Implemented.
 - **Related page/component:** [Navbar.tsx](components/layout/Navbar.tsx); OWN-007; Phase 3.
 - **Verification:** Pemeriksaan desktop dan tooling task navigasi dicatat pada bagian verifikasi navigasi; izin terbatas ini tidak mengimplementasikan proposal IA lainnya.
@@ -381,6 +382,17 @@ Penelusuran ringkasan ke source lama [app/artefak/page.tsx](app/artefak/page.tsx
 - **Status:** Implemented.
 - **Related page/component:** [page.tsx](app/refleksi-program-ppg/page.tsx), Navbar; OWN-012; Phase 3.
 - **Verification:** Sumber `artifacts/4.2. Unggah Hasil Refleksi Pengalaman Belajar Selama Mengikuti Program PPG (LK 3).docx`, ditunjuk pemilik. Jawaban terdiri dari satu paragraf pendidikan, satu paragraf guru profesional, dan tiga paragraf RTL. Hasil tooling/browser dicatat dalam verifikasi task berikut.
+
+### FR-REFLECTION-007
+
+- **Nama:** Visi Pribadi / Identifikasi Diri (LK 1).
+- **Deskripsi:** Halaman Semester II `/identifikasi-diri`, Seminar PPG Tahap 1.
+- **Rationale:** Menyajikan pandangan awal penulis sebelum Seminar PPG, terpisah dari refleksi akhir Tahap 4.
+- **Expected behavior:** Minimal Hero + Linear Sections seperti `/refleksi-program-ppg`: eyebrow SEMINAR PPG / TAHAP 1, judul Visi Pribadi, pengantar faktual, tiga paragraf visi pendidikan Indonesia, tiga paragraf visi calon guru, pengantar dan tujuh langkah dalam ordered list. Tiga anchor native, dokumen pendukung hanya ditautkan bila file/URL terverifikasi, tautan teks ke Tahap 4. Navbar Semester 2 dan menu mobile memuat Visi Pribadi tanpa top-level baru.
+- **Acceptance criteria:** Naskah `artifacts/visi-pribadi-lk1-konten.md` verbatim; tidak menambah pencapaian/perubahan filosofi atau URL. Typography/dark theme/spacing/navbar/footer mengikuti baseline; tanpa dependency/dekorasi/animasi baru. Build/lint serta Playwright 1440 × 1000 dan 390 × 844 memeriksa seluruh naskah, tujuh langkah, navigasi/keyboard, responsive typography, dan overflow; screenshot disimpan.
+- **Status:** Implemented.
+- **Related page/component:** [page.tsx](app/identifikasi-diri/page.tsx), [page.module.css](app/identifikasi-diri/page.module.css), Navbar; OWN-014; Phase 3.
+- **Verification:** Sumber Markdown pemilik; PDF yang disebut naskah tidak ditemukan di workspace dan tidak ada URL publik dalam naskah. Build/lint/TypeScript berhasil; lint 0 error dan 8 warning baseline. Playwright Chromium 156.0.8078.4 pada production lokal (1440 × 1000 dan 390 × 844) memverifikasi enam paragraf, pengantar, tujuh tindakan verbatim, anchor/keyboard, menu dan tautan Tahap 4; tidak ditemukan overflow/clipping atau console/page error. Sebelas route HTTP 200. Screenshot dan rincian tersimpan di `artifacts/identifikasi-diri/README.md`; belum mencakup browser lain atau audit aksesibilitas menyeluruh.
 
 ### FR-PORTFOLIO-001
 
