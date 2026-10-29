@@ -44,7 +44,7 @@ const semesters = [
       { ...navLinks[9], description: "Refleksi 4C dan artefak Semester II" },
       { ...navLinks[10], description: "Dokumentasi dan analisis PPL Mandiri" },
       { ...navLinks[11], description: "Desain pembelajaran praktikum Laravel dan MySQL" },
-      // { ...navLinks[6], description: "Tahap 4  Refleksi keseluruhan program PPL Mandiri" },
+      { ...navLinks[6], description: "Tahap 4  Refleksi keseluruhan program PPL Mandiri" },
     ],
   },
 ] as const;
