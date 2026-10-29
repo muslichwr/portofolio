@@ -6,7 +6,7 @@ import { RefleksiMatkulClient } from "@/components/sections/RefleksiMatkulClient
    SEO METADATA
    ============================================================================ */
 export const metadata: Metadata = {
-  title: "Refleksi Mata Kuliah",
+  title: "Refleksi Mata Kuliah Semester I",
   description:
     "Refleksi pengalaman belajar dari 6 mata kuliah Semester 1–2 menggunakan model 4C: Connection, Challenge, Concept, dan Change — LK 2 PPG Prajabatan.",
 };

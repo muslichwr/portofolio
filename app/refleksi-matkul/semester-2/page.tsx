@@ -389,7 +389,6 @@ export default function RefleksiMatkulSemester2Page() {
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">
             Struktur refleksi pengalaman belajar dari 5 mata kuliah Semester II, disusun menggunakan model 4C:
             Connection, Challenge, Concept, dan Change.
-            Refleksi Pembelajaran Sosial Emosional, Pembelajaran Mendalam dan Asesmen Lanjut, PPL Mandiri, Projek Kepemimpinan, serta Pendidikan Inklusi telah tersedia. Dokumen resmi LK 2 belum tersedia.
           </p>
         </div>
       </section>
