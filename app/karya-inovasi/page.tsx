@@ -19,7 +19,7 @@ const sections = [
 ] as const;
 
 // Destinations reviewed and downloaded without authentication; see artifacts/karya-inovasi/.
-const supportingDocuments = [
+const supportingDocuments: readonly { label: string; href?: string }[] = [
   { label: "Modul Ajar", href: "https://docs.google.com/document/d/1pYSbXbOEBjEtzzvBb0I4mPvco0JhIi4J/edit?usp=drivesdk&ouid=116097001817209864458&rtpof=true&sd=true" },
   { label: "LKPD Inventaris Kelas — Revisi", href: "https://docs.google.com/document/d/1SILfvzFJ94O--i6mCUzdZHKWma-0bPVh/edit?usp=drivesdk&ouid=116097001817209864458&rtpof=true&sd=true" },
   { label: "Instrumen Asesmen Inventaris Kelas — Revisi", href: "https://docs.google.com/document/d/1JCIMeh9ZfgAbWS5b8x3Yk90d7hIEklri/edit?usp=drivesdk&ouid=116097001817209864458&rtpof=true&sd=true" },
