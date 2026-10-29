@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { NonTeachingPhotoCarousel } from "@/components/sections/NonTeachingPhotoCarousel";
 import { nonTeachingPhotos } from "./photos";
-import { codeExamples, references, sampleRubric, teachingRecording } from "./examples";
+import { references, sampleRubric, teachingRecording } from "./examples";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -52,9 +52,9 @@ export default function EPortfolio1Page() {
           <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tighter text-white sm:text-5xl md:text-7xl">
             Praktik Mengajar Mandiri — Siklus 1
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Pemrograman Web: Laravel, Route, Controller, dan pengelolaan data melalui halaman web</strong></p>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Pembelajaran Laravel: membuat halaman web yang menerima dan mengelola data</strong></p>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">SMK Negeri 1 Surabaya · Pengembangan Perangkat Lunak dan Gim · Refleksi Siklus 1: 25 Agustus 2026</p>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">Peserta didik mengingat kembali hubungan Route dan Controller sebelum mempelajari halaman yang menerima dan mengelola data. Uraian Siklus 1 ini mengacu pada LK 4, 25 Agustus 2026.</p>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">Peserta didik mengingat kembali materi sebelumnya sebelum mempelajari pembuatan halaman web yang menerima dan mengelola data. Refleksi Siklus 1 ini mengacu pada LK 4, 25 Agustus 2026.</p>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Bukti wajib UTS:</strong> Modul Ajar lengkap terbaik Siklus 1 dan video pelaksanaan yang sesuai rancangan. Keduanya belum dilampirkan; contoh pada halaman ini tidak menggantikannya.</p>
         </header>
 
@@ -77,36 +77,38 @@ export default function EPortfolio1Page() {
         <PortfolioSection index={0}>
           <ExampleStatus>Contoh format — bukan Modul Ajar Siklus 1 asli</ExampleStatus>
           <dl className="space-y-3 border-y border-zinc-800 py-4 text-sm leading-relaxed text-zinc-400">
-            <div><dt className="font-medium text-zinc-200">Tujuan</dt><dd>Peserta didik menjelaskan hubungan Route–Controller dan menelusuri data dari form ke tampilan browser.</dd></div>
-            <div><dt className="font-medium text-zinc-200">Langkah pembelajaran</dt><dd>Peserta didik memahami alur contoh → mengaplikasi melalui tugas bertahap → merefleksi hasil dan kesulitan.</dd></div>
-            <div><dt className="font-medium text-zinc-200">LKPD</dt><dd>Peserta didik menandai Route dan Controller, memprediksi keluaran, lalu menjelaskan satu perubahan kode.</dd></div>
+            <div><dt className="font-medium text-zinc-200">Tujuan</dt><dd>Peserta didik memahami langkah pembuatan halaman web serta menjelaskan cara data diterima dan ditampilkan.</dd></div>
+            <div><dt className="font-medium text-zinc-200">Langkah pembelajaran</dt><dd>Peserta didik mengamati contoh, mengikuti praktik secara bertahap, lalu merefleksi hasil dan kesulitan.</dd></div>
+            <div><dt className="font-medium text-zinc-200">LKPD</dt><dd>Peserta didik mencatat langkah kerja, mencoba memasukkan data, dan menjelaskan hasil yang muncul pada halaman.</dd></div>
             <div><dt className="font-medium text-zinc-200">Asesmen</dt><dd>Pertanyaan awal, pengamatan proses praktik, dan penjelasan alur menggunakan rubrik contoh pada bagian Instrumen Penilaian.</dd></div>
           </dl>
-          <p className="text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Penggunaan dan kelebihan.</strong> Saya mengaitkan materi baru dengan Route dan Controller yang telah dikenalkan. Format ringkas ini memperlihatkan hubungan tujuan, langkah, dan asesmen agar tugas tidak terlepas dari konsep yang dipelajari.</p>
-          <p className="text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Keterbatasan dan perbaikan.</strong> Pada Siklus 1, keterbatasan laptop dan waktu menghambat praktik. Saya perlu menyiapkan langkah lebih pendek, pemeriksaan berkala, dan alternatif analisis kode tanpa perangkat. Format ini perlu diganti dengan Modul Ajar lengkap serta LKPD yang benar-benar digunakan.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Saya mengaitkan materi baru dengan pembelajaran sebelumnya agar peserta didik memahami tujuan praktik. Contoh format ini menyatukan tujuan, kegiatan, dan penilaian, tetapi belum menggantikan Modul Ajar lengkap serta LKPD yang digunakan pada Siklus 1.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Keterbatasan laptop dan waktu menunjukkan bahwa rencana kegiatan perlu menyesuaikan keadaan kelas. Saya perlu membagi praktik menjadi langkah lebih pendek, memeriksa kemajuan secara berkala, dan menyediakan tugas tertulis bagi peserta didik yang belum dapat menggunakan perangkat.</p>
           <p className="text-xs leading-relaxed text-zinc-400">Rujukan format: <ExternalReference href={references.planning}>Panduan Pembelajaran dan Asesmen BSKAP</ExternalReference> · <ExternalReference href={references.moduleOrganization}>Organisasi modul XI PPLG</ExternalReference>.</p>
         </PortfolioSection>
 
         <PortfolioSection index={1}>
           <ExampleStatus>Contoh materi — bukan berkas yang digunakan saat mengajar</ExampleStatus>
-          <p className="text-sm leading-relaxed text-zinc-400">Route menentukan Controller yang menangani permintaan. Controller membaca data melalui Request, lalu mengirimkannya ke Blade untuk ditampilkan. Cuplikan Laravel 12.x berikut menunjukkan penghubung alamat dan method; Request serta Blade/form menjadi topik contoh lanjutan.</p>
-          <figure className="min-w-0 border-y border-zinc-800 py-4">
-            <figcaption className="mb-3 text-sm font-medium text-zinc-200">{codeExamples[0].title}</figcaption>
-            <pre className="whitespace-pre-wrap break-words rounded-sm bg-zinc-950/70 p-4 text-xs leading-relaxed text-zinc-300"><code>{codeExamples[0].code}</code></pre>
-          </figure>
-          <p className="text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Penggunaan dan kelebihan.</strong> Peserta didik mengingat kembali Route–Controller pada awal Siklus 1. Contoh kecil membantu menelusuri hubungan alamat dan proses. Cakupan Request serta Blade/form pada contoh ini tidak membuktikan seluruh topik telah selesai dipraktikkan saat itu.</p>
-          <p className="text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Keterbatasan dan perbaikan.</strong> Cuplikan ini belum menggantikan materi asli. Saya perlu memasang bahan yang digunakan dan meminta peserta didik menjelaskan fungsi kode serta memperkirakan keluarannya sebelum melanjutkan tugas.</p>
-          <p className="text-xs leading-relaxed text-zinc-400">Rujukan: <ExternalReference href={references.controllers}>Laravel 12.x — Controllers</ExternalReference> · <ExternalReference href={references.requests}>HTTP Requests</ExternalReference>.</p>
+          <div className="space-y-3 border-y border-zinc-800 py-4">
+            <h3 className="text-sm font-medium text-zinc-200">Contoh urutan materi</h3>
+            <ol className="list-decimal space-y-2 pl-5 text-sm leading-relaxed text-zinc-400">
+              <li>Peserta didik mengenali hubungan antara langkah pembuatan dan tampilan halaman web.</li>
+              <li>Peserta didik mengikuti contoh halaman yang menerima data sederhana.</li>
+              <li>Peserta didik memeriksa hasil dan menjelaskan kembali langkah yang dikerjakan.</li>
+            </ol>
+          </div>
+          <p className="text-sm leading-relaxed text-zinc-400">Materi Siklus 1 berangkat dari pembelajaran Laravel sebelumnya dan berlanjut pada halaman yang menerima atau mengelola data. Urutan contoh di atas menunjukkan hubungan antara penjelasan, latihan, dan pembahasan hasil.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Sebagian materi belum selesai dan dilanjutkan pada pertemuan berikutnya. Saya perlu membatasi cakupan latihan serta memeriksa pemahaman sebelum menambah langkah baru. Bahan ajar asli masih perlu dilampirkan agar kesesuaian materi dengan rancangan dapat ditinjau.</p>
         </PortfolioSection>
 
         <PortfolioSection index={2}>
           <ExampleStatus>Contoh media — bukan media asli yang digunakan saat mengajar</ExampleStatus>
           <figure className="space-y-3">
-            <div className="flex aspect-video items-center justify-center border border-dashed border-zinc-700 bg-zinc-950/40 p-6 text-center text-sm leading-relaxed text-zinc-400">Area contoh tangkapan layar aplikasi Laravel — screenshot asli belum dilampirkan</div>
-            <figcaption className="text-xs leading-relaxed text-zinc-400">Skenario contoh: alamat Route dan hasilnya di browser, dibaca bersama cuplikan pada bagian Materi Pembelajaran.</figcaption>
+            <div className="flex aspect-video items-center justify-center border border-dashed border-zinc-700 bg-zinc-950/40 p-6 text-center text-sm leading-relaxed text-zinc-400">Tangkapan layar aplikasi Laravel yang digunakan saat pembelajaran belum dilampirkan</div>
+            <figcaption className="text-xs leading-relaxed text-zinc-400">Area ini disiapkan untuk memperlihatkan contoh halaman dan hasil praktik.</figcaption>
           </figure>
-          <p className="text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Penggunaan dan kelebihan.</strong> Saya mendemonstrasikan hasil aplikasi melalui browser pada Siklus 1. Keluaran yang terlihat membantu menghubungkan penjelasan kode dengan tampilan halaman.</p>
-          <p className="text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Keterbatasan dan perbaikan.</strong> Peserta didik yang tidak membawa laptop belum dapat mencoba langsung. Saya perlu menyiapkan potongan kode cetak dan pertanyaan prediksi keluaran. Screenshot serta bahan demonstrasi asli masih perlu dilampirkan.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Saya mendemonstrasikan hasil aplikasi melalui tampilan halaman web. Contoh yang terlihat di layar memberi gambaran konkret tentang pekerjaan yang akan dilakukan.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Peserta didik yang tidak membawa laptop belum dapat mencoba langsung. Saya perlu menyiapkan panduan tertulis dan pertanyaan tentang hasil yang diharapkan agar mereka tetap dapat mengikuti pembahasan. Bahan demonstrasi asli masih perlu dilampirkan.</p>
         </PortfolioSection>
 
         <PortfolioSection index={3}>
@@ -118,20 +120,18 @@ export default function EPortfolio1Page() {
                 <p className="text-sm leading-relaxed text-zinc-300">Video praktik mandiri: <strong className="font-medium text-white">Belum dilampirkan</strong></p>
               )}
             </div>
-            <figcaption className="text-xs leading-relaxed text-zinc-400"><ExternalReference href={references.video}>Video referensi pihak ketiga — BUKAN rekaman praktik mengajar saya</ExternalReference> (Laravel Learn).</figcaption>
           </figure>
-          <p className="text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Pelaksanaan dan kelebihan.</strong> Saya membuka pembelajaran dengan apersepsi Route–Controller, kemudian menjelaskan dan mendemonstrasikan halaman yang menerima atau mengelola data. LK 4 Siklus 1 mencatat kegiatan tersebut; video asli diperlukan untuk memperlihatkan kesesuaiannya dengan rancangan.</p>
-          <p className="text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Keterbatasan dan perbaikan.</strong> Peserta didik yang tidak membawa laptop belum dapat mengikuti praktik langsung. Peserta didik yang belum memulai tugas perlu diingatkan, sehingga sebagian materi dilanjutkan pada pertemuan berikutnya. Saya perlu menyesuaikan tahapan dan waktu praktik serta melampirkan rekaman asli, bukan tutorial.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Saya membuka pembelajaran dengan mengingatkan materi sebelumnya, kemudian memberi penjelasan dan demonstrasi secara bertahap. LK 4 Siklus 1 mencatat pelaksanaan ini; rekaman asli diperlukan agar penguji dapat meninjau kegiatan tersebut bersama rancangan pembelajarannya.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Peserta didik yang belum memulai tugas perlu diingatkan, sementara keterbatasan laptop mengurangi kesempatan praktik langsung. Saya perlu menyesuaikan waktu dan memberi arahan lebih singkat. Catatan refleksi belum menggantikan video pelaksanaan.</p>
         </PortfolioSection>
 
         <PortfolioSection index={4}>
           <NonTeachingPhotoCarousel photos={nonTeachingPhotos} />
-          <p className="text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Penggunaan dan kelebihan.</strong> Dua foto stok di atas memperlihatkan contoh penyajian galeri beserta keterangan dan kredit. Label ilustrasi pada setiap foto membedakannya dari dokumentasi PPL.</p>
-          <p className="text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Keterbatasan dan perbaikan.</strong> Foto tersebut tidak membuktikan kegiatan nonmengajar saya. Dokumentasi asli belum tersedia; saya perlu menggantinya dengan foto berizin dan catatan kegiatan yang dapat diverifikasi. <ExternalReference href={references.photoLicense}>Lisensi Pexels</ExternalReference>.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Dokumentasi kegiatan nonmengajar saya belum tersedia. Dua foto di atas hanya ilustrasi dan tidak menunjukkan kegiatan yang saya lakukan selama PPL. Saya perlu menggantinya dengan foto berizin dan keterangan berdasarkan catatan kegiatan yang sebenarnya. <ExternalReference href={references.photoLicense}>Lisensi Pexels</ExternalReference>.</p>
         </PortfolioSection>
 
         <PortfolioSection index={5}>
-          <ExampleStatus>Contoh instrumen — belum diverifikasi sebagai instrumen yang digunakan</ExampleStatus>
+          <ExampleStatus>Contoh instrumen — bukan instrumen penilaian asli Siklus 1</ExampleStatus>
           <div className="space-y-5" data-sample-rubric>
             {sampleRubric.map((item) => (
               <div key={item.criterion} className="border-t border-zinc-800 pt-4">
@@ -147,15 +147,15 @@ export default function EPortfolio1Page() {
               </div>
             ))}
           </div>
-          <p className="text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Penggunaan dan kelebihan.</strong> Rubrik contoh menilai ketepatan kode, penerimaan data, penjelasan alur, dan proses debugging pada tingkat 1–4. Deskriptornya membantu membedakan halaman yang berhasil terbuka dari pemahaman proses pengerjaannya.</p>
-          <p className="text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Keterbatasan dan perbaikan.</strong> Instrumen ini belum terverifikasi sebagai perangkat Siklus 1; hasil penilaian siswa juga belum tersedia. Saya perlu meninjau kriterianya bersama Guru Pamong dan melampirkan instrumen asli. Ketekunan perlu dinilai dengan mempertimbangkan akses perangkat.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Contoh instrumen ini memuat tiga aspek: pemahaman, keterampilan praktik, dan kemampuan menjelaskan hasil. Indikatornya memberi arah untuk mengamati proses belajar serta penjelasan peserta didik, bukan hanya hasil akhir yang terlihat.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Instrumen dan hasil penilaian asli Siklus 1 belum tersedia untuk ditinjau. Saya perlu membahas indikator ini bersama Guru Pamong dan menyesuaikannya dengan tujuan pembelajaran serta akses perangkat sebelum digunakan.</p>
           <p className="text-xs leading-relaxed text-zinc-400">Rujukan: <ExternalReference href={references.assessment}>Tipe Latihan/Asesmen — Rumah Pendidikan</ExternalReference>. Tingkat pada contoh ini bukan skor siswa.</p>
         </PortfolioSection>
 
         <footer className="border-t border-zinc-700 py-12 md:py-16" aria-labelledby="refleksi-penutup">
           <h2 id="refleksi-penutup" className="mb-6 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Refleksi Penutup</h2>
           <div className="max-w-3xl space-y-4 md:ml-10">
-            <p className="text-sm leading-relaxed text-zinc-400">Saya dapat menghubungkan materi sebelumnya dengan tugas baru dan memberikan demonstrasi melalui browser. Namun, pengelolaan waktu dan pemerataan kesempatan praktik masih perlu diperbaiki. Saya ingin mendampingi peserta didik sampai mereka mampu menjelaskan alasan di balik kode. Pada pertemuan berikutnya, saya akan membagi tugas menjadi langkah pendek, memeriksa kemajuan secara berkala, menyiapkan alternatif tanpa perangkat, dan meminta penjelasan alur. Langkah tersebut masih berupa rencana perbaikan.</p>
+            <p className="text-sm leading-relaxed text-zinc-400">Saya dapat menghubungkan materi sebelumnya dengan tugas baru dan memberikan demonstrasi yang dapat diamati. Pengelolaan waktu serta kesempatan praktik masih perlu diperbaiki. Saya ingin mendampingi peserta didik agar memahami tujuan setiap langkah yang dikerjakan. Pada pertemuan berikutnya, saya akan membagi tugas menjadi langkah pendek, memeriksa kemajuan secara berkala, menyiapkan alternatif tanpa perangkat, dan meminta penjelasan hasil. Langkah tersebut masih berupa rencana perbaikan.</p>
             <p className="text-sm leading-relaxed text-zinc-400">Sumber refleksi: <ExternalReference href="https://drive.google.com/file/d/1msRUpD-Xj4-aBBZ7wxh_KF1fVFtaXmqo/view?usp=drive_link">LK 4 Praktik Pembelajaran Mandiri — Siklus 1, 25 Agustus 2026</ExternalReference>.</p>
           </div>
         </footer>

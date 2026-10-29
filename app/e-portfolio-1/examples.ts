@@ -57,48 +57,30 @@ class ContohController extends Controller
 
 export const sampleRubric = [
   {
-    criterion: "Ketepatan Route",
+    criterion: "Pemahaman",
     levels: [
-      "Belum dapat menghubungkan alamat dengan Route yang sesuai.",
-      "Menentukan alamat, tetapi method atau tujuan Route masih perlu diperbaiki dengan arahan.",
-      "Menghubungkan alamat, method GET, dan method Controller dengan tepat.",
-      "Memenuhi tingkat 3 serta menjelaskan dan menguji akibat perubahan alamat atau tujuan Route.",
+      "Peserta didik belum dapat menyebutkan tujuan kegiatan meskipun sudah diberi pertanyaan penuntun.",
+      "Peserta didik menyebutkan tujuan, tetapi masih memerlukan arahan untuk menghubungkannya dengan langkah kerja.",
+      "Peserta didik menjelaskan tujuan dan hubungan langkah kerja dengan hasil yang diharapkan.",
+      "Peserta didik menjelaskan hubungan tersebut dan memperkirakan akibat perubahan sederhana pada langkah kerja.",
     ],
   },
   {
-    criterion: "Controller",
+    criterion: "Keterampilan praktik",
     levels: [
-      "Belum dapat menunjukkan method yang menangani permintaan.",
-      "Membuat method dengan bantuan, tetapi pengiriman data ke view belum konsisten.",
-      "Method menerima Request dan mengirim data bernama yang sesuai ke view.",
-      "Memenuhi tingkat 3 serta menjelaskan tanggung jawab Controller dan menelusuri kesalahan alur.",
+      "Peserta didik masih memerlukan pendampingan pada setiap langkah praktik.",
+      "Peserta didik mengikuti sebagian langkah, tetapi memerlukan bantuan berulang untuk melanjutkan pekerjaan.",
+      "Peserta didik menyelesaikan langkah sesuai panduan dan memeriksa hasil pekerjaannya.",
+      "Peserta didik menyelesaikan langkah secara mandiri serta mencoba perbaikan ketika hasil belum sesuai.",
     ],
   },
   {
-    criterion: "Penerimaan data",
+    criterion: "Kemampuan menjelaskan hasil",
     levels: [
-      "Belum dapat menghubungkan nama input form dengan data permintaan.",
-      "Membaca input dengan arahan, tetapi belum memeriksa input kosong atau tidak sesuai.",
-      "Membaca input yang tepat dan memeriksa batas format/panjang pada contoh.",
-      "Memenuhi tingkat 3 serta menguji input kosong, valid, dan tidak valid lalu menjelaskan hasilnya.",
-    ],
-  },
-  {
-    criterion: "Penjelasan alur",
-    levels: [
-      "Belum dapat mengurutkan hubungan browser, Route, dan Controller.",
-      "Menjelaskan sebagian alur, tetapi hubungan Request dan Blade masih perlu dipandu.",
-      "Menjelaskan alur dari form/Request melalui Route dan Controller menuju Blade/browser.",
-      "Memenuhi tingkat 3 serta memprediksi keluaran ketika satu bagian kode diubah.",
-    ],
-  },
-  {
-    criterion: "Ketekunan dan debugging",
-    levels: [
-      "Belum menunjukkan langkah pemeriksaan error meskipun dukungan sudah diberikan.",
-      "Mencoba perbaikan setelah diarahkan, tetapi belum mencatat bagian yang diperiksa.",
-      "Membaca pesan error, memeriksa satu dugaan, dan mencoba kembali secara terarah.",
-      "Memenuhi tingkat 3 serta menjelaskan dugaan, hasil pemeriksaan, dan langkah perbaikan berikutnya.",
+      "Peserta didik belum dapat menceritakan langkah dan hasil pekerjaannya meskipun sudah diberi pertanyaan penuntun.",
+      "Peserta didik menyebutkan hasil, tetapi penjelasan langkah atau kesulitannya masih perlu dipandu.",
+      "Peserta didik menjelaskan langkah, hasil, dan kesulitan yang ditemui secara runtut.",
+      "Peserta didik membandingkan hasil dengan tujuan serta mengusulkan perbaikan yang sesuai.",
     ],
   },
 ] as const;
