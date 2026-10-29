@@ -15,13 +15,13 @@ export const nonTeachingPhotos: readonly ActivityPhoto[] = [
     },
   },
   {
-    src: "/e-portfolio-1/ilustrasi/pexels-didsss-2675050.jpg",
-    alt: "Ilustrasi ruang kelas kosong dengan meja, kursi, dan papan tulis hijau",
+    src: "/e-portfolio-1/ilustrasi/pexels-rasyidahmad-5415447.jpg",
+    alt: "Ilustrasi dua orang berbincang di sebuah ruangan kantor sekolah",
     activity: "Foto ilustrasi dari Pexels — bukan dokumentasi PPL",
-    caption: "Ruang kelas kosong sebagai contoh foto berorientasi potret. Foto ini tidak memiliki hubungan dokumenter dengan pengalaman PPL saya.",
+    caption: "Suasana percakapan di kantor sekolah sebagai ilustrasi. Orang, lokasi, dan kegiatan pada foto ini bukan dokumentasi pengalaman PPL saya.",
     credit: {
-      label: "Kredit: Diana / Pexels — lihat sumber foto",
-      href: "https://www.pexels.com/photo/photo-of-empty-class-room-2675050/",
+      label: "Kredit: Rasyid Ahmad / Pexels — lihat sumber foto",
+      href: "https://www.pexels.com/photo/school-office-in-indonesia-5415447/",
     },
   },
 ];

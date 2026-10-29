@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import { NonTeachingPhotoCarousel } from "@/components/sections/NonTeachingPhotoCarousel";
 import { nonTeachingPhotos } from "./photos";
@@ -104,7 +105,7 @@ export default function EPortfolio1Page() {
         <PortfolioSection index={2}>
           <ExampleStatus>Contoh media — bukan media asli yang digunakan saat mengajar</ExampleStatus>
           <figure className="space-y-3">
-            <div className="flex aspect-video items-center justify-center border border-dashed border-zinc-700 bg-zinc-950/40 p-6 text-center text-sm leading-relaxed text-zinc-400">Tangkapan layar aplikasi Laravel yang digunakan saat pembelajaran belum dilampirkan</div>
+            <div data-artifact-placeholder className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400">Tangkapan layar aplikasi Laravel yang digunakan saat pembelajaran belum dilampirkan</div>
             <figcaption className="text-xs leading-relaxed text-zinc-400">Area ini disiapkan untuk memperlihatkan contoh halaman dan hasil praktik.</figcaption>
           </figure>
           <p className="text-sm leading-relaxed text-zinc-400">Saya mendemonstrasikan hasil aplikasi melalui tampilan halaman web. Contoh yang terlihat di layar memberi gambaran konkret tentang pekerjaan yang akan dilakukan.</p>
@@ -113,7 +114,7 @@ export default function EPortfolio1Page() {
 
         <PortfolioSection index={3}>
           <figure className="space-y-3" data-teaching-recording>
-            <div className="flex aspect-video items-center justify-center border border-zinc-800 bg-zinc-950/50 p-6 text-center">
+            <div data-artifact-placeholder className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400">
               {teachingRecording.href ? (
                 <ExternalReference href={teachingRecording.href}>Buka rekaman asli praktik mengajar Siklus 1</ExternalReference>
               ) : (
@@ -157,6 +158,7 @@ export default function EPortfolio1Page() {
           <div className="max-w-3xl space-y-4 md:ml-10">
             <p className="text-sm leading-relaxed text-zinc-400">Saya dapat menghubungkan materi sebelumnya dengan tugas baru dan memberikan demonstrasi yang dapat diamati. Pengelolaan waktu serta kesempatan praktik masih perlu diperbaiki. Saya ingin mendampingi peserta didik agar memahami tujuan setiap langkah yang dikerjakan. Pada pertemuan berikutnya, saya akan membagi tugas menjadi langkah pendek, memeriksa kemajuan secara berkala, menyiapkan alternatif tanpa perangkat, dan meminta penjelasan hasil. Langkah tersebut masih berupa rencana perbaikan.</p>
             <p className="text-sm leading-relaxed text-zinc-400">Sumber refleksi: <ExternalReference href="https://drive.google.com/file/d/1msRUpD-Xj4-aBBZ7wxh_KF1fVFtaXmqo/view?usp=drive_link">LK 4 Praktik Pembelajaran Mandiri — Siklus 1, 25 Agustus 2026</ExternalReference>.</p>
+            <Link href="/e-portfolio-2" className="inline-flex min-h-11 items-center rounded-sm text-sm text-zinc-200 underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">Lanjut ke E-Portfolio 2 — UAS Siklus 2–4</Link>
           </div>
         </footer>
       </div>

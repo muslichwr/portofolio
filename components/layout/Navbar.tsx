@@ -20,6 +20,7 @@ const navLinks = [
   { href: "/refleksi-matkul/semester-2", label: "SPPG - Refleksi Mata Kuliah Semester II" },
   { href: "/refleksi-program-ppg", label: "SPPG - Refleksi Program PPG" },
   { href: "/karya-inovasi", label: "SPPG - Karya Inovasi" },
+  { href: "/e-portfolio-2", label: "PPLM - E-Portfolio 2" },
 ] as const;
 
 const semesters = [
@@ -45,6 +46,7 @@ const semesters = [
       { ...navLinks[10], description: "Dokumentasi dan analisis PPL Mandiri" },
       { ...navLinks[11], description: "Desain pembelajaran praktikum Laravel dan MySQL" },
       { ...navLinks[6], description: "Tahap 4  Refleksi keseluruhan program PPL Mandiri" },
+      { ...navLinks[12], description: "UAS PPL Mandiri: artefak dan refleksi Siklus 2–4" },
     ],
   },
 ] as const;
@@ -237,7 +239,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="pointer-events-auto fixed inset-x-0 top-[4.5rem] z-40 mx-4 rounded-2xl border border-white/10 bg-black/90 p-4 backdrop-blur-xl md:hidden"
+            className="pointer-events-auto fixed inset-x-0 top-[4.5rem] z-40 mx-4 max-h-[calc(100dvh-5.5rem)] overflow-y-auto rounded-2xl border border-white/10 bg-black/90 p-4 backdrop-blur-xl md:hidden"
           >
             <div className="flex flex-col gap-1">
               {navLinks.map((link) => {
