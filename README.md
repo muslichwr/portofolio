@@ -7,7 +7,7 @@ Portfolio pribadi, profesional, dan akademik milik **Muslich Wahyu Romadhon**, d
 - Production: [portofolio-muslich.vercel.app](https://portofolio-muslich.vercel.app/).
 - Nama package: `portofolio`; versi `0.1.0`; private.
 - **CURRENT STATE:** website berjalan dengan dua belas halaman, tiga siklus praktik mengajar, enam refleksi mata kuliah Semester I, serta lima mata kuliah Semester II: kelima refleksi (PSE, PMAL, PPL Mandiri, Projek Kepemimpinan, dan Pendidikan Inklusi) sudah diisi dari PDF pemilik. Projek Kepemimpinan mempertahankan kontribusi Backend Developer dalam Ruang BK, batas draf kerja hingga 21 Oktober 2026, serta empat artefak tanpa URL terverifikasi.
-- **CURRENT STATE (20 Oktober 2026):** `/e-portfolio-1` menyediakan struktur editorial PPL Mandiri dengan enam bagian dan Refleksi Diri; seluruh artefak dan analisis masih placeholder, tersedia melalui Semester 2.
+- **CURRENT STATE (29 Oktober 2026, OWN-017):** `/e-portfolio-1` berfokus pada UTS Siklus 1 Laravel dengan enam bagian Topik 3: Perencanaan, Materi, Media, Video Pelaksanaan, Kegiatan Nonmengajar, dan Instrumen Penilaian. Format Modul Ajar/LKPD, kode, media dan rubrik berlabel contoh; dua foto lokal Pexels berlabel ilustrasi dengan kredit; video Laravel Learn terpisah dari rekaman asli yang belum dilampirkan. Analisis, filosofi, empat RTL dan bukti LK asli dipertahankan. Dokumen/video asli serta bukti asesmen belum lengkap; contoh tidak memenuhi bukti wajib UTS.
 - **DECISION:** tahap ini membangun dokumentasi. Roadmap merupakan pekerjaan mendatang, bukan izin mengubah aplikasi.
 - Baseline audit: **7 Oktober 2026**, commit `4c043ef`. Rincian hasil dan keterbatasan pemeriksaan ada di [SRS](SRS.md#hasil-verifikasi-baseline).
 

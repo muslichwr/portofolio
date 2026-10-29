@@ -1,0 +1,10 @@
+.page {
+  position: relative;
+}
+
+/* Let the mobile pill scroll away so it cannot cover the long editorial text. */
+@media (width < 48rem) {
+  :global(body):has(.page) > :global(header[role="banner"]) {
+    position: absolute;
+  }
+}

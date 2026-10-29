@@ -9,6 +9,7 @@ export type ActivityPhoto = {
   alt: string;
   caption: string;
   activity: string;
+  credit?: { label: string; href: string };
 };
 
 export function NonTeachingPhotoCarousel({ photos }: { photos: readonly ActivityPhoto[] }) {
@@ -70,6 +71,11 @@ export function NonTeachingPhotoCarousel({ photos }: { photos: readonly Activity
         </p>
         <p className="text-sm font-medium text-zinc-200">{photo.activity}</p>
         <p className="text-sm leading-relaxed text-zinc-400">{photo.caption}</p>
+        {photo.credit && (
+          <a href={photo.credit.href} target="_blank" rel="noopener noreferrer" className="inline-block rounded-sm text-sm text-zinc-300 underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">
+            {photo.credit.label}
+          </a>
+        )}
       </figcaption>
       {photos.length > 1 && (
         <div className="mt-5 flex justify-between gap-4">
