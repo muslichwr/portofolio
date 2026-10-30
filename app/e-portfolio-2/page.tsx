@@ -6,9 +6,9 @@ import { nonTeachingPhotos } from "../e-portfolio-1/photos";
 import styles from "../e-portfolio-1/page.module.css";
 
 export const metadata: Metadata = {
-  title: "E-Portfolio 2 — UAS PPL Mandiri Siklus 2–4",
+  title: "Praktik Mengajar Mandiri — Pembelajaran Basis Data",
   description:
-    "Analisis artefak dan refleksi akhir PPL Mandiri Siklus 2–4: pembelajaran MySQL, pengolahan data, susunan tabel, dan hubungan antartabel, beserta status dokumen dan video asli.",
+    "Halaman ini memuat perangkat pembelajaran, pengalaman mengajar, dan refleksi saya selama pelaksanaan PPL Mandiri, dengan fokus pada pembelajaran Basis Data. Pembahasan disusun berdasarkan Modul Ajar yang telah saya siapkan serta catatan refleksi selama praktik mengajar.",
 };
 
 const contents = [
@@ -19,36 +19,30 @@ const contents = [
   { id: "refleksi-akhir", title: "Refleksi Akhir" },
 ] as const;
 
-// Isi hanya setelah Modul Ajar dan rekaman asli yang sesuai telah diperiksa.
-// Keberadaan LK refleksi tidak menetapkan rancangan atau siklus terbaik.
-const selectedArtifacts: { moduleHref: string | null; videoHref: string | null } = {
-  moduleHref: null,
-  videoHref: null,
-};
+const teachingModules = [
+  { title: "Modul Ajar 1 — Pengenalan Basis Data", href: "https://drive.google.com/file/d/15FBTxHhIAXNrzgkZw4hMp7T3J2DDWXLq/view" },
+  { title: "Modul Ajar 2 — Pengelolaan Data", href: "https://drive.google.com/file/d/1mcBgR0FzLKpaXBavg2bg6QnczzeSskSy/view" },
+  { title: "Modul Ajar 3 — Pencarian dan Pengolahan Data", href: "https://drive.google.com/file/d/1EkbSUeBNoUXutPlGuZSMCIbABeQJMhG5/view" },
+  { title: "Modul Ajar 4 — Struktur dan Aturan Tabel", href: "https://drive.google.com/file/d/1Xp_llEKpXvG_Hxus0dsCUSp7PIST6H74/view" },
+  { title: "Modul Ajar 5 — Hubungan Antartabel", href: "https://drive.google.com/file/d/13eAyAqVkZAMob7sCZTnmyDcH9m-t5jux/view" },
+  { title: "Modul Ajar 6 — Penerapan Basis Data", href: "https://drive.google.com/file/d/10EKiKAuKb5M-1IB9YqtMbDZEyFp_82v0/view" },
+] as const;
 
-const cycles = [
+const reflections = [
+  {
+    number: 1,
+    href: "https://drive.google.com/file/d/1msRUpD-Xj4-aBBZ7wxh_KF1fVFtaXmqo/view",
+  },
   {
     number: 2,
-    date: "15 September 2026",
-    title: "MySQL dan pengelolaan data",
-    summary:
-      "Peserta didik mengenal MySQL, membuat tempat penyimpanan dan tabel, serta berlatih mengelola, menampilkan, dan mencari data. Penjelasan serta contoh dapat diberikan, tetapi latihan memerlukan pendampingan ulang dan sebagian kegiatan dilanjutkan pada pertemuan berikutnya.",
     href: "https://drive.google.com/file/d/1tlVTr52mGQ2vMZ6nB888ChzIENvNbX11/view",
   },
   {
     number: 3,
-    date: "6 Oktober 2026",
-    title: "Pengolahan data dan susunan tabel",
-    summary:
-      "Peserta didik mengingat kembali cara mengelola dan mencari data, kemudian mempelajari pengolahan data serta susunan tabel yang lebih tepat. Contoh membantu pembahasan, tetapi kesempatan praktik belum merata. Beberapa peserta didik perlu diingatkan untuk memulai tugas sehingga penyelesaian latihan membutuhkan waktu lebih panjang.",
     href: "https://drive.google.com/file/d/1jEREVsTg7xDhui4wS_hf4_dL-AT1jtV7/view",
   },
   {
     number: 4,
-    date: "20 Oktober 2026",
-    title: "Hubungan antartabel",
-    summary:
-      "Peserta didik menghubungkan materi susunan tabel dengan kebutuhan menggunakan data dari beberapa tabel. Penjelasan dan contoh hubungan antartabel serta rancangan penyimpanan data sederhana dapat diberikan. Keterbatasan perangkat dan kebutuhan pengingat mengerjakan tugas masih ditemukan hingga siklus ini.",
     href: "https://drive.google.com/file/d/1WGDruy6V-yJ82rtlmqmV8G4nyLz2w751/view",
   },
 ] as const;
@@ -79,10 +73,10 @@ export default function EPortfolio2Page() {
     <article className={`${styles.page} px-6 pb-20 pt-16 md:pb-28 md:pt-24`}>
       <div className="mx-auto max-w-4xl">
         <header className="pb-12 md:pb-16">
-          <p className="mb-5 font-mono text-xs uppercase tracking-widest text-zinc-400">SEMESTER II / UJIAN AKHIR SEMESTER / E-PORTFOLIO 2</p>
-          <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tighter text-white sm:text-5xl md:text-7xl">Praktik Mengajar Mandiri — Siklus 2–4</h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">Pembelajaran Basis Data: MySQL, pengolahan data, susunan tabel, dan hubungan antartabel di SMK Negeri 1 Surabaya.</p>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">Halaman ini melanjutkan E-Portfolio 1 melalui analisis artefak dan refleksi akhir Siklus 2–4. Uraian mengacu pada LK 4; rancangan terbaik belum ditetapkan karena Modul Ajar lengkap dan video yang sesuai belum dilampirkan.</p>
+          <p className="mb-5 font-mono text-xs uppercase tracking-widest text-zinc-400">E-Portfolio 2 | Ujian Akhir Semester PPL Mandiri</p>
+          <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tighter text-white sm:text-5xl md:text-7xl">Praktik Mengajar Mandiri — Pembelajaran Basis Data</h1>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">SMK Negeri 1 Surabaya · Pengembangan Perangkat Lunak dan Gim</p>
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">Halaman ini memuat perangkat pembelajaran, pengalaman mengajar, dan refleksi saya selama pelaksanaan PPL Mandiri, dengan fokus pada pembelajaran Basis Data. Pembahasan disusun berdasarkan Modul Ajar yang telah saya siapkan serta catatan refleksi selama praktik mengajar.</p>
         </header>
 
         <nav aria-labelledby="daftar-isi" className="border-t border-zinc-800 py-8 md:grid md:grid-cols-[1fr_2fr] md:gap-12 md:py-10">
@@ -100,53 +94,54 @@ export default function EPortfolio2Page() {
         </nav>
 
         <PortfolioSection index={0}>
-          <div data-artifact-placeholder className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400">
-            {selectedArtifacts.moduleHref ? (
-              <DocumentLink href={selectedArtifacts.moduleHref}>Buka Modul Ajar lengkap terpilih</DocumentLink>
-            ) : (
-              <p>Modul Ajar lengkap terbaik dari Siklus 2–4: <strong className="font-medium text-zinc-200">belum dilampirkan; siklus terpilih belum ditetapkan.</strong></p>
-            )}
+          <p className="text-sm leading-relaxed text-zinc-400">Saya menyusun enam Modul Ajar Basis Data dengan urutan materi yang saling berkaitan. Pembelajaran dimulai dari pengenalan cara menyimpan data, dilanjutkan dengan pengelolaan dan pencarian data, hingga perancangan tabel yang saling berhubungan. Urutan tersebut dirancang agar peserta didik memiliki pemahaman dasar sebelum mengerjakan tugas yang lebih kompleks.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Dalam rancangan pembelajaran, saya menyiapkan penjelasan awal, demonstrasi, latihan praktik, dan pendampingan sesuai kebutuhan peserta didik. Namun, pengalaman mengajar menunjukkan bahwa pelaksanaan kegiatan masih perlu mempertimbangkan ketersediaan perangkat dan waktu pengerjaan. Beberapa latihan membutuhkan penjelasan ulang sehingga tidak seluruh kegiatan dapat diselesaikan sesuai rencana.</p>
+          <div className="space-y-3" data-teaching-modules>
+            <h3 className="text-base font-medium text-zinc-200">Perangkat Pembelajaran Basis Data</h3>
+            <ol className="list-decimal space-y-3 pl-5 text-sm leading-relaxed text-zinc-400">
+              {teachingModules.map((module) => (
+                <li key={module.href} className="pl-1"><DocumentLink href={module.href}>{module.title}</DocumentLink></li>
+              ))}
+            </ol>
           </div>
-          <p className="text-sm leading-relaxed text-zinc-400">Catatan refleksi menunjukkan urutan materi dari pengenalan MySQL menuju pengolahan data dan hubungan antartabel. Pengaitan dengan materi sebelumnya memberi arah pada kegiatan baru. Namun, LK 4 belum cukup untuk menilai kelengkapan dan memilih rancangan terbaik.</p>
-          <p className="text-sm leading-relaxed text-zinc-400">Saya perlu meninjau tujuan, langkah kegiatan, bahan ajar, dan penilaian pada Modul Ajar asli bersama video pelaksanaannya. Rancangan yang dipilih perlu memperlihatkan penyesuaian terhadap waktu serta ketersediaan perangkat, bukan hanya urutan materi.</p>
+          <p data-artifact-placeholder className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Rancangan utama UAS:</strong> Satu Modul Ajar terbaik dari praktik mandiri Siklus 2–4 akan ditetapkan setelah dicocokkan dengan rekaman pelaksanaan pembelajaran.</p>
         </PortfolioSection>
 
         <PortfolioSection index={1}>
-          <p className="text-sm leading-relaxed text-zinc-400">Peserta didik mempelajari cara menyimpan, mencari, mengolah, dan menghubungkan data secara bertahap. Contoh yang diperagakan beserta hasilnya membantu pembahasan. Kesempatan mencoba tetap terbatas bagi peserta didik yang tidak memiliki perangkat saat pembelajaran di kelas biasa.</p>
-          <div data-artifact-placeholder className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400">Materi, media, instrumen penilaian, dan sampel pekerjaan asli Siklus 2–4 belum dilampirkan. LK 4 merupakan bukti refleksi, bukan rekap nilai peserta didik.</div>
-          <p className="text-sm leading-relaxed text-zinc-400">Saya perlu membagi latihan menjadi target kecil, memeriksa hasil setiap tahap, dan meminta peserta didik menjelaskan langkah yang dikerjakan. Latihan membaca contoh tabel atau memperkirakan hasil pengolahan data dapat menjadi alternatif tanpa perangkat. Langkah ini merupakan rencana perbaikan, bukan hasil asesmen yang sudah diperoleh.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Materi Basis Data saya susun dengan menghubungkan pembelajaran sebelumnya dengan kegiatan yang akan dikerjakan. Peserta didik mempelajari cara membuat tempat penyimpanan data, mengelola isinya, mencari informasi, dan memahami hubungan antara beberapa tabel.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Dalam pelaksanaan pembelajaran, saya menggunakan demonstrasi langsung untuk memperlihatkan langkah pengerjaan beserta hasilnya. Cara ini membantu peserta didik mengikuti penjelasan, terutama ketika materi masih baru. Namun, sebagian peserta didik belum dapat mencoba secara langsung karena tidak membawa laptop. Akibatnya, keterlibatan dalam kegiatan praktik belum merata.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Penilaian dalam Modul Ajar dirancang untuk melihat pemahaman materi, proses pengerjaan, dan kemampuan peserta didik menjelaskan hasil praktik. Dari pengalaman mengajar, saya melihat perlunya pemeriksaan pekerjaan secara bertahap agar kesulitan dapat diketahui lebih awal. Bukti penggunaan instrumen dan hasil penilaian asli masih perlu dilengkapi.</p>
         </PortfolioSection>
 
         <PortfolioSection index={2}>
-          <div data-artifact-placeholder data-teaching-recording className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400">
-            {selectedArtifacts.videoHref ? (
-              <DocumentLink href={selectedArtifacts.videoHref}>Buka video praktik mengajar sesuai rancangan terpilih</DocumentLink>
-            ) : (
-              <p>Video praktik mengajar sesuai rancangan terpilih: <strong className="font-medium text-zinc-200">belum dilampirkan.</strong></p>
-            )}
-          </div>
-          <p className="text-sm leading-relaxed text-zinc-400">Tiga dokumen berikut mencatat kegiatan, kendala, dan perbaikan yang saya rencanakan. Dokumen refleksi tidak menggantikan video untuk meninjau kesesuaian pelaksanaan dengan rancangan.</p>
-          <div className="space-y-6" data-cycle-reflections>
-            {cycles.map((cycle) => (
-              <div key={cycle.number} className="space-y-3 border-t border-zinc-800 pt-5">
-                <h3 className="text-base font-medium text-zinc-200">Siklus {cycle.number} — {cycle.title}</h3>
-                <p className="font-mono text-xs text-zinc-400">{cycle.date}</p>
-                <p className="text-sm leading-relaxed text-zinc-400">{cycle.summary}</p>
-                <p className="text-sm"><DocumentLink href={cycle.href}>LK 4 — Refleksi Praktik Pembelajaran Mandiri Siklus {cycle.number}</DocumentLink></p>
-              </div>
-            ))}
-          </div>
+          <p className="text-sm leading-relaxed text-zinc-400">Saya mengawali pembelajaran dengan mengingatkan kembali materi sebelumnya, kemudian memberikan penjelasan dan contoh sebelum peserta didik mengerjakan latihan. Selama praktik, saya memberikan arahan kepada peserta didik yang mengalami kesulitan dan mengingatkan mereka yang belum memulai pekerjaan.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Pelaksanaannya belum selalu sesuai dengan alokasi waktu. Sebagian peserta didik memerlukan pendampingan berulang, sedangkan peserta didik yang tidak memiliki perangkat lebih banyak mengikuti penjelasan melalui contoh yang ditampilkan. Kondisi tersebut membuat beberapa latihan perlu dilanjutkan pada pertemuan berikutnya.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Pengalaman ini menjadi bahan evaluasi bagi saya untuk menyampaikan instruksi yang lebih singkat, membagi tugas menjadi beberapa tahap, dan memeriksa pekerjaan secara berkala.</p>
+          <p data-artifact-placeholder data-teaching-recording className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Video praktik mengajar:</strong> Belum dilampirkan. Rekaman yang dipilih harus sesuai dengan Modul Ajar utama untuk UAS.</p>
         </PortfolioSection>
 
         <PortfolioSection index={3}>
+          <p className="text-sm leading-relaxed text-zinc-400">Dokumentasi kegiatan nonmengajar asli belum saya lampirkan pada halaman ini. Foto yang ditampilkan saat ini merupakan ilustrasi dan bukan dokumentasi kegiatan saya selama PPL Mandiri.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Bagian ini akan dilengkapi dengan foto serta keterangan kegiatan berdasarkan dokumentasi yang sebenarnya.</p>
           <NonTeachingPhotoCarousel photos={nonTeachingPhotos} />
-          <p className="text-sm leading-relaxed text-zinc-400">Dokumentasi kegiatan nonmengajar asli belum tersedia. Dua foto di atas hanya ilustrasi dan tidak menunjukkan lokasi, peserta, atau kegiatan yang saya lakukan. Foto berizin dan keterangan berdasarkan catatan kegiatan masih perlu dilampirkan.</p>
         </PortfolioSection>
 
         <PortfolioSection index={4}>
-          <p className="text-sm leading-relaxed text-zinc-400">Peralihan dari pembelajaran web ke Basis Data menuntut saya mempersiapkan materi dan pendampingan dengan lebih matang. Penjelasan dan contoh dapat diberikan, tetapi keterbatasan perangkat serta kebutuhan pengingat mengerjakan tugas masih muncul hingga Siklus 4. Saya belum dapat menyatakan bahwa kendala tersebut telah teratasi.</p>
-          <p className="text-sm leading-relaxed text-zinc-400">Saya perlu menyiapkan target kerja yang lebih jelas, memeriksa kemajuan secara berkala, dan menyediakan kegiatan tertulis ketika perangkat tidak tersedia. Arahan Guru Pamong mengingatkan saya untuk memberi dukungan sekaligus kesempatan bertanggung jawab terhadap pekerjaan. Pada pembelajaran berikutnya, saya akan meminta penjelasan hasil agar kebutuhan penguatan dapat diketahui.</p>
-          <p className="text-sm leading-relaxed text-zinc-400"><DocumentLink href="https://drive.google.com/file/d/13H2_vJKEMtRCCNC0vjHn-cCCNvd9jyre/view">LK 3 — Refleksi Praktik Mengajar Terbimbing</DocumentLink> disertakan sebagai konteks tahap sebelumnya. Bukti refleksi utama halaman UAS ini adalah LK 4 Siklus 2–4 di atas.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Selama praktik mengajar mandiri, saya memperoleh pengalaman dalam menyiapkan materi, memberikan penjelasan, dan mendampingi peserta didik saat mengerjakan tugas. Saya dapat mengaitkan materi sebelumnya dengan pembelajaran baru dan memperlihatkan contoh yang membantu peserta didik mengikuti penjelasan.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Namun, saya masih perlu memperbaiki pengelolaan waktu dan cara memantau pengerjaan tugas. Beberapa peserta didik membutuhkan pengingat berulang untuk mulai bekerja, sementara keterbatasan perangkat membuat kesempatan praktik belum merata. Kendala tersebut masih muncul hingga akhir pelaksanaan praktik mandiri.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Masukan dari Guru Pamong mengingatkan saya bahwa pendampingan perlu diberikan sesuai kebutuhan, tetapi peserta didik juga perlu mendapat kesempatan untuk bertanggung jawab terhadap pekerjaannya sendiri. Saya ingin menjadi guru yang mampu menjaga keseimbangan antara memberikan arahan dan membangun kemandirian peserta didik.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Untuk pembelajaran berikutnya, saya perlu menetapkan target pekerjaan yang lebih jelas, memeriksa kemajuan pada setiap tahap, dan menyiapkan kegiatan tertulis bagi peserta didik yang belum dapat menggunakan laptop. Perbaikan tersebut masih menjadi rencana yang perlu saya terapkan dan evaluasi.</p>
+          <div className="space-y-3" data-reflection-documents>
+            <h3 className="text-base font-medium text-zinc-200">Dokumen Refleksi</h3>
+            <ul className="list-disc space-y-3 pl-5 text-sm leading-relaxed text-zinc-400">
+              {reflections.map((reflection) => (
+                <li key={reflection.number} className="pl-1">
+                  <DocumentLink href={reflection.href}>LK 4 — Refleksi Siklus {reflection.number}</DocumentLink>
+                  {reflection.number === 1 && " — Praktik pembelajaran Laravel sebagai konteks awal pengalaman mengajar mandiri."}
+                </li>
+              ))}
+            </ul>
+          </div>
         </PortfolioSection>
 
         <footer className="border-t border-zinc-700 py-8">

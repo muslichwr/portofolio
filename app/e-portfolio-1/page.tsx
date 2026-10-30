@@ -51,13 +51,9 @@ export default function EPortfolio1Page() {
             SEMESTER II / UJIAN TENGAH SEMESTER / E-PORTFOLIO 1
           </p>
           <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tighter text-white sm:text-5xl md:text-7xl">
-            Praktik Mengajar Mandiri — Siklus 1
+            Praktik Mengajar Mandiri Siklus 1
           </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Pembelajaran Laravel: membuat halaman web yang menerima dan mengelola data</strong></p>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">SMK Negeri 1 Surabaya · Pengembangan Perangkat Lunak dan Gim · Refleksi Siklus 1: 25 Agustus 2026</p>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">Peserta didik mengingat kembali materi sebelumnya sebelum mempelajari pembuatan halaman web yang menerima dan mengelola data. Refleksi Siklus 1 ini mengacu pada LK 4, 25 Agustus 2026.</p>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Bukti wajib UTS:</strong> Modul Ajar lengkap terbaik Siklus 1 dan video pelaksanaan yang sesuai rancangan. Keduanya belum dilampirkan; contoh pada halaman ini tidak menggantikannya.</p>
-        </header>
+       </header>
 
         <nav aria-labelledby="daftar-isi" className="border-t border-zinc-800 py-8 md:grid md:grid-cols-[1fr_2fr] md:gap-12 md:py-10">
           <h2 id="daftar-isi" className="mb-5 font-mono text-xs uppercase tracking-widest text-zinc-400 md:mb-0 md:pt-3">
