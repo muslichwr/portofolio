@@ -29,6 +29,15 @@ const teachingModules = [
   { title: "Modul Ajar 6 — Penerapan Basis Data", href: "https://drive.google.com/file/d/10EKiKAuKb5M-1IB9YqtMbDZEyFp_82v0/view" },
 ] as const;
 
+const teachingMedia = [
+  { title: "Media Ajar Basis Data 1 — Mengenal Struktur Basis Data dan Membuat Data Pertama", href: "https://docs.google.com/document/d/18q9lHfd09lj4Qy3z2-xV73tJvB3JK6JL/edit" },
+  { title: "Media Ajar Basis Data 2 — Mengelola Data Inventaris dengan CRUD dan WHERE", href: "https://docs.google.com/document/d/1Q6ZoQJouFFOwRV9ZDQj-RY3EyO6LnQDm/edit" },
+  { title: "Media Ajar Basis Data 3 — Mengolah Data Produk Menjadi Informasi", href: "https://docs.google.com/document/d/18ScPQLngyxad_f81EqqX-WK3_7W2xlWj/edit" },
+  { title: "Media Ajar Basis Data 4 — Merancang Tabel Pelanggan dan Menjaga Integritas Data", href: "https://docs.google.com/document/d/1lYqFaWJLWELRpUwSemNg6nx40vVq36bK/edit" },
+  { title: "Media Ajar Basis Data 5 — Menghubungkan Data Peminjaman dengan FOREIGN KEY dan INNER JOIN", href: "https://docs.google.com/document/d/1uKfRrco9hovtlDDFnmT5VfdkpLsPjRww/edit" },
+  { title: "Media Ajar Basis Data 6 — Merancang Database Pendaftaran Ekstrakurikuler", href: "https://docs.google.com/document/d/1ekjD1KBCg5JaYBw1AruaFR2mkzhT5ZjD/edit" },
+] as const;
+
 const reflections = [
   {
     number: 1,
@@ -56,7 +65,7 @@ function DocumentEvidenceRow({
 }: {
   href: string;
   title: string;
-  action: "Lihat Modul Ajar" | "Lihat LK 4";
+  action: "Lihat Modul Ajar" | "Lihat LK 4" | "Lihat Media Ajar";
   children?: ReactNode;
 }) {
   return (
@@ -113,9 +122,39 @@ export default function EPortfolio2Page() {
         </PortfolioSection>
 
         <PortfolioSection index={1}>
-          <p className="text-sm leading-relaxed text-zinc-400">Materi Basis Data saya susun dengan menghubungkan pembelajaran sebelumnya dengan kegiatan yang akan dikerjakan. Peserta didik mempelajari cara membuat tempat penyimpanan data, mengelola isinya, mencari informasi, dan memahami hubungan antara beberapa tabel.</p>
-          <p className="text-sm leading-relaxed text-zinc-400">Dalam pelaksanaan pembelajaran, saya menggunakan demonstrasi langsung untuk memperlihatkan langkah pengerjaan beserta hasilnya. Cara ini membantu peserta didik mengikuti penjelasan, terutama ketika materi masih baru. Namun, sebagian peserta didik belum dapat mencoba secara langsung karena tidak membawa laptop. Akibatnya, keterlibatan dalam kegiatan praktik belum merata.</p>
-          <p className="text-sm leading-relaxed text-zinc-400">Penilaian dalam Modul Ajar dirancang untuk melihat pemahaman materi, proses pengerjaan, dan kemampuan peserta didik menjelaskan hasil praktik. Dari pengalaman mengajar, saya melihat perlunya pemeriksaan pekerjaan secara bertahap agar kesulitan dapat diketahui lebih awal. Bukti penggunaan instrumen dan hasil penilaian asli masih perlu dilengkapi.</p>
+          <p className="text-sm leading-relaxed text-zinc-400">Materi Basis Data saya siapkan melalui bahan presentasi dan panduan praktikum. Bahan presentasi digunakan untuk menjelaskan konsep dan memberikan contoh, sedangkan panduan praktikum membantu peserta didik mengikuti langkah pengerjaan menggunakan MySQL.</p>
+
+          <div className="space-y-3">
+            <h3 className="text-base font-medium text-zinc-200">Materi Pembelajaran</h3>
+            <p className="text-sm leading-relaxed text-zinc-400">Saya menggunakan presentasi Basis Data XI RPL yang memuat pengenalan MySQL, pembuatan tabel, pengelolaan data, penyusunan struktur tabel, dan hubungan antardata. Materi tersebut disusun secara bertahap agar peserta didik dapat menghubungkan pembelajaran sebelumnya dengan kegiatan yang sedang dikerjakan.</p>
+            <a href="https://www.canva.com/d/R9btiBJ9VAuAUXK" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-md border border-zinc-700 bg-zinc-900 px-3.5 py-2 text-xs font-medium text-white transition-colors hover:border-zinc-500 hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">
+              Lihat Materi Pembelajaran — Canva <ExternalLink className="size-3.5 shrink-0 text-zinc-400" aria-hidden="true" />
+            </a>
+          </div>
+
+          <div className="space-y-3" data-teaching-media>
+            <h3 className="text-base font-medium text-zinc-200">Media Ajar Basis Data</h3>
+            <p className="text-sm leading-relaxed text-zinc-400">Saya menyiapkan enam media ajar berbentuk panduan praktikum. Setiap dokumen memuat langkah pengerjaan, contoh perintah, hasil yang diharapkan, serta pemeriksaan kesalahan yang mungkin ditemukan selama praktik.</p>
+            <ol className="space-y-3">
+              {teachingMedia.map((media) => (
+                <li key={media.href}><DocumentEvidenceRow href={media.href} title={media.title} action="Lihat Media Ajar" /></li>
+              ))}
+            </ol>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-base font-medium text-zinc-200">Pengumpulan Tugas</h3>
+            <p className="text-sm leading-relaxed text-zinc-400">Hasil pekerjaan peserta didik dikumpulkan melalui Google Drive. Folder tersebut menjadi tempat dokumentasi tugas dan dapat digunakan untuk meninjau pekerjaan yang telah dikumpulkan.</p>
+            <a href="https://drive.google.com/drive/folders/1iwQ2vuYa8TcYGyJaU2sxMwF0GmooflXb" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-md border border-zinc-700 bg-zinc-900 px-3.5 py-2 text-xs font-medium text-white transition-colors hover:border-zinc-500 hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">
+              Lihat Folder Pengumpulan Tugas <ExternalLink className="size-3.5 shrink-0 text-zinc-400" aria-hidden="true" />
+            </a>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-base font-medium text-zinc-200">Penilaian Pembelajaran</h3>
+            <p className="text-sm leading-relaxed text-zinc-400">Penilaian diarahkan pada ketepatan pengerjaan, kemampuan membaca hasil, dan pemahaman peserta didik terhadap materi yang dipraktikkan. Panduan praktikum juga memuat langkah pemeriksaan untuk membantu melihat kesesuaian hasil pekerjaan.</p>
+            <p className="text-sm leading-relaxed text-zinc-400">Hasil pengumpulan tugas menjadi salah satu bahan untuk meninjau proses belajar. Nilai individual peserta didik tidak ditampilkan pada portofolio ini.</p>
+          </div>
         </PortfolioSection>
 
         <PortfolioSection index={2}>
@@ -158,7 +197,7 @@ export default function EPortfolio2Page() {
               {reflections.map((reflection) => (
                 <li key={reflection.number}>
                   <DocumentEvidenceRow href={reflection.href} title={`LK 4 — Refleksi Siklus ${reflection.number}`} action="Lihat LK 4">
-                    {reflection.number === 1 && " — Praktik pembelajaran Laravel sebagai konteks awal pengalaman mengajar mandiri."}
+                    {reflection.number === 1 }
                   </DocumentEvidenceRow>
                 </li>
               ))}

@@ -1,29 +1,44 @@
 import type { ActivityPhoto } from "@/components/sections/NonTeachingPhotoCarousel";
 
-// Nama dan pengelompokan mengikuti file/folder yang ditunjuk pemilik.
-// Kedua folder saat ini berisi pasangan foto yang sama. Caption/alt hanya
-// mendeskripsikan yang terlihat, tanpa menetapkan nama acara atau tanggal.
-const photoFiles = [
+// Foto mengikuti folder pemilik; keterangan singkat sesuai isi foto.
+export const teachingPhotos: readonly ActivityPhoto[] = [
   {
-    fileName: "WhatsApp Image 2026-10-30 at 20.58.37.jpeg",
-    caption: "Peserta kegiatan duduk bersama di lapangan beratap.",
-    alt: "Sejumlah peserta duduk berkelompok di lapangan beratap, dengan beberapa orang berdiri di tepi lapangan",
+    src: "/e-portfolio-2/kegiatan-mengajar/pembelajaran di lab.png",
+    activity: "Pembelajaran di Lab",
+    caption: "Peserta didik mengikuti pembelajaran menggunakan komputer di laboratorium.",
+    alt: "Peserta didik menggunakan komputer di laboratorium dengan contoh pengerjaan ditampilkan melalui proyektor",
   },
   {
-    fileName: "WhatsApp Image 2026-10-30 at 20.58.59.jpeg",
-    caption: "Foto kelompok di depan layar bertuliskan Ruang BK.",
-    alt: "Sekelompok orang berdiri berjajar di depan layar bertuliskan Ruang BK dalam sebuah ruangan",
+    src: "/e-portfolio-2/kegiatan-mengajar/pembelajaran di lab 2.png",
+    activity: "Pendampingan di Lab",
+    caption: "Pendampingan peserta didik saat mengerjakan latihan di komputer.",
+    alt: "Pendamping berdiri di samping peserta didik yang sedang bekerja menggunakan komputer",
   },
-] as const;
+  {
+    src: "/e-portfolio-2/kegiatan-mengajar/pendampingan pembelajaran kelas dengan guru pamong.png",
+    activity: "Pendampingan Bersama Guru Pamong",
+    caption: "Pendampingan pembelajaran di kelas bersama guru pamong.",
+    alt: "Pendampingan peserta didik di ruang kelas dengan guru pamong dan pendamping berdiri di antara meja belajar",
+  },
+];
 
-function photosFor(folder: "kegiatan-mengajar" | "kegiatan-nonmengajar"): readonly ActivityPhoto[] {
-  return photoFiles.map((photo) => ({
-    src: `/e-portfolio-2/${folder}/${photo.fileName}`,
-    activity: photo.fileName,
-    caption: photo.caption,
-    alt: photo.alt,
-  }));
-}
-
-export const teachingPhotos = photosFor("kegiatan-mengajar");
-export const nonTeachingPhotos = photosFor("kegiatan-nonmengajar");
+export const nonTeachingPhotos: readonly ActivityPhoto[] = [
+  {
+    src: "/e-portfolio-2/kegiatan-nonmengajar/pengajian.jpeg",
+    activity: "Pengajian",
+    caption: "Kegiatan pengajian bersama di lingkungan sekolah.",
+    alt: "Peserta kegiatan duduk bersama di lapangan beratap dengan beberapa pendamping di tepi lapangan",
+  },
+  {
+    src: "/e-portfolio-2/kegiatan-nonmengajar/piket pagi.png",
+    activity: "Piket Pagi",
+    caption: "Menyambut kedatangan peserta didik saat piket pagi.",
+    alt: "Peserta didik menyalami pendamping di area masuk sekolah pada pagi hari",
+  },
+  {
+    src: "/e-portfolio-2/kegiatan-nonmengajar/ruangbk.jpeg",
+    activity: "Presentasi Ruang BK",
+    caption: "Foto bersama di depan layar presentasi Ruang BK.",
+    alt: "Foto kelompok di dalam ruangan dengan layar presentasi bertuliskan Ruang BK",
+  },
+];
