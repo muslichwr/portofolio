@@ -12,14 +12,22 @@ export type ActivityPhoto = {
   credit?: { label: string; href: string };
 };
 
-export function NonTeachingPhotoCarousel({ photos }: { photos: readonly ActivityPhoto[] }) {
+export function NonTeachingPhotoCarousel({
+  photos,
+  label = "Foto kegiatan nonmengajar",
+  emptyMessage = "Foto kegiatan nonmengajar belum tersedia.",
+}: {
+  photos: readonly ActivityPhoto[];
+  label?: string;
+  emptyMessage?: string;
+}) {
   const trackId = useId();
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const photo = photos[activeIndex];
 
   if (!photo) {
-    return <p className="text-sm leading-relaxed text-zinc-400">Foto kegiatan nonmengajar belum tersedia.</p>;
+    return <p className="text-sm leading-relaxed text-zinc-400">{emptyMessage}</p>;
   }
 
   function goTo(index: number) {
@@ -32,7 +40,7 @@ export function NonTeachingPhotoCarousel({ photos }: { photos: readonly Activity
   const buttonClass = "inline-flex min-h-11 items-center justify-center gap-2 rounded-sm border border-zinc-700 px-3 text-sm text-zinc-200 hover:border-zinc-400 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300 disabled:cursor-default disabled:opacity-40";
 
   return (
-    <figure className="min-w-0" role="region" aria-roledescription="carousel" aria-label="Foto kegiatan nonmengajar">
+    <figure className="min-w-0" role="region" aria-roledescription="carousel" aria-label={label}>
       <div
         id={trackId}
         ref={trackRef}

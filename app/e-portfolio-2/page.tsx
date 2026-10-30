@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { ExternalLink, FileText } from "lucide-react";
 import { NonTeachingPhotoCarousel } from "@/components/sections/NonTeachingPhotoCarousel";
-import { nonTeachingPhotos } from "../e-portfolio-1/photos";
+import { nonTeachingPhotos, teachingPhotos } from "./photos";
 import styles from "../e-portfolio-1/page.module.css";
 
 export const metadata: Metadata = {
@@ -47,11 +48,31 @@ const reflections = [
   },
 ] as const;
 
-function DocumentLink({ href, children }: { href: string; children: ReactNode }) {
+function DocumentEvidenceRow({
+  href,
+  title,
+  action,
+  children,
+}: {
+  href: string;
+  title: string;
+  action: "Lihat Modul Ajar" | "Lihat LK 4";
+  children?: ReactNode;
+}) {
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="rounded-sm text-zinc-200 underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">
-      {children}
-    </a>
+    <div className="flex flex-col gap-3 rounded-lg border border-zinc-800 bg-zinc-900/50 p-3 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex min-w-0 items-start gap-3">
+        <FileText className="mt-0.5 size-4 shrink-0 text-zinc-400" aria-hidden="true" />
+        <div className="min-w-0 space-y-1">
+          <p className="text-sm font-medium text-white">{title}</p>
+          {children && <p className="text-xs leading-relaxed text-zinc-400">{children}</p>}
+        </div>
+      </div>
+      <a href={href} target="_blank" rel="noopener noreferrer" aria-label={`${action}: ${title}`} className="flex shrink-0 items-center gap-1.5 self-start rounded-md border border-zinc-700 bg-zinc-900 px-3.5 py-2 text-xs font-medium text-white transition-colors hover:border-zinc-500 hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300 sm:self-center">
+        <span>{action}</span>
+        <ExternalLink className="size-3.5 text-zinc-400" aria-hidden="true" />
+      </a>
+    </div>
   );
 }
 
@@ -74,33 +95,17 @@ export default function EPortfolio2Page() {
       <div className="mx-auto max-w-4xl">
         <header className="pb-12 md:pb-16">
           <p className="mb-5 font-mono text-xs uppercase tracking-widest text-zinc-400">E-Portfolio 2 | Ujian Akhir Semester PPL Mandiri</p>
-          <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tighter text-white sm:text-5xl md:text-7xl">Praktik Mengajar Mandiri — Pembelajaran Basis Data</h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">SMK Negeri 1 Surabaya · Pengembangan Perangkat Lunak dan Gim</p>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400">Halaman ini memuat perangkat pembelajaran, pengalaman mengajar, dan refleksi saya selama pelaksanaan PPL Mandiri, dengan fokus pada pembelajaran Basis Data. Pembahasan disusun berdasarkan Modul Ajar yang telah saya siapkan serta catatan refleksi selama praktik mengajar.</p>
+          <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tighter text-white sm:text-5xl md:text-7xl">Praktik Mengajar Mandiri 2</h1>
         </header>
-
-        <nav aria-labelledby="daftar-isi" className="border-t border-zinc-800 py-8 md:grid md:grid-cols-[1fr_2fr] md:gap-12 md:py-10">
-          <h2 id="daftar-isi" className="mb-5 font-mono text-xs uppercase tracking-widest text-zinc-400 md:mb-0 md:pt-3">Daftar Isi</h2>
-          <ol>
-            {contents.map((item, index) => (
-              <li key={item.id}>
-                <a href={`#${item.id}`} className="flex min-h-11 items-baseline gap-4 rounded-sm py-2.5 text-sm text-zinc-300 underline-offset-4 hover:text-white hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">
-                  <span className="font-mono text-xs text-zinc-400" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                  {item.title}
-                </a>
-              </li>
-            ))}
-          </ol>
-        </nav>
 
         <PortfolioSection index={0}>
           <p className="text-sm leading-relaxed text-zinc-400">Saya menyusun enam Modul Ajar Basis Data dengan urutan materi yang saling berkaitan. Pembelajaran dimulai dari pengenalan cara menyimpan data, dilanjutkan dengan pengelolaan dan pencarian data, hingga perancangan tabel yang saling berhubungan. Urutan tersebut dirancang agar peserta didik memiliki pemahaman dasar sebelum mengerjakan tugas yang lebih kompleks.</p>
           <p className="text-sm leading-relaxed text-zinc-400">Dalam rancangan pembelajaran, saya menyiapkan penjelasan awal, demonstrasi, latihan praktik, dan pendampingan sesuai kebutuhan peserta didik. Namun, pengalaman mengajar menunjukkan bahwa pelaksanaan kegiatan masih perlu mempertimbangkan ketersediaan perangkat dan waktu pengerjaan. Beberapa latihan membutuhkan penjelasan ulang sehingga tidak seluruh kegiatan dapat diselesaikan sesuai rencana.</p>
           <div className="space-y-3" data-teaching-modules>
             <h3 className="text-base font-medium text-zinc-200">Perangkat Pembelajaran Basis Data</h3>
-            <ol className="list-decimal space-y-3 pl-5 text-sm leading-relaxed text-zinc-400">
+            <ol className="space-y-3">
               {teachingModules.map((module) => (
-                <li key={module.href} className="pl-1"><DocumentLink href={module.href}>{module.title}</DocumentLink></li>
+                <li key={module.href}><DocumentEvidenceRow href={module.href} title={module.title} action="Lihat Modul Ajar" /></li>
               ))}
             </ol>
           </div>
@@ -117,13 +122,29 @@ export default function EPortfolio2Page() {
           <p className="text-sm leading-relaxed text-zinc-400">Saya mengawali pembelajaran dengan mengingatkan kembali materi sebelumnya, kemudian memberikan penjelasan dan contoh sebelum peserta didik mengerjakan latihan. Selama praktik, saya memberikan arahan kepada peserta didik yang mengalami kesulitan dan mengingatkan mereka yang belum memulai pekerjaan.</p>
           <p className="text-sm leading-relaxed text-zinc-400">Pelaksanaannya belum selalu sesuai dengan alokasi waktu. Sebagian peserta didik memerlukan pendampingan berulang, sedangkan peserta didik yang tidak memiliki perangkat lebih banyak mengikuti penjelasan melalui contoh yang ditampilkan. Kondisi tersebut membuat beberapa latihan perlu dilanjutkan pada pertemuan berikutnya.</p>
           <p className="text-sm leading-relaxed text-zinc-400">Pengalaman ini menjadi bahan evaluasi bagi saya untuk menyampaikan instruksi yang lebih singkat, membagi tugas menjadi beberapa tahap, dan memeriksa pekerjaan secara berkala.</p>
-          <p data-artifact-placeholder data-teaching-recording className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Video praktik mengajar:</strong> Belum dilampirkan. Rekaman yang dipilih harus sesuai dengan Modul Ajar utama untuk UAS.</p>
+          <div className="space-y-3" data-teaching-recording>
+            <p data-media-status className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Video sementara:</strong> Belum terverifikasi sebagai rekaman praktik mengajar atau sesuai dengan Modul Ajar.</p>
+            <iframe
+              src="https://www.youtube.com/embed/tfNIus1BWj4"
+              title="Video sementara dari YouTube — belum terverifikasi sebagai rekaman praktik mengajar"
+              className="aspect-video w-full rounded-lg border border-zinc-800"
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+            <a href="https://youtu.be/tfNIus1BWj4?si=twviqirzOHIpTnDH" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1.5 rounded-sm text-sm text-zinc-200 underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">
+              Tonton di YouTube <ExternalLink className="size-3.5" aria-hidden="true" />
+            </a>
+          </div>
+          <div className="space-y-3" data-teaching-gallery>
+            <h3 className="text-base font-medium text-zinc-200">Dokumentasi Kegiatan Mengajar</h3>
+            <NonTeachingPhotoCarousel photos={teachingPhotos} label="Foto kegiatan mengajar" emptyMessage="Foto kegiatan mengajar belum tersedia." />
+          </div>
         </PortfolioSection>
 
         <PortfolioSection index={3}>
-          <p className="text-sm leading-relaxed text-zinc-400">Dokumentasi kegiatan nonmengajar asli belum saya lampirkan pada halaman ini. Foto yang ditampilkan saat ini merupakan ilustrasi dan bukan dokumentasi kegiatan saya selama PPL Mandiri.</p>
-          <p className="text-sm leading-relaxed text-zinc-400">Bagian ini akan dilengkapi dengan foto serta keterangan kegiatan berdasarkan dokumentasi yang sebenarnya.</p>
-          <NonTeachingPhotoCarousel photos={nonTeachingPhotos} />
+          <NonTeachingPhotoCarousel photos={nonTeachingPhotos} label="Foto kegiatan nonmengajar" />
         </PortfolioSection>
 
         <PortfolioSection index={4}>
@@ -133,11 +154,12 @@ export default function EPortfolio2Page() {
           <p className="text-sm leading-relaxed text-zinc-400">Untuk pembelajaran berikutnya, saya perlu menetapkan target pekerjaan yang lebih jelas, memeriksa kemajuan pada setiap tahap, dan menyiapkan kegiatan tertulis bagi peserta didik yang belum dapat menggunakan laptop. Perbaikan tersebut masih menjadi rencana yang perlu saya terapkan dan evaluasi.</p>
           <div className="space-y-3" data-reflection-documents>
             <h3 className="text-base font-medium text-zinc-200">Dokumen Refleksi</h3>
-            <ul className="list-disc space-y-3 pl-5 text-sm leading-relaxed text-zinc-400">
+            <ul className="space-y-3">
               {reflections.map((reflection) => (
-                <li key={reflection.number} className="pl-1">
-                  <DocumentLink href={reflection.href}>LK 4 — Refleksi Siklus {reflection.number}</DocumentLink>
-                  {reflection.number === 1 && " — Praktik pembelajaran Laravel sebagai konteks awal pengalaman mengajar mandiri."}
+                <li key={reflection.number}>
+                  <DocumentEvidenceRow href={reflection.href} title={`LK 4 — Refleksi Siklus ${reflection.number}`} action="Lihat LK 4">
+                    {reflection.number === 1 && " — Praktik pembelajaran Laravel sebagai konteks awal pengalaman mengajar mandiri."}
+                  </DocumentEvidenceRow>
                 </li>
               ))}
             </ul>
