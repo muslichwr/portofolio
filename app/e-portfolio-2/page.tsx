@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import coverPortrait from "@/assets/images/muslich1.jpg";
 import { ExternalLink, FileText } from "lucide-react";
 import { NonTeachingPhotoCarousel } from "@/components/sections/NonTeachingPhotoCarousel";
 import { nonTeachingPhotos, teachingPhotos } from "./photos";
@@ -102,7 +104,25 @@ export default function EPortfolio2Page() {
   return (
     <article className={`${styles.page} px-6 pb-20 pt-16 md:pb-28 md:pt-24`}>
       <div className="mx-auto max-w-4xl">
-        <header className="pb-12 md:pb-16">
+        <section aria-labelledby="sampul-uas-judul" data-portfolio-cover className="mb-16 grid gap-10 border-b border-zinc-800 pb-16 md:mb-20 md:min-h-[38rem] md:grid-cols-[minmax(0,1fr)_17rem] md:items-center md:gap-12 md:pb-20">
+          <div className="min-w-0">
+            <div className="mb-8 h-1 w-12 bg-amber-300" aria-hidden="true" />
+            <p className="mb-5 font-mono text-xs tracking-[0.2em] text-zinc-400">PPG PRAJABATAN</p>
+            <p id="sampul-uas-judul" className="text-[clamp(2.25rem,7.5vw,4rem)] font-extrabold leading-none tracking-tight text-white">PORTOFOLIO</p>
+            <p className="mt-5 text-sm font-semibold tracking-wide text-amber-200">UJIAN AKHIR SEMESTER (UAS)</p>
+            <p className="mt-3 max-w-md text-sm font-medium leading-relaxed tracking-wide text-zinc-300">PRAKTIK PENGALAMAN LAPANGAN (PPL) MANDIRI</p>
+            <div className="mt-9 border-l border-zinc-700 pl-4">
+              <p className="text-base font-semibold tracking-wide text-white">MUSLICH WAHYU ROMADHON</p>
+              <p className="mt-3 text-sm text-zinc-300">2500103916524004</p>
+            </div>
+            <a href="#isi-portofolio" className="mt-8 inline-flex min-h-11 items-center rounded-md border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-200 transition-colors hover:border-zinc-500 hover:bg-zinc-900 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">Lihat Isi Portofolio</a>
+          </div>
+          <div className="w-full max-w-[17rem] justify-self-center border border-zinc-800 p-2 md:justify-self-end">
+            <Image src={coverPortrait} alt="Potret formal Muslich Wahyu Romadhon" sizes="272px" preload className="h-auto w-full" />
+          </div>
+        </section>
+
+        <header id="isi-portofolio" tabIndex={-1} className="scroll-mt-8 pb-12 focus:outline-none md:pb-16">
           <p className="mb-5 font-mono text-xs uppercase tracking-widest text-zinc-400">E-Portfolio 2 | Ujian Akhir Semester PPL Mandiri</p>
           <h1 className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tighter text-white sm:text-5xl md:text-7xl">Praktik Mengajar Mandiri 2</h1>
         </header>
