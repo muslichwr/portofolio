@@ -220,7 +220,24 @@ export default function EPortfolio2Page() {
           <p className="text-sm leading-relaxed text-zinc-400">Selama praktik mengajar mandiri, saya memperoleh pengalaman dalam menyiapkan materi, memberikan penjelasan, dan mendampingi peserta didik saat mengerjakan tugas. Saya dapat mengaitkan materi sebelumnya dengan pembelajaran baru dan memperlihatkan contoh yang membantu peserta didik mengikuti penjelasan.</p>
           <p className="text-sm leading-relaxed text-zinc-400">Namun, saya masih perlu memperbaiki pengelolaan waktu dan cara memantau pengerjaan tugas. Beberapa peserta didik membutuhkan pengingat berulang untuk mulai bekerja, sementara keterbatasan perangkat membuat kesempatan praktik belum merata. Kendala tersebut masih muncul hingga akhir pelaksanaan praktik mandiri.</p>
           <p className="text-sm leading-relaxed text-zinc-400">Masukan dari Guru Pamong mengingatkan saya bahwa pendampingan perlu diberikan sesuai kebutuhan, tetapi peserta didik juga perlu mendapat kesempatan untuk bertanggung jawab terhadap pekerjaannya sendiri. Saya ingin menjadi guru yang mampu menjaga keseimbangan antara memberikan arahan dan membangun kemandirian peserta didik.</p>
-          <p className="text-sm leading-relaxed text-zinc-400">Untuk pembelajaran berikutnya, saya perlu menetapkan target pekerjaan yang lebih jelas, memeriksa kemajuan pada setiap tahap, dan menyiapkan kegiatan tertulis bagi peserta didik yang belum dapat menggunakan laptop. Perbaikan tersebut masih menjadi rencana yang perlu saya terapkan dan evaluasi.</p>
+          <div className="space-y-3" data-follow-up-plan>
+            <h3 className="text-base font-medium text-zinc-200">Rencana Tindak Lanjut</h3>
+            <p className="text-sm leading-relaxed text-zinc-400">Berdasarkan pengalaman selama empat siklus praktik mengajar mandiri, saya merencanakan tiga perbaikan untuk pembelajaran berikutnya.</p>
+            <ol className="list-decimal space-y-4 pl-5 text-sm leading-relaxed text-zinc-400">
+              <li className="space-y-2">
+                <strong className="font-medium text-zinc-200">Mengatur target dan waktu pengerjaan.</strong>
+                <p>Saya akan membagi latihan praktik menjadi beberapa tahap dengan target pekerjaan yang jelas. Setiap tahap perlu memiliki waktu pengerjaan agar peserta didik mengetahui pekerjaan yang harus diselesaikan.</p>
+              </li>
+              <li className="space-y-2">
+                <strong className="font-medium text-zinc-200">Memantau pekerjaan dan mendorong kemandirian.</strong>
+                <p>Saya akan memeriksa kemajuan peserta didik secara berkala, terutama yang belum memulai tugas atau mengalami kesulitan. Pendampingan tetap diberikan sesuai kebutuhan, dengan memberi kesempatan kepada peserta didik untuk mencoba menyelesaikan pekerjaannya sendiri.</p>
+              </li>
+              <li className="space-y-2">
+                <strong className="font-medium text-zinc-200">Menyiapkan kegiatan bagi peserta didik yang tidak membawa laptop.</strong>
+                <p>Saya akan menyediakan latihan tertulis yang sesuai dengan materi, seperti memperkirakan hasil perintah SQL atau menggambar hubungan antartabel. Dengan demikian, peserta didik tetap dapat mengikuti kegiatan belajar meskipun belum dapat melakukan praktik langsung.</p>
+              </li>
+            </ol>
+          </div>
           <div className="space-y-3" data-reflection-documents>
             <h3 className="text-base font-medium text-zinc-200">Dokumen Refleksi</h3>
             <ul className="space-y-3">

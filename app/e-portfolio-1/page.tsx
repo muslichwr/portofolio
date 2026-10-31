@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import coverPortrait from "@/assets/images/muslich1.jpg";
 import type { ReactNode } from "react";
 import { ExternalLink, FileText } from "lucide-react";
 import { NonTeachingPhotoCarousel } from "@/components/sections/NonTeachingPhotoCarousel";
@@ -78,7 +80,25 @@ export default function EPortfolio1Page() {
   return (
     <article className={`${styles.page} px-6 pb-20 pt-16 md:pb-28 md:pt-24`}>
       <div className="mx-auto max-w-4xl">
-        <header className="pb-12 md:pb-16">
+        <section aria-labelledby="sampul-uts-judul" data-portfolio-cover className="mb-16 grid gap-10 border-b border-zinc-800 pb-16 md:mb-20 md:min-h-[38rem] md:grid-cols-[minmax(0,1fr)_17rem] md:items-center md:gap-12 md:pb-20">
+          <div className="min-w-0">
+            <div className="mb-8 h-1 w-12 bg-amber-300" aria-hidden="true" />
+            <p className="mb-5 font-mono text-xs tracking-[0.2em] text-zinc-400">PPG PRAJABATAN</p>
+            <p id="sampul-uts-judul" className="text-[clamp(2.25rem,7.5vw,4rem)] font-extrabold leading-none tracking-tight text-white">PORTOFOLIO</p>
+            <p className="mt-5 text-sm font-semibold tracking-wide text-amber-200">UJIAN TENGAH SEMESTER (UTS)</p>
+            <p className="mt-3 max-w-md text-sm font-medium leading-relaxed tracking-wide text-zinc-300">PRAKTIK PENGALAMAN LAPANGAN (PPL) MANDIRI</p>
+            <div className="mt-9 border-l border-zinc-700 pl-4">
+              <p className="text-base font-semibold tracking-wide text-white">MUSLICH WAHYU ROMADHON</p>
+              <p className="mt-3 text-sm text-zinc-300">2500103916524004</p>
+            </div>
+            <a href="#isi-portofolio" className="mt-8 inline-flex min-h-11 items-center rounded-md border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-200 transition-colors hover:border-zinc-500 hover:bg-zinc-900 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">Lihat Isi Portofolio</a>
+          </div>
+          <div className="w-full max-w-[17rem] justify-self-center border border-zinc-800 p-2 md:justify-self-end">
+            <Image src={coverPortrait} alt="Potret formal Muslich Wahyu Romadhon" sizes="272px" preload className="h-auto w-full" />
+          </div>
+        </section>
+
+        <header id="isi-portofolio" tabIndex={-1} className="scroll-mt-8 pb-12 focus:outline-none md:pb-16">
           <p className="mb-5 font-mono text-xs uppercase tracking-widest text-zinc-400">
             SEMESTER II / UJIAN TENGAH SEMESTER / E-PORTFOLIO 1
           </p>
@@ -105,7 +125,7 @@ export default function EPortfolio1Page() {
           <div className="space-y-3">
             <h3 className="text-base font-medium text-zinc-200">Materi Pembelajaran</h3>
             <p className="text-sm leading-relaxed text-zinc-400">Saya menggunakan presentasi Laravel 12 yang memuat pengenalan aplikasi, Route, Controller, Blade, form, dan materi lanjutan. Pada kegiatan yang tercatat dalam LK 3, pembelajaran berfokus pada dasar Laravel hingga pembuatan halaman yang dapat menerima data.</p>
-            <a href="https://www.canva.com/design/DAHQfRr7DjE/LbLR-L67s7yFhAJyiZVCsA/edit" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-md border border-zinc-700 bg-zinc-900 px-3.5 py-2 text-xs font-medium text-white transition-colors hover:border-zinc-500 hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">
+            <a href="https://www.canva.com/design/DAHQfRr7DjE/LbLR-L67s7yFhAJyiZVCsA/view" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-md border border-zinc-700 bg-zinc-900 px-3.5 py-2 text-xs font-medium text-white transition-colors hover:border-zinc-500 hover:bg-zinc-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">
               Lihat Materi Pembelajaran — Canva <ExternalLink className="size-3.5 shrink-0 text-zinc-400" aria-hidden="true" />
             </a>
           </div>
@@ -128,28 +148,16 @@ export default function EPortfolio1Page() {
           <p className="text-sm leading-relaxed text-zinc-400">Pembelajaran dilaksanakan melalui penjelasan dan praktik bertahap. Peserta didik terlihat lebih aktif ketika dapat mencoba langsung dan melihat hasil pekerjaannya melalui browser. Namun, sebagian masih memerlukan penjelasan ulang untuk memahami hubungan antara alamat halaman, proses pada aplikasi, dan tampilan yang dihasilkan.</p>
           <p className="text-sm leading-relaxed text-zinc-400">Keterbatasan perangkat juga memengaruhi kegiatan. Ketika pembelajaran berlangsung di kelas biasa, tidak semua peserta didik membawa laptop sehingga kesempatan praktik belum merata. Saya perlu menyesuaikan kegiatan agar peserta didik yang belum dapat mencoba tetap dapat mengikuti pembahasan.</p>
           <h3 className="text-base font-medium text-zinc-200">Video Praktik</h3>
-          <div className="space-y-3" data-teaching-recording>
-            <p data-media-status className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400">Video sementara — rekaman pelaksanaan pembelajaran belum terverifikasi.</p>
-            <iframe
-              src="https://www.youtube.com/embed/tfNIus1BWj4"
-              title="Video sementara dari YouTube — belum terverifikasi sebagai rekaman praktik mengajar"
-              className="aspect-video w-full rounded-lg border border-zinc-800"
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-            <a href="https://youtu.be/tfNIus1BWj4?si=twviqirzOHIpTnDH" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1.5 rounded-sm text-sm text-zinc-200 underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">
-              Tonton di YouTube <ExternalLink className="size-3.5" aria-hidden="true" />
-            </a>
-          </div>
+          <p data-media-status className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400">Rekaman praktik mengajar terbimbing belum ditautkan.</p>
           <div className="space-y-3" data-teaching-gallery>
             <h3 className="text-base font-medium text-zinc-200">Dokumentasi Kegiatan Mengajar</h3>
+            <p data-gallery-context className="text-sm leading-relaxed text-zinc-400">Foto berikut merupakan dokumentasi umum PPL Mandiri; keterkaitannya dengan empat pertemuan dalam LK 3 belum terverifikasi.</p>
             <NonTeachingPhotoCarousel photos={teachingPhotos} label="Foto kegiatan mengajar" emptyMessage="Foto kegiatan mengajar belum tersedia." />
           </div>
         </PortfolioSection>
 
         <PortfolioSection index={3}>
+          <p data-gallery-context className="text-sm leading-relaxed text-zinc-400">Dokumentasi umum kegiatan nonmengajar selama PPL Mandiri; keterkaitannya dengan periode UTS belum terverifikasi.</p>
           <NonTeachingPhotoCarousel photos={nonTeachingPhotos} label="Foto kegiatan nonmengajar" />
         </PortfolioSection>
 
@@ -164,7 +172,7 @@ export default function EPortfolio1Page() {
         </PortfolioSection>
 
         <footer className="border-t border-zinc-700 py-8">
-          <Link href="/e-portfolio-2" className="inline-flex min-h-11 items-center rounded-sm text-sm text-zinc-200 underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">Lanjut ke E-Portfolio 2 — UAS Siklus 2–4</Link>
+          <Link href="/e-portfolio-2" className="inline-flex min-h-11 items-center rounded-sm text-sm text-zinc-200 underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">Lanjut ke E-Portfolio 2 — UAS Pembelajaran Basis Data</Link>
         </footer>
       </div>
     </article>
