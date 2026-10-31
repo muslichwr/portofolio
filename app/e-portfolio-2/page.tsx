@@ -162,17 +162,17 @@ export default function EPortfolio2Page() {
           <p className="text-sm leading-relaxed text-zinc-400">Pelaksanaannya belum selalu sesuai dengan alokasi waktu. Sebagian peserta didik memerlukan pendampingan berulang, sedangkan peserta didik yang tidak memiliki perangkat lebih banyak mengikuti penjelasan melalui contoh yang ditampilkan. Kondisi tersebut membuat beberapa latihan perlu dilanjutkan pada pertemuan berikutnya.</p>
           <p className="text-sm leading-relaxed text-zinc-400">Pengalaman ini menjadi bahan evaluasi bagi saya untuk menyampaikan instruksi yang lebih singkat, membagi tugas menjadi beberapa tahap, dan memeriksa pekerjaan secara berkala.</p>
           <div className="space-y-3" data-teaching-recording>
-            <p data-media-status className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Video sementara:</strong> Belum terverifikasi sebagai rekaman praktik mengajar atau sesuai dengan Modul Ajar.</p>
+            <p data-media-status className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400">Video praktik mengajar sedang dalam proses unggah. Kesesuaian rekaman dengan Modul Ajar akan diperiksa setelah video tersedia.</p>
             <iframe
-              src="https://www.youtube.com/embed/tfNIus1BWj4"
-              title="Video sementara dari YouTube — belum terverifikasi sebagai rekaman praktik mengajar"
+              src="https://www.youtube.com/embed/QmJenQOYLqQ"
+              title="Video praktik mengajar — sedang dalam proses unggah, kesesuaian dengan Modul Ajar belum diperiksa"
               className="aspect-video w-full rounded-lg border border-zinc-800"
               loading="lazy"
               referrerPolicy="strict-origin-when-cross-origin"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
-            <a href="https://youtu.be/tfNIus1BWj4?si=twviqirzOHIpTnDH" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1.5 rounded-sm text-sm text-zinc-200 underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">
+            <a href="https://youtu.be/QmJenQOYLqQ" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1.5 rounded-sm text-sm text-zinc-200 underline underline-offset-4 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-zinc-300">
               Tonton di YouTube <ExternalLink className="size-3.5" aria-hidden="true" />
             </a>
           </div>
@@ -184,6 +184,18 @@ export default function EPortfolio2Page() {
 
         <PortfolioSection index={3}>
           <NonTeachingPhotoCarousel photos={nonTeachingPhotos} label="Foto kegiatan nonmengajar" />
+          <div className="space-y-3">
+            <h3 className="text-base font-medium text-zinc-200">Piket Sekolah dan Pendampingan Kelas</h3>
+            <p className="text-sm leading-relaxed text-zinc-400">Selama PPL Mandiri, saya mengikuti kegiatan piket sekolah sesuai jadwal. Saat piket pagi, saya membantu memantau ketertiban peserta didik yang memasuki lingkungan sekolah melalui gerbang. Saya juga mendampingi kelas ketika guru mata pelajaran berhalangan hadir, sesuai dengan tugas yang diberikan oleh guru piket.</p>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-base font-medium text-zinc-200">Upacara dan Kegiatan Sekolah</h3>
+            <p className="text-sm leading-relaxed text-zinc-400">Saya mengikuti kegiatan sekolah seperti upacara bendera dan apel. Pada 19 Oktober 2026, saya juga mengikuti rangkaian Dies Natalis SMK Negeri 1 Surabaya.</p>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-base font-medium text-zinc-200">Pemaparan dan Demonstrasi Aplikasi Ruang BK</h3>
+            <p className="text-sm leading-relaxed text-zinc-400">Pada 13 Oktober 2026, saya bersama rekan-rekan mahasiswa PPG memaparkan dan mendemonstrasikan aplikasi Ruang BK kepada pihak SMK Negeri 1 Surabaya. Kegiatan ini merupakan bagian dari mata kuliah Proyek Kepemimpinan. Kami mengembangkan aplikasi sistem informasi tersebut untuk membantu pengelolaan data dan layanan Bimbingan dan Konseling di sekolah.</p>
+          </div>
         </PortfolioSection>
 
         <PortfolioSection index={4}>
