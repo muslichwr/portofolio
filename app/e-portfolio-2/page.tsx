@@ -118,7 +118,6 @@ export default function EPortfolio2Page() {
               ))}
             </ol>
           </div>
-          <p data-artifact-placeholder className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400"><strong className="font-medium text-zinc-200">Rancangan utama UAS:</strong> Satu Modul Ajar terbaik dari praktik mandiri Siklus 2–4 akan ditetapkan setelah dicocokkan dengan rekaman pelaksanaan pembelajaran.</p>
         </PortfolioSection>
 
         <PortfolioSection index={1}>
@@ -162,7 +161,6 @@ export default function EPortfolio2Page() {
           <p className="text-sm leading-relaxed text-zinc-400">Pelaksanaannya belum selalu sesuai dengan alokasi waktu. Sebagian peserta didik memerlukan pendampingan berulang, sedangkan peserta didik yang tidak memiliki perangkat lebih banyak mengikuti penjelasan melalui contoh yang ditampilkan. Kondisi tersebut membuat beberapa latihan perlu dilanjutkan pada pertemuan berikutnya.</p>
           <p className="text-sm leading-relaxed text-zinc-400">Pengalaman ini menjadi bahan evaluasi bagi saya untuk menyampaikan instruksi yang lebih singkat, membagi tugas menjadi beberapa tahap, dan memeriksa pekerjaan secara berkala.</p>
           <div className="space-y-3" data-teaching-recording>
-            <p data-media-status className="border-l-2 border-zinc-700 bg-zinc-950/40 px-4 py-4 text-sm leading-relaxed text-zinc-400">Video praktik mengajar sedang dalam proses unggah. Kesesuaian rekaman dengan Modul Ajar akan diperiksa setelah video tersedia.</p>
             <iframe
               src="https://www.youtube.com/embed/QmJenQOYLqQ"
               title="Video praktik mengajar — sedang dalam proses unggah, kesesuaian dengan Modul Ajar belum diperiksa"
